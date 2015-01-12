@@ -21,6 +21,6 @@ with open('list-of-video-games.csv', 'w+') as f:
   for game in games:
     f.write(
         '{}\n'.format(
-          ','.join(game._asdict().values())
+          ','.join(('"{}"'.format(x.strip()) for x in game._asdict().values()))
         )
       )
