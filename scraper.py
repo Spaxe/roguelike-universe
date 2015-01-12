@@ -39,9 +39,11 @@ def get_games():
   # pprint.pprint(games, indent=2)
   return games
 
-def get_urls(title):
+def get_urls(game):
   '''Return a list of potential websites to scrap'''
-  response = requests.get('http://duckduckgo.com/html/?q={}'.format(title + "+postmortem"))
+  title = game['Title'].replace(' ', '+')
+  developer = game['Developer'].replace(' ', '+')
+  response = requests.get('http://duckduckgo.com/html/?q={}+{}'.format(title, developer))
   soup = bs4.BeautifulSoup(response.text)
   links = []
   for node in soup.select('div.web-result'):
@@ -52,12 +54,12 @@ def get_urls(title):
 
 def compile_urls():
   games = get_games()
-  with open(os.path.join(__dir, 'generated', 'postmortems.csv'), 'w+') as f:
+  with open(os.path.join(__dir, 'generated', 'postmortems-with-developer.csv'), 'w+') as f:
     f.write('Title,Links\n')
     total = len(games)
     for i, game in enumerate(games.values()):
       print '{}%: {}'.format(i*100/total, game['Title'])
-      game['Links'] = [x.encode('utf-8').replace('"', '\\"') for x in get_urls(game['Title'])]
+      game['Links'] = [x.encode('utf-8').replace('"', '\\"') for x in get_urls(game)]
       f.write('"{}","{}"\n'.format(game['Title'], '\n'.join(game['Links'])))
 
 
