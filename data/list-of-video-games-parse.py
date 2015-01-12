@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+'''Parsing list-of-video-games to CSV form'''
+
+import re
+from collections import namedtuple
+
+data = namedtuple('Game', ['title', 'year', 'publisher', 'platforms'], verbose=False, rename=True)
+regex = re.compile('^\s*(.*) \(([0-9]+), (.*)\) \((.*)\)\s*$')
+games = []
+
+with open('list-of-video-games.txt') as f:
+  for line in f.readlines():
+    match = regex.match(line)
+    if match:
+      games.append(data(*match.groups()))
+    else:
+      print 'Error: {} is abnormal.'.format(line)
+
+with open('list-of-video-games.csv', 'w+') as f:
+  f.write('Title,Year,Publisher,Platforms\n')
+  for game in games:
+    f.write(
+        '{}\n'.format(
+          ','.join(game._asdict().values())
+        )
+      )
