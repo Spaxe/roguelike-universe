@@ -2,6 +2,7 @@
 '''Parsing list-of-video-games to CSV form'''
 
 import re
+import json
 from collections import namedtuple
 
 data = namedtuple('Game', ['title', 'year', 'publisher', 'platforms'], verbose=False, rename=True)
@@ -16,11 +17,15 @@ with open('list-of-video-games.txt') as f:
     else:
       print 'Error: {} is abnormal.'.format(line)
 
-with open('list-of-video-games.csv', 'w+') as f:
-  f.write('Title,Year,Publisher,Platforms\n')
-  for game in games:
-    f.write(
-        '{}\n'.format(
-          ','.join(('"{}"'.format(x.strip()) for x in game._asdict().values()))
-        )
-      )
+# with open('list-of-video-games.csv', 'w+') as f:
+#   f.write('Title,Year,Publisher,Platforms\n')
+#   for game in games:
+#     f.write(
+#         '{}\n'.format(
+#           ','.join(('"{}"'.format(x.strip()) for x in game._asdict().values()))
+#         )
+#       )
+
+with open('../generated/games.json', 'w+') as f:
+  output = [game['title'] for game in games]
+  json.dumps(output, indent=2)

@@ -16,6 +16,12 @@ works. The output is a list of items with related titles.
 
 This program requires BeautifulSoup and Requests.
 '''
+
+# Set default encoding to UTF-8 so print statements don't complain
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 import os
 import csv
 import bs4
@@ -43,26 +49,55 @@ def get_games():
 
 def compile_urls(cached=True):
   path = os.path.join(__dir, 'generated', 'roguelike-games.json')
+  games = None
   if cached and os.path.exists(path):
-    with open(path) as f:
-      return json.loads(f.read())
+    try:
+      with open(path) as f:
+        games = json.loads(f.read())
+    except:
+      games = get_games()
+  else:
+    games = get_games()
 
-  games = get_games()
+  print "Compiling a list of URLs...."
 
-  print "Compiling a list of URLS...."
-  for i, game in enumerate(games.values()):
-    print u'{}%: {}'.format(i*100/len(games), game['Title'].decode('utf-8'))
-    game['Links'] = [x.encode('utf-8').replace('"', '\\"') for x in get_urls(game)]
+  for i, (title, game) in enumerate(games.items()):
+    print '{}%: {}'.format(i*100/len(games), title)
+    # Skip scraping if links already exist
+    if cached and 'Links' in game and game['Links']:
+      print u"--- {} already has {} links.".format(title, len(game['Links']))
+      continue
 
-  # with open(path, 'w+') as f:
-  #   f.write(json.dumps(games), indent=2)
+    links = [x.encode('utf-8').replace('"', '\\"') for x in get_urls(game)]
+    game['Links'] = links
+    print 'Scrapped {} links.'.format(len(links))
+
+  with open(path, 'w+') as f:
+    f.write(json.dumps(games, indent=2))
   return games
 
-def compile_content():
-  games = compile_urls(False)
-  content = {}
+def compile_content(cached=True):
+  path = os.path.join(__dir, 'generated', 'roguelike-game-articles.json')
+  content = None
+  if cached and os.path.exists(path):
+    try:
+      with open(path) as f:
+        content = json.loads(f.read())
+    except:
+      content = {}
+  else:
+    content = {}
+
+  games = compile_urls()
+
+  print "Scrapping all the URLs..."
+
   for i, (title, game) in enumerate(games.items()):
-    print u'{}%: {}'.format(i*100/len(games), title.decode('utf-8'))
+    print '{}%: {}'.format(i*100/len(games), title)
+    # Skip scraping if content already exist
+    if cached and title in content and content[title]:
+      print '--- Skipping {}, already has content.'.format(title)
+      continue
     content[title] = get_url_content(game)
 
     with open(os.path.join(__dir, 'generated', 'roguelike-game-articles.json'), 'w+') as f:
@@ -87,11 +122,11 @@ def get_urls(game):
 def get_url_content(game):
   scrape = {}
   for i, url in enumerate(game['Links']):
-    print "{}/{}\tLoading {}".format(i+1, len(game['Links']), url)
+    print u"{}/{}\tLoading {}".format(i+1, len(game['Links']), url)
     try:
       response = requests.get(url, timeout=(3.1, 10.1))
     except Exception as e:
-      print "{}: Failed to load {}".format(e, url)
+      print u"{}: Failed to load {}".format(e, url)
       continue
     scrape[url] = response.text
   return scrape

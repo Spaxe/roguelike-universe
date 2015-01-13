@@ -1,6 +1,6 @@
 First,Last,Title,Developer,Setting,Platform,Notes
-1978,,*Beneath Apple Manor*,Don Worth,Fantasy,APPII,"One of the earliest commercial Apple II games. It predates Rogue, and was 
-much simpler, but supported a low resolution graphical display in addition 
+1978,,*Beneath Apple Manor*,Don Worth,Fantasy,APPII,"One of the earliest commercial Apple II games. It predates Rogue, and was
+much simpler, but supported a low resolution graphical display in addition
 to the text version. Was ported to the IBM PC in 1983.[1]"
 1978,,*DUNGEON*,Brian Sawyer,Fantasy,PET,Published in Cursor issue 15[2]
 1980,,*Rogue*,"Michael Toy, others",Fantasy,CROSS,Inspired the genre as a whole.
@@ -8,7 +8,7 @@ to the text version. Was ported to the IBM PC in 1983.[1]"
 1982,,*Sword of Fargoal*,Jeff McCord,Fantasy,"C64, PET, VIC20",Based on *Gammaquest II* by the same author.
 1982,,*Hack*,"Jay Fenlason, Andries Brouwer, others",Fantasy,CROSS,Later became the basis for *NetHack*.
 1982,,*Advanced Dungeons & Dragons: Cloudy Mountain*,Mattel Electronics,Fantasy,INT,
-1983,1999,*Moria*,Robert Alan Koeneke & Jimmey Wayne Todd,Fantasy,CROSS,"Based heavily on *The Lord of the Rings*. Later port (*Umoria*) became the 
+1983,1999,*Moria*,Robert Alan Koeneke & Jimmey Wayne Todd,Fantasy,CROSS,"Based heavily on *The Lord of the Rings*. Later port (*Umoria*) became the
 basis of *Angband*. Influenced the preliminary design of Blizzard's *Diablo*
 .[3]"
 1985,1987,"*Dungeon of Doom, The*",John Raymonds,Fantasy,MAC,Released commercially in 1987 as *The Dungeon Revealed*.
@@ -25,43 +25,43 @@ basis of *Angband*. Influenced the preliminary design of Blizzard's *Diablo*
 1991,,*Moraff's World*,Steve Moraff,Fantasy,DOS,Sequel to *Moraff's Revenge*.
 1992,,*Mission Thunderbolt*,"Dave Scheifler, John Calhoun",Futuristic,"DEC, MAC, WIN",
 1992,1995,*Ragnarok*,Norsehelm,Fantasy,DOS,
-1992,2013,*UnReal World*,Sami Maaranen,"Wilderness survival, Historical","DOS, WIN, LIN, OSX","Graphical roguelike set in the far north during the late Iron-Age. It's 
+1992,2013,*UnReal World*,Sami Maaranen,"Wilderness survival, Historical","DOS, WIN, LIN, OSX","Graphical roguelike set in the far north during the late Iron-Age. It's
 open-ended and emphasized on survival in the harsh ancient wilderness."
 1993,,*Torneko no Daiboken: Fushigi no Dungeon*,Chunsoft,Fantasy,SNES,
-1993,,*Dungeons of the Unforgiven*,Steve Moraff,Fantasy,DOS,"The final of the series that began with *Moraff's Revenge* and continued 
-with *Moraff's World*. It is very unforgiving indeed on ""I can handle 
+1993,,*Dungeons of the Unforgiven*,Steve Moraff,Fantasy,DOS,"The final of the series that began with *Moraff's Revenge* and continued
+with *Moraff's World*. It is very unforgiving indeed on ""I can handle
 anything"" difficulty."
-1993,N/A,*Dungeon Hack*,DreamForge,Fantasy,DOS,"Features a pseudo-3D game screen based on SSI's *Eye of the Beholder* 
+1993,N/A,*Dungeon Hack*,DreamForge,Fantasy,DOS,"Features a pseudo-3D game screen based on SSI's *Eye of the Beholder*
 series. It uses the rules mechanics of *AD&D* 2nd Edition."
 1994,2012,*Ancient Domains of Mystery*,Thomas Biskup,Fantasy,"AMI, BeOS, DOS, LIN, OS2, OSX, WIN",
 1994,2012,*World of Arch*,I.A. Jääskeläinen,Fantasy,"AMI, WIN",
-1995,,*The Sorcerer's Cave*,Peter Donnelly/Skookum,Fantasy,WIN,"Based on Donnelly's ""roguelike"" boardgames, The Sorcerer's Cave (1978) and Mystic 
+1995,,*The Sorcerer's Cave*,Peter Donnelly/Skookum,Fantasy,WIN,"Based on Donnelly's ""roguelike"" boardgames, The Sorcerer's Cave (1978) and Mystic
 Wood published by Avalon Hill in 1980"
 1995,,*Alphaman*,Jeffrey R. Olson,Post-apocalypse Science Fiction,DOS,"Features ""elaborate use of colors and the extended IBM character set"""
 "1995, 2008",,*Mystery Dungeon: Shiren the Wanderer*,Chunsoft,Fantasy,"DS, GB, SNES",
 "1997, 1999",,*Chocobo no Fushigina Dungeon*,Square,Fantasy,"PS1, WS",
 1997,2005,*Linley's Dungeon Crawl*,Linley Henzell,Fantasy,CROSS,
 1998,2008,*Baroque*,Sting,Fantasy,"PS1, PS2, SAT, Wii",
-1998,2008,*Tales (or Troubles) of Middle Earth*,"DarkGod, others",Fantastical,CROSS,"Based on the PernBand variant of Angband, and thus on The Lord of the Rings. 
-Author no longer maintains it, but a separate maintenance branch repository 
+1998,2008,*Tales (or Troubles) of Middle Earth*,"DarkGod, others",Fantastical,CROSS,"Based on the PernBand variant of Angband, and thus on The Lord of the Rings.
+Author no longer maintains it, but a separate maintenance branch repository
 exists.[5]"
 "1998, 1999",,*Chocobo's Dungeon 2*,Square,Fantasy,PS1,Sequel to *Chocobo no Fushigina Dungeon*.
 1998,2000,*Azure Dreams*,Konami,Fantasy,"PS1, GBC",
 1998,,*Super Lotsa Added Stuff Hack - Extended Magic*,The Slash'EM development team,Fantasy,CROSS,Variant of *NetHack*.
 "1999, 2001",,*Torneko: The Last Hope*,Chunsoft,Fantasy,"GBA, PS1",Sequel to *Torneko no Daiboken: Fushigi no Dungeon*.
-2000,2001,*Dark Cloud*,Level-5,Fantasy,PS2,"Also included a city-building aspect, making it not purely a roguelike, 
+2000,2001,*Dark Cloud*,Level-5,Fantasy,PS2,"Also included a city-building aspect, making it not purely a roguelike,
 though dungeons did include a roguelike engine."
 2000,2001,*Falcon's Eye*,Jaakko Peltonen,Fantasy,CROSS,Graphical update to NetHack.
 2000,,*Fushigi no Dungeon: Fūrai no Shiren 2: Oni Shūrai! Siren-jō!*,Chunsoft,Fantasy,N64,
-2001,2011,*Lost Labyrinth*,Lost Labyrinth,Fantasy,"WIN, LIN","""Zelda style"" gameplay, graphics and sound; plays to its conclusion in 
+2001,2011,*Lost Labyrinth*,Lost Labyrinth,Fantasy,"WIN, LIN","""Zelda style"" gameplay, graphics and sound; plays to its conclusion in
 10–40 minutes."
 2002,2004,*Strange Adventures In Infinite Space*,Digital Eel,Space science fiction,"WIN, MAC, PALM, PPC","Full graphics, sound and music; plays to completion in 20 minutes or less."
-2002,2003,*Dark Chronicle*/*Dark Cloud 2*,Level-5,Fantasy,PS2,"Much like its predecessor, Dark Cloud, it wasn't a pure roguelike, 
+2002,2003,*Dark Chronicle / Dark Cloud 2*,Level-5,Fantasy,PS2,"Much like its predecessor, Dark Cloud, it wasn't a pure roguelike,
 including world-building aspects, though dungeons remained roguelike."
 2002,2013,"*Doom, the Roguelike*",Kornel Kisielewicz,"Futuristic, Fantasy","LIN, WIN",Based on the *Doom* series by id Software.
 2004,,*TwinBee*,Konami,Fantasy,Mobile Phone,Themed by TwinBee Universe.
 2004,,"*Nightmare of Druaga: Fushigino Dungeon, The*","Arika, Chunsoft",Fantasy,PS2,Sequel to *The Blue Crystal Rod* for SNES.
-2005,2013,*Weird Worlds: Return to Infinite Space*,Digital Eel,Space science fiction,"WIN, MAC, iOS, DROID, NOOK","Full graphics, sound and music; sequel to *Strange Adventures in Infinite 
+2005,2013,*Weird Worlds: Return to Infinite Space*,Digital Eel,Space science fiction,"WIN, MAC, iOS, DROID, NOOK","Full graphics, sound and music; sequel to *Strange Adventures in Infinite
 Space*; plays to its conclusion in less than 30 minutes."
 2005,N/A,*Pokémon Mystery Dungeon: Blue Rescue Team*[6],Chunsoft,"Modern, Fantasy",DS,
 2005,N/A,*Pokémon Mystery Dungeon: Red Rescue Team*,Chunsoft,"Modern, Fantasy",GBA,
@@ -77,64 +77,64 @@ Space*; plays to its conclusion in less than 30 minutes."
 2008,2010,*Shiren the Wanderer*,Chunsoft,Fantasy,"Wii, PSP",3rd game in the series.[8]
 2009,N/A,*Pokémon Mystery Dungeon: Explorers of Sky*,Chunsoft,"Modern, Fantasy",DS,[9]
 2009,2012,*Brogue*,Brian Walker,Fantasy,"WIN, MAC, LIN",
-2009,2012,*Spelunky*,"Derek Yu, Andy Hull","Modern, Fantasy","WIN (2009), XBLA (2012)","2D action-adventure platformer without save points that has four 
-increasingly difficult areas with exclusive features that are divided into 
-multiple randomly generated caves of which each one might contain a further 
+2009,2012,*Spelunky*,"Derek Yu, Andy Hull","Modern, Fantasy","WIN (2009), XBLA (2012)","2D action-adventure platformer without save points that has four
+increasingly difficult areas with exclusive features that are divided into
+multiple randomly generated caves of which each one might contain a further
 unique secret."
 2010,,*100 Rogues*,Dinofarm Games,Fantasy,iOS,
-2010,,*Smart Kobold*,Jeff Lait,Fantasy,"WIN, Linux","A ""seven-day roguelike"" that was selected for demonstration at IndieCade, E3 
-2010. It attempts to implement a high level of artificial intelligence for 
+2010,,*Smart Kobold*,Jeff Lait,Fantasy,"WIN, Linux","A ""seven-day roguelike"" that was selected for demonstration at IndieCade, E3
+2010. It attempts to implement a high level of artificial intelligence for
 a single type of enemy.[10]"
 2010,,*Z.H.P. Unlosing Ranger VS Darkdeath Evilman*,Nippon Ichi Software,Fantasy,PSP,[11]
-2011,,*Deadly Dungeons*,CodeZombie Games,Fantasy,Android,"3D Dungeon exploration with randomly generated floors, items, and 
-creatures. Movement is tile-based. First-person roguelike [12] gameplay 
+2011,,*Deadly Dungeons*,CodeZombie Games,Fantasy,Android,"3D Dungeon exploration with randomly generated floors, items, and
+creatures. Movement is tile-based. First-person roguelike [12] gameplay
 similar to Dungeon Hack."
 2011,,*Dungeons of Dredmor*,Gaslamp Games,Fantasy,"WIN, LIN, OSX",Tile-based movement with rudimentary graphics and a sense of humour.[13]
-2011,,*The Binding of Isaac (video game)*,"Edmund McMillen, Florian Himsl","Surrealistic, Horror","WIN, LIN, OSX","2D Dungeon exploration without save points inspired by The Legend of Zelda, 
-but with semi-randomly accessed floors with exclusive features that have 
-randomly generated rooms of various types potentially including random 
+2011,,*The Binding of Isaac (video game)*,"Edmund McMillen, Florian Himsl","Surrealistic, Horror","WIN, LIN, OSX","2D Dungeon exploration without save points inspired by The Legend of Zelda,
+but with semi-randomly accessed floors with exclusive features that have
+randomly generated rooms of various types potentially including random
 items."
-2011,,*Tales of Maj'Eyal*,Nicolas ‘DarkGod’ Casalini,Fantasy RPG,"WIN, LIN, OSX","Graphical rewrite of the author's earlier ToME (video game). Turn based 
-role playing game based on its own fantasy universe. Players unlock most 
-classes, story threads are available, and elements have been taken from 
+2011,,*Tales of Maj'Eyal*,Nicolas ‘DarkGod’ Casalini,Fantasy RPG,"WIN, LIN, OSX","Graphical rewrite of the author's earlier ToME (video game). Turn based
+role playing game based on its own fantasy universe. Players unlock most
+classes, story threads are available, and elements have been taken from
 MMOs to significantly change the combat."
-2012,,*FTL: Faster Than Light*,Subset Games,"Futuristic, Space Simulator","WIN, LIN, OSX","2D Dungeon exploration styled after space travel. Players move from system 
-to system avoiding a trailing horde of enemies as they participate in 
+2012,,*FTL: Faster Than Light*,Subset Games,"Futuristic, Space Simulator","WIN, LIN, OSX","2D Dungeon exploration styled after space travel. Players move from system
+to system avoiding a trailing horde of enemies as they participate in
 side-quests, with the ultimate goal of entering the last area."
-2013,,*TowerClimb (Beta)*,davioware,Platformer,WIN,"An unforgiving proceedurally generated platformer, in which players must 
-climb/jump/fly and swim up through increasingly difficult levels. The game 
-is divided into multiple sections each with their own unique theme and 
+2013,,*TowerClimb (Beta)*,davioware,Platformer,WIN,"An unforgiving proceedurally generated platformer, in which players must
+climb/jump/fly and swim up through increasingly difficult levels. The game
+is divided into multiple sections each with their own unique theme and
 challenges.[14]"
-2013,,*Wizards Encounters*,Alderan Gaming,Fantasy RPG,DROID,"Turn based role playing game based on the Wizards universe. Players are 
-able to collect money, items, weapons and armor. Fights are random and 
+2013,,*Wizards Encounters*,Alderan Gaming,Fantasy RPG,DROID,"Turn based role playing game based on the Wizards universe. Players are
+able to collect money, items, weapons and armor. Fights are random and
 death is permanent."
-2013,,*Sword of the Stars: The Pit*,Kerberos Productions,Sci-Fi RPG,WIN,"Turn based, 2D Dungeon crawl, RPG based in the Sword of the Stars universe. 
-Players are able to collect equipment, weapons, armor, and ingredients for 
+2013,,*Sword of the Stars: The Pit*,Kerberos Productions,Sci-Fi RPG,WIN,"Turn based, 2D Dungeon crawl, RPG based in the Sword of the Stars universe.
+Players are able to collect equipment, weapons, armor, and ingredients for
 crafting. Explore 30 levels and death is permanent."
-2013,,*WazHack*,"Warwick ""Waz"" Allison",Fantasy RPG,"IOS, DROID, WIN, OSX","Turn based, 2D side-scrollingDungeon crawl, RPG. Players are able to 
-collect equipment, weapons, armor, potions, and scrolls while combating 
+2013,,*WazHack*,"Warwick ""Waz"" Allison",Fantasy RPG,"IOS, DROID, WIN, OSX","Turn based, 2D side-scrollingDungeon crawl, RPG. Players are able to
+collect equipment, weapons, armor, potions, and scrolls while combating
 enemies and starvation. Fights and levels are random and death is permanent."
-2013,,*Don't Starve*,Klei Entertainment,Fantasy RPG,"WIN, OSX, LIN","2D action-adventure. Players are able to harvest plants, build traps to 
-catch animals and craft items. Fights and levels are random and death is 
+2013,,*Don't Starve*,Klei Entertainment,Fantasy RPG,"WIN, OSX, LIN","2D action-adventure. Players are able to harvest plants, build traps to
+catch animals and craft items. Fights and levels are random and death is
 permanent.[15]"
-2013,,*Rogue Legacy*,Cellar Door Games,Fantasy RPG,"WIN, OSX, LIN","2D side-scrolling Dungeon crawl, RPG. Players are able to collect gold, 
-food and potions while combating enemies. Fights are random. Each character 
-has its own unique abilities. Characters level up and change every time 
+2013,,*Rogue Legacy*,Cellar Door Games,Fantasy RPG,"WIN, OSX, LIN","2D side-scrolling Dungeon crawl, RPG. Players are able to collect gold,
+food and potions while combating enemies. Fights are random. Each character
+has its own unique abilities. Characters level up and change every time
 player dies."
 2013,,*99 Levels to Hell*,ZaxisGames,Fantasy Action,WIN,2D side-scrolling action game[16]
-2013,,*Risk of Rain*,Hopoo Games,Sci-Fi Action,WIN,"2D side-scrolling action platformer; a single play through goes through six 
-levels that are randomly selected from pre-generated layouts but with 
-randomized object placement, and the game's difficulty increases based on 
+2013,,*Risk of Rain*,Hopoo Games,Sci-Fi Action,WIN,"2D side-scrolling action platformer; a single play through goes through six
+levels that are randomly selected from pre-generated layouts but with
+randomized object placement, and the game's difficulty increases based on
 how long the player remains alive."
 2013,,*The Guided Fate Paradox*,Nippon Ichi Software,Fantasy,PS3,
-2013,,*Not the Robots*,2DArray,Sci-Fi Action,WIN,"From their Steam Store Page: ""Not The Robots is this year’s most exciting 
-Roguelike Stealth Furniture Eating Simulator. It’s a game with random 
-levels, permadeath, and the goal of eating furniture. Same furniture is 
+2013,,*Not the Robots*,2DArray,Sci-Fi Action,WIN,"From their Steam Store Page: ""Not The Robots is this year’s most exciting
+Roguelike Stealth Furniture Eating Simulator. It’s a game with random
+levels, permadeath, and the goal of eating furniture. Same furniture is
 also your stealth cover. """
-2013,,*Teleglitch*,Test3 Projects,Sci-Fi Horror,"WIN, OSX, LIN","2D top-down shooter with line-of-sight shadows. A randomly generated military 
-research base full of repurposed ex-personell is the setting for you, your guns, 
+2013,,*Teleglitch*,Test3 Projects,Sci-Fi Horror,"WIN, OSX, LIN","2D top-down shooter with line-of-sight shadows. A randomly generated military
+research base full of repurposed ex-personell is the setting for you, your guns,
 your high explosives, and whatever other weapons/augmentations you can craft."
-2014,,*Tower of Guns*,Terrible Posture Games,First-Person Shooter,WIN,"Single player game described as ""Quake-roguelike"" for its randomly 
+2014,,*Tower of Guns*,Terrible Posture Games,First-Person Shooter,WIN,"Single player game described as ""Quake-roguelike"" for its randomly
 generated levels.[17]"
 2014,,*Infinite Space III: Sea of Stars*,Digital Eel,Space science fiction,WIN,"3D graphics, sound and music; plays to completion in 20-45 minutes."
 2015,,*Popup Dungeon*,Triple B Titles,Papercraft Fantasy RPG,PC,
