@@ -27,5 +27,5 @@ with open('list-of-video-games.txt') as f:
 #       )
 
 with open('../generated/games.json', 'w+') as f:
-  output = [game['title'] for game in games]
-  json.dumps(output, indent=2)
+  output = [game[0].strip() for game in games]
+  f.write(json.dumps(output, indent=2))
