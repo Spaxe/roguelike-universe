@@ -2,3 +2,4 @@
 *.sublime-*
 backup
 generated/roguelike-game-articles.json
+*.pyc

@@ -34,6 +34,75 @@ import collections
 __dir = os.path.dirname(os.path.realpath(__file__))
 Game = collections.namedtuple('Game', ['First','Last','Title','Developer','Setting','Platform','Notes'], rename=True)
 
+def compile_games(cached=True, write=True, verbose=False):
+  path = os.path.join(__dir, 'generated', 'roguelike-games.json')
+  games = None
+  if cached and os.path.exists(path):
+    try:
+      with open(path) as f:
+        games = json.loads(f.read())
+    except:
+      games = get_games()
+  else:
+    games = get_games()
+
+  if verbose:
+    print "Compiling a list of URLs...."
+
+  for i, (title, game) in enumerate(games.items()):
+    if verbose:
+      print '{}%: {}'.format(i*100/len(games), title)
+    # Skip scraping if links already exist
+    if cached and 'Links' in game and game['Links']:
+      if verbose:
+        print u"--- {} already has {} links.".format(title, len(game['Links']))
+      continue
+
+    links = [x.encode('utf-8').replace('"', '\\"') for x in get_urls(game)]
+    game['Links'] = links
+    if verbose:
+      print 'Scrapped {} links.'.format(len(links))
+
+  if write:
+    with open(path, 'w+') as f:
+      f.write(json.dumps(games, indent=2))
+  return games
+
+
+def compile_content(cached=True, write=True, verbose=False):
+  path = os.path.join(__dir, 'generated', 'roguelike-game-articles.json')
+  content = None
+  if cached and os.path.exists(path):
+    try:
+      with open(path) as f:
+        content = json.loads(f.read())
+    except:
+      content = {}
+  else:
+    content = {}
+
+  games = compile_games()
+
+  if verbose:
+    print "Scrapping all the URLs..."
+
+  for i, (title, game) in enumerate(games.items()):
+    if verbose:
+      print '{}%: {}'.format(i*100/len(games), title)
+    # Skip scraping if content already exist
+    if cached and title in content and content[title]:
+      if verbose:
+        print '--- Skipping {}, already has content.'.format(title)
+      continue
+    content[title] = get_url_content(game)
+
+  if write:
+    with open(os.path.join(__dir, 'generated', 'roguelike-game-articles.json'), 'w+') as f:
+      f.write(json.dumps(content, indent=2))
+
+  return content
+
+
 def get_games():
   '''Return a dict of videogame names'''
   games = collections.OrderedDict()
@@ -46,65 +115,6 @@ def get_games():
       games[game.Title] = game._asdict()
   # pprint.pprint(games, indent=2)
   return games
-
-def compile_urls(cached=True):
-  path = os.path.join(__dir, 'generated', 'roguelike-games.json')
-  games = None
-  if cached and os.path.exists(path):
-    try:
-      with open(path) as f:
-        games = json.loads(f.read())
-    except:
-      games = get_games()
-  else:
-    games = get_games()
-
-  print "Compiling a list of URLs...."
-
-  for i, (title, game) in enumerate(games.items()):
-    print '{}%: {}'.format(i*100/len(games), title)
-    # Skip scraping if links already exist
-    if cached and 'Links' in game and game['Links']:
-      print u"--- {} already has {} links.".format(title, len(game['Links']))
-      continue
-
-    links = [x.encode('utf-8').replace('"', '\\"') for x in get_urls(game)]
-    game['Links'] = links
-    print 'Scrapped {} links.'.format(len(links))
-
-  with open(path, 'w+') as f:
-    f.write(json.dumps(games, indent=2))
-  return games
-
-
-def compile_content(cached=True):
-  path = os.path.join(__dir, 'generated', 'roguelike-game-articles.json')
-  content = None
-  if cached and os.path.exists(path):
-    try:
-      with open(path) as f:
-        content = json.loads(f.read())
-    except:
-      content = {}
-  else:
-    content = {}
-
-  games = compile_urls()
-
-  print "Scrapping all the URLs..."
-
-  for i, (title, game) in enumerate(games.items()):
-    print '{}%: {}'.format(i*100/len(games), title)
-    # Skip scraping if content already exist
-    if cached and title in content and content[title]:
-      print '--- Skipping {}, already has content.'.format(title)
-      continue
-    content[title] = get_url_content(game)
-
-    with open(os.path.join(__dir, 'generated', 'roguelike-game-articles.json'), 'w+') as f:
-      f.write(json.dumps(content, indent=2))
-
-  return content
 
 
 def get_urls(game):
@@ -126,7 +136,8 @@ def get_urls(game):
 def get_url_content(game):
   scrape = {}
   for i, url in enumerate(game['Links']):
-    print u"{}/{}\tLoading {}".format(i+1, len(game['Links']), url)
+    if verbose:
+      print u"{}/{}\tLoading {}".format(i+1, len(game['Links']), url)
     try:
       response = requests.get(url, timeout=(3.1, 10.1))
     except Exception as e:
