@@ -1,3 +1,4 @@
 .DS_Store
 *.sublime-*
 backup
+generated/roguelike-game-articles.json

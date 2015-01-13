@@ -76,6 +76,7 @@ def compile_urls(cached=True):
     f.write(json.dumps(games, indent=2))
   return games
 
+
 def compile_content(cached=True):
   path = os.path.join(__dir, 'generated', 'roguelike-game-articles.json')
   content = None
@@ -102,6 +103,9 @@ def compile_content(cached=True):
 
     with open(os.path.join(__dir, 'generated', 'roguelike-game-articles.json'), 'w+') as f:
       f.write(json.dumps(content, indent=2))
+
+  return content
+
 
 def get_urls(game):
   '''Return a list of potential websites to scrap'''
