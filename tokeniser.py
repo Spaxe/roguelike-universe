@@ -27,6 +27,7 @@ __dir = os.path.dirname(os.path.realpath(__file__))
 blacklist = set([
   'youtube',
   'Chronology_of_roguelike_video_games',
+  'Liste_chronologique_des_Rogue-like',
   'dictionary',
   'twitter',
   'facebook',
@@ -35,6 +36,8 @@ blacklist = set([
 
 not_games = set([
   'Android',
+  'Firefox',
+  'Chrome',
   'Dragon',
   'Wizard',
   'Puzzle',

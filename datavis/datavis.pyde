@@ -105,7 +105,7 @@ def draw_roguelike_links():
             stroke(1, 0.2)
             strokeWeight(1)
         
-        for target in targets:
+        for target in set(targets):
             if target in roguelike_data:
                 target_year = int(roguelike_data[target]['First'])
                 target_x = (target_year -  begin_time) * line_length
@@ -115,9 +115,9 @@ def draw_roguelike_links():
                 xs = sorted([source_x + 0.9 * line_length * (source_index / source_year_count), 
                              target_x + 0.9 * line_length * (target_index / target_year_count)])
                 arc(xs[0], 
-                    roguelike_y - abs(target_x - source_x)/2.0,
+                    roguelike_y - abs(xs[1] - xs[0])/2.0,
                     xs[1],
-                    roguelike_y + abs(target_x - source_x)/2.0,
+                    roguelike_y + abs(xs[1] - xs[0])/2.0,
                     PI, PI*2)
         
     popStyle()
@@ -135,6 +135,7 @@ def draw_game_title():
     textSize(14)
     textAlign(CENTER)
     text('{} ({})'.format(name, roguelike_data[name]['First']), draw_width/2, 25)
+    text(','.join(set(relational_map_data[name])), draw_width/2, 35)
     
     popStyle()
     
