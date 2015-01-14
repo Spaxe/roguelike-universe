@@ -62,6 +62,7 @@ def basic_statistics(roguelikes, content, games):
 def relational_maps(content, game_set):
   path = os.path.join(__dir, 'generated', 'roguelike-relational-maps.json')
   relational_map = {}
+  appeared_games = set()
   for game, info in content.iteritems():
     relational_map[game] = []
 
@@ -77,6 +78,7 @@ def relational_maps(content, game_set):
         n = name.text
         if n in game_set and n.lower() != game.lower() and len(n) > 1 and n not in not_games:
           relational_map[game].append(n)
+          appeared_games.add(n)
 
     print '--- {} ---'.format(game)
     print relational_map[game]
@@ -84,6 +86,10 @@ def relational_maps(content, game_set):
 
   with open(path, 'w+') as f:
     f.write(json.dumps(relational_map, indent=2))
+
+  path_additional = os.path.join(__dir, 'generated', 'games-small.json')
+  with open(path_additional, 'w+') as f:
+    f.write(json.dumps({k: v for k, v in game_set.iteritems() if k in appeared_games}, indent=2))
 
   return relational_map
 

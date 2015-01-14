@@ -19,7 +19,7 @@ def draw():
     pass
 
 def get_games_data():
-    with open('games-years.json') as f:
+    with open('games-small.json') as f:
         return json.loads(f.read())
     
 def get_roguelike_data():

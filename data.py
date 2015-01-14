@@ -116,7 +116,7 @@ def compile_games():
   '''Return a set of videogame names'''
   path = os.path.join(__dir, 'generated', 'games.json')
   with open(path) as f:
-    return set(ujson.loads(f.read()))
+    return ujson.loads(f.read())
 
 
 def get_roguelikes():
