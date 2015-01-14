@@ -35,19 +35,21 @@ import collections
 __dir = os.path.dirname(os.path.realpath(__file__))
 Game = collections.namedtuple('Game', ['First','Last','Title','Developer','Setting','Platform','Notes'], rename=True)
 
-def compile_games(cached=True, write=True, verbose=False, use_file=False):
+def compile_roguelikes(cached=True, write=True, verbose=False, use_file=False):
   path = os.path.join(__dir, 'generated', 'roguelike-games.json')
   games = None
   if cached and os.path.exists(path):
     try:
       with open(path) as f:
-        games = ujson.loads(f.read())
+        games = json.loads(f.read())
         if use_file:
           return games
-    except:
-      games = get_games()
+    except Exception as e:
+      print 'compile_roguelikes file loading failed'
+      print e
+      sys.exit(1)
   else:
-    games = get_games()
+    games = get_roguelikes()
 
   if verbose:
     print "Compiling a list of URLs...."
@@ -78,15 +80,17 @@ def compile_content(cached=True, write=True, verbose=False, use_file=False):
   if cached and os.path.exists(path):
     try:
       with open(path) as f:
-        content = ujson.loads(f.read())
+        content = json.loads(f.read())
         if use_file:
           return content
-    except:
-      content = {}
+    except Exception as e:
+      print 'compile_content file loading failed'
+      print e
+      sys.exit(1)
   else:
     content = {}
 
-  games = compile_games()
+  games = compile_roguelikes()
 
   if verbose:
     print "Scrapping all the URLs..."
@@ -108,7 +112,14 @@ def compile_content(cached=True, write=True, verbose=False, use_file=False):
   return content
 
 
-def get_games():
+def compile_games():
+  '''Return a set of videogame names'''
+  path = os.path.join(__dir, 'generated', 'games.json')
+  with open(path) as f:
+    return set(ujson.loads(f.read()))
+
+
+def get_roguelikes():
   '''Return a dict of videogame names'''
   games = collections.OrderedDict()
   with open(os.path.join(__dir, 'data', 'list-of-roguelike-games-wikipedia.csv')) as f:
@@ -138,7 +149,7 @@ def get_urls(game):
       pass
   return links
 
-def get_url_content(game):
+def get_url_content(game, verbose=False):
   scrape = {}
   for i, url in enumerate(game['Links']):
     if verbose:
