@@ -29,7 +29,24 @@ blacklist = set([
   'Chronology_of_roguelike_video_games',
   'dictionary',
   'twitter',
-  'facebook'
+  'facebook',
+  'mac.gmer.onemac.net/2014/06/24/historic-mac-games-wiki/'
+])
+
+not_games = set([
+  'Android',
+  'Dragon',
+  'Wizard',
+  'Puzzle',
+  'Music',
+  'Racing',
+  'Sports',
+  'Casino',
+  'Sports',
+  'Adventure',
+  'Image',
+  'Legend',
+  'Ninja'
 ])
 
 def basic_statistics(roguelikes, content, games):
@@ -55,10 +72,10 @@ def relational_maps(content, game_set):
 
       # Italics and bold are often used for name of games.
       soup = bs4.BeautifulSoup(html)
-      names = soup.select('i') + soup.select('em') + soup.select('b') + soup.select('strong')
+      names = soup.select('i') + soup.select('em') + soup.select('b') + soup.select('strong') + soup.select('a')
       for name in names:
         n = name.text
-        if n in game_set and n.lower() != game.lower():
+        if n in game_set and n.lower() != game.lower() and len(n) > 1 and n not in not_games:
           relational_map[game].append(n)
 
     print '--- {} ---'.format(game)
