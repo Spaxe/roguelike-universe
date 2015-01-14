@@ -26,6 +26,7 @@ import os
 import csv
 import bs4
 import json
+import ujson
 import pprint
 import urllib
 import requests
@@ -34,13 +35,15 @@ import collections
 __dir = os.path.dirname(os.path.realpath(__file__))
 Game = collections.namedtuple('Game', ['First','Last','Title','Developer','Setting','Platform','Notes'], rename=True)
 
-def compile_games(cached=True, write=True, verbose=False):
+def compile_games(cached=True, write=True, verbose=False, use_file=False):
   path = os.path.join(__dir, 'generated', 'roguelike-games.json')
   games = None
   if cached and os.path.exists(path):
     try:
       with open(path) as f:
-        games = json.loads(f.read())
+        games = ujson.loads(f.read())
+        if use_file:
+          return games
     except:
       games = get_games()
   else:
@@ -69,13 +72,15 @@ def compile_games(cached=True, write=True, verbose=False):
   return games
 
 
-def compile_content(cached=True, write=True, verbose=False):
+def compile_content(cached=True, write=True, verbose=False, use_file=False):
   path = os.path.join(__dir, 'generated', 'roguelike-game-articles.json')
   content = None
   if cached and os.path.exists(path):
     try:
       with open(path) as f:
-        content = json.loads(f.read())
+        content = ujson.loads(f.read())
+        if use_file:
+          return content
     except:
       content = {}
   else:

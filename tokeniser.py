@@ -17,7 +17,6 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 import bs4
-import json
 import collections
 import data
 
@@ -30,7 +29,7 @@ def basic_statistics(games, content):
   print "Crawled {} games for average {} links each.".format(len(games), sum(game_stats.values())/float(len(games)))
 
 if '__main__' in __name__:
-  games = data.compile_games(write=False)
-  content = data.compile_content(write=False)
+  games = data.compile_games(write=False, use_file=True)
+  content = data.compile_content(write=False, use_file=True)
 
   basic_statistics(games, content)
