@@ -16,6 +16,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+import io
 import os
 import bs4
 import json
@@ -28,7 +29,8 @@ blacklist = set([
   'youtube',
   'Chronology_of_roguelike_video_games',
   'Liste_chronologique_des_Rogue-like',
-  'en.academic.ru/dic.nsf/enwiki/5833202',
+  'en.academic.ru/dic.nsf/enwiki',
+  "ru.wikipedia.org",
   'dictionary',
   'twitter',
   'facebook',
@@ -37,6 +39,20 @@ blacklist = set([
   "macscene.net",
   "home.planet.nl/~pulle071/firemac/games2.htm",
   "www.hsoi.com/hsoishop/links",
+  "dosgames.ru",
+  "www.roguebasin.com/index.php?title=Roguelike_Radio",
+  "gk4.me/en/steam",
+  "www.spacegamejunkie.com/featured/sgj-podcast-10-infinite-spaces-small-worlds",
+  "www.gametrailers.com/videos",
+  "www.neoseeker.com",
+  "www.giantbomb.com/sting-entertainment/3010-1636",
+  "www.mashpedia.com",
+  "www.cubed3.com",
+  "www.g4tv.com",
+  "www.digital-eel.com/deep.htm",
+  "norse-mythology.org/tales/ragnarok",
+  "www.imdb.com",
+  "www.gamesetwatch.com/2009/10/04-week",
 ])
 
 not_games = set([
@@ -51,10 +67,40 @@ not_games = set([
   'Sports',
   'Casino',
   'Sports',
-  'Adventure',
   'Image',
   'Legend',
-  'Ninja'
+  'Ninja',
+  'People',
+  'Fantasy',
+  'Life',
+  'NBA',
+  'NFL',
+  'MLB',
+  'Soccer',
+  'Search',
+  'Steam',
+  'Contact',
+  'Bugs',
+  'Energy',
+  'Silver',
+  'Platinum',
+  'Black',
+  'White',
+  'The Pit',
+  'Solo',
+  'All Games',
+  'Retro',
+  'Amazon',
+  'Green',
+  'Detroit',
+  'Contact',
+  'January',
+  'Feedback',
+  'Awesome',
+  'Space',
+  'Monsters',
+  'Stealth',
+  'Combat'
 ])
 
 def basic_statistics(roguelikes, content, games):
@@ -97,7 +143,7 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
         # Italics and bold are often used for name of games.
         games_in_url = []
         soup = bs4.BeautifulSoup(html)
-        names = soup.select('i') + soup.select('em') + soup.select('a')
+        names = soup.select('p > i') + soup.select('p > em') + soup.select('p > a')
         for name in names:
           n = name.text
           if n in game_set and n.lower() != game.lower() and len(n) > 1 and n not in not_games:
@@ -108,11 +154,19 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
         print '{}: {}'.format(url, games_in_url)
       print
 
-  with open(path, 'w+') as f:
-    f.write(json.dumps(relational_map, indent=2))
+  with io.open(path, 'w', encoding="utf8") as f:
+    output = json.dumps(relational_map, indent=2, ensure_ascii=False).decode('utf8')
+    try:
+      f.write(output)
+    except TypeError:
+      f.write(output.decode('utf8'))
 
-  with open(path_additional, 'w+') as f:
-    f.write(json.dumps({k: v for k, v in game_set.iteritems() if k in appeared_games}, indent=2))
+  with io.open(path_additional, 'w', encoding="utf8") as f:
+    output = json.dumps({k: v for k, v in game_set.iteritems() if k in appeared_games}, indent=2, ensure_ascii=False)
+    try:
+      f.write(output)
+    except TypeError:
+      f.write(output.decode('utf8'))
 
   return relational_map
 
@@ -123,5 +177,5 @@ if '__main__' in __name__:
   roguelike_set = set(roguelikes.keys())
 
   # basic_statistics(roguelikes, content, game_set)
-  relational_maps(content, game_set, reload=True)
+  relational_maps(content, game_set, cached=False, reload=True)
 
