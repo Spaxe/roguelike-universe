@@ -20,8 +20,8 @@ draw_width = screen_width - 100.0
 draw_height = screen_height - 100.0
 
 def setup():
-    size(screen_width, screen_height, "processing.core.PGraphicsRetina2D")
-#     size(screen_width, screen_height, P2D)
+#     size(screen_width, screen_height, "processing.core.PGraphicsRetina2D")
+    size(screen_width, screen_height, P2D)
     global games_data, roguelike_data, relational_map_data, all_games_by_year, roguelikes_by_year, \
            roguelikes_list, begin_time, end_time, line_length
     
@@ -50,7 +50,7 @@ def draw():
           
     draw_roguelike_links()
     draw_timeline()
-    draw_game_title()
+#     draw_game_title()
     
     popMatrix()
 
@@ -63,17 +63,23 @@ def draw_timeline():
     textSize(8)
     
     for _year, games in all_games_by_year.iteritems():
-        fill(min(map(len(games), 1, 250, 0.5, 0.25), 1))
+        fill(map(_year, begin_time, end_time, 0, 1),
+             0.9, 
+             0.5, 
+             map(len(games), 1, 250, 0.5, 0.25))
         x = (_year - begin_time) * line_length
         y = draw_height/2
-        rect(x, y, line_length*0.9, 4)
-        text(_year, x, y+14)
+        rect(x, y, line_length*0.9, 2)
+        text(_year, x, y+12)
     
     for _year, games in roguelikes_by_year.iteritems():
-        fill(min(map(len(games), 1, 5, 0.5, 0.1), 1))
+        fill(map(_year, begin_time, end_time, 0, 1), 
+             0.9, 
+             0.5, 
+             map(len(games), 1, 5, 0.8, 0.5))
         x = (_year - begin_time) * line_length
         y = draw_height/2
-        rect(x, y, line_length*0.9, 4)
+        rect(x, y, line_length*0.9, 2)
         text(_year, x, y-4)
     
     popStyle()
@@ -132,9 +138,9 @@ def draw_roguelike_links():
                 xs = sorted([source_x + 0.9 * line_length * (source_index / source_year_count), 
                              target_x + 0.9 * line_length * (target_index / target_year_count)])
                 arc(xs[0], 
-                    draw_height/2 - abs(xs[1] - xs[0])/2.0 + 18,
+                    draw_height/2 - abs(xs[1] - xs[0])/2.0 + 16,
                     xs[1],
-                    draw_height/2 + abs(xs[1] - xs[0])/2.0 + 18,
+                    draw_height/2 + abs(xs[1] - xs[0])/2.0 + 16,
                     0, PI)
                 
         
@@ -146,8 +152,8 @@ def draw_game_title():
     global selection_name
     pushStyle()
     
-    mX = map(mouseX, 0, screen_width, (screen_width - draw_width) / 2, (screen_width - draw_width) / 2 + draw_width)
-    i = int(min(mX / draw_width, 0.9999) * len(roguelikes_list))
+#     mX = map(mouseX, 0, screen_width, (screen_width - draw_width) / 2, (screen_width - draw_width) / 2 + draw_width)
+    i = int(min(mouseX / float(screen_width), 0.9999) * len(roguelikes_list))
     name = roguelikes_list[i]
     selection_name = name
     fill(0)

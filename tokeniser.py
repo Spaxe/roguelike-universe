@@ -222,7 +222,7 @@ def relational_maps(content, game_set, roguelike_set, cached=True, use_file=Fals
           names = soup.select('p > i') + soup.select('p > em') + soup.select('p > a')
         for name in names:
           n = name.text
-          if n in game_set and n.lower() != game.lower() and len(n) > 1 and n not in not_games:
+          if n in game_set and len(n) > 2 and n not in not_games and n.lower() != game.lower():
             games_in_url.append(n)
             appeared_games.add(n)
 
@@ -238,10 +238,12 @@ def relational_maps(content, game_set, roguelike_set, cached=True, use_file=Fals
         for sentence in ''.join(p.text.strip() + '.' for p in paragraphs).split('.'):
           for keyword in keywords:
             if keyword in sentence:
-              for roguelike in roguelike_set:
-                if roguelike in sentence:
-                  n = roguelike
-                  if n in game_set and n.lower() != game.lower() and len(n) > 1 and n not in not_games:
+              for g in game_set:
+                if g in ['Rogue', 'DUNGEON']:
+                  continue
+                if g in sentence:
+                  n = g
+                  if n in game_set and len(n) > 2 and n not in not_games and n.lower() != game.lower():
                     games_in_url.append(n)
                     appeared_games.add(n)
 

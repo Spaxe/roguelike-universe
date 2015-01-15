@@ -1,21 +1,21 @@
 {
   "Torneko no Daiboken: Fushigi no Dungeon": [
     "Star Wars", 
-    "Rogue", 
+    "Final Fantasy", 
     "Dragon Warrior IV", 
-    "Dragon Quest Monsters: Joker", 
-    "Final Fantasy"
+    "Breath of Fire", 
+    "Dragon Quest Monsters: Joker"
   ], 
   "Dark Cloud 2": [
-    "Trials Evolution", 
-    "Rogue", 
     "Forza Motorsport 4", 
+    "Trials Evolution", 
     "Dark Cloud", 
-    "The Legend of Zelda: Ocarina of Time"
+    "The Legend of Zelda: Ocarina of Time", 
+    "Vagrant Story"
   ], 
   "Teleglitch": [
     "Teleglitch: Die More Edition", 
-    "Rogue", 
+    "Hotline Miami", 
     "Nox", 
     "Monaco: What's Yours is Mine", 
     "Akira"
@@ -28,30 +28,28 @@
     "Lunar Lander"
   ], 
   "Larn": [
-    "Rogue", 
     "Ancient Domains of Mystery", 
     "Solaris", 
     "NetHack", 
     "Hack"
   ], 
   "UnReal World": [
-    "Rogue", 
-    "Indiana Jones and the Fate of Atlantis", 
-    "Wolfenstein 3D"
+    "Wolfenstein 3D", 
+    "Indiana Jones and the Fate of Atlantis"
   ], 
   "Rogue Legacy": [
     "Moria", 
-    "Rogue", 
     "The Binding of Isaac", 
+    "Demon's Souls", 
     "Dark Souls", 
     "Spelunky"
   ], 
   "Pokémon Mystery Dungeon: Red Rescue Team": [
     "Golem", 
     "New Super Mario Bros.", 
-    "Rogue", 
+    "Mario Paint", 
     "Conquest", 
-    "Mario Paint"
+    "Pinball"
   ], 
   "100 Rogues": [
     "Mirror's Edge", 
@@ -61,11 +59,11 @@
     "Top Spin"
   ], 
   "Sword of the Stars: The Pit": [
-    "Rogue", 
+    "Dungeons of Dredmor", 
+    "Chrono Trigger", 
     "Galactic Civilizations", 
     "FTL: Faster Than Light", 
-    "Sword of the Stars", 
-    "Chrono Trigger"
+    "Sword of the Stars"
   ], 
   "Castle of the Winds": [
     "Dungeon Hack", 
@@ -88,12 +86,12 @@
     "Xenogears", 
     "ActRaiser"
   ], 
-  "Z.H.P. Unlosing Ranger VS Darkdeath Evilman": [
-    "Prince of Persia", 
-    "Disgaea: Hour of Darkness", 
-    "Phantom Brave", 
-    "Demon's Souls", 
-    "Rhapsody: A Musical Adventure"
+  "TowerClimb": [
+    "Sheep", 
+    "Out of This World", 
+    "VVVVVV", 
+    "Bullseye", 
+    "Spelunky"
   ], 
   "Infinite Space III: Sea of Stars": [
     "Rogue", 
@@ -103,8 +101,8 @@
     "Weird Worlds: Return to Infinite Space"
   ], 
   "Dark Cloud": [
+    "Shenmue", 
     "Ni no Kuni: Wrath of the White Witch", 
-    "Rogue", 
     "Vagrant Story", 
     "The Legend of Zelda: Ocarina of Time", 
     "Dark Cloud 2"
@@ -118,24 +116,21 @@
   ], 
   "World of Arch": [
     "Aftermath", 
-    "Rogue", 
     "War on Terror", 
     "Forsaken", 
     "The Horde"
   ], 
-  "Chocobo no Fushigina Dungeon": [
-    "Final Fantasy Tactics", 
-    "Final Fantasy III", 
-    "Chocobo's Dungeon 2", 
-    "Final Fantasy", 
-    "Final Fantasy II"
+  "Pokémon Mystery Dungeon: Explorers of Darkness": [
+    "Rogue", 
+    "Rescue", 
+    "Chrono Trigger"
   ], 
   "Smart Kobold": [
     "Light", 
     "Dungeons of Dredmor", 
-    "Rogue", 
     "Love", 
-    "You Only Live Once"
+    "You Only Live Once", 
+    "POWDER"
   ], 
   "Lost Labyrinth": [
     "12", 
@@ -144,22 +139,22 @@
   ], 
   "Slaves to Armok II: Dwarf Fortress": [
     "World of Warcraft", 
-    "Rogue", 
     "Minecraft", 
+    "NetHack", 
     "Dungeon Keeper", 
     "Hack"
   ], 
   "Final Fantasy Fables: Chocobo's Dungeon": [
     "Rogue", 
-    "Leviathan", 
     "Final Fantasy", 
     "Final Fantasy Fables: Chocobo Tales", 
+    "Meteor", 
     "Phoenix"
   ], 
   "Tales (or Troubles) of Middle Earth": [
     "Tales of the Abyss", 
     "Angband", 
-    "Rogue", 
+    "Final Fantasy", 
     "The Hobbit", 
     "The Two Towers"
   ], 
@@ -171,27 +166,25 @@
     "NetHack"
   ], 
   "99 Levels to Hell": [
-    "Rogue", 
-    "The Binding of Isaac", 
+    "Amnesia: The Dark Descent", 
     "Bubble Bobble", 
+    "The Binding of Isaac", 
     "Diablo II", 
     "Spelunky"
   ], 
   "Azure Dreams": [
-    "Rogue", 
-    "The Walking Dead", 
-    "Crusader Kings"
+    "Crusader Kings", 
+    "The Walking Dead"
   ], 
   "Popup Dungeon": [
     "Final Fantasy Tactics", 
     "Ring Runner: Flight of the Sages", 
-    "Rogue", 
     "Call of Duty"
   ], 
   "Falcon's Eye": [
     "Dungeon Hack", 
     "Angband", 
-    "Rogue", 
+    "Fable", 
     "NetHack", 
     "Hack"
   ], 
@@ -202,9 +195,9 @@
   ], 
   "Dungeon Hack": [
     "Pool of Radiance", 
+    "Rogue", 
     "Might and Magic", 
     "Eye of the Beholder", 
-    "Rogue", 
     "Hack"
   ], 
   "Wizards Encounters": [
@@ -229,14 +222,14 @@
   "Pokémon Mystery Dungeon: Blue Rescue Team": [
     "Golem", 
     "New Super Mario Bros.", 
-    "Rogue", 
+    "Mario Paint", 
     "Conquest", 
-    "Mario Paint"
+    "Pinball"
   ], 
   "FTL: Faster Than Light": [
     "Firefly", 
     "Star Wars", 
-    "Rogue", 
+    "Edge", 
     "Laser Squad", 
     "Star Trek"
   ], 
@@ -272,18 +265,18 @@
     "Sword of Fargoal", 
     "DND", 
     "Ultima", 
-    "Rogue", 
-    "Tunnels of Doom"
+    "Tunnels of Doom", 
+    "Gateway to Apshai"
   ], 
   "Tao's Adventure: Curse of the Demon Seal": [
     "Azure Dreams", 
     "Diablo"
   ], 
   "Chocobo's Dungeon 2": [
-    "Final Fantasy Fables: Chocobo's Dungeon", 
     "Kingdom Hearts", 
     "The Last Story", 
     "Final Fantasy", 
+    "Final Fantasy Fables: Chocobo's Dungeon", 
     "Final Fantasy V"
   ], 
   "Island of Kesmai": [
@@ -298,12 +291,12 @@
     "Pinball", 
     "Conquest"
   ], 
-  "TowerClimb": [
-    "Sheep", 
-    "Out of This World", 
-    "VVVVVV", 
-    "Rogue", 
-    "Spelunky"
+  "Z.H.P. Unlosing Ranger VS Darkdeath Evilman": [
+    "Prince of Persia", 
+    "Disgaea: Hour of Darkness", 
+    "Phantom Brave", 
+    "Demon's Souls", 
+    "Rhapsody: A Musical Adventure"
   ], 
   "Don't Starve": [
     "The Binding of Isaac", 
@@ -327,11 +320,10 @@
     "NetHack"
   ], 
   "Tower of Guns": [
-    "Spelunky", 
-    "Rogue", 
+    "Looney Tunes", 
     "The Binding of Isaac", 
     "Quake", 
-    "Looney Tunes"
+    "Spelunky"
   ], 
   "Dragon Quest: Shonen Yangus to Fushigi no Dungeon": [
     "Star Wars", 
@@ -343,7 +335,7 @@
   "The Binding of Isaac": [
     "The Legend of Zelda", 
     "Super Meat Boy", 
-    "Rogue", 
+    "Spewer", 
     "Bomberman", 
     "Spelunky"
   ], 
@@ -373,7 +365,6 @@
   ], 
   "Moraff's World": [
     "Mahjongg", 
-    "Rogue", 
     "Mahjong", 
     "Moraff's Revenge"
   ], 
@@ -382,17 +373,16 @@
   ], 
   "Ragnarok": [
     "Rush", 
-    "Rogue", 
     "Hack", 
     "NetHack", 
+    "Cardinal Syn", 
     "Game of Thrones"
   ], 
-  "Weird Worlds: Return to Infinite Space": [
-    "Gish", 
-    "Oasis", 
-    "Infinite Space", 
-    "Dr. Blob's Organism", 
-    "Strange Adventures in Infinite Space"
+  "Deadly Dungeons": [
+    "The Legend of Zelda: A Link Between Worlds", 
+    "Dungeon Hack", 
+    "Pikmin 3", 
+    "Hack"
   ], 
   "The Sorcerer's Cave": [
     "Jotto"
@@ -406,8 +396,8 @@
   ], 
   "Dungeon Crawl Stone Soup": [
     "Zooming Secretary", 
+    "Final Fantasy VII", 
     "Psychosomnium", 
-    "Rogue", 
     "Age of Empires II: The Age of Kings", 
     "Spelunky"
   ], 
@@ -418,8 +408,7 @@
     "Chrono Trigger"
   ], 
   "Tales of Maj'Eyal": [
-    "Angband", 
-    "Rogue"
+    "Angband"
   ], 
   "Spelunky": [
     "Aquaria", 
@@ -430,54 +419,48 @@
   ], 
   "Dungeons of Dredmor": [
     "Duke Nukem Forever", 
-    "Rogue", 
     "Infinity Blade", 
     "Game Over", 
     "Terraria"
   ], 
   "Dungeons of the Unforgiven": [
-    "Rogue", 
+    "Dungeons & Dragons: Warriors of the Eternal Sun", 
     "Mummies", 
     "Moraff's Revenge", 
     "Drakkhen", 
     "Moraff's World"
   ], 
   "Super Lotsa Added Stuff Hack - Extended Magic": [
+    "Amulet of Yendor", 
     "Moria", 
     "Angband", 
-    "Rogue", 
     "NetHack", 
     "Hack"
   ], 
-  "Brogue": [
-    "Rogue"
-  ], 
-  "Deadly Dungeons": [
-    "The Legend of Zelda: A Link Between Worlds", 
-    "Dungeon Hack", 
-    "Rogue", 
-    "Pikmin 3", 
-    "Hack"
+  "Brogue": [], 
+  "Weird Worlds: Return to Infinite Space": [
+    "Gish", 
+    "Oasis", 
+    "Infinite Space", 
+    "Dr. Blob's Organism", 
+    "Strange Adventures in Infinite Space"
   ], 
   "Alphaman": [
-    "Rogue", 
+    "Hack", 
     "Ricochet", 
-    "NetHack", 
+    "Escape from Hell", 
     "Larn", 
-    "Genesis"
+    "NetHack"
   ], 
-  "Doom, the Roguelike": [
-    "Rogue"
-  ], 
+  "Doom, the Roguelike": [], 
   "Risk of Rain": [
-    "Rogue", 
     "The Binding of Isaac", 
     "Spelunky"
   ], 
   "Ancient Domains of Mystery": [
+    "Conway's Game of Life", 
     "Moria", 
     "Angband", 
-    "Rogue", 
     "UnReal World", 
     "Adventure"
   ], 
@@ -488,15 +471,16 @@
     "NetHack", 
     "Spelunky"
   ], 
-  "Pokémon Mystery Dungeon: Explorers of Darkness": [
-    "Rogue", 
-    "Rescue", 
-    "Chrono Trigger"
+  "Chocobo no Fushigina Dungeon": [
+    "Final Fantasy Tactics", 
+    "Final Fantasy III", 
+    "Chocobo's Dungeon 2", 
+    "Final Fantasy", 
+    "Final Fantasy II"
   ], 
   "Omega": [
     "Moria", 
     "Angband", 
-    "Rogue", 
     "Larn"
   ], 
   "Scarab of Ra": [
@@ -532,8 +516,8 @@
   ], 
   "WazHack": [
     "Organ Trail", 
+    "Final Fantasy Tactics", 
     "Dungeons of Dredmor", 
-    "Rogue", 
     "Adventure", 
     "Hack"
   ], 
