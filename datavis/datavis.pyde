@@ -14,13 +14,10 @@ line_length = 0
 
 selection_name = ''
 
-screen_width = 1280
-screen_height = 800
+screen_width = 1200
+screen_height = 900
 draw_width = screen_width - 100.0
 draw_height = screen_height - 100.0
-
-roguelike_y = draw_height / 2 + 200
-all_games_y = draw_height / 2 + 250
 
 def setup():
     size(screen_width, screen_height, "processing.core.PGraphicsRetina2D")
@@ -37,8 +34,8 @@ def setup():
     for y in sorted(roguelikes_by_year.keys()):
         roguelikes_list += roguelikes_by_year[y]
     
-    begin_time = min(all_games_by_year)
-    end_time = max(all_games_by_year)
+    begin_time = min(min(all_games_by_year), min(roguelikes_by_year))
+    end_time = max(max(all_games_by_year), max(roguelikes_by_year))
     line_length = draw_width / (end_time - begin_time + 1)
 #     pprint.pprint(all_games_by_year, indent=2)
     
@@ -65,19 +62,19 @@ def draw_timeline():
     noStroke()
     textSize(8)
     
+    for _year, games in all_games_by_year.iteritems():
+        fill(min(map(len(games), 1, 250, 0.5, 0.75), 1))
+        x = (_year - begin_time) * line_length
+        y = draw_height/2
+        rect(x, y, line_length*0.9, 4)
+        text(_year, x, y+14)
+    
     for _year, games in roguelikes_by_year.iteritems():
         fill(min(map(len(games), 1, 5, 0.5, 1), 1))
         x = (_year - begin_time) * line_length
-        y = roguelike_y
+        y = draw_height/2
         rect(x, y, line_length*0.9, 4)
         text(_year, x, y-4)
-        
-    for _year, games in all_games_by_year.iteritems():
-        fill(min(map(len(games), 1, 250, 0.5, 1), 1))
-        x = (_year - begin_time) * line_length
-        y = all_games_y
-        rect(x, y, line_length*0.9, 4)
-        text(_year, x, y+14)
     
     popStyle()
     popMatrix()
@@ -101,8 +98,8 @@ def draw_roguelike_links():
             stroke(1, 0.5, 0.2, 1)
             strokeWeight(2)
         else:
-            continue
-            stroke(1, 0.2)
+#             continue
+            stroke(1, 0.5)
             strokeWeight(1)
         
         for target in set(targets):
@@ -115,9 +112,9 @@ def draw_roguelike_links():
                 xs = sorted([source_x + 0.9 * line_length * (source_index / source_year_count), 
                              target_x + 0.9 * line_length * (target_index / target_year_count)])
                 arc(xs[0], 
-                    roguelike_y - abs(xs[1] - xs[0])/2.0,
+                    draw_height/2 - abs(xs[1] - xs[0])/2.0,
                     xs[1],
-                    roguelike_y + abs(xs[1] - xs[0])/2.0,
+                    draw_height/2 + abs(xs[1] - xs[0])/2.0,
                     PI, PI*2)
         
     popStyle()
@@ -135,7 +132,7 @@ def draw_game_title():
     textSize(14)
     textAlign(CENTER)
     text('{} ({})'.format(name, roguelike_data[name]['First']), draw_width/2, 25)
-    text(','.join(set(relational_map_data[name])), draw_width/2, 35)
+#     text(','.join(set(relational_map_data[name])), draw_width/2, 35)
     
     popStyle()
     

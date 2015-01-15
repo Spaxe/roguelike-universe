@@ -53,6 +53,13 @@ blacklist = set([
   "norse-mythology.org/tales/ragnarok",
   "www.imdb.com",
   "www.gamesetwatch.com/2009/10/04-week",
+  "nocturnalhitoshura.blogspot.com",
+  "en.wikipedia.org/wiki/Wikipedia:WikiProject_Video_games/Reference_library/Official_PlayStation_Magazine",
+  "labyrinth.wikia.com/wiki/Labyrinth_(film)",
+  "article.wn.com",
+  "en.wikipedia.org/wiki/Genesis_games",
+  "www.gamasutra.com/view/feature/3674",
+  "2-dimensions.com/tag/sega/page/5/",
 ])
 
 not_games = set([
@@ -131,6 +138,9 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
 
       print '--- {} ---'.format(game)
       for url, html in info.iteritems():
+        if url.count('/') <= 3 and url.endswith('/'):
+          print '{} is a top level, skipped.'.format(url)
+          continue
         blacklisted = False
         for b in blacklist:
           if b in url:
@@ -143,7 +153,11 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
         # Italics and bold are often used for name of games.
         games_in_url = []
         soup = bs4.BeautifulSoup(html)
-        names = soup.select('p > i') + soup.select('p > em') + soup.select('p > a')
+        names = []
+        if 'wikipedia.org' in url:
+          names = soup.select('#mw-content-text > p > i') + soup.select('#mw-content-text > p > em') + soup.select('#mw-content-text > p > a')
+        else:
+          names = soup.select('p > i') + soup.select('p > em') + soup.select('p > a')
         for name in names:
           n = name.text
           if n in game_set and n.lower() != game.lower() and len(n) > 1 and n not in not_games:
@@ -171,11 +185,11 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
   return relational_map
 
 if '__main__' in __name__:
-  roguelikes = data.compile_roguelikes(write=False, use_file=True)
-  content = data.compile_content(write=False, use_file=True, verbose=True)
+  roguelikes = data.compile_roguelikes(use_file=True, verbose=True)
+  content = data.compile_content(use_file=True, verbose=True)
   game_set = data.compile_games()
   roguelike_set = set(roguelikes.keys())
 
   # basic_statistics(roguelikes, content, game_set)
-  relational_maps(content, game_set, cached=False, reload=True)
+  relational_maps(content, game_set, reload=True)
 

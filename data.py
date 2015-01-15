@@ -142,6 +142,7 @@ def get_roguelikes():
                       .replace(', The', '') \
                       .replace('(video game)', '') \
                       .replace('(Beta)', '') \
+                      .replace('Dark Chronicle / Dark Cloud 2', 'Dark Cloud 2') \
                       .strip(' *')
       game = Game(*row)
       games[game.Title] = game._asdict()
@@ -153,7 +154,7 @@ def get_urls(game):
   '''Return a list of potential websites to scrap'''
   title = game['Title']
   developer = game['Developer']
-  response = requests.get('http://duckduckgo.com/html/?q={}'.format(urllib.quote('{} {} {}'.format(title, developer, "interview"))), timeout=(9.1, 12.1))
+  response = requests.get('http://duckduckgo.com/html/?q={}'.format(urllib.quote('{} {} {}'.format(title, developer, "interview game"))), timeout=(9.1, 12.1))
   soup = bs4.BeautifulSoup(response.text)
   links = []
   for node in soup.select('div.web-result'):
