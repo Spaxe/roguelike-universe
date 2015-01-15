@@ -89,23 +89,17 @@
     "year": "1982", 
     "title": "Adventures"
   }, 
-  "Diablo III": {
-    "platforms": "Macintosh, PlayStation 3, Windows, Xbox 360", 
-    "publisher": "Blizzard Entertainment Europe, Blizzard Entertainment Inc.", 
-    "year": "2012", 
-    "title": "Diablo III"
-  }, 
   "Monaco: What's Yours is Mine": {
     "platforms": "Linux, Macintosh, Windows, Xbox 360", 
     "publisher": "Majesco Entertainment Company, Pocketwatch Games, LLC", 
     "year": "2013", 
     "title": "Monaco: What's Yours is Mine"
   }, 
-  "Star Control II": {
-    "platforms": "3DO, DOS, Linux, Macintosh, Windows", 
-    "publisher": "Accolade, Inc., Crystal Dynamics, Inc., Telstar Fun and Games", 
-    "year": "1992", 
-    "title": "Star Control II"
+  "Galactic Civilizations": {
+    "platforms": "Windows", 
+    "publisher": "1C Company, Empire Interactive Entertainment, Strategy First, Inc., Xplosiv", 
+    "year": "2003", 
+    "title": "Galactic Civilizations"
   }, 
   "Sonic the Hedgehog: Triple Trouble": {
     "platforms": "Game Gear, Nintendo 3DS", 
@@ -281,11 +275,11 @@
     "year": "2011", 
     "title": "Rune Factory: Tides of Destiny"
   }, 
-  "Dead Rising": {
-    "platforms": "Xbox 360", 
-    "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., CE Europe Ltd.", 
-    "year": "2006", 
-    "title": "Dead Rising"
+  "Mario Paint": {
+    "platforms": "SNES", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Playtronic Industrial Ltda.", 
+    "year": "1992", 
+    "title": "Mario Paint"
   }, 
   "Valhalla": {
     "platforms": "Commodore 64, ZX Spectrum", 
@@ -425,11 +419,11 @@
     "year": "1993", 
     "title": "Streets of Rage 2"
   }, 
-  "Galactic Civilizations": {
-    "platforms": "Windows", 
-    "publisher": "1C Company, Empire Interactive Entertainment, Strategy First, Inc., Xplosiv", 
-    "year": "2003", 
-    "title": "Galactic Civilizations"
+  "Star Control II": {
+    "platforms": "3DO, DOS, Linux, Macintosh, Windows", 
+    "publisher": "Accolade, Inc., Crystal Dynamics, Inc., Telstar Fun and Games", 
+    "year": "1992", 
+    "title": "Star Control II"
   }, 
   "Spelunky": {
     "platforms": "PlayStation 3, PS Vita, Windows, Xbox 360", 
@@ -502,12 +496,6 @@
     "publisher": "Aspyr Media, Inc., Electronic Arts, Inc., TransGaming Technologies Inc.", 
     "year": "2000", 
     "title": "The Sims"
-  }, 
-  "Beast": {
-    "platforms": "DOS", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1984", 
-    "title": "Beast"
   }, 
   "Oasis": {
     "platforms": "iPad, J2ME, Windows", 
@@ -707,12 +695,6 @@
     "year": "1988", 
     "title": "Dragon Warrior III"
   }, 
-  "Scavenger": {
-    "platforms": "Windows", 
-    "publisher": "PiEyeGames", 
-    "year": "2007", 
-    "title": "Scavenger"
-  }, 
   "Driver: San Francisco": {
     "platforms": "Wii", 
     "publisher": "Ubisoft, Inc.", 
@@ -838,12 +820,6 @@
     "publisher": "Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
     "year": "2007", 
     "title": "Final Fantasy IV"
-  }, 
-  "Borderlands": {
-    "platforms": "PlayStation 3, Windows, Xbox 360", 
-    "publisher": "1C Company, 2K Games, Inc., ak tronic Software & Services GmbH, Cenega Poland Sp. z o.o.", 
-    "year": "2009", 
-    "title": "Borderlands"
   }, 
   "Final Fantasy IX": {
     "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
@@ -1066,12 +1042,6 @@
     "publisher": "Codemasters, Dinamic Software", 
     "year": "1986", 
     "title": "Vampire"
-  }, 
-  "Baal": {
-    "platforms": "Amiga, Atari ST, Commodore 64, DOS", 
-    "publisher": "Psyclapse", 
-    "year": "1988", 
-    "title": "Baal"
   }, 
   "Final Fantasy Tactics": {
     "platforms": "iPad, iPhone, PlayStation, PlayStation 3, PSP, PS Vita", 
@@ -1379,12 +1349,6 @@
     "year": "1989", 
     "title": "Rick Dangerous"
   }, 
-  "Spider": {
-    "platforms": "PlayStation", 
-    "publisher": "BMG Interactive Entertainment", 
-    "year": "1996", 
-    "title": "Spider"
-  }, 
   "Mystery Dungeon: Shiren the Wanderer": {
     "platforms": "Nintendo DS, SNES, Wii", 
     "publisher": "SEGA Corporation, SEGA Europe Ltd., SEGA of America, Inc., Chunsoft Co., Ltd.", 
@@ -1589,11 +1553,11 @@
     "year": "1987", 
     "title": "Dungeon Master"
   }, 
-  "Mario Paint": {
-    "platforms": "SNES", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Playtronic Industrial Ltda.", 
-    "year": "1992", 
-    "title": "Mario Paint"
+  "Dead Rising": {
+    "platforms": "Xbox 360", 
+    "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., CE Europe Ltd.", 
+    "year": "2006", 
+    "title": "Dead Rising"
   }, 
   "Adventure": {
     "platforms": "Atari 2600, iPhone", 
@@ -1775,12 +1739,6 @@
     "year": "1998", 
     "title": "Sonic Adventure"
   }, 
-  "Skeleton": {
-    "platforms": "Atari 2600", 
-    "publisher": "AtariAge", 
-    "year": "2002", 
-    "title": "Skeleton"
-  }, 
   "Glare": {
     "platforms": "Linux, Macintosh, Windows", 
     "publisher": "Team Phobic", 
@@ -1900,12 +1858,6 @@
     "publisher": "ak tronic Software & Services GmbH, THQ Inc.", 
     "year": "2011", 
     "title": "Warhammer 40,000: Space Marine"
-  }, 
-  "Barbarian": {
-    "platforms": "Amiga, Amstrad CPC, Atari ST, Commodore 64, DOS, iPad, iPhone, MSX, ZX Spectrum", 
-    "publisher": "Elite Systems Ltd., Melbourne House, Melbourne House, Mastertronic Ltd., Psygnosis Limited", 
-    "year": "1987", 
-    "title": "Barbarian"
   }, 
   "Quake": {
     "platforms": "Acorn 32-bit, Amiga, DOS, Linux, Macintosh, Nintendo 64, SEGA Saturn, Windows, Windows Mobile, Zeebo", 

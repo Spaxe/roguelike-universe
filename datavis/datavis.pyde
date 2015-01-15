@@ -96,17 +96,17 @@ def draw_roguelike_links():
         
         for target in set(targets):
             if target in roguelike_data:
-                if source == selection_name:
-                    stroke(0.05, 0.9, 1, 1)
-                    strokeWeight(2)
-                else:
-                    stroke(0.1, 0.4)
-                    strokeWeight(1)
-                    
                 target_year = int(roguelike_data[target]['First'])
                 target_x = (target_year -  begin_time) * line_length
                 target_index = float(roguelikes_by_year[target_year][target]['index'])
                 target_year_count = len(roguelikes_by_year[target_year])
+                
+                if source == selection_name:
+                    stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 1)
+                    strokeWeight(2)
+                else:
+                    stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 0.5)
+                    strokeWeight(1)
                 
                 xs = sorted([source_x + 0.9 * line_length * (source_index / source_year_count), 
                              target_x + 0.9 * line_length * (target_index / target_year_count)])
@@ -115,18 +115,19 @@ def draw_roguelike_links():
                     xs[1],
                     draw_height/2 + abs(xs[1] - xs[0])/2.0 - 15,
                     PI, PI*2)
-            elif target in games_data:
-                if source == selection_name:
-                    stroke(0.05, 0.9, 0.9, 1)
-                    strokeWeight(2)
-                else:
-                    stroke(0.2, 0.2)
-                    strokeWeight(1)
-                    
+                
+            elif target in games_data:                    
                 target_year = int(games_data[target]['year'])
                 target_x = (target_year -  begin_time) * line_length
                 target_index = float(all_games_by_year[target_year][target]['index'])
                 target_year_count = len(all_games_by_year[target_year])
+                
+                if source == selection_name:
+                    stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.7, 1)
+                    strokeWeight(2)
+                else:
+                    stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.7, 0.2)
+                    strokeWeight(1)
                 
                 xs = sorted([source_x + 0.9 * line_length * (source_index / source_year_count), 
                              target_x + 0.9 * line_length * (target_index / target_year_count)])
@@ -182,6 +183,7 @@ def get_roguelike_data():
         games = json.loads(f.read())
         for game in games:
             y = games[game]['First']
+            
             if len(y) > 4:
                 y = y[:4]
             games[game]['First'] = y

@@ -20,8 +20,11 @@ import io
 import os
 import bs4
 import json
+import logging
 import collections
 import data
+
+logging.basicConfig(format='%(levelname)s: %(message)s', filename='tokeniser.log',level=logging.DEBUG)
 
 __dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -60,6 +63,7 @@ blacklist = set([
   "en.wikipedia.org/wiki/Genesis_games",
   "www.gamasutra.com/view/feature/3674",
   "2-dimensions.com/tag/sega/page/5/",
+  "www.diablowiki.net/Storyline",
 ])
 
 not_games = set([
@@ -120,6 +124,54 @@ def basic_statistics(roguelikes, content, games):
   print 'Got {} videogame names.'.format(len(games))
 
 
+def inspirations(content, game_set):
+  path = os.path.join(__dir, 'generated', 'roguelike-inspirations.json')
+  inspirations = {}
+  keywords = ('inspire', 'based on', 'drawn from', 'influence', 'similar', 'like')
+
+  logging.debug('##########')
+  logging.debug('Inspiration Map')
+  logging.debug('##########')
+  for game, info in content.iteritems():
+    for url, html in info.iteritems():
+      if url.count('/') <= 3 and url.endswith('/'):
+        # logging.info('{} is a top level, skipped.'.format(url))
+        continue
+      blacklisted = False
+      for b in blacklist:
+        if b in url:
+          # logging.info('Blacklisted {}.'.format(url))
+          blacklisted = True
+          continue
+      if blacklisted:
+        continue
+
+      soup = bs4.BeautifulSoup(html)
+      key_sentences = []
+      paragraphs = []
+
+      if 'wikipedia.org' in url:
+        paragraphs = soup.select('#mw-content-text > p')
+      else:
+        paragraphs = soup.select('p')
+
+      for sentence in ''.join(p.text.strip() for p in paragraphs).split('.'):
+        for keyword in keywords:
+          if keyword in sentence:
+            key_sentences.append(sentence)
+
+    inspirations[game] = key_sentences
+    logging.debug('--- {} ---\n{}'.format(game, '\n'.join(key_sentences)))
+
+  with io.open(path, 'w', encoding="utf8") as f:
+    output = json.dumps(inspirations, indent=2, ensure_ascii=False).decode('utf8')
+    try:
+      f.write(output)
+    except TypeError:
+      f.write(output.decode('utf8'))
+  return inspirations
+
+
 def relational_maps(content, game_set, cached=True, use_file=False, reload=None):
   path = os.path.join(__dir, 'generated', 'roguelike-relational-maps.json')
   path_additional = os.path.join(__dir, 'generated', 'games-small.json')
@@ -132,19 +184,22 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
       if use_file:
         return relational_map
 
+  logging.debug('##########')
+  logging.debug('Relational Map')
+  logging.debug('##########')
   for game, info in content.iteritems():
     if reload is True or (reload and game in reload):
       relational_map[game] = []
 
-      print '--- {} ---'.format(game)
+      logging.debug('--- {} ---'.format(game))
       for url, html in info.iteritems():
         if url.count('/') <= 3 and url.endswith('/'):
-          print '{} is a top level, skipped.'.format(url)
+          # logging.info('{} is a top level, skipped.'.format(url))
           continue
         blacklisted = False
         for b in blacklist:
           if b in url:
-            print 'Blacklisted {}.'.format(url)
+            # logging.info('Blacklisted {}.'.format(url))
             blacklisted = True
             continue
         if blacklisted:
@@ -165,8 +220,7 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
             appeared_games.add(n)
 
         relational_map[game].extend(games_in_url)
-        print '{}: {}'.format(url, games_in_url)
-      print
+        logging.debug('{}: {}'.format(url, games_in_url))
 
   # Make the map 2-way
   for source, target in relational_map.iteritems():
@@ -197,8 +251,9 @@ if '__main__' in __name__:
   roguelikes = data.compile_roguelikes(use_file=True, verbose=True)
   content = data.compile_content(use_file=True, verbose=True)
   game_set = data.compile_games()
-  roguelike_set = set(roguelikes.keys())
 
+  # roguelike_set = set(roguelikes.keys())
   # basic_statistics(roguelikes, content, game_set)
-  relational_maps(content, game_set, reload=True)
+  relational_maps(content, game_set, use_file=True)
+  # inspirations(content, game_set)
 
