@@ -95,11 +95,11 @@
     "year": "2013", 
     "title": "Monaco: What's Yours is Mine"
   }, 
-  "Galactic Civilizations": {
-    "platforms": "Windows", 
-    "publisher": "1C Company, Empire Interactive Entertainment, Strategy First, Inc., Xplosiv", 
-    "year": "2003", 
-    "title": "Galactic Civilizations"
+  "Star Control II": {
+    "platforms": "3DO, DOS, Linux, Macintosh, Windows", 
+    "publisher": "Accolade, Inc., Crystal Dynamics, Inc., Telstar Fun and Games", 
+    "year": "1992", 
+    "title": "Star Control II"
   }, 
   "Sonic the Hedgehog: Triple Trouble": {
     "platforms": "Game Gear, Nintendo 3DS", 
@@ -275,11 +275,11 @@
     "year": "2011", 
     "title": "Rune Factory: Tides of Destiny"
   }, 
-  "Mario Paint": {
-    "platforms": "SNES", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Playtronic Industrial Ltda.", 
-    "year": "1992", 
-    "title": "Mario Paint"
+  "Dead Rising": {
+    "platforms": "Xbox 360", 
+    "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., CE Europe Ltd.", 
+    "year": "2006", 
+    "title": "Dead Rising"
   }, 
   "Valhalla": {
     "platforms": "Commodore 64, ZX Spectrum", 
@@ -419,11 +419,17 @@
     "year": "1993", 
     "title": "Streets of Rage 2"
   }, 
-  "Star Control II": {
-    "platforms": "3DO, DOS, Linux, Macintosh, Windows", 
-    "publisher": "Accolade, Inc., Crystal Dynamics, Inc., Telstar Fun and Games", 
-    "year": "1992", 
-    "title": "Star Control II"
+  "Galactic Civilizations": {
+    "platforms": "Windows", 
+    "publisher": "1C Company, Empire Interactive Entertainment, Strategy First, Inc., Xplosiv", 
+    "year": "2003", 
+    "title": "Galactic Civilizations"
+  }, 
+  "Castle of the Winds": {
+    "platforms": "Windows 3.x", 
+    "publisher": "Epic MegaGames, Inc., SaadaSoft", 
+    "year": "1993", 
+    "title": "Castle of the Winds"
   }, 
   "Spelunky": {
     "platforms": "PlayStation 3, PS Vita, Windows, Xbox 360", 
@@ -1079,6 +1085,12 @@
     "year": "2000", 
     "title": "Dragon Warrior VII"
   }, 
+  "Omega": {
+    "platforms": "DOS, Linux, Windows", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1988", 
+    "title": "Omega"
+  }, 
   "Pikmin 3": {
     "platforms": "Wii U", 
     "publisher": "Nintendo of America Inc., Nintendo of Europe GmbH", 
@@ -1553,11 +1565,11 @@
     "year": "1987", 
     "title": "Dungeon Master"
   }, 
-  "Dead Rising": {
-    "platforms": "Xbox 360", 
-    "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., CE Europe Ltd.", 
-    "year": "2006", 
-    "title": "Dead Rising"
+  "Mario Paint": {
+    "platforms": "SNES", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Playtronic Industrial Ltda.", 
+    "year": "1992", 
+    "title": "Mario Paint"
   }, 
   "Adventure": {
     "platforms": "Atari 2600, iPhone", 
@@ -2038,6 +2050,12 @@
     "publisher": "Gamelamp Games, Inc.", 
     "year": "2011", 
     "title": "Dungeons of Dredmor"
+  }, 
+  "Doom, the Roguelike": {
+    "platforms": "DOS, Linux, Windows", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "2002", 
+    "title": "Doom, the Roguelike"
   }, 
   "Super Mario All-Stars": {
     "platforms": "SNES", 

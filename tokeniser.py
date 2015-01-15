@@ -64,6 +64,10 @@ blacklist = set([
   "www.gamasutra.com/view/feature/3674",
   "2-dimensions.com/tag/sega/page/5/",
   "www.diablowiki.net/Storyline",
+  "pl.wn.com/F**k_Fatal_Labyrinth",
+  "techcrunch.com/2008/11/06/sega-releasing-40-game-ultimate-genesis-collection-for-ps3-and-360-early-next-year-will-cost-30/",
+  "www.gamewinners.com",
+  "www.actiontrip.com/cheats/ps3/sonics-ultimate-genesis-collection.phtml",
 ])
 
 not_games = set([
@@ -172,9 +176,10 @@ def inspirations(content, game_set):
   return inspirations
 
 
-def relational_maps(content, game_set, cached=True, use_file=False, reload=None):
+def relational_maps(content, game_set, roguelike_set, cached=True, use_file=False, reload=None):
   path = os.path.join(__dir, 'generated', 'roguelike-relational-maps.json')
   path_additional = os.path.join(__dir, 'generated', 'games-small.json')
+  keywords = ('inspir', 'based', 'drawn', 'influenc', 'similar', 'like')
   relational_map = {}
   appeared_games = set()
 
@@ -192,7 +197,7 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
       relational_map[game] = []
 
       logging.debug('--- {} ---'.format(game))
-      for url, html in info.iteritems():
+      for i, (url, html) in enumerate(info.iteritems()):
         if url.count('/') <= 3 and url.endswith('/'):
           # logging.info('{} is a top level, skipped.'.format(url))
           continue
@@ -205,10 +210,12 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
         if blacklisted:
           continue
 
+        logging.debug(url)
         # Italics and bold are often used for name of games.
         games_in_url = []
         soup = bs4.BeautifulSoup(html)
         names = []
+
         if 'wikipedia.org' in url:
           names = soup.select('#mw-content-text > p > i') + soup.select('#mw-content-text > p > em') + soup.select('#mw-content-text > p > a')
         else:
@@ -219,8 +226,31 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
             games_in_url.append(n)
             appeared_games.add(n)
 
+        # Also check sentences that contain possible keywords
+        key_sentences = []
+        paragraphs = []
+
+        if 'wikipedia.org' in url:
+          paragraphs = soup.select('#mw-content-text > p')
+        else:
+          paragraphs = soup.select('p')
+
+        for sentence in ''.join(p.text.strip() + '.' for p in paragraphs).split('.'):
+          for keyword in keywords:
+            if keyword in sentence:
+              for roguelike in roguelike_set:
+                if roguelike in sentence:
+                  n = roguelike
+                  if n in game_set and n.lower() != game.lower() and len(n) > 1 and n not in not_games:
+                    games_in_url.append(n)
+                    appeared_games.add(n)
+
         relational_map[game].extend(games_in_url)
-        logging.debug('{}: {}'.format(url, games_in_url))
+        logging.debug('{}/{} {}'.format(i+1, len(info), games_in_url))
+
+    # Return the most common occurences
+    counter = collections.Counter(relational_map[game])
+    relational_map[game] = [x[0] for x in counter.most_common(5)]
 
   # Make the map 2-way
   for source, target in relational_map.iteritems():
@@ -251,9 +281,8 @@ if '__main__' in __name__:
   roguelikes = data.compile_roguelikes(use_file=True, verbose=True)
   content = data.compile_content(use_file=True, verbose=True)
   game_set = data.compile_games()
-
-  # roguelike_set = set(roguelikes.keys())
+  roguelike_set = set(roguelikes.keys())
   # basic_statistics(roguelikes, content, game_set)
-  relational_maps(content, game_set, use_file=True)
+  relational_maps(content, game_set, roguelike_set, reload=True)
   # inspirations(content, game_set)
 
