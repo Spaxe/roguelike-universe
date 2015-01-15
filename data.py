@@ -22,6 +22,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+import io
 import os
 import csv
 import bs4
@@ -40,7 +41,7 @@ def compile_roguelikes(cached=True, write=True, verbose=False, use_file=False):
   games = None
   if cached and os.path.exists(path):
     try:
-      with open(path) as f:
+      with io.open(path, encoding='utf8') as f:
         games = json.loads(f.read())
         if use_file:
           return games
@@ -69,17 +70,21 @@ def compile_roguelikes(cached=True, write=True, verbose=False, use_file=False):
       print 'Scrapped {} links.'.format(len(links))
 
   if write:
-    with open(path, 'w+') as f:
-      f.write(json.dumps(games, indent=2))
+    with io.open(path, 'w', encoding='utf8') as f:
+      output = json.dumps(games, indent=2, ensure_ascii=False).decode('utf8')
+      try:
+        f.write(output)
+      except TypeError:
+        f.write(output.decode('utf8'))
   return games
 
 
-def compile_content(cached=True, write=True, verbose=False, use_file=False):
+def compile_content(cached=True, write=True, verbose=False, use_file=False, reload=None):
   path = os.path.join(__dir, 'generated', 'roguelike-game-articles.json')
   content = None
   if cached and os.path.exists(path):
     try:
-      with open(path) as f:
+      with io.open(path, encoding="utf8") as f:
         content = json.loads(f.read())
         if use_file:
           return content
@@ -99,16 +104,22 @@ def compile_content(cached=True, write=True, verbose=False, use_file=False):
     if verbose:
       print '{}%: {}'.format(i*100/len(games), title)
     # Skip scraping if content already exist
-    if cached and title in content and content[title]:
+    if (cached and title in content and content[title]):
+      if reload and title in reload:
+        content[title] = get_url_content(game, verbose=verbose)
+        continue
       if verbose:
         print '--- Skipping {}, already has content.'.format(title)
       continue
-    content[title] = get_url_content(game)
+    content[title] = get_url_content(game, verbose=verbose)
 
   if write:
-    with open(os.path.join(__dir, 'generated', 'roguelike-game-articles.json'), 'w+') as f:
-      f.write(json.dumps(content, indent=2))
-
+    with io.open(path, 'w', encoding='utf8') as f:
+      output = json.dumps(content, indent=2, ensure_ascii=False).decode('utf8')
+      try:
+        f.write(output)
+      except TypeError:
+        f.write(output.decode('utf8'))
   return content
 
 
@@ -126,7 +137,12 @@ def get_roguelikes():
     reader = csv.reader(f)
     reader.next() # Discard header
     for row in reader:
-      row[2] = row[2].strip(' *')
+      row[2] = row[2].replace('[6]', '') \
+                      .replace('*', ' ') \
+                      .replace(', The', '') \
+                      .replace('(video game)', '') \
+                      .replace('(Beta)', '') \
+                      .strip(' *')
       game = Game(*row)
       games[game.Title] = game._asdict()
   # pprint.pprint(games, indent=2)
@@ -135,9 +151,9 @@ def get_roguelikes():
 
 def get_urls(game):
   '''Return a list of potential websites to scrap'''
-  title = game['Title'].replace(' ', '+')
-  developer = game['Developer'].replace(' ', '+')
-  response = requests.get('http://duckduckgo.com/html/?q={}'.format(urllib.quote("{} {}".format(title, developer))), timeout=(9.1, 12.1))
+  title = game['Title']
+  developer = game['Developer']
+  response = requests.get('http://duckduckgo.com/html/?q={}'.format(urllib.quote('{} {} {}'.format(title, developer, "interview"))), timeout=(9.1, 12.1))
   soup = bs4.BeautifulSoup(response.text)
   links = []
   for node in soup.select('div.web-result'):
@@ -163,5 +179,6 @@ def get_url_content(game, verbose=False):
   return scrape
 
 if '__main__' in __name__:
-  compile_content()
+  compile_roguelikes(use_file=True, verbose=True)
+  compile_content(cached=False, verbose=True)
 
