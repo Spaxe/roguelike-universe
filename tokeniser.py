@@ -168,6 +168,15 @@ def relational_maps(content, game_set, cached=True, use_file=False, reload=None)
         print '{}: {}'.format(url, games_in_url)
       print
 
+  # Make the map 2-way
+  for source, target in relational_map.iteritems():
+    if reload is True or (reload and source in reload):
+      new_target = set(target)
+      for game in target:
+        if game in relational_map:
+          new_target.add(game)
+      relational_map[source] = list(new_target)
+
   with io.open(path, 'w', encoding="utf8") as f:
     output = json.dumps(relational_map, indent=2, ensure_ascii=False).decode('utf8')
     try:

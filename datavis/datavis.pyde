@@ -14,8 +14,8 @@ line_length = 0
 
 selection_name = ''
 
-screen_width = 1200
-screen_height = 900
+screen_width = 1000
+screen_height = 850
 draw_width = screen_width - 100.0
 draw_height = screen_height - 100.0
 
@@ -41,8 +41,8 @@ def setup():
     
 
 def draw():
-    background(0)
-    colorMode(1, 1, 1, 1, HSB)
+    colorMode(HSB, 1, 1, 1, 1)
+    background(1)
     ellipseMode(CORNERS)
 
     pushMatrix()
@@ -63,14 +63,14 @@ def draw_timeline():
     textSize(8)
     
     for _year, games in all_games_by_year.iteritems():
-        fill(min(map(len(games), 1, 250, 0.5, 0.75), 1))
+        fill(min(map(len(games), 1, 250, 0.5, 0.25), 1))
         x = (_year - begin_time) * line_length
         y = draw_height/2
         rect(x, y, line_length*0.9, 4)
         text(_year, x, y+14)
     
     for _year, games in roguelikes_by_year.iteritems():
-        fill(min(map(len(games), 1, 5, 0.5, 1), 1))
+        fill(min(map(len(games), 1, 5, 0.5, 0.1), 1))
         x = (_year - begin_time) * line_length
         y = draw_height/2
         rect(x, y, line_length*0.9, 4)
@@ -86,7 +86,7 @@ def draw_roguelike_links():
     
     noFill()
     strokeWeight(1)
-    stroke(1, 0.2)
+    stroke(0, 0.2)
 
     for source, targets in relational_map_data.iteritems():
         _year = int(roguelike_data[source]['First'])
@@ -94,16 +94,15 @@ def draw_roguelike_links():
         source_index = float(roguelikes_by_year[_year][source]['index'])
         source_year_count = len(roguelikes_by_year[_year])
         
-        if source == selection_name:
-            stroke(1, 0.5, 0.2, 1)
-            strokeWeight(2)
-        else:
-#             continue
-            stroke(1, 0.5)
-            strokeWeight(1)
-        
         for target in set(targets):
             if target in roguelike_data:
+                if source == selection_name:
+                    stroke(0.05, 0.9, 1, 1)
+                    strokeWeight(2)
+                else:
+                    stroke(0.1, 0.4)
+                    strokeWeight(1)
+                    
                 target_year = int(roguelike_data[target]['First'])
                 target_x = (target_year -  begin_time) * line_length
                 target_index = float(roguelikes_by_year[target_year][target]['index'])
@@ -112,10 +111,31 @@ def draw_roguelike_links():
                 xs = sorted([source_x + 0.9 * line_length * (source_index / source_year_count), 
                              target_x + 0.9 * line_length * (target_index / target_year_count)])
                 arc(xs[0], 
-                    draw_height/2 - abs(xs[1] - xs[0])/2.0,
+                    draw_height/2 - abs(xs[1] - xs[0])/2.0 - 15,
                     xs[1],
-                    draw_height/2 + abs(xs[1] - xs[0])/2.0,
+                    draw_height/2 + abs(xs[1] - xs[0])/2.0 - 15,
                     PI, PI*2)
+            elif target in games_data:
+                if source == selection_name:
+                    stroke(0.05, 0.9, 0.9, 1)
+                    strokeWeight(2)
+                else:
+                    stroke(0.2, 0.2)
+                    strokeWeight(1)
+                    
+                target_year = int(games_data[target]['year'])
+                target_x = (target_year -  begin_time) * line_length
+                target_index = float(all_games_by_year[target_year][target]['index'])
+                target_year_count = len(all_games_by_year[target_year])
+                
+                xs = sorted([source_x + 0.9 * line_length * (source_index / source_year_count), 
+                             target_x + 0.9 * line_length * (target_index / target_year_count)])
+                arc(xs[0], 
+                    draw_height/2 - abs(xs[1] - xs[0])/2.0 + 18,
+                    xs[1],
+                    draw_height/2 + abs(xs[1] - xs[0])/2.0 + 18,
+                    0, PI)
+                
         
     popStyle()
     popMatrix()
@@ -129,6 +149,7 @@ def draw_game_title():
     i = int(min(mX / draw_width, 0.9999) * len(roguelikes_list))
     name = roguelikes_list[i]
     selection_name = name
+    fill(0)
     textSize(14)
     textAlign(CENTER)
     text('{} ({})'.format(name, roguelike_data[name]['First']), draw_width/2, 25)
