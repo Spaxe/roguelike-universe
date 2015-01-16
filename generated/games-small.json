@@ -1,33 +1,63 @@
 {
-  "Savage": {
-    "platforms": "Amiga, Amstrad CPC, Atari ST, Commodore 64, DOS, ZX Spectrum", 
-    "publisher": "Firebird Software Ltd., Microplay Software", 
-    "year": "1988", 
-    "title": "Savage"
+  "You Only Live Once": {
+    "platforms": "Browser", 
+    "publisher": "Raitendo", 
+    "year": "2009", 
+    "title": "You Only Live Once"
   }, 
-  "Gremlins": {
-    "platforms": "Atari 2600", 
-    "publisher": "Atari, Inc.", 
-    "year": "1984", 
-    "title": "Gremlins"
+  "Night Stalker": {
+    "platforms": "Apple II, Atari 2600, Intellivision, Mattel Aquarius, PC Booter", 
+    "publisher": "Mattel Electronics", 
+    "year": "1982", 
+    "title": "Night Stalker"
   }, 
-  "RuneScape": {
-    "platforms": "Browser, Windows, Windows 3.x", 
-    "publisher": "Jagex Ltd.", 
-    "year": "2001", 
-    "title": "RuneScape"
+  "Shining Force": {
+    "platforms": "Genesis, iPhone, Wii, Windows", 
+    "publisher": "SEGA Enterprises Ltd., SEGA of America, Inc.", 
+    "year": "1992", 
+    "title": "Shining Force"
   }, 
-  "Out of This World": {
-    "platforms": "3DO, Amiga, Android, Apple IIgs, Atari ST, DOS, Genesis, iPad, iPhone, Macintosh, Ouya, SNES, Symbian, Windows, Windows 3.x", 
-    "publisher": "Akella, Bulkypix, Delphine Software International, DotEmu SAS, Electronic Arts Victor, Interplay Productions, Inc., Kixx, MacPlay, Magic Productions, Telcogames Ltd., U.S. Gold Ltd., Victor Musical Industries, Inc., Virgin Games, Inc.", 
+  "Strange Adventures in Infinite Space": {
+    "platforms": "Macintosh, Palm OS, Windows, Windows Mobile", 
+    "publisher": "Astraware Limited, Cheapass Games, Digital Eel", 
+    "year": "2002", 
+    "title": "Strange Adventures in Infinite Space"
+  }, 
+  "The Legend of Zelda: A Link Between Worlds": {
+    "platforms": "Nintendo 3DS", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
+    "year": "2013", 
+    "title": "The Legend of Zelda: A Link Between Worlds"
+  }, 
+  "Minesweeper": {
+    "platforms": "Game Boy, TurboGrafx CD", 
+    "publisher": "Pack-In-Video Co., Ltd", 
     "year": "1991", 
-    "title": "Out of This World"
+    "title": "Minesweeper"
   }, 
-  "Populous": {
-    "platforms": "Acorn 32-bit, Amiga, Atari ST, DOS, Genesis, Macintosh, PC-98, SEGA Master System, Sharp X68000, SNES, TurboGrafx-16, Windows", 
-    "publisher": "Acclaim Entertainment, Inc., Electronic Arts, Inc., Electronic Arts Ltd., Hudson Soft Company, Ltd., Imagineer Co., Ltd., Krisalis Software Ltd., SEGA Enterprises Ltd.", 
-    "year": "1989", 
-    "title": "Populous"
+  "Dungeon Lords MMXII": {
+    "platforms": "Windows", 
+    "publisher": "Nordic Games GmbH", 
+    "year": "2012", 
+    "title": "Dungeon Lords MMXII"
+  }, 
+  "Arcana": {
+    "platforms": "SNES", 
+    "publisher": "HAL America Inc., HAL Laboratory, Inc.", 
+    "year": "1992", 
+    "title": "Arcana"
+  }, 
+  "Alien Breed": {
+    "platforms": "Amiga, BlackBerry, DOS", 
+    "publisher": "Amiga, Inc., MicroLeague Multimedia, Inc., Team17 Software Limited", 
+    "year": "1991", 
+    "title": "Alien Breed"
+  }, 
+  "Avalon": {
+    "platforms": "DOS", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1998", 
+    "title": "Avalon"
   }, 
   "Larn": {
     "platforms": "Atari ST, DOS, Linux", 
@@ -35,17 +65,41 @@
     "year": "1986", 
     "title": "Larn"
   }, 
-  "Sorcerer": {
-    "platforms": "Atari 2600", 
-    "publisher": "Mythicon, Inc.", 
-    "year": "1983", 
-    "title": "Sorcerer"
+  "Mark of the Ninja": {
+    "platforms": "Linux, Macintosh, Windows, Xbox 360", 
+    "publisher": "Microsoft Studios", 
+    "year": "2012", 
+    "title": "Mark of the Ninja"
   }, 
   "UnReal World": {
     "platforms": "DOS, Linux, Macintosh, Windows", 
     "publisher": "Enormous Elk, The Three Relaxed Byte-Biters", 
     "year": "1992", 
     "title": "UnReal World"
+  }, 
+  "Dead Space": {
+    "platforms": "PlayStation 3, Windows, Xbox 360", 
+    "publisher": "ak tronic Software & Services GmbH, Electronic Arts, Inc., Electronic Arts LLC", 
+    "year": "2008", 
+    "title": "Dead Space"
+  }, 
+  "Robots": {
+    "platforms": "Game Boy Advance, Nintendo DS", 
+    "publisher": "Vivendi Universal Games, Inc.", 
+    "year": "2005", 
+    "title": "Robots"
+  }, 
+  "Star Control": {
+    "platforms": "Amiga, Amstrad CPC, Commodore 64, DOS, Genesis, ZX Spectrum", 
+    "publisher": "Accolade, Inc., Ballistic", 
+    "year": "1990", 
+    "title": "Star Control"
+  }, 
+  "The Tower of Druaga": {
+    "platforms": "Arcade, FM-7, Game Boy, GameCube, MSX, NES, Nintendo 3DS, Sharp X1, Wii", 
+    "publisher": "Dempa Shimbunsha, Namco Bandai Games Inc., Namco Limited", 
+    "year": "1984", 
+    "title": "The Tower of Druaga"
   }, 
   "Ultima": {
     "platforms": "Apple II, Atari 8-bit", 
@@ -59,17 +113,71 @@
     "year": "2009", 
     "title": "Demon's Souls"
   }, 
+  "Death Tank": {
+    "platforms": "Xbox 360", 
+    "publisher": "Microsoft Game Studios", 
+    "year": "2009", 
+    "title": "Death Tank"
+  }, 
+  "Azure Dreams": {
+    "platforms": "Game Boy Color, PlayStation", 
+    "publisher": "Konami Co., Ltd., Konami of Europe GmbH, Konami of America, Inc.", 
+    "year": "1997", 
+    "title": "Azure Dreams"
+  }, 
+  "Traffic": {
+    "platforms": "Amstrad CPC, Commodore 64, MSX", 
+    "publisher": "Amsoft, Quicksilva Ltd., Sony Corporation", 
+    "year": "1984", 
+    "title": "Traffic"
+  }, 
+  "Diablo": {
+    "platforms": "Amiga, Atari ST, Commodore 64, MSX, PC-88, PC-98, Sharp X1, Sharp X68000, TI-99/4A, TurboGrafx-16", 
+    "publisher": "Br?derbund Japan Inc., Classic Image Inc. , Diamond Software, Extended Software, Hudson Soft Company, Ltd.", 
+    "year": "1983", 
+    "title": "Diablo"
+  }, 
+  "Fallout": {
+    "platforms": "DOS, Macintosh, Windows", 
+    "publisher": "1C Company, Best Distribution S.R.L., Dice Multi Media Europe B.V., Interplay Productions, Inc., Interplay Entertainment Corp., MacPlay, Sold Out Sales & Marketing Ltd.", 
+    "year": "1997", 
+    "title": "Fallout"
+  }, 
+  "Dark Cloud 2": {
+    "platforms": "PlayStation 2", 
+    "publisher": "Sony Computer Entertainment America, Inc., Sony Computer Entertainment Europe Ltd., Sony Computer Entertainment Incorporated", 
+    "year": "2002", 
+    "title": "Dark Cloud 2"
+  }, 
   "Resurrection": {
     "platforms": "Windows", 
     "publisher": "Dinamic Multimedia, S.A.", 
     "year": "2000", 
     "title": "Resurrection"
   }, 
-  "Amnesia: The Dark Descent": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "1C Company, 1C-SoftClub, Frictional Games, Snowball Studios, THQ Inc.", 
-    "year": "2010", 
-    "title": "Amnesia: The Dark Descent"
+  "Rogue Galaxy": {
+    "platforms": "PlayStation 2", 
+    "publisher": "Sony Computer Entertainment Incorporated", 
+    "year": "2005", 
+    "title": "Rogue Galaxy"
+  }, 
+  "Castle of the Winds": {
+    "platforms": "Windows 3.x", 
+    "publisher": "Epic MegaGames, Inc., SaadaSoft", 
+    "year": "1993", 
+    "title": "Castle of the Winds"
+  }, 
+  "NetHack": {
+    "platforms": "Acorn 32-bit, Amiga, Android, Atari ST, Browser, DOS, GP32, iPhone, Linux, Macintosh, Windows", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1987", 
+    "title": "NetHack"
+  }, 
+  "Star Wars": {
+    "platforms": "Amiga, Amstrad CPC, Arcade, Atari 2600, Atari 5200, Atari 8-bit, Atari ST, BBC Micro, ColecoVision, Commodore 64, DOS, Electron, GameCube, Macintosh, ZX Spectrum", 
+    "publisher": "Br?derbund Software, Inc., Domark Ltd., LucasArts, Atari, Inc., Parker Brothers", 
+    "year": "1983", 
+    "title": "Star Wars"
   }, 
   "Psychosomnium": {
     "platforms": "Browser, Macintosh, Windows", 
@@ -77,47 +185,65 @@
     "year": "2008", 
     "title": "Psychosomnium"
   }, 
-  "Chrono Cross": {
-    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
-    "publisher": "Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix Co., Ltd.", 
-    "year": "1999", 
-    "title": "Chrono Cross"
+  "Z.H.P. Unlosing Ranger VS Darkdeath Evilman": {
+    "platforms": "PSP", 
+    "publisher": "Nippon Ichi Software Inc., NIS America, Inc.", 
+    "year": "2010", 
+    "title": "Z.H.P. Unlosing Ranger VS Darkdeath Evilman"
   }, 
-  "Joker": {
-    "platforms": "MSX, PC-98", 
-    "publisher": "Birdy Soft", 
+  "Dragon Quest VIII: Journey of the Cursed King": {
+    "platforms": "PlayStation 2", 
+    "publisher": "Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
+    "year": "2004", 
+    "title": "Dragon Quest VIII: Journey of the Cursed King"
+  }, 
+  "Captain Blood": {
+    "platforms": "Amiga, Amstrad CPC, Apple IIgs, Atari ST, Commodore 64, DOS, Macintosh, Thomson TO, ZX Spectrum", 
+    "publisher": "Infogrames Europe SA, Infogrames UK Ltd., ERE Informatique, Exxos, Mindscape, Inc.", 
+    "year": "1988", 
+    "title": "Captain Blood"
+  }, 
+  "Eye of the Beholder": {
+    "platforms": "Amiga, DOS, PC-98, SEGA CD, SNES", 
+    "publisher": "Capcom Co., Ltd., Capcom U.S.A., Inc., FCI, Pony Canyon, Inc., SEGA of America, Inc., Strategic Simulations, Inc., U.S. Gold Ltd.", 
     "year": "1991", 
-    "title": "Joker"
+    "title": "Eye of the Beholder"
   }, 
-  "Flam": {
-    "platforms": "Browser", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2008", 
-    "title": "Flam"
+  "Sword of Fargoal": {
+    "platforms": "Commodore 64, VIC-20", 
+    "publisher": "Epyx, Inc.", 
+    "year": "1982", 
+    "title": "Sword of Fargoal"
   }, 
-  "Monaco: What's Yours is Mine": {
-    "platforms": "Linux, Macintosh, Windows, Xbox 360", 
-    "publisher": "Majesco Entertainment Company, Pocketwatch Games, LLC", 
-    "year": "2013", 
-    "title": "Monaco: What's Yours is Mine"
+  "Centipede": {
+    "platforms": "Apple II, Arcade, Atari 2600, Atari 5200, Atari 7800, Atari 8-bit, BBC Micro, Browser, ColecoVision, Commodore 64, Game Boy, Game Boy Color, Intellivision, PC Booter, TI-99/4A, VIC-20, Windows Phone", 
+    "publisher": "Accolade, Inc., Atari Corporation, Atari, Inc., Atarisoft, Majesco Sales, Inc., Microsoft Game Studios, Atari, Inc., Superior Software Ltd.", 
+    "year": "1980", 
+    "title": "Centipede"
   }, 
-  "Star Control II": {
-    "platforms": "3DO, DOS, Linux, Macintosh, Windows", 
-    "publisher": "Accolade, Inc., Crystal Dynamics, Inc., Telstar Fun and Games", 
-    "year": "1992", 
-    "title": "Star Control II"
+  "Dark Cloud": {
+    "platforms": "PlayStation 2", 
+    "publisher": "Sony Computer Entertainment America, Inc., Sony Computer Entertainment Europe Ltd., Sony Computer Entertainment Incorporated", 
+    "year": "2000", 
+    "title": "Dark Cloud"
   }, 
-  "RPG Maker": {
-    "platforms": "PlayStation", 
-    "publisher": "Agetec, Inc., ASCII Entertainment Software, Inc.", 
-    "year": "1997", 
-    "title": "RPG Maker"
+  "Gish": {
+    "platforms": "BlackBerry, J2ME, Linux, Macintosh, Windows", 
+    "publisher": "Chronic Logic LLC, GarageGames, Inc., Halycon Media GmbH & Co. KG, MediaHouse Ltd., Pixalon Studios", 
+    "year": "2004", 
+    "title": "Gish"
   }, 
-  "Sonic the Hedgehog: Triple Trouble": {
-    "platforms": "Game Gear, Nintendo 3DS", 
-    "publisher": "SEGA Enterprises Ltd., SEGA Corporation, SEGA Europe Ltd.", 
-    "year": "1994", 
-    "title": "Sonic the Hedgehog: Triple Trouble"
+  "Hey You, Pikachu!": {
+    "platforms": "Nintendo 64", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc.", 
+    "year": "1998", 
+    "title": "Hey You, Pikachu!"
+  }, 
+  "Golf": {
+    "platforms": "Commodore PET/CBM", 
+    "publisher": "Creative Computing Software", 
+    "year": "1978", 
+    "title": "Golf"
   }, 
   "The Walking Dead": {
     "platforms": "Macintosh, PlayStation 3, Windows, Xbox 360", 
@@ -125,11 +251,47 @@
     "year": "2012", 
     "title": "The Walking Dead"
   }, 
+  "Out of This World": {
+    "platforms": "3DO, Amiga, Android, Apple IIgs, Atari ST, DOS, Genesis, iPad, iPhone, Macintosh, Ouya, SNES, Symbian, Windows, Windows 3.x", 
+    "publisher": "Akella, Bulkypix, Delphine Software International, DotEmu SAS, Electronic Arts Victor, Interplay Productions, Inc., Kixx, MacPlay, Magic Productions, Telcogames Ltd., U.S. Gold Ltd., Victor Musical Industries, Inc., Virgin Games, Inc.", 
+    "year": "1991", 
+    "title": "Out of This World"
+  }, 
+  "Glare": {
+    "platforms": "Linux, Macintosh, Windows", 
+    "publisher": "Team Phobic", 
+    "year": "2013", 
+    "title": "Glare"
+  }, 
+  "Diablo II": {
+    "platforms": "Macintosh, Windows", 
+    "publisher": "Blizzard Entertainment Inc.", 
+    "year": "2000", 
+    "title": "Diablo II"
+  }, 
   "Ratchet & Clank: Up Your Arsenal": {
     "platforms": "PlayStation 2, PlayStation 3", 
     "publisher": "ak tronic Software & Services GmbH, Sony Computer Entertainment America, Inc., Sony Computer Entertainment Europe Ltd., Sony Computer Entertainment Incorporated", 
     "year": "2004", 
     "title": "Ratchet & Clank: Up Your Arsenal"
+  }, 
+  "Starflight": {
+    "platforms": "Amiga, Atari ST, Commodore 64, DOS, Genesis, Macintosh", 
+    "publisher": "Electronic Arts, Inc.", 
+    "year": "1986", 
+    "title": "Starflight"
+  }, 
+  "Aliens": {
+    "platforms": "Amstrad CPC, Commodore 16, Plus/4, Commodore 64, MSX, ZX Spectrum", 
+    "publisher": "Electric Dreams Software", 
+    "year": "1987", 
+    "title": "Aliens"
+  }, 
+  "Dragon Quest Monsters: Joker": {
+    "platforms": "Nintendo DS", 
+    "publisher": "Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
+    "year": "2006", 
+    "title": "Dragon Quest Monsters: Joker"
   }, 
   "Dark Souls": {
     "platforms": "PlayStation 3, Xbox 360", 
@@ -137,23 +299,35 @@
     "year": "2011", 
     "title": "Dark Souls"
   }, 
-  "Final Fantasy Fables: Chocobo's Dungeon": {
-    "platforms": "Wii", 
-    "publisher": "Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "2007", 
-    "title": "Final Fantasy Fables: Chocobo's Dungeon"
+  "Spewer": {
+    "platforms": "Browser", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "2009", 
+    "title": "Spewer"
   }, 
-  "Super Mario 64": {
-    "platforms": "Nintendo 64, Wii", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "1996", 
-    "title": "Super Mario 64"
+  "Hotline Miami": {
+    "platforms": "Linux, Macintosh, PlayStation 3, PS Vita, Windows", 
+    "publisher": "Devolver Digital", 
+    "year": "2012", 
+    "title": "Hotline Miami"
   }, 
-  "Dune 2000": {
-    "platforms": "PlayStation, Windows", 
-    "publisher": "Virgin Interactive Entertainment (Europe) Ltd., Electronic Arts, Inc., Sold Out Sales & Marketing Ltd., Westwood Studios, Inc.", 
-    "year": "1998", 
-    "title": "Dune 2000"
+  "Hack": {
+    "platforms": "Amiga, Atari ST, DOS", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1984", 
+    "title": "Hack"
+  }, 
+  "Pool of Radiance": {
+    "platforms": "Amiga, Apple II, Commodore 64, DOS, Macintosh, NES, PC-88, PC-98, Sharp X1", 
+    "publisher": "FCI, Pony Canyon, Inc., Strategic Simulations, Inc., U.S. Gold Ltd.", 
+    "year": "1988", 
+    "title": "Pool of Radiance"
+  }, 
+  "Abyss": {
+    "platforms": "BBC Micro, Electron, ZX Spectrum", 
+    "publisher": "Cases Computer Simulations Ltd.", 
+    "year": "1984", 
+    "title": "Abyss"
   }, 
   "Rex": {
     "platforms": "Amstrad CPC, ZX Spectrum", 
@@ -161,11 +335,11 @@
     "year": "1988", 
     "title": "Rex"
   }, 
-  "Looney Tunes": {
-    "platforms": "Game Boy, Game Boy Color", 
-    "publisher": "Sun Electronics Corp., Sun Corporation, Sun Corporation of America", 
-    "year": "1992", 
-    "title": "Looney Tunes"
+  "Pixel Dungeon": {
+    "platforms": "Android", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "2012", 
+    "title": "Pixel Dungeon"
   }, 
   "Colossal Cave Adventure": {
     "platforms": "Windows", 
@@ -173,23 +347,17 @@
     "year": "2007", 
     "title": "Colossal Cave Adventure"
   }, 
-  "Tobal 2": {
-    "platforms": "PlayStation", 
-    "publisher": "Square Co., Ltd.", 
+  "The Last Story": {
+    "platforms": "Wii", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of Europe GmbH, XSEED Games", 
+    "year": "2011", 
+    "title": "The Last Story"
+  }, 
+  "Jumanji": {
+    "platforms": "Windows 3.x", 
+    "publisher": "Philips Interactive Media, Inc.", 
     "year": "1997", 
-    "title": "Tobal 2"
-  }, 
-  "Nightmare": {
-    "platforms": "Odyssey 2, Videopac+ G7400", 
-    "publisher": "N.V. Philips Gloeilampenfabrieken, Philips Export B.V.", 
-    "year": "1983", 
-    "title": "Nightmare"
-  }, 
-  "Worms 2: Armageddon": {
-    "platforms": "Android, iPad, iPhone, PlayStation 3, Xbox 360", 
-    "publisher": "Team17 Software Limited", 
-    "year": "2009", 
-    "title": "Worms 2: Armageddon"
+    "title": "Jumanji"
   }, 
   "Dungeon Hack": {
     "platforms": "DOS, PC-98", 
@@ -197,59 +365,119 @@
     "year": "1993", 
     "title": "Dungeon Hack"
   }, 
-  "Notrium": {
-    "platforms": "Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2004", 
-    "title": "Notrium"
+  "Advance Wars": {
+    "platforms": "Game Boy Advance, Wii U", 
+    "publisher": "Nintendo of America Inc., Nintendo of Europe GmbH", 
+    "year": "2001", 
+    "title": "Advance Wars"
   }, 
-  "The Hobbit": {
-    "platforms": "Game Boy Advance", 
-    "publisher": "Sierra Entertainment, Inc., Vivendi Universal Games, Inc.", 
-    "year": "2003", 
-    "title": "The Hobbit"
+  "Mahjongg": {
+    "platforms": "Windows", 
+    "publisher": "Dice Multi Media Europe B.V., Xplorys BV", 
+    "year": "2002", 
+    "title": "Mahjongg"
+  }, 
+  "Sleeping Dogs": {
+    "platforms": "PlayStation 3, Windows, Xbox 360", 
+    "publisher": "Square Enix Co., Ltd., Square Enix, Inc.", 
+    "year": "2012", 
+    "title": "Sleeping Dogs"
+  }, 
+  "Ricochet": {
+    "platforms": "Commodore 64", 
+    "publisher": "Firebird Software Ltd.", 
+    "year": "1988", 
+    "title": "Ricochet"
+  }, 
+  "Spelunky": {
+    "platforms": "Macintosh, Windows", 
+    "publisher": "Mossmouth, LLC", 
+    "year": "2009", 
+    "title": "Spelunky"
+  }, 
+  "Breath of Fire": {
+    "platforms": "Game Boy Advance, SNES", 
+    "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., Square Soft, Inc., Ubi Soft Entertainment Software", 
+    "year": "1993", 
+    "title": "Breath of Fire"
+  }, 
+  "Firefly": {
+    "platforms": "Commodore 64, ZX Spectrum", 
+    "publisher": "Ocean Software Ltd.", 
+    "year": "1988", 
+    "title": "Firefly"
+  }, 
+  "Dragon Warrior": {
+    "platforms": "MSX, NES", 
+    "publisher": "Enix Corporation, Nintendo of America Inc.", 
+    "year": "1986", 
+    "title": "Dragon Warrior"
+  }, 
+  "Risk": {
+    "platforms": "DOS", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1986", 
+    "title": "Risk"
   }, 
   "Dungeon Keeper": {
-    "platforms": "Android, iPad, iPhone", 
-    "publisher": "Electronic Arts, Inc.", 
-    "year": "2013", 
+    "platforms": "DOS, Macintosh, Windows", 
+    "publisher": "Electronic Arts, Inc., Tec Toy Ind?stria de Brinquedos S.A.", 
+    "year": "1997", 
     "title": "Dungeon Keeper"
   }, 
-  "Zeus": {
-    "platforms": "Atari 8-bit", 
-    "publisher": "L.K. Avalon", 
-    "year": "1993", 
-    "title": "Zeus"
+  "Dungeons & Dragons: Warriors of the Eternal Sun": {
+    "platforms": "Genesis", 
+    "publisher": "SEGA Enterprises Ltd., SEGA of America, Inc.", 
+    "year": "1992", 
+    "title": "Dungeons & Dragons: Warriors of the Eternal Sun"
   }, 
-  "Dissidia: Final Fantasy": {
-    "platforms": "PSP", 
-    "publisher": "Sony Computer Entertainment Incorporated, Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "2008", 
-    "title": "Dissidia: Final Fantasy"
+  "Tunnels of Doom": {
+    "platforms": "TI-99/4A", 
+    "publisher": "Texas Instruments Incorporated", 
+    "year": "1982", 
+    "title": "Tunnels of Doom"
   }, 
-  "Super Crate Box": {
-    "platforms": "Android, Commodore 64, iPad, iPhone, Macintosh, Ouya, PS Vita, Windows", 
-    "publisher": "RGCD, Vlambeer", 
-    "year": "2010", 
-    "title": "Super Crate Box"
+  "Mario Bros.": {
+    "platforms": "Amstrad CPC, Arcade, Atari 2600, Atari 5200, Atari 7800, Atari 8-bit, Commodore 64, Game Boy Advance, NES, Nintendo 3DS, PC-88, Wii, Wii U, ZX Spectrum", 
+    "publisher": "Atari Corporation, Ocean Software Ltd., Atari, Inc., Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH, Westside Soft House", 
+    "year": "1983", 
+    "title": "Mario Bros."
   }, 
-  "Professor Layton and the Last Specter": {
-    "platforms": "Nintendo DS", 
-    "publisher": "ak tronic Software & Services GmbH, Level-5 Inc., Nintendo of Europe GmbH", 
-    "year": "2009", 
-    "title": "Professor Layton and the Last Specter"
+  "Renaissance": {
+    "platforms": "Amiga, Atari ST", 
+    "publisher": "Impressions", 
+    "year": "1990", 
+    "title": "Renaissance"
   }, 
-  "Magic: The Gathering": {
-    "platforms": "Windows", 
-    "publisher": "MicroProse Software, Inc.", 
-    "year": "1997", 
-    "title": "Magic: The Gathering"
+  "Angband": {
+    "platforms": "Acorn 32-bit, Amiga, Android, DOS, GP2X, GP2X Wiz, Linux, Macintosh, Windows, Windows Mobile", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1992", 
+    "title": "Angband"
   }, 
-  "Twilight": {
-    "platforms": "PC-98", 
-    "publisher": "Studio Twinkle", 
-    "year": "1994", 
-    "title": "Twilight"
+  "Disgaea: Hour of Darkness": {
+    "platforms": "PlayStation 2, PlayStation 3", 
+    "publisher": "Atlus U.S.A., Inc., KOEI Co., Ltd., KOEI Ltd., Nippon Ichi Software Inc., Sony Computer Entertainment America, Inc.", 
+    "year": "2003", 
+    "title": "Disgaea: Hour of Darkness"
+  }, 
+  "Super Monkey Ball": {
+    "platforms": "Arcade, GameCube", 
+    "publisher": "SEGA Corporation, SEGA Europe Ltd.", 
+    "year": "2001", 
+    "title": "Super Monkey Ball"
+  }, 
+  "Another World": {
+    "platforms": "Commodore 64", 
+    "publisher": "CP Verlag", 
+    "year": "1991", 
+    "title": "Another World"
+  }, 
+  "World of Warcraft": {
+    "platforms": "Macintosh, Windows", 
+    "publisher": "Blizzard Entertainment Europe, Blizzard Entertainment Inc., Blizzard Entertainment Korea, Soft Club, The9 Limited, Vivendi Universal Games, Inc.", 
+    "year": "2004", 
+    "title": "World of Warcraft"
   }, 
   "FTL: Faster Than Light": {
     "platforms": "iPad, Linux, Macintosh, Windows", 
@@ -263,11 +491,41 @@
     "year": "1986", 
     "title": "Thunder Castle"
   }, 
+  "Parasite Eve": {
+    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
+    "publisher": "Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix Co., Ltd.", 
+    "year": "1998", 
+    "title": "Parasite Eve"
+  }, 
+  "Arcadia": {
+    "platforms": "Commodore 64, VIC-20, ZX Spectrum", 
+    "publisher": "Imagine Software, Transworld Publishers (Australia) Pty Ltd.", 
+    "year": "1982", 
+    "title": "Arcadia"
+  }, 
+  "Knights in the Nightmare": {
+    "platforms": "Nintendo DS, PSP", 
+    "publisher": "Atlus Co., Ltd., Atlus U.S.A., Inc., Sting, Inc.", 
+    "year": "2008", 
+    "title": "Knights in the Nightmare"
+  }, 
+  "Monopoly": {
+    "platforms": "Amiga, Amstrad CPC, BBC Micro, Commodore 64, DOS, MSX, Thomson TO, ZX Spectrum", 
+    "publisher": "France Image Logiciels, Leisure Genius, Mastertronic Ltd., Virgin Games, Inc.", 
+    "year": "1985", 
+    "title": "Monopoly"
+  }, 
   "Light": {
     "platforms": "Windows", 
     "publisher": "Unknown Publisher(s)", 
     "year": "2002", 
     "title": "Light"
+  }, 
+  "Legends of Kesmai": {
+    "platforms": "Windows", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1997", 
+    "title": "Legends of Kesmai"
   }, 
   "Final Fantasy Fables: Chocobo Tales": {
     "platforms": "Nintendo DS", 
@@ -275,17 +533,41 @@
     "year": "2007", 
     "title": "Final Fantasy Fables: Chocobo Tales"
   }, 
-  "Faces": {
-    "platforms": "Amiga, DOS, Macintosh", 
-    "publisher": "Spectrum Holobyte, Inc.", 
-    "year": "1990", 
-    "title": "Faces"
+  "American Airlines": {
+    "platforms": "Windows", 
+    "publisher": "World Airline Simulation", 
+    "year": "2000", 
+    "title": "American Airlines"
+  }, 
+  "White Knight Chronicles": {
+    "platforms": "PlayStation 3", 
+    "publisher": "Sony Computer Entertainment America, Inc., Sony Computer Entertainment Incorporated", 
+    "year": "2008", 
+    "title": "White Knight Chronicles"
+  }, 
+  "Final Fantasy VII": {
+    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita, Windows", 
+    "publisher": "Eidos Interactive, Inc., Eidos Interactive Ltd., Sony Computer Entertainment America, Inc., Sony Computer Entertainment Europe Ltd., Square Co., Ltd., Square Enix Co., Ltd., Square Enix Europe Ltd, Square Enix, Inc., Square Europe, Ltd.", 
+    "year": "1997", 
+    "title": "Final Fantasy VII"
   }, 
   "Crusader Kings": {
     "platforms": "Macintosh, Windows", 
     "publisher": "1C Company, Auran Games Pty Ltd., PAN Vision AB, Paradox Entertainment AB, Snowball.ru, Strategy First, Inc., Virtual Programming Ltd.", 
     "year": "2004", 
     "title": "Crusader Kings"
+  }, 
+  "Messiah": {
+    "platforms": "Windows", 
+    "publisher": "1C Company, Interplay Entertainment Corp.", 
+    "year": "2000", 
+    "title": "Messiah"
+  }, 
+  "Moraff's Revenge": {
+    "platforms": "DOS", 
+    "publisher": "Moraffware", 
+    "year": "1988", 
+    "title": "Moraff's Revenge"
   }, 
   "Sonic Free Riders": {
     "platforms": "Xbox 360", 
@@ -299,23 +581,65 @@
     "year": "2007", 
     "title": "Rondo of Swords"
   }, 
+  "Pac-Man": {
+    "platforms": "Android, Apple II, Arcade, Atari 2600, Atari 5200, Atari 8-bit, BlackBerry, Channel F, Commodore 64, FM-7, Game Boy, Game Boy Advance, Game Gear, Intellivision, iPhone, MSX, Neo Geo Pocket Color, NES, Nintendo 3DS, Palm OS, PC-88, PC-98, PC Booter, Sharp X1, TI-99/4A, VIC-20, Wii, Wii U, Windows Phone, Xbox 360, ZX Spectrum", 
+    "publisher": "AtariAge, Atarisoft, Bug-Byte Software Ltd., Commodore Japan Limited, Dempa Shimbunsha, ?bivision, Atari, Inc., Namco Bandai Games America Inc., Namco Bandai Games Europe SAS, Namco Bandai Games Inc., Namco Europe Limited, Namco Hometek Inc., Namco Limited, Namcot, Namco Mobile, Namco Networks America Inc., Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH, Polyvox, SNK Corporation, SNK of America, Tengen Inc., WiZ", 
+    "year": "1980", 
+    "title": "Pac-Man"
+  }, 
   "Diplomacy": {
     "platforms": "Windows", 
     "publisher": "1C Company, PAN Vision AB, Paradox Interactive AB, Snowball Studios", 
     "year": "2005", 
     "title": "Diplomacy"
   }, 
-  "Rune Factory: Tides of Destiny": {
-    "platforms": "Wii", 
-    "publisher": "Marvelous Entertainment Inc.", 
-    "year": "2011", 
-    "title": "Rune Factory: Tides of Destiny"
+  "Final Fantasy X": {
+    "platforms": "PlayStation 2", 
+    "publisher": "ak tronic Software & Services GmbH, Sony Computer Entertainment Europe Ltd., Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix, Ltd.", 
+    "year": "2001", 
+    "title": "Final Fantasy X"
+  }, 
+  "Mystery Dungeon: Shiren the Wanderer": {
+    "platforms": "Nintendo DS, SNES, Wii", 
+    "publisher": "SEGA Corporation, SEGA Europe Ltd., SEGA of America, Inc., Chunsoft Co., Ltd.", 
+    "year": "1995", 
+    "title": "Mystery Dungeon: Shiren the Wanderer"
   }, 
   "Dead Rising": {
     "platforms": "Xbox 360", 
     "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., CE Europe Ltd.", 
     "year": "2006", 
     "title": "Dead Rising"
+  }, 
+  "Quake": {
+    "platforms": "Acorn 32-bit, Amiga, DOS, Linux, Macintosh, Nintendo 64, SEGA Saturn, Windows, Windows Mobile, Zeebo", 
+    "publisher": "id Software, Inc., MacSoft, Midway Games, Inc., Pulse Interactive, Inc., PXL computers, R-Comp Interactive, SEGA of America, Inc., Tectoy S.A.", 
+    "year": "1996", 
+    "title": "Quake"
+  }, 
+  "Fable": {
+    "platforms": "DOS, Windows", 
+    "publisher": "Sir-tech Software, Inc., Telstar Electronic Studios Ltd.", 
+    "year": "1996", 
+    "title": "Fable"
+  }, 
+  "Call of Duty": {
+    "platforms": "Macintosh, PlayStation 3, Windows, Xbox 360", 
+    "publisher": "1C Company, Activision Deutschland GmbH, Activision Publishing, Inc., ak tronic Software & Services GmbH, Aspyr Media, Inc., Electronic Arts Ltda.", 
+    "year": "2003", 
+    "title": "Call of Duty"
+  }, 
+  "Dungeon Lords": {
+    "platforms": "Windows", 
+    "publisher": "1C Company, ak tronic Software & Services GmbH, Crimson Cow GmbH, DreamCatcher Europe SA, DreamCatcher Interactive Inc., dtp entertainment AG", 
+    "year": "2005", 
+    "title": "Dungeon Lords"
+  }, 
+  "Final Fantasy II": {
+    "platforms": "NES, Nintendo 3DS, Wii", 
+    "publisher": "Square Co., Ltd., Square Enix Co., Ltd.", 
+    "year": "1988", 
+    "title": "Final Fantasy II"
   }, 
   "Valhalla": {
     "platforms": "Commodore 64, ZX Spectrum", 
@@ -329,17 +653,29 @@
     "year": "1998", 
     "title": "Chocobo's Dungeon 2"
   }, 
-  "Matrix": {
-    "platforms": "Amiga", 
-    "publisher": "Softshop GmbH", 
-    "year": "1992", 
-    "title": "Matrix"
+  "Half-Life": {
+    "platforms": "Linux, Macintosh, Windows", 
+    "publisher": "Sierra On-Line, Inc., Sierra Entertainment, Inc., Valve Corporation", 
+    "year": "1998", 
+    "title": "Half-Life"
   }, 
-  "Sheriff": {
-    "platforms": "Arcade", 
-    "publisher": "Nintendo Co., Ltd.", 
-    "year": "1979", 
-    "title": "Sheriff"
+  "Metroid Prime": {
+    "platforms": "GameCube, Wii", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
+    "year": "2002", 
+    "title": "Metroid Prime"
+  }, 
+  "Wizards & Warriors": {
+    "platforms": "NES", 
+    "publisher": "Acclaim Entertainment, Inc., Jaleco Ltd.", 
+    "year": "1987", 
+    "title": "Wizards & Warriors"
+  }, 
+  "The Legend of Zelda: Ocarina of Time": {
+    "platforms": "Nintendo 64, Wii", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
+    "year": "1998", 
+    "title": "The Legend of Zelda: Ocarina of Time"
   }, 
   "Air Warrior": {
     "platforms": "Amiga, Atari ST, CDTV, DOS", 
@@ -347,23 +683,29 @@
     "year": "1990", 
     "title": "Air Warrior"
   }, 
-  "Z.H.P. Unlosing Ranger VS Darkdeath Evilman": {
-    "platforms": "PSP", 
-    "publisher": "Nippon Ichi Software Inc., NIS America, Inc.", 
-    "year": "2010", 
-    "title": "Z.H.P. Unlosing Ranger VS Darkdeath Evilman"
+  "Battlefield Heroes": {
+    "platforms": "Browser", 
+    "publisher": "Electronic Arts, Inc.", 
+    "year": "2009", 
+    "title": "Battlefield Heroes"
   }, 
-  "Wipeout": {
-    "platforms": "Commodore PET/CBM", 
-    "publisher": "Code Works, The", 
-    "year": "1979", 
-    "title": "Wipeout"
+  "Star Trek": {
+    "platforms": "Commodore 64, Commodore PET/CBM", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1978", 
+    "title": "Star Trek"
   }, 
-  "Satan": {
-    "platforms": "Amiga, Amstrad CPC, Atari ST, Commodore 64, DOS, MSX, PC Booter, ZX Spectrum", 
-    "publisher": "Dinamic Software", 
-    "year": "1989", 
-    "title": "Satan"
+  "Looney Tunes": {
+    "platforms": "Game Boy, Game Boy Color", 
+    "publisher": "Sun Electronics Corp., Sun Corporation, Sun Corporation of America", 
+    "year": "1992", 
+    "title": "Looney Tunes"
+  }, 
+  "Baroque Syndrome": {
+    "platforms": "PlayStation, PlayStation 3, PSP", 
+    "publisher": "Sting, Inc.", 
+    "year": "2000", 
+    "title": "Baroque Syndrome"
   }, 
   "Nahlakh": {
     "platforms": "DOS", 
@@ -371,23 +713,17 @@
     "year": "1994", 
     "title": "Nahlakh"
   }, 
+  "Fez": {
+    "platforms": "Linux, Macintosh, PlayStation 3, PlayStation 4, PS Vita, Windows, Xbox 360", 
+    "publisher": "Microsoft Studios, Polytron Corporation, Trapdoor, Inc.", 
+    "year": "2012", 
+    "title": "Fez"
+  }, 
   "Black & White": {
     "platforms": "Macintosh, Windows", 
     "publisher": "Electronic Arts, Inc., Feral Interactive, Sold Out Sales & Marketing Ltd.", 
     "year": "2001", 
     "title": "Black & White"
-  }, 
-  "Warlock": {
-    "platforms": "Amiga, Apple IIgs, Atari ST, Commodore 64, Macintosh", 
-    "publisher": "ERE Informatique, Three-Sixty Pacific, Inc.", 
-    "year": "1988", 
-    "title": "Warlock"
-  }, 
-  "Final Fantasy Adventure": {
-    "platforms": "Game Boy", 
-    "publisher": "Square Co., Ltd., Square Soft, Inc., Sun Corporation", 
-    "year": "1991", 
-    "title": "Final Fantasy Adventure"
   }, 
   "Wizardry 8": {
     "platforms": "Windows", 
@@ -395,11 +731,29 @@
     "year": "2001", 
     "title": "Wizardry 8"
   }, 
-  "Toad": {
-    "platforms": "DOS", 
+  "Shank": {
+    "platforms": "Linux, Macintosh, PlayStation 3, Windows, Xbox 360", 
+    "publisher": "Electronic Arts, Inc.", 
+    "year": "2010", 
+    "title": "Shank"
+  }, 
+  "Labyrinth": {
+    "platforms": "Commodore PET/CBM", 
     "publisher": "Unknown Publisher(s)", 
-    "year": "1995", 
-    "title": "Toad"
+    "year": "1980", 
+    "title": "Labyrinth"
+  }, 
+  "Baroque Shooting": {
+    "platforms": "Windows", 
+    "publisher": "Sting, Inc.", 
+    "year": "2000", 
+    "title": "Baroque Shooting"
+  }, 
+  "The Binding of Isaac": {
+    "platforms": "Macintosh, Windows", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "2011", 
+    "title": "The Binding of Isaac"
   }, 
   "Dragon Warrior IV": {
     "platforms": "NES", 
@@ -407,11 +761,29 @@
     "year": "1990", 
     "title": "Dragon Warrior IV"
   }, 
-  "Duke Nukem": {
-    "platforms": "DOS, Macintosh, Windows", 
-    "publisher": "Apogee Software, Ltd., Interceptor Entertainment ApS, PC-SIG", 
-    "year": "1991", 
-    "title": "Duke Nukem"
+  "Ring Runner: Flight of the Sages": {
+    "platforms": "Windows", 
+    "publisher": "Triple.B.Titles", 
+    "year": "2013", 
+    "title": "Ring Runner: Flight of the Sages"
+  }, 
+  "Rogue": {
+    "platforms": "Amiga, Amstrad CPC, Android, Atari 8-bit, Atari ST, Commodore 64, DOS, Linux, Macintosh, TRS-80 CoCo, ZX Spectrum", 
+    "publisher": "Artificial Intelligence Design, Epyx, Inc., Mastertronic Ltd., ytmtsoft", 
+    "year": "1983", 
+    "title": "Rogue"
+  }, 
+  "Impulse": {
+    "platforms": "Atari ST", 
+    "publisher": "Budgie UK", 
+    "year": "1989", 
+    "title": "Impulse"
+  }, 
+  "Devil May Cry": {
+    "platforms": "PlayStation 2", 
+    "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., CE Europe Ltd.", 
+    "year": "2001", 
+    "title": "Devil May Cry"
   }, 
   "Phantom Brave": {
     "platforms": "PlayStation 2, Wii", 
@@ -419,17 +791,47 @@
     "year": "2004", 
     "title": "Phantom Brave"
   }, 
-  "Telengard": {
-    "platforms": "Apple II, Atari 8-bit, Commodore 64, Commodore PET/CBM, DOS, FM-7, PC-88, PC-98, TRS-80, Windows", 
-    "publisher": "Kiya Overseas Industry Co., Ltd., The Avalon Hill Game Company", 
+  "Spider-Man": {
+    "platforms": "Atari 2600, Odyssey 2", 
+    "publisher": "Parker Brothers", 
     "year": "1982", 
-    "title": "Telengard"
+    "title": "Spider-Man"
+  }, 
+  "Indiana Jones and the Fate of Atlantis": {
+    "platforms": "Amiga, DOS, FM Towns, Macintosh, Windows", 
+    "publisher": "Lucasfilm Games LLC, LucasArts, Softgold Computerspiele GmbH, Victor Entertainment Inc.", 
+    "year": "1992", 
+    "title": "Indiana Jones and the Fate of Atlantis"
+  }, 
+  "Amulet of Yendor": {
+    "platforms": "DOS", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1985", 
+    "title": "Amulet of Yendor"
+  }, 
+  "DND": {
+    "platforms": "DOS", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1984", 
+    "title": "DND"
+  }, 
+  "New Super Mario Bros.": {
+    "platforms": "Nintendo DS", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
+    "year": "2006", 
+    "title": "New Super Mario Bros."
   }, 
   "Dillon's Rolling Western": {
     "platforms": "Nintendo 3DS", 
     "publisher": "Nintendo of Europe GmbH", 
     "year": "2012", 
     "title": "Dillon's Rolling Western"
+  }, 
+  "Sonic the Hedgehog": {
+    "platforms": "Game Gear, Nintendo 3DS, SEGA Master System, Wii", 
+    "publisher": "SEGA Enterprises Ltd., SEGA Corporation, SEGA of America, Inc., Tec Toy Ind?stria de Brinquedos S.A.", 
+    "year": "1991", 
+    "title": "Sonic the Hedgehog"
   }, 
   "Moraff's World": {
     "platforms": "DOS", 
@@ -449,581 +851,11 @@
     "year": "2008", 
     "title": "Izuna 2: The Unemployed Ninja Returns"
   }, 
-  "Final Fantasy VII": {
-    "platforms": "NES", 
-    "publisher": "Shenzhen Nanjing Technology", 
-    "year": "2005", 
-    "title": "Final Fantasy VII"
-  }, 
-  "Captain Blood": {
-    "platforms": "Amiga, Amstrad CPC, Apple IIgs, Atari ST, Commodore 64, DOS, Macintosh, Thomson TO, ZX Spectrum", 
-    "publisher": "Infogrames Europe SA, Infogrames UK Ltd., ERE Informatique, Exxos, Mindscape, Inc.", 
-    "year": "1988", 
-    "title": "Captain Blood"
-  }, 
-  "Streets of Rage 2": {
-    "platforms": "Game Gear, Genesis, iPhone, PlayStation 3, SEGA Master System, Wii, Windows, Xbox 360", 
-    "publisher": "SEGA Enterprises Ltd., SEGA Europe Ltd., SEGA of America, Inc., Tec Toy Ind?stria de Brinquedos S.A.", 
-    "year": "1993", 
-    "title": "Streets of Rage 2"
-  }, 
-  "Galactic Civilizations": {
+  "Mines of Morgoth": {
     "platforms": "Windows", 
-    "publisher": "1C Company, Empire Interactive Entertainment, Strategy First, Inc., Xplosiv", 
-    "year": "2003", 
-    "title": "Galactic Civilizations"
-  }, 
-  "Castle of the Winds": {
-    "platforms": "Windows 3.x", 
-    "publisher": "Epic MegaGames, Inc., SaadaSoft", 
-    "year": "1993", 
-    "title": "Castle of the Winds"
-  }, 
-  "Spelunky": {
-    "platforms": "PlayStation 3, PS Vita, Windows, Xbox 360", 
-    "publisher": "Microsoft Studios, Mossmouth, LLC", 
-    "year": "2012", 
-    "title": "Spelunky"
-  }, 
-  "Gunstar Heroes": {
-    "platforms": "Game Gear, Genesis, iPhone, PlayStation 3, Wii, Windows, Xbox 360", 
-    "publisher": "SEGA Enterprises Ltd., SEGA Corporation, SEGA of America, Inc.", 
-    "year": "1993", 
-    "title": "Gunstar Heroes"
-  }, 
-  "Xenogears": {
-    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
-    "publisher": "Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix Co., Ltd.", 
-    "year": "1998", 
-    "title": "Xenogears"
-  }, 
-  "Lode Runner": {
-    "platforms": "Windows", 
-    "publisher": "ZX Games", 
-    "year": "2006", 
-    "title": "Lode Runner"
-  }, 
-  "League of Legends": {
-    "platforms": "Windows", 
-    "publisher": "GOA, Riot Games, Inc.", 
+    "publisher": "Unknown Publisher(s)", 
     "year": "2009", 
-    "title": "League of Legends"
-  }, 
-  "Cthulhu Saves the World": {
-    "platforms": "Android, iPad, iPhone, Macintosh, Windows, Xbox 360", 
-    "publisher": "TinkerHouse Games, Zeboyd Games", 
-    "year": "2010", 
-    "title": "Cthulhu Saves the World"
-  }, 
-  "Drakengard": {
-    "platforms": "J2ME", 
-    "publisher": "Square Enix Mobile", 
-    "year": "2004", 
-    "title": "Drakengard"
-  }, 
-  "Forza Motorsport 4": {
-    "platforms": "Xbox 360", 
-    "publisher": "ak tronic Software & Services GmbH, Microsoft Studios", 
-    "year": "2011", 
-    "title": "Forza Motorsport 4"
-  }, 
-  "Weird Worlds: Return to Infinite Space": {
-    "platforms": "Android, iPad, Macintosh, Windows", 
-    "publisher": "Astraware Limited, Shrapnel Games, Inc.", 
-    "year": "2005", 
-    "title": "Weird Worlds: Return to Infinite Space"
-  }, 
-  "Interphase": {
-    "platforms": "Amiga, Atari ST, DOS", 
-    "publisher": "Image Works", 
-    "year": "1989", 
-    "title": "Interphase"
-  }, 
-  "Druid: Daemons of the Mind": {
-    "platforms": "DOS, PlayStation, SEGA Saturn", 
-    "publisher": "KOEI Co., Ltd., Sir-tech Software, Inc., Softkey London, SoftKey Multimedia Inc.", 
-    "year": "1995", 
-    "title": "Druid: Daemons of the Mind"
-  }, 
-  "Phoenix": {
-    "platforms": "Atari ST", 
-    "publisher": "ERE Informatique", 
-    "year": "1987", 
-    "title": "Phoenix"
-  }, 
-  "Kingdom Hearts": {
-    "platforms": "PlayStation 2", 
-    "publisher": "Sony Computer Entertainment Europe Ltd., Square Electronic Arts L.L.C., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "2002", 
-    "title": "Kingdom Hearts"
-  }, 
-  "The Sims": {
-    "platforms": "GameCube, Linux, Macintosh, PlayStation 2, Windows, Xbox", 
-    "publisher": "Aspyr Media, Inc., Electronic Arts, Inc., TransGaming Technologies Inc.", 
-    "year": "2000", 
-    "title": "The Sims"
-  }, 
-  "Oasis": {
-    "platforms": "iPad, J2ME, Windows", 
-    "publisher": "Electrified Games, Inc., Konami Digital Entertainment, Inc., PlayFirst, Inc.", 
-    "year": "2005", 
-    "title": "Oasis"
-  }, 
-  "Dig Dug": {
-    "platforms": "Apple II, Arcade, Atari 2600, Atari 5200, Atari 7800, Atari 8-bit, Casio PV-1000, Commodore 64, FM-7, Game Boy, Game Boy Advance, Intellivision, MSX, NES, Nintendo 3DS, Palm OS, PC-88, PC Booter, Sharp X1, Sord M5, TI-99/4A, VIC-20, Wii, Windows Mobile, Xbox 360", 
-    "publisher": "Atari Corporation, Atarisoft, Casio Computer Co., Ltd., Dempa Shimbunsha, INTV Corp., Atari, Inc., Namco Bandai Games America Inc., Namco Bandai Games Europe SAS, Namco Bandai Games Inc., Namco Limited, Namco Mobile, Namco Networks America Inc., Nintendo Co., Ltd., TAKARA Co., Ltd.", 
-    "year": "1982", 
-    "title": "Dig Dug"
-  }, 
-  "Sleeping Dogs": {
-    "platforms": "PlayStation 3, Windows, Xbox 360", 
-    "publisher": "Square Enix Co., Ltd., Square Enix, Inc.", 
-    "year": "2012", 
-    "title": "Sleeping Dogs"
-  }, 
-  "Independent Games": {
-    "platforms": "Windows", 
-    "publisher": "Moondance Games", 
-    "year": "2005", 
-    "title": "Independent Games"
-  }, 
-  "The Company of Myself": {
-    "platforms": "Browser", 
-    "publisher": "Games Free", 
-    "year": "2009", 
-    "title": "The Company of Myself"
-  }, 
-  "Advance Wars": {
-    "platforms": "Game Boy Advance, Wii U", 
-    "publisher": "Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "2001", 
-    "title": "Advance Wars"
-  }, 
-  "Flappy": {
-    "platforms": "FM-7, MSX, NES, PC-88, Sharp X1, Wii", 
-    "publisher": "dB-SOFT, NetFarm Communications, Inc.", 
-    "year": "1983", 
-    "title": "Flappy"
-  }, 
-  "Secret of Evermore": {
-    "platforms": "SNES", 
-    "publisher": "Nintendo Australia Pty., Ltd., Nintendo of Europe GmbH, Square Soft, Inc.", 
-    "year": "1995", 
-    "title": "Secret of Evermore"
-  }, 
-  "Hive": {
-    "platforms": "Amstrad CPC, ZX Spectrum", 
-    "publisher": "Firebird Software Ltd.", 
-    "year": "1986", 
-    "title": "Hive"
-  }, 
-  "Elysium": {
-    "platforms": "Amiga, DOS", 
-    "publisher": "Magic Bytes", 
-    "year": "1992", 
-    "title": "Elysium"
-  }, 
-  "Parsec": {
-    "platforms": "TI-99/4A", 
-    "publisher": "Texas Instruments Incorporated", 
-    "year": "1982", 
-    "title": "Parsec"
-  }, 
-  "Fortress": {
-    "platforms": "Game Boy Advance", 
-    "publisher": "Majesco Sales, Inc., THQ International Ltd.", 
-    "year": "2001", 
-    "title": "Fortress"
-  }, 
-  "Solaris": {
-    "platforms": "Atari 2600", 
-    "publisher": "Atari Corporation", 
-    "year": "1986", 
-    "title": "Solaris"
-  }, 
-  "Gone Home": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "Fullbright Company LLC, The", 
-    "year": "2013", 
-    "title": "Gone Home"
-  }, 
-  "Air Warrior III": {
-    "platforms": "Windows", 
-    "publisher": "Interactive Magic Ltd., Kesmai Corporation, Midas Interactive Entertainment BV", 
-    "year": "1997", 
-    "title": "Air Warrior III"
-  }, 
-  "Teleglitch: Die More Edition": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "Paradox Interactive AB", 
-    "year": "2013", 
-    "title": "Teleglitch: Die More Edition"
-  }, 
-  "You Only Live Once": {
-    "platforms": "Browser", 
-    "publisher": "Raitendo", 
-    "year": "2009", 
-    "title": "You Only Live Once"
-  }, 
-  "Strange Adventures in Infinite Space": {
-    "platforms": "Macintosh, Palm OS, Windows, Windows Mobile", 
-    "publisher": "Astraware Limited, Cheapass Games, Digital Eel", 
-    "year": "2002", 
-    "title": "Strange Adventures in Infinite Space"
-  }, 
-  "Minesweeper": {
-    "platforms": "Windows, Windows 3.x", 
-    "publisher": "Microsoft Corporation", 
-    "year": "1992", 
-    "title": "Minesweeper"
-  }, 
-  "Burnout": {
-    "platforms": "BREW, J2ME", 
-    "publisher": "EA Mobile", 
-    "year": "2007", 
-    "title": "Burnout"
-  }, 
-  "Breakout": {
-    "platforms": "ZX80, ZX81", 
-    "publisher": "Macronics Systems Ltd.", 
-    "year": "1980", 
-    "title": "Breakout"
-  }, 
-  "La Pucelle: Tactics": {
-    "platforms": "PlayStation 2, PlayStation 3", 
-    "publisher": "KOEI Ltd., Mastiff, LLC, Nippon Ichi Software Inc.", 
-    "year": "2002", 
-    "title": "La Pucelle: Tactics"
-  }, 
-  "Triple Action": {
-    "platforms": "Intellivision", 
-    "publisher": "Mattel Electronics", 
-    "year": "1981", 
-    "title": "Triple Action"
-  }, 
-  "Dead Space": {
-    "platforms": "PlayStation 3, Windows, Xbox 360", 
-    "publisher": "ak tronic Software & Services GmbH, Electronic Arts, Inc., Electronic Arts LLC", 
-    "year": "2008", 
-    "title": "Dead Space"
-  }, 
-  "Death Tank": {
-    "platforms": "Xbox 360", 
-    "publisher": "Microsoft Game Studios", 
-    "year": "2009", 
-    "title": "Death Tank"
-  }, 
-  "Keeper": {
-    "platforms": "PlayStation, SNES", 
-    "publisher": "Datam Polystar, Success Corp.", 
-    "year": "1994", 
-    "title": "Keeper"
-  }, 
-  "Rogue Galaxy": {
-    "platforms": "PlayStation 2", 
-    "publisher": "Sony Computer Entertainment Incorporated", 
-    "year": "2005", 
-    "title": "Rogue Galaxy"
-  }, 
-  "Defender's Quest: Valley of the Forgotten": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "Level Up Labs, LLC ", 
-    "year": "2012", 
-    "title": "Defender's Quest: Valley of the Forgotten"
-  }, 
-  "Eye of the Beholder": {
-    "platforms": "Amiga, DOS, PC-98, SEGA CD, SNES", 
-    "publisher": "Capcom Co., Ltd., Capcom U.S.A., Inc., FCI, Pony Canyon, Inc., SEGA of America, Inc., Strategic Simulations, Inc., U.S. Gold Ltd.", 
-    "year": "1991", 
-    "title": "Eye of the Beholder"
-  }, 
-  "Zork: Grand Inquisitor": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "Activision, Inc., MacPlay, Xplosiv", 
-    "year": "1997", 
-    "title": "Zork: Grand Inquisitor"
-  }, 
-  "Jumanji": {
-    "platforms": "Windows 3.x", 
-    "publisher": "Philips Interactive Media, Inc.", 
-    "year": "1997", 
-    "title": "Jumanji"
-  }, 
-  "Hey You, Pikachu!": {
-    "platforms": "Nintendo 64", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc.", 
-    "year": "1998", 
-    "title": "Hey You, Pikachu!"
-  }, 
-  "Starflight": {
-    "platforms": "Amiga, Atari ST, Commodore 64, DOS, Genesis, Macintosh", 
-    "publisher": "Electronic Arts, Inc.", 
-    "year": "1986", 
-    "title": "Starflight"
-  }, 
-  "Infinity Blade": {
-    "platforms": "iPad, iPhone", 
-    "publisher": "Epic Games, Inc.", 
-    "year": "2010", 
-    "title": "Infinity Blade"
-  }, 
-  "Aliens": {
-    "platforms": "Atari ST", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1987", 
-    "title": "Aliens"
-  }, 
-  "Fable III": {
-    "platforms": "Windows, Xbox 360", 
-    "publisher": "ak tronic Software & Services GmbH, Microsoft Game Studios", 
-    "year": "2010", 
-    "title": "Fable III"
-  }, 
-  "Dragon Warrior III": {
-    "platforms": "Game Boy Color, NES, SNES", 
-    "publisher": "Enix America Corporation, Enix America Inc., Enix Corporation", 
-    "year": "1988", 
-    "title": "Dragon Warrior III"
-  }, 
-  "Driver: San Francisco": {
-    "platforms": "Wii", 
-    "publisher": "Ubisoft, Inc.", 
-    "year": "2011", 
-    "title": "Driver: San Francisco"
-  }, 
-  "Curse": {
-    "platforms": "Genesis", 
-    "publisher": "Micronet Co. Ltd.", 
-    "year": "1989", 
-    "title": "Curse"
-  }, 
-  "Breath of Fire": {
-    "platforms": "Game Boy Advance, SNES", 
-    "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., Square Soft, Inc., Ubi Soft Entertainment Software", 
-    "year": "1993", 
-    "title": "Breath of Fire"
-  }, 
-  "Dragon Warrior": {
-    "platforms": "MSX, NES", 
-    "publisher": "Enix Corporation, Nintendo of America Inc.", 
-    "year": "1986", 
-    "title": "Dragon Warrior"
-  }, 
-  "The Fellowship of the Ring": {
-    "platforms": "Amstrad CPC, Amstrad PCW, Apple II, BBC Micro, Commodore 64, DOS, Macintosh, ZX Spectrum", 
-    "publisher": "Addison-Wesley Publishing Company, Inc., Melbourne House", 
-    "year": "1986", 
-    "title": "The Fellowship of the Ring"
-  }, 
-  "Dungeons & Dragons: Warriors of the Eternal Sun": {
-    "platforms": "Genesis", 
-    "publisher": "SEGA Enterprises Ltd., SEGA of America, Inc.", 
-    "year": "1992", 
-    "title": "Dungeons & Dragons: Warriors of the Eternal Sun"
-  }, 
-  "Welcome": {
-    "platforms": "BBC Micro", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1981", 
-    "title": "Welcome"
-  }, 
-  "Anubis II": {
-    "platforms": "PlayStation 2, Wii, Windows", 
-    "publisher": "Conspiracy Entertainment  Corp., Fairprice Games, Metro3D Europe Ltd., Popcorn Arcade", 
-    "year": "2005", 
-    "title": "Anubis II"
-  }, 
-  "Renaissance": {
-    "platforms": "Amiga, Atari ST", 
-    "publisher": "Impressions", 
-    "year": "1990", 
-    "title": "Renaissance"
-  }, 
-  "Angband": {
-    "platforms": "Acorn 32-bit, Amiga, Android, DOS, GP2X, GP2X Wiz, Linux, Macintosh, Windows, Windows Mobile", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1992", 
-    "title": "Angband"
-  }, 
-  "Ecco the Dolphin": {
-    "platforms": "Game Gear, Genesis, iPhone, Nintendo 3DS, SEGA CD, SEGA Master System, Wii, Windows, Xbox 360", 
-    "publisher": "Nintendo Co., Ltd., SEGA Enterprises Ltd., SEGA Corporation, SEGA Europe Ltd., SEGA of America, Inc., Tec Toy Ind?stria de Brinquedos S.A.", 
-    "year": "1992", 
-    "title": "Ecco the Dolphin"
-  }, 
-  "Another World": {
-    "platforms": "Commodore 64", 
-    "publisher": "CP Verlag", 
-    "year": "1991", 
-    "title": "Another World"
-  }, 
-  "Parasite Eve": {
-    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
-    "publisher": "Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix Co., Ltd.", 
-    "year": "1998", 
-    "title": "Parasite Eve"
-  }, 
-  "Artemis": {
-    "platforms": "PC-98", 
-    "publisher": "Birdy Soft", 
-    "year": "1991", 
-    "title": "Artemis"
-  }, 
-  "American Airlines": {
-    "platforms": "Windows", 
-    "publisher": "World Airline Simulation", 
-    "year": "2000", 
-    "title": "American Airlines"
-  }, 
-  "Suikoden": {
-    "platforms": "PlayStation, PlayStation 3, PSP, SEGA Saturn", 
-    "publisher": "Konami Co., Ltd., Konami Corporation, Konami Deutschland GmbH , Konami of America, Inc., Sony Computer Entertainment America, Inc.", 
-    "year": "1995", 
-    "title": "Suikoden"
-  }, 
-  "Baroque Typing": {
-    "platforms": "Windows", 
-    "publisher": "Sting, Inc.", 
-    "year": "2002", 
-    "title": "Baroque Typing"
-  }, 
-  "Messiah": {
-    "platforms": "Windows", 
-    "publisher": "1C Company, Interplay Entertainment Corp.", 
-    "year": "2000", 
-    "title": "Messiah"
-  }, 
-  "The Legend of Zelda": {
-    "platforms": "Game Boy Advance, NES, Nintendo 3DS, Wii, Wii U", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "1986", 
-    "title": "The Legend of Zelda"
-  }, 
-  "Final Fantasy IV": {
-    "platforms": "Android, iPad, iPhone, Nintendo DS", 
-    "publisher": "Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "2007", 
-    "title": "Final Fantasy IV"
-  }, 
-  "Pac-Man": {
-    "platforms": "Android, Apple II, Arcade, Atari 2600, Atari 5200, Atari 8-bit, BlackBerry, Channel F, Commodore 64, FM-7, Game Boy, Game Boy Advance, Game Gear, Intellivision, iPhone, MSX, Neo Geo Pocket Color, NES, Nintendo 3DS, Palm OS, PC-88, PC-98, PC Booter, Sharp X1, TI-99/4A, VIC-20, Wii, Wii U, Windows Phone, Xbox 360, ZX Spectrum", 
-    "publisher": "AtariAge, Atarisoft, Bug-Byte Software Ltd., Commodore Japan Limited, Dempa Shimbunsha, ?bivision, Atari, Inc., Namco Bandai Games America Inc., Namco Bandai Games Europe SAS, Namco Bandai Games Inc., Namco Europe Limited, Namco Hometek Inc., Namco Limited, Namcot, Namco Mobile, Namco Networks America Inc., Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH, Polyvox, SNK Corporation, SNK of America, Tengen Inc., WiZ", 
-    "year": "1980", 
-    "title": "Pac-Man"
-  }, 
-  "Final Fantasy IX": {
-    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
-    "publisher": "Infogrames Europe SA, Sony Computer Entertainment Incorporated, Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix Co., Ltd., Square Enix, Inc., Square Europe, Ltd., Square Enix, Ltd.", 
-    "year": "2000", 
-    "title": "Final Fantasy IX"
-  }, 
-  "DC Universe Online": {
-    "platforms": "PlayStation 3, Windows", 
-    "publisher": "Sony Computer Entertainment Europe Ltd., Sony Online Entertainment Inc.", 
-    "year": "2011", 
-    "title": "DC Universe Online"
-  }, 
-  "Mirror": {
-    "platforms": "PC-98", 
-    "publisher": "Studio Twinkle", 
-    "year": "1992", 
-    "title": "Mirror"
-  }, 
-  "Chrono Trigger": {
-    "platforms": "Android, iPhone, Nintendo DS, PlayStation, PlayStation 3, PSP, PS Vita, SNES, Wii", 
-    "publisher": "Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Enix Co., Ltd., Square Soft, Inc., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "1995", 
-    "title": "Chrono Trigger"
-  }, 
-  "Final Fantasy II": {
-    "platforms": "Game Boy Advance, PlayStation, PlayStation 3, PSP, PS Vita, SNES, Wii, WonderSwan Color", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH, Square Co., Ltd., Square Enix Co., Ltd., Square Soft, Inc., Square Enix, Inc.", 
-    "year": "1991", 
-    "title": "Final Fantasy II"
-  }, 
-  "AlphaMan": {
-    "platforms": "DOS", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1995", 
-    "title": "AlphaMan"
-  }, 
-  "Defense": {
-    "platforms": "DOS", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1994", 
-    "title": "Defense"
-  }, 
-  "Swords": {
-    "platforms": "Wii", 
-    "publisher": "Majesco Entertainment Company", 
-    "year": "2010", 
-    "title": "Swords"
-  }, 
-  "Tales of Symphonia: Dawn of the New World": {
-    "platforms": "PlayStation 3, Wii", 
-    "publisher": "Namco Bandai Games America Inc., Namco Bandai Games Inc.", 
-    "year": "2008", 
-    "title": "Tales of Symphonia: Dawn of the New World"
-  }, 
-  "Din's Curse": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "Soldak Entertainment, Inc.", 
-    "year": "2010", 
-    "title": "Din's Curse"
-  }, 
-  "Genesis": {
-    "platforms": "Apple II, Atari 8-bit, Commodore 64, PC Booter", 
-    "publisher": "Datasoft, Inc.", 
-    "year": "1983", 
-    "title": "Genesis"
-  }, 
-  "Shank": {
-    "platforms": "Linux, Macintosh, PlayStation 3, Windows, Xbox 360", 
-    "publisher": "Electronic Arts, Inc.", 
-    "year": "2010", 
-    "title": "Shank"
-  }, 
-  "Ankh": {
-    "platforms": "Macintosh, Nintendo DS, Windows", 
-    "publisher": "bhv Software GmbH & Co. KG, Daedalic Entertainment GmbH, Noviy Disk, Runesoft GmbH, Take-Two Interactive Software, Inc., Telltale, Inc., Virtual Programming Ltd., Viva Media, LLC, XIDER", 
-    "year": "2005", 
-    "title": "Ankh"
-  }, 
-  "ActRaiser": {
-    "platforms": "Arcade, SNES, Wii", 
-    "publisher": "Enix America Corporation, Enix Corporation, Nintendo of America Inc., Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "1990", 
-    "title": "ActRaiser"
-  }, 
-  "Super Monkey Ball": {
-    "platforms": "Arcade, GameCube", 
-    "publisher": "SEGA Corporation, SEGA Europe Ltd.", 
-    "year": "2001", 
-    "title": "Super Monkey Ball"
-  }, 
-  "River City Ransom": {
-    "platforms": "Game Boy Advance, NES, Nintendo 3DS, TurboGrafx CD, Wii", 
-    "publisher": "505 GameStreet, 505 Games S.R.L., Aksys Games Localization, Inc., American Technos Inc., Arc System Works Co., Ltd., Atlus U.S.A., Inc., Naxat Soft, Technos Japan Corp., WindySoft Co., Ltd.", 
-    "year": "1989", 
-    "title": "River City Ransom"
-  }, 
-  "Alexander": {
-    "platforms": "Windows", 
-    "publisher": "Ubisoft Entertainment SA, Ubisoft, Inc.", 
-    "year": "2004", 
-    "title": "Alexander"
-  }, 
-  "Metroid": {
-    "platforms": "Arcade, Game Boy Advance, NES, Nintendo 3DS, Wii, Wii U", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "1986", 
-    "title": "Metroid"
-  }, 
-  "Sonic the Hedgehog": {
-    "platforms": "Android, BlackBerry, Game Boy Advance, Genesis, iPad, iPhone, iPod Classic, J2ME, Nintendo 3DS, PlayStation 3, Wii, Windows, Xbox 360", 
-    "publisher": "EA Mobile, Nintendo Co., Ltd., SEGA Enterprises Ltd., SEGA Corporation, SEGA Europe Ltd., SEGA Mobile, SEGA of America, Inc., Sony Computer Entertainment America, Inc., Tec Toy Mobile, Tec Toy Ind?stria de Brinquedos S.A.", 
-    "year": "1991", 
-    "title": "Sonic the Hedgehog"
+    "title": "Mines of Morgoth"
   }, 
   "Terraria": {
     "platforms": "Android, iPad, iPhone, PlayStation 3, PS Vita, Windows, Xbox 360", 
@@ -1031,29 +863,23 @@
     "year": "2011", 
     "title": "Terraria"
   }, 
-  "Legend of Mana": {
-    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
-    "publisher": "Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix Co., Ltd.", 
-    "year": "1999", 
-    "title": "Legend of Mana"
+  "Tales of the Abyss": {
+    "platforms": "Nintendo 3DS, PlayStation 2", 
+    "publisher": "Namco Bandai Games America Inc., Namco Bandai Games Inc.", 
+    "year": "2005", 
+    "title": "Tales of the Abyss"
   }, 
-  "Blind Justice": {
-    "platforms": "DOS", 
-    "publisher": "R.A.W. Entertainment, Inc.", 
-    "year": "1995", 
-    "title": "Blind Justice"
+  "Wolfenstein": {
+    "platforms": "PlayStation 3, Windows, Xbox 360", 
+    "publisher": "1C Company, Activision (UK) Limited, Activision Publishing, Inc.", 
+    "year": "2009", 
+    "title": "Wolfenstein"
   }, 
-  "Amulets & Armor": {
-    "platforms": "DOS", 
-    "publisher": "Exiguus Entertainment, United Software Artists", 
-    "year": "1997", 
-    "title": "Amulets & Armor"
-  }, 
-  "Zombies": {
-    "platforms": "Apple II, Atari 8-bit, Commodore 64, ZX Spectrum", 
-    "publisher": "Ariolasoft UK, BRAM Inc., Electronic Arts, Inc.", 
-    "year": "1983", 
-    "title": "Zombies"
+  "BioShock": {
+    "platforms": "Macintosh, PlayStation 3, Windows, Xbox 360", 
+    "publisher": "1C Company, 2K Games, Inc., ak tronic Software & Services GmbH, Feral Interactive, Spike Co., Ltd., ZOO Corporation", 
+    "year": "2007", 
+    "title": "BioShock"
   }, 
   "Dungeon Defenders": {
     "platforms": "Linux, Macintosh, PlayStation 3, Windows, Xbox 360", 
@@ -1061,47 +887,83 @@
     "year": "2011", 
     "title": "Dungeon Defenders"
   }, 
-  "Game Over": {
-    "platforms": "Amstrad CPC, Commodore 64, MSX, PC Booter, Thomson TO, ZX Spectrum", 
-    "publisher": "Dinamic Software, France Image Logiciels, Imagine Software, Imagine", 
-    "year": "1987", 
-    "title": "Game Over"
+  "Sokoban": {
+    "platforms": "Philips VG 5000", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "2010", 
+    "title": "Sokoban"
   }, 
-  "The Power": {
-    "platforms": "Amiga, Commodore 64, DOS", 
-    "publisher": "Demonware Softwarehaus GmbH", 
-    "year": "1991", 
-    "title": "The Power"
+  "Torchlight": {
+    "platforms": "Linux, Macintosh, Windows, Xbox 360", 
+    "publisher": "ak tronic Software & Services GmbH, JoWooD Productions Software AG, Runic Games, Inc.", 
+    "year": "2009", 
+    "title": "Torchlight"
   }, 
-  "Aquaria": {
-    "platforms": "iPad, Linux, Macintosh, Windows", 
-    "publisher": "1C-SoftClub, Ambrosia Software, Inc., Bit Blot, LLC., Semi Secret Software, Snowball Studios", 
-    "year": "2007", 
-    "title": "Aquaria"
+  "Streets of Rage 2": {
+    "platforms": "Game Gear, Genesis, iPhone, PlayStation 3, SEGA Master System, Wii, Windows, Xbox 360", 
+    "publisher": "SEGA Enterprises Ltd., SEGA Europe Ltd., SEGA of America, Inc., Tec Toy Ind?stria de Brinquedos S.A.", 
+    "year": "1993", 
+    "title": "Streets of Rage 2"
   }, 
-  "Age of Empires II: The Age of Kings": {
-    "platforms": "Macintosh, PlayStation 2, Windows", 
-    "publisher": "Konami Corporation, Konami of Europe GmbH, MacSoft, Microsoft Corporation, Microsoft Game Studios", 
-    "year": "1999", 
-    "title": "Age of Empires II: The Age of Kings"
+  "Castlevania": {
+    "platforms": "Amiga, Arcade, Commodore 64, DOS, Game Boy Advance, J2ME, NES, Nintendo 3DS, Wii, Wii U", 
+    "publisher": "Konami Industry Co. Ltd., Konami Co., Ltd., Konami Digital Entertainment Co., Ltd., Konami Digital Entertainment GmbH, Konami, Inc., Konami Digital Entertainment, Inc., Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
+    "year": "1986", 
+    "title": "Castlevania"
+  }, 
+  "Shank 2": {
+    "platforms": "Linux, Macintosh, PlayStation 3, Windows, Xbox 360", 
+    "publisher": "Electronic Arts, Inc.", 
+    "year": "2012", 
+    "title": "Shank 2"
+  }, 
+  "Galactic Civilizations": {
+    "platforms": "Windows", 
+    "publisher": "1C Company, Empire Interactive Entertainment, Strategy First, Inc., Xplosiv", 
+    "year": "2003", 
+    "title": "Galactic Civilizations"
+  }, 
+  "Rhapsody: A Musical Adventure": {
+    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
+    "publisher": "Atlus U.S.A., Inc., Nippon Ichi Software Inc.", 
+    "year": "1998", 
+    "title": "Rhapsody: A Musical Adventure"
+  }, 
+  "Escape from Hell": {
+    "platforms": "DOS", 
+    "publisher": "Electronic Arts, Inc.", 
+    "year": "1990", 
+    "title": "Escape from Hell"
   }, 
   "Bomberman": {
-    "platforms": "Nintendo DS", 
-    "publisher": "Hudson Soft Company, Ltd., Ubisoft Entertainment SA, Ubisoft, Inc.", 
-    "year": "2005", 
+    "platforms": "Arcade, Game Boy Advance, MSX, NES, Sharp X1, ZX Spectrum", 
+    "publisher": "Al Alamiah, Electrocoin Software, Hudson Soft Company, Ltd., Hudson Soft USA, Inc., Kuma Computers Ltd., Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH, Sinclair Research Ltd.", 
+    "year": "1983", 
     "title": "Bomberman"
   }, 
-  "Mirror's Edge": {
-    "platforms": "PlayStation 3, Windows, Xbox 360", 
-    "publisher": "ak tronic Software & Services GmbH, Electronic Arts, Inc., Electronic Arts LLC", 
-    "year": "2008", 
-    "title": "Mirror's Edge"
+  "Final Fantasy V": {
+    "platforms": "Game Boy Advance, iPad, iPhone, PlayStation, PlayStation 3, PSP, PS Vita, SNES", 
+    "publisher": "Nintendo of America Inc., Nintendo of Europe GmbH, Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
+    "year": "1992", 
+    "title": "Final Fantasy V"
   }, 
-  "Ants": {
-    "platforms": "Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2000", 
-    "title": "Ants"
+  "Telengard": {
+    "platforms": "Apple II, Atari 8-bit, Commodore 64, Commodore PET/CBM, DOS, FM-7, PC-88, PC-98, TRS-80, Windows", 
+    "publisher": "Kiya Overseas Industry Co., Ltd., The Avalon Hill Game Company", 
+    "year": "1982", 
+    "title": "Telengard"
+  }, 
+  "Dungeons of Dredmor": {
+    "platforms": "Linux, Macintosh, Windows", 
+    "publisher": "Gamelamp Games, Inc.", 
+    "year": "2011", 
+    "title": "Dungeons of Dredmor"
+  }, 
+  "Phantasy Star": {
+    "platforms": "Genesis, SEGA Master System, Wii", 
+    "publisher": "SEGA Enterprises Ltd., SEGA of America, Inc., Tec Toy Ind?stria de Brinquedos S.A.", 
+    "year": "1987", 
+    "title": "Phantasy Star"
   }, 
   "Sword of the Stars": {
     "platforms": "Windows", 
@@ -1109,11 +971,41 @@
     "year": "2006", 
     "title": "Sword of the Stars"
   }, 
+  "Lode Runner": {
+    "platforms": "Amstrad CPC, Apple II, Arcade, Atari 8-bit, Atari ST, BBC Micro, Commodore 64, DOS, FM-7, J2ME, Macintosh, MSX, NES, PC-88, PC Booter, SG-1000, Sharp X1, VIC-20, Wii, Windows Phone, WonderSwan, ZX Spectrum", 
+    "publisher": "ASCII Corporation, Atari Corporation, Banpresto Co., Ltd., Br?derbund Software, Inc., Hudson Entertainment, Inc., Hudson Soft Company, Ltd., Irem Corp., Living Mobile GmbH, Microsoft Studios, SEGA Enterprises Ltd., Soft Pro International, Software Projects Ltd., SystemSoft, Tozai, Inc.", 
+    "year": "1983", 
+    "title": "Lode Runner"
+  }, 
+  "Notrium": {
+    "platforms": "Windows", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "2004", 
+    "title": "Notrium"
+  }, 
   "Might and Magic": {
     "platforms": "TurboGrafx CD", 
     "publisher": "NEC Avenue, Ltd.", 
     "year": "1992", 
     "title": "Might and Magic"
+  }, 
+  "Cthulhu Saves the World": {
+    "platforms": "Android, iPad, iPhone, Macintosh, Windows, Xbox 360", 
+    "publisher": "TinkerHouse Games, Zeboyd Games", 
+    "year": "2010", 
+    "title": "Cthulhu Saves the World"
+  }, 
+  "Sonic the Hedgehog 4: Episode I": {
+    "platforms": "Android, BlackBerry, iPad, iPhone, Ouya, PlayStation 3, Wii, Windows, Windows Phone, Xbox 360", 
+    "publisher": "SEGA of America, Inc.", 
+    "year": "2010", 
+    "title": "Sonic the Hedgehog 4: Episode I"
+  }, 
+  "Shanghai": {
+    "platforms": "Amiga, Amstrad CPC, Apple II, Apple IIgs, Atari 8-bit, Atari ST, Commodore 64, DOS, Lynx, Macintosh, MSX, NES, SEGA Master System, TRS-80 CoCo, TurboGrafx-16", 
+    "publisher": "Activision, Inc., Activision, Inc., Atari Corporation, Hudson Soft Company, Ltd., SEGA of America, Inc., Sun Electronics Corp., SystemSoft", 
+    "year": "1986", 
+    "title": "Shanghai"
   }, 
   "Vampire": {
     "platforms": "Amstrad CPC, Commodore 64, MSX, ZX Spectrum", 
@@ -1122,16 +1014,22 @@
     "title": "Vampire"
   }, 
   "Elemental": {
-    "platforms": "Windows", 
-    "publisher": "Oberon Games, Inc., Reflexive Entertainment Inc.", 
-    "year": "2007", 
+    "platforms": "Atari ST", 
+    "publisher": "Lankhor", 
+    "year": "1988", 
     "title": "Elemental"
   }, 
-  "Loco-Motion": {
-    "platforms": "Arcade, Intellivision", 
-    "publisher": "Mattel Electronics, SEGA Enterprises Ltd.", 
-    "year": "1982", 
-    "title": "Loco-Motion"
+  "Weird Worlds: Return to Infinite Space": {
+    "platforms": "Android, iPad, Macintosh, Windows", 
+    "publisher": "Astraware Limited, Shrapnel Games, Inc.", 
+    "year": "2005", 
+    "title": "Weird Worlds: Return to Infinite Space"
+  }, 
+  "Lunar: Dragon Song": {
+    "platforms": "Nintendo DS", 
+    "publisher": "Marvelous Interactive, Inc., Rising Star Games Ltd., Ubisoft, Inc.", 
+    "year": "2005", 
+    "title": "Lunar: Dragon Song"
   }, 
   "Final Fantasy Tactics": {
     "platforms": "iPad, iPhone, PlayStation, PlayStation 3, PSP, PS Vita", 
@@ -1139,17 +1037,89 @@
     "year": "1997", 
     "title": "Final Fantasy Tactics"
   }, 
-  "Final Fantasy III": {
-    "platforms": "Android, Game Boy Advance, PlayStation, PlayStation 3, PSP, PS Vita, SNES, Wii", 
-    "publisher": "Nintendo of America Inc., Nintendo of Europe GmbH, Sony Computer Entertainment America, Inc., Sony Computer Entertainment Europe Ltd., Square Co., Ltd., Square Enix Co., Ltd., Square Soft, Inc., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "1994", 
-    "title": "Final Fantasy III"
+  "Super Mario All-Stars": {
+    "platforms": "SNES", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
+    "year": "1993", 
+    "title": "Super Mario All-Stars"
+  }, 
+  "Infinite Space": {
+    "platforms": "Nintendo DS", 
+    "publisher": "SEGA Corporation, SEGA Europe Ltd., SEGA of America, Inc.", 
+    "year": "2009", 
+    "title": "Infinite Space"
+  }, 
+  "Interphase": {
+    "platforms": "Amiga, Atari ST, DOS", 
+    "publisher": "Image Works", 
+    "year": "1989", 
+    "title": "Interphase"
+  }, 
+  "Duke Nukem Forever": {
+    "platforms": "Macintosh, PlayStation 3, Windows, Xbox 360", 
+    "publisher": "2K Games, Inc., ak tronic Software & Services GmbH, Aspyr Media, Inc.", 
+    "year": "2011", 
+    "title": "Duke Nukem Forever"
+  }, 
+  "Laser Squad": {
+    "platforms": "Amiga, Amstrad CPC, Atari ST, Commodore 64, DOS, MSX, ZX Spectrum", 
+    "publisher": "Blade Software Ltd., Krisalis Software Ltd., MicroIllusions, MicroLeague Multimedia, Inc., Target Games Limited", 
+    "year": "1988", 
+    "title": "Laser Squad"
+  }, 
+  "Druid: Daemons of the Mind": {
+    "platforms": "DOS, PlayStation, SEGA Saturn", 
+    "publisher": "KOEI Co., Ltd., Sir-tech Software, Inc., Softkey London, SoftKey Multimedia Inc.", 
+    "year": "1995", 
+    "title": "Druid: Daemons of the Mind"
+  }, 
+  "Phoenix": {
+    "platforms": "Arcade, Atari 2600", 
+    "publisher": "Amstar Electronics, Atari Corporation, Atari, Inc.", 
+    "year": "1980", 
+    "title": "Phoenix"
+  }, 
+  "Kingdom Hearts": {
+    "platforms": "PlayStation 2", 
+    "publisher": "Sony Computer Entertainment Europe Ltd., Square Electronic Arts L.L.C., Square Enix, Inc., Square Enix, Ltd.", 
+    "year": "2002", 
+    "title": "Kingdom Hearts"
+  }, 
+  "Ni no Kuni: Wrath of the White Witch": {
+    "platforms": "PlayStation 3", 
+    "publisher": "Level-5 Inc., Namco Bandai Games America Inc., Namco Bandai Games Europe SAS", 
+    "year": "2011", 
+    "title": "Ni no Kuni: Wrath of the White Witch"
+  }, 
+  "Dungeon Master": {
+    "platforms": "Amiga, Apple IIgs, Atari ST, DOS, FM Towns, PC-98, Sharp X68000, SNES", 
+    "publisher": "FTL Games, Fujitsu Interactive, JVC Musical Industries Europe Limited, JVC Musical Industries, Inc., Psygnosis Limited, Victor Musical Industries, Inc.", 
+    "year": "1987", 
+    "title": "Dungeon Master"
   }, 
   "Battlestar Galactica": {
-    "platforms": "Windows, Xbox 360", 
-    "publisher": "Sierra Online", 
-    "year": "2007", 
+    "platforms": "PlayStation 2, Xbox", 
+    "publisher": "Universal Interactive Inc.", 
+    "year": "2003", 
     "title": "Battlestar Galactica"
+  }, 
+  "Artifact": {
+    "platforms": "Game Boy Advance", 
+    "publisher": "Foreign Media Games", 
+    "year": "2003", 
+    "title": "Artifact"
+  }, 
+  "The Hobbit": {
+    "platforms": "Amstrad CPC, Apple II, BBC Micro, Commodore 64, Macintosh, MSX, Oric, PC Booter, ZX Spectrum", 
+    "publisher": "Addison-Wesley Publishing Company, Inc., Melbourne House, Melbourne House, Tansoft Ltd.", 
+    "year": "1982", 
+    "title": "The Hobbit"
+  }, 
+  "Oasis": {
+    "platforms": "iPad, J2ME, Windows", 
+    "publisher": "Electrified Games, Inc., Konami Digital Entertainment, Inc., PlayFirst, Inc.", 
+    "year": "2005", 
+    "title": "Oasis"
   }, 
   "Ancient Domains of Mystery": {
     "platforms": "Amiga, DOS, Linux, Windows", 
@@ -1157,17 +1127,35 @@
     "year": "1994", 
     "title": "Ancient Domains of Mystery"
   }, 
-  "Dragon Warrior VII": {
-    "platforms": "PlayStation", 
-    "publisher": "Enix America Inc., Enix Corporation, Square Enix Co., Ltd.", 
-    "year": "2000", 
-    "title": "Dragon Warrior VII"
+  "EverQuest": {
+    "platforms": "Macintosh, Windows", 
+    "publisher": "989 Studios, Sony Online Entertainment Inc.", 
+    "year": "1999", 
+    "title": "EverQuest"
   }, 
-  "Omega": {
-    "platforms": "DOS, Linux, Windows", 
+  "AlphaMan": {
+    "platforms": "DOS", 
     "publisher": "Unknown Publisher(s)", 
-    "year": "1988", 
-    "title": "Omega"
+    "year": "1995", 
+    "title": "AlphaMan"
+  }, 
+  "Desktop Dungeons": {
+    "platforms": "Browser, Macintosh, Windows", 
+    "publisher": "QCF Design", 
+    "year": "2010", 
+    "title": "Desktop Dungeons"
+  }, 
+  "The Company of Myself": {
+    "platforms": "Browser", 
+    "publisher": "Games Free", 
+    "year": "2009", 
+    "title": "The Company of Myself"
+  }, 
+  "Chrono Trigger": {
+    "platforms": "Android, iPhone, Nintendo DS, PlayStation, PlayStation 3, PSP, PS Vita, SNES, Wii", 
+    "publisher": "Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Enix Co., Ltd., Square Soft, Inc., Square Enix, Inc., Square Enix, Ltd.", 
+    "year": "1995", 
+    "title": "Chrono Trigger"
   }, 
   "Pikmin 3": {
     "platforms": "Wii U", 
@@ -1175,29 +1163,65 @@
     "year": "2013", 
     "title": "Pikmin 3"
   }, 
+  "Conway's Game of Life": {
+    "platforms": "DOS, Palm OS, Windows", 
+    "publisher": "Unknown Publisher(s)", 
+    "year": "1996", 
+    "title": "Conway's Game of Life"
+  }, 
   "Shinobi": {
-    "platforms": "Nintendo 3DS", 
-    "publisher": "SEGA of America, Inc.", 
-    "year": "2011", 
+    "platforms": "Amiga, Amstrad CPC, Arcade, Atari ST, Commodore 64, DOS, MSX, NES, SEGA Master System, TurboGrafx-16, Wii, Xbox 360, ZX Spectrum", 
+    "publisher": "Asmik Corporation, Mastertronic Ltd., Sales Curve Ltd., The, SEGA Enterprises Ltd., SEGA Europe Ltd., SEGA of America, Inc., Tengen Inc., Virgin Games, Inc.", 
+    "year": "1987", 
     "title": "Shinobi"
   }, 
-  "Rage": {
-    "platforms": "iPad, iPhone", 
-    "publisher": "Bethesda Softworks LLC", 
-    "year": "2010", 
-    "title": "Rage"
+  "Renegade": {
+    "platforms": "Amiga, Amstrad CPC, Apple II, Arcade, Atari ST, Commodore 64, DOS, NES, Nintendo 3DS, SEGA Master System, Wii, Wii U, ZX Spectrum", 
+    "publisher": "Aksys Games Localization, Inc., Arc System Works Co., Ltd., Hit Squad, The, Imagine, SEGA Enterprises Ltd., Taito America Corporation, Taito Corporation, Technos Japan Corp.", 
+    "year": "1986", 
+    "title": "Renegade"
   }, 
-  "Duke Nukem 3D": {
-    "platforms": "Game.Com", 
-    "publisher": "Tiger Electronics, Inc.", 
-    "year": "1997", 
-    "title": "Duke Nukem 3D"
+  "Mario Paint": {
+    "platforms": "SNES", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Playtronic Industrial Ltda.", 
+    "year": "1992", 
+    "title": "Mario Paint"
+  }, 
+  "Hive": {
+    "platforms": "Amstrad CPC, ZX Spectrum", 
+    "publisher": "Firebird Software Ltd.", 
+    "year": "1986", 
+    "title": "Hive"
+  }, 
+  "Organ Trail": {
+    "platforms": "Browser", 
+    "publisher": "The Men Who Wear Many Hats LLC", 
+    "year": "2011", 
+    "title": "Organ Trail"
+  }, 
+  "Unreal": {
+    "platforms": "Amiga, Atari ST, DOS", 
+    "publisher": "Ubi Soft Entertainment Software", 
+    "year": "1990", 
+    "title": "Unreal"
+  }, 
+  "Berserk": {
+    "platforms": "Dragon 32/64", 
+    "publisher": "Dragon Data Ltd.", 
+    "year": "1982", 
+    "title": "Berserk"
   }, 
   "Drakkhen": {
     "platforms": "Amiga, Atari ST, DOS, FM Towns, PC-98, Sharp X68000, SNES", 
     "publisher": "Infogrames Europe SA, Data East Corporation, Draconian, Epic/Sony Inc., Fujitsu Interactive, Kemco/Seika, Kotobuki System Co., Ltd.", 
     "year": "1989", 
     "title": "Drakkhen"
+  }, 
+  "Izuna: Legend of the Unemployed Ninja": {
+    "platforms": "Nintendo DS", 
+    "publisher": "Atlus U.S.A., Inc.", 
+    "year": "2007", 
+    "title": "Izuna: Legend of the Unemployed Ninja"
   }, 
   "Super Meat Boy": {
     "platforms": "Macintosh, Windows, Xbox 360", 
@@ -1217,17 +1241,11 @@
     "year": "2010", 
     "title": "Minecraft"
   }, 
-  "Shark! Shark!": {
-    "platforms": "Intellivision", 
-    "publisher": "Mattel Electronics", 
-    "year": "1982", 
-    "title": "Shark! Shark!"
-  }, 
-  "Street Fighter": {
-    "platforms": "Amiga, Amstrad CPC, Arcade, Atari ST, Commodore 64, DOS, TurboGrafx CD, Wii, Windows, ZX Spectrum", 
-    "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., Capcom U.S.A., Inc., CE Europe Ltd., GameTap LLC, GO!, Hudson Soft Company, Ltd., Kixx, NEC Home Electronics (U.S.A.) Inc.", 
-    "year": "1987", 
-    "title": "Street Fighter"
+  "The Legend of Zelda": {
+    "platforms": "Game Boy Advance, NES, Nintendo 3DS, Wii, Wii U", 
+    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
+    "year": "1986", 
+    "title": "The Legend of Zelda"
   }, 
   "Moria": {
     "platforms": "Acorn 32-bit, Amiga, Atari ST, DOS, Macintosh", 
@@ -1241,593 +1259,17 @@
     "year": "1983", 
     "title": "Gateway to Apshai"
   }, 
-  "Samurai": {
-    "platforms": "Arcade", 
-    "publisher": "SEGA Enterprises Ltd.", 
-    "year": "1980", 
-    "title": "Samurai"
-  }, 
-  "Twilight Zone": {
-    "platforms": "FM-7, PC-88, PC-98", 
-    "publisher": "Great Co., Ltd.", 
+  "Final Fantasy": {
+    "platforms": "BREW, J2ME, MSX, NES, Nintendo 3DS, Wii", 
+    "publisher": "Micro Cabin Corp., Namco Networks America Inc., Nintendo of America Inc., Square Co., Ltd., Square Enix Co., Ltd., Square Enix, Inc.", 
     "year": "1987", 
-    "title": "Twilight Zone"
+    "title": "Final Fantasy"
   }, 
-  "Phantasy Star": {
-    "platforms": "Genesis, SEGA Master System, Wii", 
-    "publisher": "SEGA Enterprises Ltd., SEGA of America, Inc., Tec Toy Ind?stria de Brinquedos S.A.", 
-    "year": "1987", 
-    "title": "Phantasy Star"
-  }, 
-  "Garfield": {
-    "platforms": "PlayStation 2, Windows", 
-    "publisher": "Hip Games, Hip Interactive Europe", 
-    "year": "2004", 
-    "title": "Garfield"
-  }, 
-  "Edge": {
-    "platforms": "Android, BlackBerry, BREW, iPad, iPhone, J2ME, Linux, Macintosh, Nintendo 3DS, PlayStation 3, PSP, Wii U, Windows", 
-    "publisher": "Connect2Media, Mobigame S.A.R.L., Two Tribes Publishing B.V.", 
-    "year": "2009", 
-    "title": "Edge"
-  }, 
-  "Mahjong": {
-    "platforms": "NES", 
-    "publisher": "Nintendo Co., Ltd.", 
-    "year": "1983", 
-    "title": "Mahjong"
-  }, 
-  "Conquest of Elysium II": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "Shrapnel Games, Inc.", 
-    "year": "1997", 
-    "title": "Conquest of Elysium II"
-  }, 
-  "Shining Force": {
-    "platforms": "Genesis, iPhone, Wii, Windows", 
-    "publisher": "SEGA Enterprises Ltd., SEGA of America, Inc.", 
-    "year": "1992", 
-    "title": "Shining Force"
-  }, 
-  "The Legend of Zelda: A Link Between Worlds": {
-    "platforms": "Nintendo 3DS", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "2013", 
-    "title": "The Legend of Zelda: A Link Between Worlds"
-  }, 
-  "Dark Cloud 2": {
-    "platforms": "PlayStation 2", 
-    "publisher": "Sony Computer Entertainment America, Inc., Sony Computer Entertainment Europe Ltd., Sony Computer Entertainment Incorporated", 
-    "year": "2002", 
-    "title": "Dark Cloud 2"
-  }, 
-  "Arcana": {
-    "platforms": "SNES", 
-    "publisher": "HAL America Inc., HAL Laboratory, Inc.", 
-    "year": "1992", 
-    "title": "Arcana"
-  }, 
-  "Paradise": {
-    "platforms": "Nintendo DS, Windows", 
-    "publisher": "dtp entertainment AG, Easy Computing B.V., Focus Home Interactive SAS, Micro Application, S.A., ND GAMES, Ubisoft, Inc., YooStar Ltd.", 
-    "year": "2006", 
-    "title": "Paradise"
-  }, 
-  "Plasmaworm": {
-    "platforms": "Windows", 
-    "publisher": "Cheapass Games, Digital Eel", 
-    "year": "2001", 
-    "title": "Plasmaworm"
-  }, 
-  "Wolfenstein": {
-    "platforms": "PlayStation 3, Windows, Xbox 360", 
-    "publisher": "1C Company, Activision (UK) Limited, Activision Publishing, Inc.", 
-    "year": "2009", 
-    "title": "Wolfenstein"
-  }, 
-  "Dice de Chocobo": {
-    "platforms": "Game Boy Advance, PlayStation 3, PSP, PS Vita", 
-    "publisher": "Square Enix Co., Ltd., Square Soft, Inc.", 
-    "year": "2002", 
-    "title": "Dice de Chocobo"
-  }, 
-  "Half-Life": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "Sierra On-Line, Inc., Sierra Entertainment, Inc., Valve Corporation", 
-    "year": "1998", 
-    "title": "Half-Life"
-  }, 
-  "The Tower of Druaga": {
-    "platforms": "Arcade, FM-7, Game Boy, GameCube, MSX, NES, Nintendo 3DS, Sharp X1, Wii", 
-    "publisher": "Dempa Shimbunsha, Namco Bandai Games Inc., Namco Limited", 
-    "year": "1984", 
-    "title": "The Tower of Druaga"
-  }, 
-  "Traffic": {
-    "platforms": "Amstrad CPC, Commodore 64, MSX", 
-    "publisher": "Amsoft, Quicksilva Ltd., Sony Corporation", 
-    "year": "1984", 
-    "title": "Traffic"
-  }, 
-  "Mahjongg": {
-    "platforms": "Windows", 
-    "publisher": "Dice Multi Media Europe B.V., Xplorys BV", 
-    "year": "2002", 
-    "title": "Mahjongg"
-  }, 
-  "Ghost in the Shell": {
-    "platforms": "PlayStation", 
-    "publisher": "Sony Computer Entertainment Europe Ltd., Sony Computer Entertainment Incorporated, THQ Inc.", 
-    "year": "1997", 
-    "title": "Ghost in the Shell"
-  }, 
-  "Frigate": {
-    "platforms": "DOS", 
-    "publisher": "MK Systems", 
-    "year": "1988", 
-    "title": "Frigate"
-  }, 
-  "Dragon Quest VIII: Journey of the Cursed King": {
-    "platforms": "PlayStation 2", 
-    "publisher": "Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "2004", 
-    "title": "Dragon Quest VIII: Journey of the Cursed King"
-  }, 
-  "POWDER": {
-    "platforms": "iPhone, Linux, Macintosh, Nintendo DS, PlayStation 3, PSP, Wii, Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2004", 
-    "title": "POWDER"
-  }, 
-  "Alien Breed": {
-    "platforms": "Android, iPad, iPhone, PlayStation 3, PS Vita", 
-    "publisher": "Team17 Software Limited, Team 17 Digital Limited", 
-    "year": "2012", 
-    "title": "Alien Breed"
-  }, 
-  "Secret of Mana": {
-    "platforms": "iPhone, SNES, Wii", 
-    "publisher": "Square Co., Ltd., Square Enix Co., Ltd., Square Soft, Inc., Square Enix, Inc.", 
-    "year": "1993", 
-    "title": "Secret of Mana"
-  }, 
-  "Legends": {
-    "platforms": "Amiga, Amiga CD32, DOS", 
-    "publisher": "Guildhall Leisure Services Ltd.", 
-    "year": "1996", 
-    "title": "Legends"
-  }, 
-  "Top Spin": {
-    "platforms": "PlayStation 2, Windows, Xbox", 
-    "publisher": "2K Games, Inc., 2K Sports, Atari do Brasil Ltda., Atari Europe S.A.S.U., Microsoft Game Studios", 
-    "year": "2003", 
-    "title": "Top Spin"
-  }, 
-  "World of Warcraft": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "Blizzard Entertainment Europe, Blizzard Entertainment Inc., Blizzard Entertainment Korea, Soft Club, The9 Limited, Vivendi Universal Games, Inc.", 
-    "year": "2004", 
-    "title": "World of Warcraft"
-  }, 
-  "Shank 2": {
-    "platforms": "Linux, Macintosh, PlayStation 3, Windows, Xbox 360", 
-    "publisher": "Electronic Arts, Inc.", 
-    "year": "2012", 
-    "title": "Shank 2"
-  }, 
-  "Spewer": {
-    "platforms": "Browser", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2009", 
-    "title": "Spewer"
-  }, 
-  "Blitzkrieg": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "1C Company, ak tronic Software & Services GmbH, CDV Software Entertainment AG, Focus Home Interactive SAS, Runesoft GmbH, Virtual Programming Ltd., Xplosiv", 
-    "year": "2003", 
-    "title": "Blitzkrieg"
-  }, 
-  "Baroque Shooting": {
-    "platforms": "Windows", 
-    "publisher": "Sting, Inc.", 
-    "year": "2000", 
-    "title": "Baroque Shooting"
-  }, 
-  "Spider-Man": {
-    "platforms": "Game Boy Advance", 
-    "publisher": "Activision Publishing, Inc.", 
-    "year": "2002", 
-    "title": "Spider-Man"
-  }, 
-  "Chaos": {
-    "platforms": "iPad, iPhone, ZX Spectrum", 
-    "publisher": "Elite Systems Ltd., Firebird Software Ltd., Games Workshop Ltd.", 
-    "year": "1985", 
-    "title": "Chaos"
-  }, 
-  "Burnout Paradise": {
-    "platforms": "PlayStation 3, Xbox 360", 
-    "publisher": "Electronic Arts, Inc.", 
-    "year": "2008", 
-    "title": "Burnout Paradise"
-  }, 
-  "Voyager": {
-    "platforms": "Windows", 
-    "publisher": "Just Trains", 
-    "year": "2008", 
-    "title": "Voyager"
-  }, 
-  "Risk": {
-    "platforms": "DOS", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1986", 
-    "title": "Risk"
-  }, 
-  "Godzilla": {
-    "platforms": "Game Boy, MSX", 
-    "publisher": "Toho Cinefile-Soft Library, Toho Co.,Ltd.", 
-    "year": "1985", 
-    "title": "Godzilla"
-  }, 
-  "Baldur's Gate": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "Atari UK Ltd., Virgin Interactive Entertainment (Europe) Ltd., Black Isle Studios, Graphsim Entertainment Inc., Interplay Productions, Inc., Interplay Productions Ltd.", 
-    "year": "1998", 
-    "title": "Baldur's Gate"
-  }, 
-  "Monopoly": {
-    "platforms": "iPod Classic", 
-    "publisher": "Apple Inc.", 
-    "year": "2008", 
-    "title": "Monopoly"
-  }, 
-  "Lunar Lander": {
-    "platforms": "Commodore PET/CBM", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1980", 
-    "title": "Lunar Lander"
-  }, 
-  "Dilemma": {
-    "platforms": "Android, Browser, iPad, iPhone", 
-    "publisher": "Choice of Games LLC", 
-    "year": "2011", 
-    "title": "Dilemma"
-  }, 
-  "Final Fantasy V": {
-    "platforms": "Game Boy Advance, iPad, iPhone, PlayStation, PlayStation 3, PSP, PS Vita, SNES", 
-    "publisher": "Nintendo of America Inc., Nintendo of Europe GmbH, Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "1992", 
-    "title": "Final Fantasy V"
-  }, 
-  "Final Fantasy X": {
-    "platforms": "PlayStation 2", 
-    "publisher": "ak tronic Software & Services GmbH, Sony Computer Entertainment Europe Ltd., Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix, Ltd.", 
-    "year": "2001", 
-    "title": "Final Fantasy X"
-  }, 
-  "Rick Dangerous": {
-    "platforms": "Amiga, Amstrad CPC, Atari ST, Commodore 64, DOS, iPhone, ZX Spectrum", 
-    "publisher": "Firebird Software Ltd., Kixx, Magic Team, Microplay Software, MicroStyle", 
-    "year": "1989", 
-    "title": "Rick Dangerous"
-  }, 
-  "Spider": {
-    "platforms": "PlayStation", 
-    "publisher": "BMG Interactive Entertainment", 
-    "year": "1996", 
-    "title": "Spider"
-  }, 
-  "Mystery Dungeon: Shiren the Wanderer": {
-    "platforms": "Nintendo DS, SNES, Wii", 
-    "publisher": "SEGA Corporation, SEGA Europe Ltd., SEGA of America, Inc., Chunsoft Co., Ltd.", 
-    "year": "1995", 
-    "title": "Mystery Dungeon: Shiren the Wanderer"
-  }, 
-  "Call of Duty": {
-    "platforms": "J2ME", 
-    "publisher": "Activision Publishing, Inc., MFORMA Group Inc.", 
-    "year": "2004", 
-    "title": "Call of Duty"
-  }, 
-  "The Last Story": {
-    "platforms": "Wii", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of Europe GmbH, XSEED Games", 
-    "year": "2011", 
-    "title": "The Last Story"
-  }, 
-  "The Legend of Zelda: Ocarina of Time": {
-    "platforms": "Nintendo 64, Wii", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "1998", 
-    "title": "The Legend of Zelda: Ocarina of Time"
-  }, 
-  "Battlefield Heroes": {
-    "platforms": "Browser", 
-    "publisher": "Electronic Arts, Inc.", 
-    "year": "2009", 
-    "title": "Battlefield Heroes"
-  }, 
-  "Hotline Miami": {
-    "platforms": "Linux, Macintosh, PlayStation 3, PS Vita, Windows", 
-    "publisher": "Devolver Digital", 
-    "year": "2012", 
-    "title": "Hotline Miami"
-  }, 
-  "Forest": {
+  "Solaris": {
     "platforms": "Atari 2600", 
-    "publisher": "Tang's Electronic Co., Ltd.", 
-    "year": "1983", 
-    "title": "Forest"
-  }, 
-  "Tunnels of Doom": {
-    "platforms": "TI-99/4A", 
-    "publisher": "Texas Instruments Incorporated", 
-    "year": "1982", 
-    "title": "Tunnels of Doom"
-  }, 
-  "Columns": {
-    "platforms": "Arcade, FM Towns, Game Gear, Genesis, MSX, Nintendo 3DS, PC-88, PC-98, SEGA Master System, SNES, TurboGrafx-16, Wii, Windows", 
-    "publisher": "Media Factory, SEGA Enterprises Ltd., SEGA Corporation, SEGA Europe Ltd., SEGA of America, Inc., SystemSoft, Tec Toy Ind?stria de Brinquedos S.A., Telenet Japan Co., Ltd.", 
-    "year": "1990", 
-    "title": "Columns"
-  }, 
-  "Trials Evolution": {
-    "platforms": "Xbox 360", 
-    "publisher": "Microsoft Studios", 
-    "year": "2012", 
-    "title": "Trials Evolution"
-  }, 
-  "The Binding of Isaac": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2011", 
-    "title": "The Binding of Isaac"
-  }, 
-  "Rogue": {
-    "platforms": "Amiga, Amstrad CPC, Android, Atari 8-bit, Atari ST, Commodore 64, DOS, Linux, Macintosh, TRS-80 CoCo, ZX Spectrum", 
-    "publisher": "Artificial Intelligence Design, Epyx, Inc., Mastertronic Ltd., ytmtsoft", 
-    "year": "1983", 
-    "title": "Rogue"
-  }, 
-  "Tanks": {
-    "platforms": "Atari 8-bit", 
-    "publisher": "Mirage Software", 
-    "year": "1992", 
-    "title": "Tanks"
-  }, 
-  "Tetris": {
-    "platforms": "Dragon 32/64", 
-    "publisher": "Pulser Software", 
-    "year": "1991", 
-    "title": "Tetris"
-  }, 
-  "Escape from Hell": {
-    "platforms": "DOS", 
-    "publisher": "Electronic Arts, Inc.", 
-    "year": "1990", 
-    "title": "Escape from Hell"
-  }, 
-  "Indiana Jones and the Fate of Atlantis": {
-    "platforms": "Amiga, DOS, FM Towns, Macintosh, Windows", 
-    "publisher": "Lucasfilm Games LLC, LucasArts, Softgold Computerspiele GmbH, Victor Entertainment Inc.", 
-    "year": "1992", 
-    "title": "Indiana Jones and the Fate of Atlantis"
-  }, 
-  "Yellow Peril": {
-    "platforms": "Commodore 64", 
-    "publisher": "The Guild Adventure Software", 
-    "year": "1994", 
-    "title": "Yellow Peril"
-  }, 
-  "Tales of the Abyss": {
-    "platforms": "Nintendo 3DS, PlayStation 2", 
-    "publisher": "Namco Bandai Games America Inc., Namco Bandai Games Inc.", 
-    "year": "2005", 
-    "title": "Tales of the Abyss"
-  }, 
-  "BioShock": {
-    "platforms": "J2ME", 
-    "publisher": "IG Fun LLC", 
-    "year": "2009", 
-    "title": "BioShock"
-  }, 
-  "Sokoban": {
-    "platforms": "Philips VG 5000", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2010", 
-    "title": "Sokoban"
-  }, 
-  "Far Cry 3": {
-    "platforms": "PlayStation 3, Windows, Xbox 360", 
-    "publisher": "Ubisoft Entertainment SA", 
-    "year": "2012", 
-    "title": "Far Cry 3"
-  }, 
-  "Torchlight": {
-    "platforms": "Linux, Macintosh, Windows, Xbox 360", 
-    "publisher": "ak tronic Software & Services GmbH, JoWooD Productions Software AG, Runic Games, Inc.", 
-    "year": "2009", 
-    "title": "Torchlight"
-  }, 
-  "The Two Towers": {
-    "platforms": "Browser", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2010", 
-    "title": "The Two Towers"
-  }, 
-  "Lost Odyssey": {
-    "platforms": "Xbox 360", 
-    "publisher": "Microsoft Game Studios", 
-    "year": "2007", 
-    "title": "Lost Odyssey"
-  }, 
-  "Rhapsody: A Musical Adventure": {
-    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
-    "publisher": "Atlus U.S.A., Inc., Nippon Ichi Software Inc.", 
-    "year": "1998", 
-    "title": "Rhapsody: A Musical Adventure"
-  }, 
-  "Valkyria Chronicles": {
-    "platforms": "PlayStation 3", 
-    "publisher": "SEGA Corporation, SEGA Europe Ltd., SEGA of America, Inc.", 
-    "year": "2008", 
-    "title": "Valkyria Chronicles"
-  }, 
-  "Bubble Bobble": {
-    "platforms": "Amiga, Amstrad CPC, Apple II, Arcade, Atari ST, Commodore 64, DOS, FM Towns, Game Boy, Game Boy Color, Game Gear, J2ME, MSX, NES, Nintendo 3DS, SEGA Master System, Sharp X68000, Wii, ZX Spectrum", 
-    "publisher": "Firebird Software Ltd., Hit Squad, The, Kaasa Solution GmbH, Metro3D, Inc., Micomsoft, SEGA Enterprises Ltd., Square Enix Co., Ltd., Taito America Corporation, Taito Corporation, Taito Software Inc., Tec Toy Ind?stria de Brinquedos S.A., Ving Co., Ltd.", 
+    "publisher": "Atari Corporation", 
     "year": "1986", 
-    "title": "Bubble Bobble"
-  }, 
-  "Bloodwych": {
-    "platforms": "Amiga, Amstrad CPC, Atari ST, Commodore 64, DOS, ZX Spectrum", 
-    "publisher": "Image Works, Konami, Inc.", 
-    "year": "1989", 
-    "title": "Bloodwych"
-  }, 
-  "Defender": {
-    "platforms": "Game Boy Advance", 
-    "publisher": "Midway Home Entertainment, Inc.", 
-    "year": "2002", 
-    "title": "Defender"
-  }, 
-  "Sonic the Hedgehog 4: Episode I": {
-    "platforms": "Android, BlackBerry, iPad, iPhone, Ouya, PlayStation 3, Wii, Windows, Windows Phone, Xbox 360", 
-    "publisher": "SEGA of America, Inc.", 
-    "year": "2010", 
-    "title": "Sonic the Hedgehog 4: Episode I"
-  }, 
-  "Donuts": {
-    "platforms": "Commodore PET/CBM", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1980", 
-    "title": "Donuts"
-  }, 
-  "Sword of Mana": {
-    "platforms": "Game Boy Advance", 
-    "publisher": "Nintendo of America Inc., Nintendo of Europe GmbH, Square Enix Co., Ltd.", 
-    "year": "2003", 
-    "title": "Sword of Mana"
-  }, 
-  "Shanghai": {
-    "platforms": "Game Boy", 
-    "publisher": "HAL America Inc., HAL Laboratory, Inc.", 
-    "year": "1989", 
-    "title": "Shanghai"
-  }, 
-  "EverQuest II": {
-    "platforms": "Windows", 
-    "publisher": "Akella, Sony Online Entertainment Inc., Ubisoft Entertainment SA, Ubisoft GmbH", 
-    "year": "2004", 
-    "title": "EverQuest II"
-  }, 
-  "Chess": {
-    "platforms": "Oric", 
-    "publisher": "IJK Software Ltd", 
-    "year": "1984", 
-    "title": "Chess"
-  }, 
-  "Eagles": {
-    "platforms": "Commodore 64", 
-    "publisher": "Hewson Consultants Ltd.", 
-    "year": "1987", 
-    "title": "Eagles"
-  }, 
-  "Duke Nukem Forever": {
-    "platforms": "Macintosh, PlayStation 3, Windows, Xbox 360", 
-    "publisher": "2K Games, Inc., ak tronic Software & Services GmbH, Aspyr Media, Inc.", 
-    "year": "2011", 
-    "title": "Duke Nukem Forever"
-  }, 
-  "Ni no Kuni: Wrath of the White Witch": {
-    "platforms": "PlayStation 3", 
-    "publisher": "Level-5 Inc., Namco Bandai Games America Inc., Namco Bandai Games Europe SAS", 
-    "year": "2011", 
-    "title": "Ni no Kuni: Wrath of the White Witch"
-  }, 
-  "Dungeon Master": {
-    "platforms": "Amiga, Apple IIgs, Atari ST, DOS, FM Towns, PC-98, Sharp X68000, SNES", 
-    "publisher": "FTL Games, Fujitsu Interactive, JVC Musical Industries Europe Limited, JVC Musical Industries, Inc., Psygnosis Limited, Victor Musical Industries, Inc.", 
-    "year": "1987", 
-    "title": "Dungeon Master"
-  }, 
-  "Artifact": {
-    "platforms": "Game Boy Advance", 
-    "publisher": "Foreign Media Games", 
-    "year": "2003", 
-    "title": "Artifact"
-  }, 
-  "Mario Paint": {
-    "platforms": "SNES", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Playtronic Industrial Ltda.", 
-    "year": "1992", 
-    "title": "Mario Paint"
-  }, 
-  "Sword of Fargoal": {
-    "platforms": "Commodore 64, VIC-20", 
-    "publisher": "Epyx, Inc.", 
-    "year": "1982", 
-    "title": "Sword of Fargoal"
-  }, 
-  "Biggles": {
-    "platforms": "Amstrad CPC, Commodore 64, ZX Spectrum", 
-    "publisher": "Mirrorsoft Ltd.", 
-    "year": "1986", 
-    "title": "Biggles"
-  }, 
-  "Renegade": {
-    "platforms": "Amiga, Amstrad CPC, Apple II, Arcade, Atari ST, Commodore 64, DOS, NES, Nintendo 3DS, SEGA Master System, Wii, Wii U, ZX Spectrum", 
-    "publisher": "Aksys Games Localization, Inc., Arc System Works Co., Ltd., Hit Squad, The, Imagine, SEGA Enterprises Ltd., Taito America Corporation, Taito Corporation, Technos Japan Corp.", 
-    "year": "1986", 
-    "title": "Renegade"
-  }, 
-  "Organ Trail": {
-    "platforms": "Browser", 
-    "publisher": "The Men Who Wear Many Hats LLC", 
-    "year": "2011", 
-    "title": "Organ Trail"
-  }, 
-  "Unreal": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "Infogrames Europe SA, GT Interactive Software Corp., MacSoft, Novitas GmbH", 
-    "year": "1998", 
-    "title": "Unreal"
-  }, 
-  "Blinx the Time Sweeper": {
-    "platforms": "Xbox", 
-    "publisher": "Microsoft Game Studios", 
-    "year": "2002", 
-    "title": "Blinx the Time Sweeper"
-  }, 
-  "Ricochet": {
-    "platforms": "Windows", 
-    "publisher": "Valve L.L.C., Valve Corporation", 
-    "year": "2000", 
-    "title": "Ricochet"
-  }, 
-  "Blue Dragon": {
-    "platforms": "Xbox 360", 
-    "publisher": "Microsoft Game Studios", 
-    "year": "2006", 
-    "title": "Blue Dragon"
-  }, 
-  "Flappy Bird": {
-    "platforms": "Amiga", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2014", 
-    "title": "Flappy Bird"
-  }, 
-  "Quiver": {
-    "platforms": "DOS", 
-    "publisher": "ESD Games", 
-    "year": "1997", 
-    "title": "Quiver"
-  }, 
-  "Emperor: Battle for Dune": {
-    "platforms": "Windows", 
-    "publisher": "Electronic Arts, Inc.", 
-    "year": "2001", 
-    "title": "Emperor: Battle for Dune"
+    "title": "Solaris"
   }, 
   "Akira": {
     "platforms": "NES", 
@@ -1835,16 +1277,40 @@
     "year": "1988", 
     "title": "Akira"
   }, 
+  "Twilight Zone": {
+    "platforms": "FM-7, PC-88, PC-98", 
+    "publisher": "Great Co., Ltd.", 
+    "year": "1987", 
+    "title": "Twilight Zone"
+  }, 
   "Mind": {
     "platforms": "Commodore PET/CBM", 
     "publisher": "Code Works, The", 
     "year": "1979", 
     "title": "Mind"
   }, 
+  "Monaco: What's Yours is Mine": {
+    "platforms": "Linux, Macintosh, Windows, Xbox 360", 
+    "publisher": "Majesco Entertainment Company, Pocketwatch Games, LLC", 
+    "year": "2013", 
+    "title": "Monaco: What's Yours is Mine"
+  }, 
+  "Garfield": {
+    "platforms": "PlayStation 2, Windows", 
+    "publisher": "Hip Games, Hip Interactive Europe", 
+    "year": "2004", 
+    "title": "Garfield"
+  }, 
+  "Mahjong": {
+    "platforms": "NES", 
+    "publisher": "Nintendo Co., Ltd.", 
+    "year": "1983", 
+    "title": "Mahjong"
+  }, 
   "Wolfenstein 3D": {
-    "platforms": "3DO, Apple IIgs, Macintosh", 
-    "publisher": "Electronic Arts Victor, Interplay Productions, Inc., MacPlay", 
-    "year": "1995", 
+    "platforms": "Acorn 32-bit, Browser, DOS, Game Boy Advance, iPad, iPhone, Macintosh, PC-98, PlayStation 3, Windows, Xbox 360", 
+    "publisher": "Activision Publishing, Inc., Apogee Software Productions, Apogee Software, Ltd., BAM! Entertainment, Inc., Bethesda Softworks LLC, id Software, Inc., Imagineer Co., Ltd., MacPlay, Powerslave Software", 
+    "year": "1992", 
     "title": "Wolfenstein 3D"
   }, 
   "Solitaire": {
@@ -1852,749 +1318,5 @@
     "publisher": "Unknown Publisher(s)", 
     "year": "1986", 
     "title": "Solitaire"
-  }, 
-  "Night Stalker": {
-    "platforms": "Apple II, Atari 2600, Intellivision, Mattel Aquarius, PC Booter", 
-    "publisher": "Mattel Electronics", 
-    "year": "1982", 
-    "title": "Night Stalker"
-  }, 
-  "Seiken Densetsu": {
-    "platforms": "PC-88", 
-    "publisher": "Compac Inc.", 
-    "year": "1983", 
-    "title": "Seiken Densetsu"
-  }, 
-  "Dungeon Lords MMXII": {
-    "platforms": "Windows", 
-    "publisher": "Nordic Games GmbH", 
-    "year": "2012", 
-    "title": "Dungeon Lords MMXII"
-  }, 
-  "Prodigy": {
-    "platforms": "Amstrad CPC, Commodore 64, ZX Spectrum", 
-    "publisher": "Electric Dreams Software", 
-    "year": "1986", 
-    "title": "Prodigy"
-  }, 
-  "Guild Wars": {
-    "platforms": "Windows", 
-    "publisher": "NCsoft Corporation, NCsoft Europe Ltd., NCsoft - North America, The9 Limited", 
-    "year": "2005", 
-    "title": "Guild Wars"
-  }, 
-  "Astrosmash": {
-    "platforms": "Atari 2600, Intellivision, Mattel Aquarius", 
-    "publisher": "Mattel Electronics", 
-    "year": "1981", 
-    "title": "Astrosmash"
-  }, 
-  "Judith": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2009", 
-    "title": "Judith"
-  }, 
-  "Streets of Rage": {
-    "platforms": "Game Gear, Genesis, iPhone, Nintendo 3DS, SEGA Master System, Wii, Windows", 
-    "publisher": "Nintendo Co., Ltd., SEGA Enterprises Ltd., SEGA Corporation, SEGA of America, Inc.", 
-    "year": "1991", 
-    "title": "Streets of Rage"
-  }, 
-  "Sea Battle": {
-    "platforms": "Atari 2600, Intellivision", 
-    "publisher": "Mattel Electronics, Retrotopia", 
-    "year": "1980", 
-    "title": "Sea Battle"
-  }, 
-  "Mark of the Ninja": {
-    "platforms": "Linux, Macintosh, Windows, Xbox 360", 
-    "publisher": "Microsoft Studios", 
-    "year": "2012", 
-    "title": "Mark of the Ninja"
-  }, 
-  "Knights in the Nightmare": {
-    "platforms": "Nintendo DS, PSP", 
-    "publisher": "Atlus Co., Ltd., Atlus U.S.A., Inc., Sting, Inc.", 
-    "year": "2008", 
-    "title": "Knights in the Nightmare"
-  }, 
-  "Star Control": {
-    "platforms": "Amiga, Amstrad CPC, Commodore 64, DOS, Genesis, ZX Spectrum", 
-    "publisher": "Accolade, Inc., Ballistic", 
-    "year": "1990", 
-    "title": "Star Control"
-  }, 
-  "Super Smash Bros.": {
-    "platforms": "Nintendo 64, Wii", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "1999", 
-    "title": "Super Smash Bros."
-  }, 
-  "Robots": {
-    "platforms": "GameCube, PlayStation 2, Windows, Xbox", 
-    "publisher": "Sierra Entertainment, Inc., Vivendi Universal Games, Inc.", 
-    "year": "2005", 
-    "title": "Robots"
-  }, 
-  "Moraff's Escapade": {
-    "platforms": "Windows", 
-    "publisher": "Moraffware", 
-    "year": "1996", 
-    "title": "Moraff's Escapade"
-  }, 
-  "Hundreds": {
-    "platforms": "Browser", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2010", 
-    "title": "Hundreds"
-  }, 
-  "Hangman": {
-    "platforms": "Commodore PET/CBM", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1980", 
-    "title": "Hangman"
-  }, 
-  "Diablo": {
-    "platforms": "Macintosh, PlayStation, Windows", 
-    "publisher": "Blizzard Entertainment Inc., Electronic Arts, Inc., Electronic Arts Square, K.K., SourceNext Corporation", 
-    "year": "1996", 
-    "title": "Diablo"
-  }, 
-  "Fallout": {
-    "platforms": "DOS, Macintosh, Windows", 
-    "publisher": "1C Company, Best Distribution S.R.L., Dice Multi Media Europe B.V., Interplay Productions, Inc., Interplay Entertainment Corp., MacPlay, Sold Out Sales & Marketing Ltd.", 
-    "year": "1997", 
-    "title": "Fallout"
-  }, 
-  "Coil": {
-    "platforms": "Browser, Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2008", 
-    "title": "Coil"
-  }, 
-  "Alida": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "Game Factory Interactive Ltd., Got Game Entertainment, LLC, magnussoft Deutschland GmbH, Project Three Interactive BV, e.p.i.c. interactive entertainment gmbh, Russobit-M, Scubb.com B.V.", 
-    "year": "2004", 
-    "title": "Alida"
-  }, 
-  "NetHack": {
-    "platforms": "Acorn 32-bit, Amiga, Android, Atari ST, Browser, DOS, GP32, iPhone, Linux, Macintosh, Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1987", 
-    "title": "NetHack"
-  }, 
-  "Change": {
-    "platforms": "Atari 8-bit", 
-    "publisher": "L.K. Avalon", 
-    "year": "1992", 
-    "title": "Change"
-  }, 
-  "Centipede": {
-    "platforms": "Dreamcast, Game.Com, Macintosh, PlayStation, PlayStation 3, PSP, PS Vita, Windows", 
-    "publisher": "Atari Europe S.A.S.U., Hasbro Interactive, Inc., MacSoft, Sony Computer Entertainment America, Inc., Tiger Electronics, Ltd", 
-    "year": "1998", 
-    "title": "Centipede"
-  }, 
-  "Heavy Rain": {
-    "platforms": "PlayStation 3", 
-    "publisher": "Sony Computer Entertainment America, Inc., Sony Computer Entertainment Europe Ltd.", 
-    "year": "2010", 
-    "title": "Heavy Rain"
-  }, 
-  "Dark Cloud": {
-    "platforms": "PlayStation 2", 
-    "publisher": "Sony Computer Entertainment America, Inc., Sony Computer Entertainment Europe Ltd., Sony Computer Entertainment Incorporated", 
-    "year": "2000", 
-    "title": "Dark Cloud"
-  }, 
-  "Sonic Adventure": {
-    "platforms": "Dreamcast, PlayStation 3, Xbox 360", 
-    "publisher": "SEGA Enterprises Ltd., SEGA of America, Inc.", 
-    "year": "1998", 
-    "title": "Sonic Adventure"
-  }, 
-  "Tron": {
-    "platforms": "DOS", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1997", 
-    "title": "Tron"
-  }, 
-  "Glare": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "Team Phobic", 
-    "year": "2013", 
-    "title": "Glare"
-  }, 
-  "Vagrant Story": {
-    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita", 
-    "publisher": "Sony Computer Entertainment America, Inc., Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix Co., Ltd., Square Europe, Ltd., Square Enix, Ltd.", 
-    "year": "2000", 
-    "title": "Vagrant Story"
-  }, 
-  "Dragon Quest Monsters: Joker": {
-    "platforms": "Nintendo DS", 
-    "publisher": "Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "2006", 
-    "title": "Dragon Quest Monsters: Joker"
-  }, 
-  "Torchlight II": {
-    "platforms": "Windows", 
-    "publisher": "Runic Games, Inc.", 
-    "year": "2012", 
-    "title": "Torchlight II"
-  }, 
-  "Dragon Quest Heroes: Rocket Slime": {
-    "platforms": "Nintendo DS", 
-    "publisher": "Square Enix Co., Ltd., Square Enix, Inc.", 
-    "year": "2005", 
-    "title": "Dragon Quest Heroes: Rocket Slime"
-  }, 
-  "Hack": {
-    "platforms": "Amiga, Atari ST, DOS", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1984", 
-    "title": "Hack"
-  }, 
-  "The Last of Us": {
-    "platforms": "PlayStation 3", 
-    "publisher": "Sony Computer Entertainment America, Inc., Sony Computer Entertainment Europe Ltd., Sony Computer Entertainment Incorporated", 
-    "year": "2013", 
-    "title": "The Last of Us"
-  }, 
-  "Operation": {
-    "platforms": "Windows", 
-    "publisher": "Hasbro Interactive, Inc.", 
-    "year": "1998", 
-    "title": "Operation"
-  }, 
-  "Pool of Radiance": {
-    "platforms": "Amiga, Apple II, Commodore 64, DOS, Macintosh, NES, PC-88, PC-98, Sharp X1", 
-    "publisher": "FCI, Pony Canyon, Inc., Strategic Simulations, Inc., U.S. Gold Ltd.", 
-    "year": "1988", 
-    "title": "Pool of Radiance"
-  }, 
-  "Abyss": {
-    "platforms": "FM-7, PC-88", 
-    "publisher": "Humming Bird Soft", 
-    "year": "1984", 
-    "title": "Abyss"
-  }, 
-  "Pixel Dungeon": {
-    "platforms": "Android", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2012", 
-    "title": "Pixel Dungeon"
-  }, 
-  "Major League Baseball": {
-    "platforms": "Atari 2600, Intellivision", 
-    "publisher": "Mattel Electronics", 
-    "year": "1980", 
-    "title": "Major League Baseball"
-  }, 
-  "Between": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2008", 
-    "title": "Between"
-  }, 
-  "Underground": {
-    "platforms": "MSX, ZX Spectrum", 
-    "publisher": "SYSTEM 4 de Espa?a, S.A.", 
-    "year": "1988", 
-    "title": "Underground"
-  }, 
-  "Star Wars: X-Wing": {
-    "platforms": "DOS", 
-    "publisher": "LucasArts Entertainment Company LLC, Softgold Computerspiele GmbH, U.S. Gold Ltd.", 
-    "year": "1993", 
-    "title": "Star Wars: X-Wing"
-  }, 
-  "Berserk": {
-    "platforms": "Dragon 32/64", 
-    "publisher": "Dragon Data Ltd.", 
-    "year": "1982", 
-    "title": "Berserk"
-  }, 
-  "Wolfram": {
-    "platforms": "Windows", 
-    "publisher": "Chain Studios", 
-    "year": "2012", 
-    "title": "Wolfram"
-  }, 
-  "Firefly": {
-    "platforms": "Commodore 64, ZX Spectrum", 
-    "publisher": "Ocean Software Ltd.", 
-    "year": "1988", 
-    "title": "Firefly"
-  }, 
-  "Cube": {
-    "platforms": "PSP", 
-    "publisher": "D3Publisher Inc., D3Publisher of Europe Ltd.", 
-    "year": "2007", 
-    "title": "Cube"
-  }, 
-  "Mario Bros.": {
-    "platforms": "Amstrad CPC, Arcade, Atari 2600, Atari 5200, Atari 7800, Atari 8-bit, Commodore 64, Game Boy Advance, NES, Nintendo 3DS, PC-88, Wii, Wii U, ZX Spectrum", 
-    "publisher": "Atari Corporation, Ocean Software Ltd., Atari, Inc., Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH, Westside Soft House", 
-    "year": "1983", 
-    "title": "Mario Bros."
-  }, 
-  "Disgaea: Hour of Darkness": {
-    "platforms": "PlayStation 2, PlayStation 3", 
-    "publisher": "Atlus U.S.A., Inc., KOEI Co., Ltd., KOEI Ltd., Nippon Ichi Software Inc., Sony Computer Entertainment America, Inc.", 
-    "year": "2003", 
-    "title": "Disgaea: Hour of Darkness"
-  }, 
-  "Arcadia": {
-    "platforms": "Commodore 64, VIC-20, ZX Spectrum", 
-    "publisher": "Imagine Software, Transworld Publishers (Australia) Pty Ltd.", 
-    "year": "1982", 
-    "title": "Arcadia"
-  }, 
-  "Core": {
-    "platforms": "Amstrad CPC, Commodore 64, ZX Spectrum", 
-    "publisher": "A&F Software Ltd.", 
-    "year": "1986", 
-    "title": "Core"
-  }, 
-  "Legends of Kesmai": {
-    "platforms": "Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1997", 
-    "title": "Legends of Kesmai"
-  }, 
-  "Final Fantasy VIII": {
-    "platforms": "PlayStation, PlayStation 3, PSP, PS Vita, Windows", 
-    "publisher": "Eidos Interactive Ltd., Sony Computer Entertainment Europe Ltd., Sony Computer Entertainment Incorporated, Square Co., Ltd., Square Electronic Arts L.L.C., Square Enix Co., Ltd., Square Enix, Ltd.", 
-    "year": "1999", 
-    "title": "Final Fantasy VIII"
-  }, 
-  "White Knight Chronicles": {
-    "platforms": "PlayStation 3", 
-    "publisher": "Sony Computer Entertainment America, Inc., Sony Computer Entertainment Incorporated", 
-    "year": "2008", 
-    "title": "White Knight Chronicles"
-  }, 
-  "Inazuma Eleven": {
-    "platforms": "Nintendo DS", 
-    "publisher": "Level-5 Inc., Nintendo of Europe GmbH", 
-    "year": "2008", 
-    "title": "Inazuma Eleven"
-  }, 
-  "Moraff's Revenge": {
-    "platforms": "DOS", 
-    "publisher": "Moraffware", 
-    "year": "1988", 
-    "title": "Moraff's Revenge"
-  }, 
-  "Dr. Blob's Organism": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "Cheapass Games, Digital Eel", 
-    "year": "2003", 
-    "title": "Dr. Blob's Organism"
-  }, 
-  "Warhammer 40,000: Space Marine": {
-    "platforms": "PlayStation 3, Windows, Xbox 360", 
-    "publisher": "ak tronic Software & Services GmbH, THQ Inc.", 
-    "year": "2011", 
-    "title": "Warhammer 40,000: Space Marine"
-  }, 
-  "Labyrinth": {
-    "platforms": "Apple II, Commodore 64, MSX, PC-88", 
-    "publisher": "Activision, Inc., Pack-In-Video Co., Ltd", 
-    "year": "1986", 
-    "title": "Labyrinth"
-  }, 
-  "Quake": {
-    "platforms": "Acorn 32-bit, Amiga, DOS, Linux, Macintosh, Nintendo 64, SEGA Saturn, Windows, Windows Mobile, Zeebo", 
-    "publisher": "id Software, Inc., MacSoft, Midway Games, Inc., Pulse Interactive, Inc., PXL computers, R-Comp Interactive, SEGA of America, Inc., Tectoy S.A.", 
-    "year": "1996", 
-    "title": "Quake"
-  }, 
-  "Fable": {
-    "platforms": "Xbox, Xbox 360", 
-    "publisher": "Microsoft Game Studios", 
-    "year": "2004", 
-    "title": "Fable"
-  }, 
-  "Pong": {
-    "platforms": "Atari 8-bit", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1992", 
-    "title": "Pong"
-  }, 
-  "Dungeon Lords": {
-    "platforms": "Windows", 
-    "publisher": "1C Company, ak tronic Software & Services GmbH, Crimson Cow GmbH, DreamCatcher Europe SA, DreamCatcher Interactive Inc., dtp entertainment AG", 
-    "year": "2005", 
-    "title": "Dungeon Lords"
-  }, 
-  "Street Fighter II": {
-    "platforms": "Game Boy", 
-    "publisher": "Capcom Co., Ltd., Nintendo of Europe GmbH", 
-    "year": "1995", 
-    "title": "Street Fighter II"
-  }, 
-  "Summoner": {
-    "platforms": "Macintosh, PlayStation 2, Windows", 
-    "publisher": "Graphic Simulations Corporation, Nordic Games Publishing AB, THQ Inc.", 
-    "year": "2000", 
-    "title": "Summoner"
-  }, 
-  "Simon": {
-    "platforms": "Windows 3.x", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1991", 
-    "title": "Simon"
-  }, 
-  "Metroid Prime": {
-    "platforms": "GameCube, Wii", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "2002", 
-    "title": "Metroid Prime"
-  }, 
-  "Wizards & Warriors": {
-    "platforms": "Windows", 
-    "publisher": "Activision Publishing, Inc.", 
-    "year": "2000", 
-    "title": "Wizards & Warriors"
-  }, 
-  "Shenmue": {
-    "platforms": "Dreamcast", 
-    "publisher": "SEGA Enterprises Ltd., SEGA Corporation, SEGA of America, Inc.", 
-    "year": "1999", 
-    "title": "Shenmue"
-  }, 
-  "Myst": {
-    "platforms": "Nintendo 3DS, Nintendo DS, PSP", 
-    "publisher": "Funbox Media Ltd., SEGA Corporation, Midway Games Ltd.", 
-    "year": "2006", 
-    "title": "Myst"
-  }, 
-  "Elf": {
-    "platforms": "Amiga, Atari ST, DOS", 
-    "publisher": "Ocean Software Ltd.", 
-    "year": "1991", 
-    "title": "Elf"
-  }, 
-  "Star Trek": {
-    "platforms": "Commodore 64, Commodore PET/CBM", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1978", 
-    "title": "Star Trek"
-  }, 
-  "Foxy": {
-    "platforms": "MSX, PC-98", 
-    "publisher": "Elf Co., Ltd.", 
-    "year": "1990", 
-    "title": "Foxy"
-  }, 
-  "Baroque Syndrome": {
-    "platforms": "PlayStation, PlayStation 3, PSP", 
-    "publisher": "Sting, Inc.", 
-    "year": "2000", 
-    "title": "Baroque Syndrome"
-  }, 
-  "Fez": {
-    "platforms": "Linux, Macintosh, PlayStation 3, PlayStation 4, PS Vita, Windows, Xbox 360", 
-    "publisher": "Microsoft Studios, Polytron Corporation, Trapdoor, Inc.", 
-    "year": "2012", 
-    "title": "Fez"
-  }, 
-  "SimCity": {
-    "platforms": "Acorn 32-bit, Amiga, Amstrad CPC, Atari ST, BBC Micro, CDTV, Commodore 64, DOS, Electron, FM Towns, Macintosh, Palm OS, PC-98, Sharp X68000, SNES, Wii, Windows, Windows 3.x, ZX Spectrum", 
-    "publisher": "Infogrames Europe SA, Br?derbund Software, Inc., Enfour, Inc., Erbe Software, S.A., Fujitsu Interactive, GameTap LLC, Imagineer Co., Ltd., Krisalis Software Ltd., Maxis Software Inc., Maxis UK Ltd., Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH, Playtronic Industrial Ltda., Superior Software Ltd., Superior Interactive", 
-    "year": "1989", 
-    "title": "SimCity"
-  }, 
-  "Bullet Witch": {
-    "platforms": "Xbox 360", 
-    "publisher": "AQ Interactive, Inc., Atari Europe S.A.S.U., Atari, Inc.", 
-    "year": "2006", 
-    "title": "Bullet Witch"
-  }, 
-  "Ring Runner: Flight of the Sages": {
-    "platforms": "Windows", 
-    "publisher": "Triple.B.Titles", 
-    "year": "2013", 
-    "title": "Ring Runner: Flight of the Sages"
-  }, 
-  "Final Fantasy XIII": {
-    "platforms": "PlayStation 3, Xbox 360", 
-    "publisher": "Sony Computer Entertainment Incorporated, Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "2009", 
-    "title": "Final Fantasy XIII"
-  }, 
-  "Impulse": {
-    "platforms": "Atari ST", 
-    "publisher": "Budgie UK", 
-    "year": "1989", 
-    "title": "Impulse"
-  }, 
-  "Puerto Rico": {
-    "platforms": "Windows", 
-    "publisher": "bhv Software GmbH & Co. KG, Dartmoor Softworks GmbH & Co. KG, Eagle Games, Inc.", 
-    "year": "2005", 
-    "title": "Puerto Rico"
-  }, 
-  "Devil May Cry": {
-    "platforms": "PlayStation 2", 
-    "publisher": "Capcom Co., Ltd., Capcom Entertainment, Inc., CE Europe Ltd.", 
-    "year": "2001", 
-    "title": "Devil May Cry"
-  }, 
-  "Super Mario Land": {
-    "platforms": "Game Boy, Nintendo 3DS", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "1989", 
-    "title": "Super Mario Land"
-  }, 
-  "Champions": {
-    "platforms": "Amiga, Atari ST, Commodore 64", 
-    "publisher": "Krisalis Software Ltd.", 
-    "year": "1992", 
-    "title": "Champions"
-  }, 
-  "Amulet of Yendor": {
-    "platforms": "DOS", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1985", 
-    "title": "Amulet of Yendor"
-  }, 
-  "DND": {
-    "platforms": "DOS", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1984", 
-    "title": "DND"
-  }, 
-  "Spiral Knights": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "SEGA Corporation", 
-    "year": "2011", 
-    "title": "Spiral Knights"
-  }, 
-  "Lost in Blue": {
-    "platforms": "Nintendo DS", 
-    "publisher": "Konami Corporation, Konami of Europe GmbH, Konami Digital Entertainment, Inc.", 
-    "year": "2005", 
-    "title": "Lost in Blue"
-  }, 
-  "Ragnarok": {
-    "platforms": "DOS", 
-    "publisher": "Optyk", 
-    "year": "1993", 
-    "title": "Ragnarok"
-  }, 
-  "Aliens Online": {
-    "platforms": "Windows", 
-    "publisher": "Fox Interactive, Inc.", 
-    "year": "1998", 
-    "title": "Aliens Online"
-  }, 
-  "Leviathan": {
-    "platforms": "Amiga, Amstrad CPC, Atari ST, Commodore 64, ZX Spectrum", 
-    "publisher": "English Software Company, The", 
-    "year": "1987", 
-    "title": "Leviathan"
-  }, 
-  "The Legend of Zelda: The Wind Waker": {
-    "platforms": "GameCube, Wii U", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "2002", 
-    "title": "The Legend of Zelda: The Wind Waker"
-  }, 
-  "Star Wars": {
-    "platforms": "Atari ST", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1990", 
-    "title": "Star Wars"
-  }, 
-  "Castlevania": {
-    "platforms": "Nintendo 64", 
-    "publisher": "Konami Co., Ltd., Konami of America, Inc.", 
-    "year": "1999", 
-    "title": "Castlevania"
-  }, 
-  "Golf": {
-    "platforms": "Atari 2600", 
-    "publisher": "Atari, Inc.", 
-    "year": "1980", 
-    "title": "Golf"
-  }, 
-  "Diablo II": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "Blizzard Entertainment Inc.", 
-    "year": "2000", 
-    "title": "Diablo II"
-  }, 
-  "Elite": {
-    "platforms": "BBC Micro, Electron", 
-    "publisher": "Acornsoft Limited", 
-    "year": "1984", 
-    "title": "Elite"
-  }, 
-  "Streets": {
-    "platforms": "Atari 8-bit", 
-    "publisher": "L.K. Avalon", 
-    "year": "1993", 
-    "title": "Streets"
-  }, 
-  "CatchWord": {
-    "platforms": "Windows", 
-    "publisher": "Discovery Channel Multimedia", 
-    "year": "1997", 
-    "title": "CatchWord"
-  }, 
-  "Gish": {
-    "platforms": "BlackBerry, J2ME, Linux, Macintosh, Windows", 
-    "publisher": "Chronic Logic LLC, GarageGames, Inc., Halycon Media GmbH & Co. KG, MediaHouse Ltd., Pixalon Studios", 
-    "year": "2004", 
-    "title": "Gish"
-  }, 
-  "Dungeons of Dredmor": {
-    "platforms": "Linux, Macintosh, Windows", 
-    "publisher": "Gamelamp Games, Inc.", 
-    "year": "2011", 
-    "title": "Dungeons of Dredmor"
-  }, 
-  "Spirits": {
-    "platforms": "Amstrad CPC, MSX, ZX Spectrum", 
-    "publisher": "Topo Soft", 
-    "year": "1987", 
-    "title": "Spirits"
-  }, 
-  "New Super Mario Bros.": {
-    "platforms": "Nintendo DS", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "2006", 
-    "title": "New Super Mario Bros."
-  }, 
-  "Lunar: Dragon Song": {
-    "platforms": "Nintendo DS", 
-    "publisher": "Marvelous Interactive, Inc., Rising Star Games Ltd., Ubisoft, Inc.", 
-    "year": "2005", 
-    "title": "Lunar: Dragon Song"
-  }, 
-  "Memory": {
-    "platforms": "DOS", 
-    "publisher": "Compulogical, S.A.", 
-    "year": "1988", 
-    "title": "Memory"
-  }, 
-  "Super Mario All-Stars": {
-    "platforms": "SNES", 
-    "publisher": "Nintendo Co., Ltd., Nintendo of America Inc., Nintendo of Europe GmbH", 
-    "year": "1993", 
-    "title": "Super Mario All-Stars"
-  }, 
-  "Infinite Space": {
-    "platforms": "Nintendo DS", 
-    "publisher": "SEGA Corporation, SEGA Europe Ltd., SEGA of America, Inc.", 
-    "year": "2009", 
-    "title": "Infinite Space"
-  }, 
-  "Laser Squad": {
-    "platforms": "Amiga, Amstrad CPC, Atari ST, Commodore 64, DOS, MSX, ZX Spectrum", 
-    "publisher": "Blade Software Ltd., Krisalis Software Ltd., MicroIllusions, MicroLeague Multimedia, Inc., Target Games Limited", 
-    "year": "1988", 
-    "title": "Laser Squad"
-  }, 
-  "Remember Me": {
-    "platforms": "PlayStation 3, Windows, Xbox 360", 
-    "publisher": "Capcom Entertainment, Inc., Capcom U.S.A., Inc., CE Europe Ltd.", 
-    "year": "2013", 
-    "title": "Remember Me"
-  }, 
-  "Avalon": {
-    "platforms": "DOS", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1998", 
-    "title": "Avalon"
-  }, 
-  "Hydorah": {
-    "platforms": "Windows", 
-    "publisher": "Locomalito", 
-    "year": "2010", 
-    "title": "Hydorah"
-  }, 
-  "The Elder Scrolls IV: Oblivion": {
-    "platforms": "J2ME", 
-    "publisher": "Superscape Ltd., Vir2L Studios Inc.", 
-    "year": "2006", 
-    "title": "The Elder Scrolls IV: Oblivion"
-  }, 
-  "Azure Dreams": {
-    "platforms": "Game Boy Color, PlayStation", 
-    "publisher": "Konami Co., Ltd., Konami of Europe GmbH, Konami of America, Inc.", 
-    "year": "1997", 
-    "title": "Azure Dreams"
-  }, 
-  "EverQuest": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "989 Studios, Sony Online Entertainment Inc.", 
-    "year": "1999", 
-    "title": "EverQuest"
-  }, 
-  "Desktop Dungeons": {
-    "platforms": "Macintosh, Windows", 
-    "publisher": "QCF Design", 
-    "year": "2013", 
-    "title": "Desktop Dungeons"
-  }, 
-  "Spelunker": {
-    "platforms": "Arcade, Atari 8-bit, Commodore 64, MSX, NES, Nintendo 3DS, Wii, Wii U", 
-    "publisher": "Br?derbund Software, Inc., Irem Corp., Irem Software Engineering, Inc., Micro Graphic Image, Tozai, Inc.", 
-    "year": "1983", 
-    "title": "Spelunker"
-  }, 
-  "Conway's Game of Life": {
-    "platforms": "DOS, Palm OS, Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "1996", 
-    "title": "Conway's Game of Life"
-  }, 
-  "Mines of Morgoth": {
-    "platforms": "Windows", 
-    "publisher": "Unknown Publisher(s)", 
-    "year": "2009", 
-    "title": "Mines of Morgoth"
-  }, 
-  "Prince of Persia": {
-    "platforms": "Amiga, Amstrad CPC, Apple II, Atari ST, DOS, FM Towns, Game Boy, Game Boy Color, Game Gear, Genesis, iPad, iPhone, Macintosh, NES, Nintendo 3DS, SAM Coup?, SEGA CD, SEGA Master System, Sharp X68000, SNES, TurboGrafx CD, Wii", 
-    "publisher": "Virgin Games, Ltd., Br?derbund Japan Inc., Br?derbund Software, Inc., Domark Group Ltd., Domark Software Ltd., Konami of Europe GmbH, Konami of America, Inc., Masaya, Mindscape International Ltd., Red Orb Entertainment, Revelation Software, Riverhill Soft Inc., Softgold Computerspiele GmbH, Tengen Inc., Ubisoft Entertainment SA, Ubisoft, Inc., Ubisoft KK, Victor Musical Industries, Inc., Virgin Games, Inc.", 
-    "year": "1989", 
-    "title": "Prince of Persia"
-  }, 
-  "Drive": {
-    "platforms": "Windows", 
-    "publisher": "SoundSupport", 
-    "year": "2001", 
-    "title": "Drive"
-  }, 
-  "Izuna: Legend of the Unemployed Ninja": {
-    "platforms": "Nintendo DS", 
-    "publisher": "Atlus U.S.A., Inc.", 
-    "year": "2007", 
-    "title": "Izuna: Legend of the Unemployed Ninja"
-  }, 
-  "Final Fantasy": {
-    "platforms": "Android, iPhone, PSP, Windows Phone", 
-    "publisher": "Square Enix Co., Ltd., Square Enix, Inc., Square Enix, Ltd.", 
-    "year": "2007", 
-    "title": "Final Fantasy"
-  }, 
-  "Half-Life 2": {
-    "platforms": "Macintosh, Windows, Xbox", 
-    "publisher": "Electronic Arts, Inc., Sierra Entertainment, Inc., Valve Corporation, Vivendi Universal Games, Inc.", 
-    "year": "2004", 
-    "title": "Half-Life 2"
-  }, 
-  "Phantasie": {
-    "platforms": "Amiga, Apple II, Atari 8-bit, Atari ST, Commodore 64, DOS, FM-7, MSX, PC-88, PC-98, Sharp X1", 
-    "publisher": "Bothtec, Inc., Star Craft, Strategic Simulations, Inc.", 
-    "year": "1985", 
-    "title": "Phantasie"
   }
 }

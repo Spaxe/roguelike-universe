@@ -27,9 +27,23 @@ with open('list-of-video-games.txt') as f:
 #       )
 
 with open('../generated/games.json', 'w+') as f:
-  output = {game[0].strip(): game._asdict() for game in games}
+  output = {}
+  for game in games:
+    this_dict = game._asdict()
+    this_game = game[0].strip()
+    if this_game in output and this_dict['year'] < output[this_game]['year']:
+      output.update({this_game: this_dict})
+    elif this_game not in output:
+      output.update({this_game: this_dict})
   f.write(json.dumps(output, indent=2))
 
 with open('../generated/games-years.json', 'w+') as f:
-  output = {game[0].strip(): game.year for game in games}
+  output = {}
+  for game in games:
+    this_dict = game._asdict()
+    this_game = game[0].strip()
+    if this_game in output and this_dict['year'] < output[this_game]:
+      output.update({this_game: this_dict['year']})
+    elif this_game not in output:
+      output.update({this_game: this_dict['year']})
   f.write(json.dumps(output, indent=2))

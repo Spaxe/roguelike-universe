@@ -49,7 +49,7 @@ def draw():
     ellipseMode(CORNERS)
 
     pushMatrix()
-    translate(50, 50)
+    translate(75, 50)
     
     draw_roguelike_links()
     draw_timeline()
@@ -69,21 +69,25 @@ def draw_timeline():
         fill(map(_year, begin_time, end_time, 0, 1),
              0.9, 
              0.5, 
-             map(len(games), 1, 250, 0.5, 0.25))
+             map(len(games), 1, 250, 0.5, 0.7))
         x = (_year - begin_time) * line_length
         y = draw_height/2
         rect(x, y, line_length*0.9, 2)
         text(_year, x, y+12)
+    fill(0, 0.9, 0.5, 1)
+    text('ALL GAMES', (screen_width - draw_width) / 2 - 100, draw_height/2+12)
     
     for _year, games in roguelikes_by_year.iteritems():
         fill(map(_year, begin_time, end_time, 0, 1), 
              0.9, 
              0.5, 
-             map(len(games), 1, 5, 0.8, 0.5))
+             map(len(games), 1, 5, 0.5, 0.8))
         x = (_year - begin_time) * line_length
         y = draw_height/2
         rect(x, y, line_length*0.9, 2)
         text(_year, x, y-4)
+    fill(0, 0.9, 0.5, 1)
+    text('ROGUELIKE', (screen_width - draw_width) / 2 - 100, draw_height/2-4)
     
     popStyle()
     popMatrix()
@@ -111,7 +115,7 @@ def draw_roguelike_links():
                 target_year_count = len(roguelikes_by_year[target_year])
                 
                 if source == selection_name:
-                    stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 1)
+                    stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 0.75)
                     strokeWeight(2)
                 else:
                     stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 0.5)
@@ -132,7 +136,7 @@ def draw_roguelike_links():
                 target_year_count = len(all_games_by_year[target_year])
                 
                 if source == selection_name:
-                    stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.7, 1)
+                    stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.7, 0.5)
                     strokeWeight(2)
                 else:
                     stroke(map(_year, begin_time, end_time, 0, 1), 0.9, 0.7, 0.2)
@@ -154,8 +158,8 @@ def draw_roguelike_links():
         source_index = float(roguelikes_by_year[_year][selection_name]['index'])
         source_year_count = len(roguelikes_by_year[_year])
         
-        label_boundaries, label_x = \
-                adjust_label(label_boundaries, source_x + 0.9 * line_length * (source_index / source_year_count))
+        label_x = source_x + 0.9 * line_length * (source_index / source_year_count)
+#         label_boundaries, label_x = adjust_label(label_boundaries, label_x)
         label_y = draw_height/2 - 15
         draw_label(selection_name, 
                 label_x, 
@@ -173,14 +177,14 @@ def draw_roguelike_links():
                 target_index = float(roguelikes_by_year[target_year][target]['index'])
                 target_year_count = len(roguelikes_by_year[target_year])
                 
-                label_boundaries, label_x = \
-                        adjust_label(label_boundaries, target_x + 0.9 * line_length * (source_index / source_year_count))
+                label_x = target_x + 0.9 * line_length * (target_index / target_year_count)
+#                 label_boundaries, label_x = adjust_label(label_boundaries, label_x)
                 label_y = draw_height/2 - 15
                 
                 draw_label(target, 
                         label_x, 
                         label_y, 
-                        (map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 1),
+                        (map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 0.75),
                         direction=-PI/2,
                         size=10,
                         x_offset=0)
@@ -191,14 +195,14 @@ def draw_roguelike_links():
                 target_index = float(all_games_by_year[target_year][target]['index'])
                 target_year_count = len(all_games_by_year[target_year])
                 
-                label_boundaries, label_x = \
-                    adjust_label(label_boundaries, target_x + 0.9 * line_length * (source_index / source_year_count))
+                label_x = target_x + 0.9 * line_length * (target_index / target_year_count)
+#                 label_boundaries, label_x = adjust_label(label_boundaries, label_x)
                 label_y = draw_height/2 + 16
                 
                 draw_label(target, 
                         label_x, 
                         label_y, 
-                        (map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 1),
+                        (map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 0.5),
                         direction=PI/2,
                         size=10,
                         x_offset=0)
@@ -248,14 +252,15 @@ def draw_label(t, x, y, colour, direction=-PI/2, size=12, x_offset=20, bold=Fals
     
 def adjust_label(label_boundaries, x):
     x_right = x + line_length * 0.9
-    offset = 0
-    for left, right in label_boundaries:
-        if left <= x <= right:
-            offset = -line_length * 0.9
-        if left <= x_right <= right:
-            offset = line_length * 0.9
-    x += offset
-    x_right += offset    
+    for i in range(6):
+        offset = 0
+        for left, right in label_boundaries:
+            if left <= x <= right:
+                offset = line_length * 0.9
+            elif left <= x_right <= right:
+                offset = -line_length * 0.9
+        x += offset
+        x_right += offset    
     output = (x, x_right)
     label_boundaries.append(output)
     return label_boundaries, output[0]

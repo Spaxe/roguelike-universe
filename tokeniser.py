@@ -222,6 +222,7 @@ not_games = set([
   'Tactic',
   'Tank',
   'Team',
+  'Teleglitch: Die More Edition',
   'Temporal',
   'That',
   'The Pit',
@@ -309,7 +310,6 @@ def relational_maps(content, game_set, roguelikes, cached=True, use_file=False, 
           n = name.text
           if n in game_set and len(n) > 2 and n not in not_games and n.lower() != game.lower():
             games_in_url.append(n)
-            appeared_games.add(n)
 
         # Also check sentences that contain possible keywords
         key_sentences = []
@@ -331,7 +331,6 @@ def relational_maps(content, game_set, roguelikes, cached=True, use_file=False, 
                 if ' {} '.format(n) in sentence:
                   if len(n) > 2 and n not in not_games and n.lower() != game.lower():
                     games_in_url.append(n)
-                    appeared_games.add(n)
 
         relational_map[game].extend(games_in_url)
         logging.debug('{}/{} {}'.format(i+1, len(info), games_in_url))
@@ -339,6 +338,8 @@ def relational_maps(content, game_set, roguelikes, cached=True, use_file=False, 
     # Return the most common occurences
     counter = collections.Counter(relational_map[game])
     relational_map[game] = [x[0] for x in counter.most_common(5)]
+    for g in relational_map[game]:
+      appeared_games.add(g)
 
   # Make the map 2-way
   for source, target in relational_map.iteritems():
