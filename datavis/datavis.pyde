@@ -19,6 +19,10 @@ screen_height = 850
 draw_width = screen_width - 100.0
 draw_height = screen_height - 100.0
 
+text_number = createFont("LucidaSans", 8)
+text_normal = createFont("Georgia", 10)
+text_bold = createFont("Georgia-Bold", 10)
+
 def setup():
     size(screen_width, screen_height, "processing.core.PGraphicsRetina2D")
 #     size(screen_width, screen_height, P2D)
@@ -37,7 +41,6 @@ def setup():
     begin_time = min(min(all_games_by_year), min(roguelikes_by_year))
     end_time = max(max(all_games_by_year), max(roguelikes_by_year))
     line_length = draw_width / (end_time - begin_time + 1)
-#     pprint.pprint(all_games_by_year, indent=2)
     
 
 def draw():
@@ -48,7 +51,6 @@ def draw():
     pushMatrix()
     translate(50, 50)
     
-    update_selection()      
     draw_roguelike_links()
     draw_timeline()
     
@@ -61,6 +63,7 @@ def draw_timeline():
 
     noStroke()
     textSize(8)
+#     textFont(text_number)
     
     for _year, games in all_games_by_year.iteritems():
         fill(map(_year, begin_time, end_time, 0, 1),
@@ -143,37 +146,119 @@ def draw_roguelike_links():
                     draw_height/2 + abs(xs[1] - xs[0])/2.0 + 16,
                     0, PI)
         
+    # Draw labels
+    if selection_name:
+        label_boundaries = []
+        _year = int(roguelike_data[selection_name]['First'])
+        source_x = (_year - begin_time) * line_length
+        source_index = float(roguelikes_by_year[_year][selection_name]['index'])
+        source_year_count = len(roguelikes_by_year[_year])
         
-        if source == selection_name:
-            pushMatrix()
-            pushStyle()
-            noStroke()
-            fill(map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 1)
-            label_x = source_x + 0.9 * line_length * (source_index / source_year_count)
-            label_y = draw_height/2 - 15
-            translate(label_x, label_y)
-            rotate(-PI/2)
-            label_length = textWidth(source)
-            rect(0,
-                 0, 
-                 label_length + 10, 
-                 line_length * 0.9, 
-                 2, 2, 2, 2)
-            fill(1)
-            textSize(12)
-            text(source, 5, 14)
-            popStyle()
-            popMatrix()        
+        label_boundaries, label_x = \
+                adjust_label(label_boundaries, source_x + 0.9 * line_length * (source_index / source_year_count))
+        label_y = draw_height/2 - 15
+        draw_label(selection_name, 
+                label_x, 
+                label_y, 
+                (map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 1),
+                -PI/2,
+                10,
+                x_offset=0,
+                bold=True)
+        
+        for target in set(relational_map_data[selection_name]):
+            if target in roguelike_data:
+                target_year = int(roguelike_data[target]['First'])
+                target_x = (target_year -  begin_time) * line_length
+                target_index = float(roguelikes_by_year[target_year][target]['index'])
+                target_year_count = len(roguelikes_by_year[target_year])
+                
+                label_boundaries, label_x = \
+                        adjust_label(label_boundaries, target_x + 0.9 * line_length * (source_index / source_year_count))
+                label_y = draw_height/2 - 15
+                
+                draw_label(target, 
+                        label_x, 
+                        label_y, 
+                        (map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 1),
+                        direction=-PI/2,
+                        size=10,
+                        x_offset=0)
+                
+            elif target in games_data:                    
+                target_year = int(games_data[target]['year'])
+                target_x = (target_year -  begin_time) * line_length
+                target_index = float(all_games_by_year[target_year][target]['index'])
+                target_year_count = len(all_games_by_year[target_year])
+                
+                label_boundaries, label_x = \
+                    adjust_label(label_boundaries, target_x + 0.9 * line_length * (source_index / source_year_count))
+                label_y = draw_height/2 + 16
+                
+                draw_label(target, 
+                        label_x, 
+                        label_y, 
+                        (map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 1),
+                        direction=PI/2,
+                        size=10,
+                        x_offset=0)
+                
+#         # Debugging label shifting
+#         for left, right in label_boundaries:
+#             stroke(0, 1, 1, 1)
+#             line(left - line_length * 0.9 / 2, 0, left - line_length * 0.9 / 2, draw_height)
+#             line(right - line_length * 0.9 / 2, 0, right - line_length * 0.9 / 2, draw_height)
         
     popStyle()
     popMatrix()
     
 
-def update_selection():
+def mouseMoved():
     global selection_name
     i = int(min(mouseX / float(screen_width), 0.9999) * len(roguelikes_list))
     name = roguelikes_list[i]
     selection_name = name
+    
+    
+def draw_label(t, x, y, colour, direction=-PI/2, size=12, x_offset=20, bold=False):
+    pushMatrix()
+    pushStyle()
+    
+    noStroke()
+    fill(*colour)
+    if bold:
+        textFont(text_bold)
+    else:
+        textFont(text_normal)
+    textSize(size)
+    label_length = textWidth(t)
+    translate(x, y)
+    rotate(direction)
+    rect(x_offset,
+        -line_length*0.9 / 2, 
+        label_length + 10, 
+        line_length * 0.9, 
+        2, 2, 2, 2)
+    fill(1)
+    text(t, x_offset + 5, -line_length*0.9 / 2 + 14)
+    
+    popStyle()
+    popMatrix()     
+    
+    
+def adjust_label(label_boundaries, x):
+    x_right = x + line_length * 0.9
+    offset = 0
+    for left, right in label_boundaries:
+        if left <= x <= right:
+            offset = -line_length * 0.9
+        if left <= x_right <= right:
+            offset = line_length * 0.9
+    x += offset
+    x_right += offset    
+    output = (x, x_right)
+    label_boundaries.append(output)
+    return label_boundaries, output[0]
     
             
 def compile_games_by_year(games):
