@@ -1,65 +1,233 @@
 {
+  "Popup Dungeon": [
+    "Final Fantasy Tactics", 
+    "Ring Runner: Flight of the Sages", 
+    "Final Fantasy", 
+    "Jumanji", 
+    "Call of Duty"
+  ], 
+  "Falcon's Eye": [
+    "Diablo", 
+    "Dungeon Master", 
+    "Angband", 
+    "NetHack", 
+    "Eye of the Beholder"
+  ], 
+  "Island of Kesmai": [
+    "Legends of Kesmai", 
+    "Air Warrior", 
+    "Rogue", 
+    "Renegade", 
+    "EverQuest"
+  ], 
   "Torneko no Daiboken: Fushigi no Dungeon": [
     "Star Wars", 
-    "Final Fantasy", 
+    "Dragon Quest Monsters: Joker", 
     "Dragon Warrior IV", 
     "Breath of Fire", 
-    "Dragon Quest Monsters: Joker"
+    "Final Fantasy"
+  ], 
+  "Super Lotsa Added Stuff Hack - Extended Magic": [
+    "Amulet of Yendor", 
+    "Angband", 
+    "Rogue", 
+    "NetHack", 
+    "Vampire"
+  ], 
+  "Pokémon Mystery Dungeon: Explorers of Sky": [
+    "Hey You, Pikachu!"
   ], 
   "Dark Cloud 2": [
-    "Forza Motorsport 4", 
-    "Trials Evolution", 
+    "Ni no Kuni: Wrath of the White Witch", 
+    "Rogue Galaxy", 
     "Dark Cloud", 
     "The Legend of Zelda: Ocarina of Time", 
-    "Vagrant Story"
+    "White Knight Chronicles"
+  ], 
+  "Linley's Dungeon Crawl": [
+    "Battlefield Heroes", 
+    "NetHack", 
+    "Hack"
+  ], 
+  "Z.H.P. Unlosing Ranger VS Darkdeath Evilman": [
+    "Disgaea: Hour of Darkness", 
+    "Phantom Brave", 
+    "Final Fantasy", 
+    "Rhapsody: A Musical Adventure", 
+    "Dead Rising"
   ], 
   "Teleglitch": [
     "Teleglitch: Die More Edition", 
     "Hotline Miami", 
-    "Nox", 
     "Monaco: What's Yours is Mine", 
+    "Quake", 
     "Akira"
   ], 
+  "Brogue": [], 
+  "Weird Worlds: Return to Infinite Space": [
+    "Gish", 
+    "Oasis", 
+    "Star Control", 
+    "Infinite Space", 
+    "Strange Adventures in Infinite Space"
+  ], 
+  "Advanced Dungeons & Dragons: Cloudy Mountain": [
+    "Thunder Castle", 
+    "Interphase", 
+    "Arcadia", 
+    "Night Stalker", 
+    "Pac-Man"
+  ], 
+  "Dungeon Hack": [
+    "Pool of Radiance", 
+    "Might and Magic", 
+    "Hack", 
+    "Rogue", 
+    "Eye of the Beholder"
+  ], 
   "Dungeon of Doom": [
+    "Might and Magic", 
     "Minesweeper", 
     "Centipede", 
-    "Breakout", 
     "Robots", 
-    "Lunar Lander"
+    "Risk"
+  ], 
+  "Dungeon Crawl Stone Soup": [
+    "Gish", 
+    "Desktop Dungeons", 
+    "Final Fantasy VII", 
+    "Psychosomnium", 
+    "Captain Blood"
+  ], 
+  "Doom, the Roguelike": [
+    "Alien Breed", 
+    "Aliens", 
+    "Castlevania", 
+    "Diablo", 
+    "Berserk"
+  ], 
+  "Beneath Apple Manor": [
+    "Torchlight", 
+    "Telengard", 
+    "Rogue", 
+    "NetHack", 
+    "Avalon"
+  ], 
+  "Mystery Dungeon: Shiren the Wanderer": [
+    "Kingdom Hearts", 
+    "Death Tank", 
+    "Rogue", 
+    "Metroid Prime", 
+    "Final Fantasy"
+  ], 
+  "Lost Labyrinth": [
+    "Sonic the Hedgehog 4: Episode I", 
+    "Castle of the Winds", 
+    "Sonic the Hedgehog"
   ], 
   "Larn": [
     "Ancient Domains of Mystery", 
     "Solaris", 
-    "NetHack", 
-    "Hack"
+    "NetHack"
+  ], 
+  "Tower of Guns": [
+    "Half-Life", 
+    "Looney Tunes", 
+    "Quake"
   ], 
   "UnReal World": [
     "Wolfenstein 3D", 
-    "Indiana Jones and the Fate of Atlantis"
+    "Indiana Jones and the Fate of Atlantis", 
+    "Wolfenstein"
+  ], 
+  "Dragon Quest: Shonen Yangus to Fushigi no Dungeon": [
+    "Star Wars", 
+    "Dragon Quest VIII: Journey of the Cursed King", 
+    "Dragon Quest Monsters: Joker", 
+    "Dragon Warrior IV", 
+    "Final Fantasy"
+  ], 
+  "Wizards Encounters": [
+    "Dungeon Lords", 
+    "Wizardry 8", 
+    "Wizards & Warriors", 
+    "Dungeon Lords MMXII"
+  ], 
+  "Rogue": [
+    "Colossal Cave Adventure", 
+    "Diablo", 
+    "Angband", 
+    "NetHack", 
+    "Hack"
   ], 
   "Rogue Legacy": [
-    "Moria", 
+    "Fez", 
     "The Binding of Isaac", 
     "Demon's Souls", 
     "Dark Souls", 
     "Spelunky"
   ], 
-  "Pokémon Mystery Dungeon: Red Rescue Team": [
-    "Golem", 
+  "The Binding of Isaac": [
+    "The Legend of Zelda", 
+    "Super Meat Boy", 
+    "Spewer", 
+    "Bomberman", 
+    "Spelunky"
+  ], 
+  "Angband": [
+    "Moria", 
+    "Rogue", 
+    "NetHack", 
+    "Hack"
+  ], 
+  "Risk of Rain": [
+    "Alone in the Dark", 
+    "The Binding of Isaac", 
+    "Dark Souls", 
+    "Spelunky"
+  ], 
+  "Ancient Domains of Mystery": [
+    "Conway's Game of Life", 
+    "Desktop Dungeons", 
+    "Angband", 
+    "UnReal World", 
+    "Ultima"
+  ], 
+  "Smart Kobold": [
+    "Arcana", 
+    "Light", 
+    "Dungeons of Dredmor", 
+    "You Only Live Once", 
+    "Duke Nukem Forever"
+  ], 
+  "Pokémon Mystery Dungeon: Blue Rescue Team": [
+    "Hey You, Pikachu!", 
     "New Super Mario Bros.", 
     "Mario Paint", 
-    "Conquest", 
-    "Pinball"
+    "Black & White"
   ], 
-  "100 Rogues": [
-    "Mirror's Edge", 
-    "Angband", 
+  "Sword of Fargoal": [
+    "Spelunky", 
     "Rogue", 
-    "Advance Wars", 
-    "Top Spin"
+    "NetHack", 
+    "Telengard"
+  ], 
+  "Tales (or Troubles) of Middle Earth": [
+    "Abyss", 
+    "Angband", 
+    "Final Fantasy", 
+    "The Hobbit", 
+    "Tales of the Abyss"
+  ], 
+  "Chocobo no Fushigina Dungeon": [
+    "Final Fantasy Tactics", 
+    "Chocobo's Dungeon 2", 
+    "Final Fantasy", 
+    "Final Fantasy II", 
+    "Final Fantasy VII"
   ], 
   "Sword of the Stars: The Pit": [
-    "Dungeons of Dredmor", 
+    "Dead Space", 
     "Chrono Trigger", 
     "Galactic Civilizations", 
     "FTL: Faster Than Light", 
@@ -72,26 +240,97 @@
     "Diablo", 
     "NetHack"
   ], 
-  "NetHack": [
-    "Moria", 
-    "Angband", 
-    "Rogue", 
-    "Elf", 
-    "Hack"
+  "Nightmare of Druaga: Fushigino Dungeon": [
+    "The Tower of Druaga", 
+    "Ratchet & Clank: Up Your Arsenal"
+  ], 
+  "FTL: Faster Than Light": [
+    "Firefly", 
+    "Star Wars", 
+    "Battlestar Galactica", 
+    "Laser Squad", 
+    "Star Trek"
   ], 
   "The Guided Fate Paradox": [
-    "Populous", 
     "Final Fantasy X", 
+    "Final Fantasy", 
     "Z.H.P. Unlosing Ranger VS Darkdeath Evilman", 
-    "Xenogears", 
-    "ActRaiser"
+    "Artifact", 
+    "Twilight Zone"
+  ], 
+  "DUNGEON": [
+    "Torchlight", 
+    "Star Wars", 
+    "Lode Runner", 
+    "Pac-Man", 
+    "Dungeon Defenders"
+  ], 
+  "Mission Thunderbolt": [
+    "Rogue", 
+    "Larn", 
+    "Hack"
+  ], 
+  "Moraff's World": [
+    "Mahjongg", 
+    "Shanghai", 
+    "Mahjong", 
+    "Solitaire", 
+    "Moraff's Revenge"
+  ], 
+  "Moria": [
+    "Angband", 
+    "Rogue", 
+    "Diablo", 
+    "American Airlines", 
+    "Mines of Morgoth"
+  ], 
+  "Scarab of Ra": [
+    "Might and Magic", 
+    "Minesweeper", 
+    "Centipede", 
+    "Robots", 
+    "Risk"
   ], 
   "TowerClimb": [
-    "Sheep", 
     "Out of This World", 
-    "VVVVVV", 
-    "Bullseye", 
+    "Another World", 
     "Spelunky"
+  ], 
+  "Izuna 2: The Unemployed Ninja Returns": [
+    "Izuna: Legend of the Unemployed Ninja"
+  ], 
+  "Chocobo's Dungeon 2": [
+    "Kingdom Hearts", 
+    "Parasite Eve", 
+    "The Last Story", 
+    "Final Fantasy", 
+    "Final Fantasy V"
+  ], 
+  "Azure Dreams": [
+    "Crusader Kings", 
+    "The Walking Dead", 
+    "Fallout", 
+    "Elemental", 
+    "Fable"
+  ], 
+  "Fushigi no Dungeon: Fūrai no Shiren 2: Oni Shūrai! Siren-jō!": [
+    "Mystery Dungeon: Shiren the Wanderer", 
+    "Rogue", 
+    "Final Fantasy"
+  ], 
+  "Don't Starve": [
+    "The Binding of Isaac", 
+    "Mark of the Ninja", 
+    "Minecraft", 
+    "Shank", 
+    "Shank 2"
+  ], 
+  "100 Rogues": [
+    "Desktop Dungeons", 
+    "Angband", 
+    "Rogue", 
+    "Advance Wars", 
+    "Hive"
   ], 
   "Infinite Space III: Sea of Stars": [
     "Rogue", 
@@ -101,151 +340,43 @@
     "Weird Worlds: Return to Infinite Space"
   ], 
   "Dark Cloud": [
-    "Shenmue", 
     "Ni no Kuni: Wrath of the White Witch", 
-    "Vagrant Story", 
+    "Rogue Galaxy", 
+    "Dark Cloud 2", 
     "The Legend of Zelda: Ocarina of Time", 
-    "Dark Cloud 2"
+    "White Knight Chronicles"
   ], 
-  "Baroque": [
-    "Baroque Shooting", 
-    "Knights in the Nightmare", 
-    "Traffic", 
-    "Messiah", 
-    "Baroque Syndrome"
-  ], 
-  "World of Arch": [
-    "Aftermath", 
-    "War on Terror", 
-    "Forsaken", 
-    "The Horde"
-  ], 
-  "Pokémon Mystery Dungeon: Explorers of Darkness": [
-    "Rogue", 
-    "Rescue", 
-    "Chrono Trigger"
-  ], 
-  "Smart Kobold": [
-    "Light", 
-    "Dungeons of Dredmor", 
-    "Love", 
-    "You Only Live Once", 
-    "POWDER"
-  ], 
-  "Lost Labyrinth": [
-    "12", 
-    "Sonic the Hedgehog 4: Episode I", 
-    "Castle of the Winds"
-  ], 
-  "Slaves to Armok II: Dwarf Fortress": [
-    "World of Warcraft", 
-    "Minecraft", 
-    "NetHack", 
-    "Dungeon Keeper", 
-    "Hack"
-  ], 
-  "Final Fantasy Fables: Chocobo's Dungeon": [
-    "Rogue", 
-    "Final Fantasy", 
-    "Final Fantasy Fables: Chocobo Tales", 
-    "Meteor", 
-    "Phoenix"
-  ], 
-  "Tales (or Troubles) of Middle Earth": [
-    "Tales of the Abyss", 
-    "Angband", 
-    "Final Fantasy", 
-    "The Hobbit", 
-    "The Two Towers"
-  ], 
-  "Hack": [
-    "Amulet of Yendor", 
-    "Pool of Radiance", 
-    "Rogue", 
-    "Fighter", 
-    "NetHack"
-  ], 
-  "99 Levels to Hell": [
-    "Amnesia: The Dark Descent", 
-    "Bubble Bobble", 
-    "The Binding of Isaac", 
-    "Diablo II", 
-    "Spelunky"
-  ], 
-  "Azure Dreams": [
-    "Crusader Kings", 
-    "The Walking Dead"
-  ], 
-  "Popup Dungeon": [
-    "Final Fantasy Tactics", 
-    "Ring Runner: Flight of the Sages", 
-    "Call of Duty"
-  ], 
-  "Falcon's Eye": [
-    "Dungeon Hack", 
-    "Angband", 
-    "Fable", 
-    "NetHack", 
-    "Hack"
-  ], 
-  "Linley's Dungeon Crawl": [
-    "Battlefield Heroes", 
-    "NetHack", 
-    "Hack"
-  ], 
-  "Dungeon Hack": [
-    "Pool of Radiance", 
-    "Rogue", 
-    "Might and Magic", 
-    "Eye of the Beholder", 
-    "Hack"
-  ], 
-  "Wizards Encounters": [
-    "Dungeon Lords", 
-    "Wizardry 8", 
-    "Wizards & Warriors", 
-    "Dungeon Lords MMXII"
-  ], 
-  "TwinBee": [
-    "Pop'n TwinBee", 
-    "Detana!! TwinBee", 
-    "Xevious", 
-    "Gradius", 
-    "Stinger"
-  ], 
-  "Angband": [
-    "Moria", 
-    "Rogue", 
-    "NetHack", 
-    "Hack"
-  ], 
-  "Pokémon Mystery Dungeon: Blue Rescue Team": [
-    "Golem", 
-    "New Super Mario Bros.", 
-    "Mario Paint", 
-    "Conquest", 
-    "Pinball"
-  ], 
-  "FTL: Faster Than Light": [
-    "Firefly", 
-    "Star Wars", 
-    "Edge", 
-    "Laser Squad", 
-    "Star Trek"
+  "Izuna: Legend of the Unemployed Ninja": [
+    "Devil May Cry", 
+    "Izuna 2: The Unemployed Ninja Returns", 
+    "Rondo of Swords", 
+    "Pikmin 3"
   ], 
   "Shiren the Wanderer": [
-    "Mystery Dungeon: Shiren the Wanderer", 
-    "Final Fantasy", 
-    "Rogue", 
     "Desktop Dungeons", 
-    "Spelunky"
+    "Rogue", 
+    "Final Fantasy"
   ], 
-  "Dragon Crystal": [
+  "Deadly Dungeons": [
     "The Legend of Zelda", 
-    "Sonic Free Riders", 
-    "Shinobi", 
-    "The Binding of Isaac", 
-    "Hack"
+    "Resurrection", 
+    "Dungeon Defenders", 
+    "Pixel Dungeon", 
+    "The Legend of Zelda: A Link Between Worlds"
+  ], 
+  "World of Arch": [
+    "Renaissance", 
+    "Mind", 
+    "Impulse"
+  ], 
+  "Pokémon Mystery Dungeon: Explorers of Darkness": [
+    "Spider-Man", 
+    "Rogue", 
+    "Chrono Trigger"
+  ], 
+  "The Sorcerer's Cave": [
+    "Garfield", 
+    "Diplomacy"
   ], 
   "Moraff's Revenge": [
     "Dungeons & Dragons: Warriors of the Eternal Sun", 
@@ -254,12 +385,84 @@
     "Druid: Daemons of the Mind", 
     "Moraff's World"
   ], 
-  "Mystery Dungeon: Shiren the Wanderer": [
-    "Kingdom Hearts", 
-    "Final Fantasy", 
+  "Torneko: The Last Hope": [
+    "Star Wars", 
+    "Dragon Warrior", 
+    "Chocobo's Dungeon 2", 
+    "Dragon Quest Monsters: Joker", 
+    "Dragon Warrior IV"
+  ], 
+  "NetHack": [
+    "Sokoban", 
+    "Moria", 
+    "Angband", 
     "Rogue", 
-    "Azure Dreams", 
     "Hack"
+  ], 
+  "Strange Adventures In Infinite Space": [
+    "Starflight", 
+    "Gish", 
+    "Oasis", 
+    "Star Control", 
+    "Weird Worlds: Return to Infinite Space"
+  ], 
+  "Dragon Crystal": [
+    "The Legend of Zelda", 
+    "Sonic Free Riders", 
+    "Super Monkey Ball", 
+    "Shinobi", 
+    "Dillon's Rolling Western"
+  ], 
+  "Dungeons of the Unforgiven": [
+    "Dungeons & Dragons: Warriors of the Eternal Sun", 
+    "Moraff's Revenge", 
+    "Druid: Daemons of the Mind", 
+    "Drakkhen", 
+    "Moraff's World"
+  ], 
+  "Pokémon Mystery Dungeon: Explorers of Time": [
+    "Spider-Man", 
+    "Rogue", 
+    "Glare", 
+    "Chrono Trigger"
+  ], 
+  "Tales of Maj'Eyal": [
+    "Angband"
+  ], 
+  "Spelunky": [
+    "Super Meat Boy", 
+    "Super Mario All-Stars", 
+    "Rex", 
+    "Diablo", 
+    "Mario Bros."
+  ], 
+  "Slaves to Armok II: Dwarf Fortress": [
+    "World of Warcraft", 
+    "Ultima", 
+    "Minecraft", 
+    "Dungeon Keeper", 
+    "Hack"
+  ], 
+  "Dungeons of Dredmor": [
+    "Cthulhu Saves the World", 
+    "Duke Nukem Forever", 
+    "Unreal", 
+    "Ultima", 
+    "Terraria"
+  ], 
+  "Final Fantasy Fables: Chocobo's Dungeon": [
+    "Labyrinth", 
+    "Rogue", 
+    "Final Fantasy", 
+    "Final Fantasy Fables: Chocobo Tales", 
+    "Phoenix"
+  ], 
+  "Baroque": [
+    "Baroque Shooting", 
+    "Knights in the Nightmare", 
+    "Traffic", 
+    "Messiah", 
+    "Baroque Syndrome"
   ], 
   "Telengard": [
     "Sword of Fargoal", 
@@ -268,268 +471,63 @@
     "Tunnels of Doom", 
     "Gateway to Apshai"
   ], 
+  "WazHack": [
+    "Final Fantasy Tactics", 
+    "Organ Trail", 
+    "Dungeons of Dredmor", 
+    "Star Traders", 
+    "Terraria"
+  ], 
+  "Hack": [
+    "Amulet of Yendor", 
+    "Pool of Radiance", 
+    "Nahlakh", 
+    "Rogue", 
+    "NetHack"
+  ], 
   "Tao's Adventure: Curse of the Demon Seal": [
+    "Lunar: Dragon Song", 
+    "Shanghai", 
     "Azure Dreams", 
     "Diablo"
   ], 
-  "Chocobo's Dungeon 2": [
-    "Kingdom Hearts", 
-    "The Last Story", 
-    "Final Fantasy", 
-    "Final Fantasy Fables: Chocobo's Dungeon", 
-    "Final Fantasy V"
-  ], 
-  "Island of Kesmai": [
-    "Legends of Kesmai", 
-    "Air Warrior", 
-    "Rogue", 
-    "Renegade", 
-    "EverQuest"
-  ], 
-  "Pokémon Mystery Dungeon: Explorers of Sky": [
-    "Hey You, Pikachu!", 
-    "Pinball", 
-    "Conquest"
-  ], 
-  "Z.H.P. Unlosing Ranger VS Darkdeath Evilman": [
-    "Prince of Persia", 
-    "Disgaea: Hour of Darkness", 
-    "Phantom Brave", 
-    "Demon's Souls", 
-    "Rhapsody: A Musical Adventure"
-  ], 
-  "Don't Starve": [
-    "The Binding of Isaac", 
-    "Mark of the Ninja", 
-    "Minecraft", 
-    "Shank 2", 
-    "Spelunky"
-  ], 
-  "Advanced Dungeons & Dragons: Cloudy Mountain": [
-    "Interphase", 
-    "Triple Action", 
-    "Night Stalker", 
-    "Astrosmash", 
-    "Pinball"
-  ], 
-  "Beneath Apple Manor": [
-    "Sword of Fargoal", 
-    "Angband", 
-    "Rogue", 
-    "Telengard", 
-    "NetHack"
-  ], 
-  "Tower of Guns": [
-    "Looney Tunes", 
-    "The Binding of Isaac", 
-    "Quake", 
-    "Spelunky"
-  ], 
-  "Dragon Quest: Shonen Yangus to Fushigi no Dungeon": [
-    "Star Wars", 
-    "Dragon Quest VIII: Journey of the Cursed King", 
-    "Final Fantasy", 
-    "Dragon Warrior IV", 
-    "Dragon Quest Monsters: Joker"
-  ], 
-  "The Binding of Isaac": [
-    "The Legend of Zelda", 
-    "Super Meat Boy", 
-    "Spewer", 
-    "Bomberman", 
-    "Spelunky"
-  ], 
-  "Rogue": [
-    "Colossal Cave Adventure", 
-    "Diablo", 
-    "Angband", 
-    "NetHack", 
-    "Hack"
-  ], 
-  "Nightmare of Druaga: Fushigino Dungeon": [
-    "Dungeon", 
-    "Ki", 
-    "The Tower of Druaga", 
-    "Ratchet & Clank: Up Your Arsenal"
-  ], 
-  "DUNGEON": [
-    "Torchlight", 
-    "Rogue", 
-    "Omega", 
-    "Final Fantasy"
-  ], 
-  "Mission Thunderbolt": [
-    "Rogue", 
-    "Larn", 
-    "Hack"
-  ], 
-  "Moraff's World": [
-    "Mahjongg", 
-    "Mahjong", 
-    "Moraff's Revenge"
-  ], 
-  "Izuna 2: The Unemployed Ninja Returns": [
-    "Izuna: Legend of the Unemployed Ninja"
-  ], 
-  "Ragnarok": [
-    "Rush", 
-    "Hack", 
-    "NetHack", 
-    "Cardinal Syn", 
-    "Game of Thrones"
-  ], 
-  "Deadly Dungeons": [
-    "The Legend of Zelda: A Link Between Worlds", 
-    "Dungeon Hack", 
-    "Pikmin 3", 
-    "Hack"
-  ], 
-  "The Sorcerer's Cave": [
-    "Jotto"
-  ], 
-  "Torneko: The Last Hope": [
-    "Town", 
-    "Star Wars", 
-    "Chocobo's Dungeon 2", 
-    "Final Fantasy", 
-    "Dragon Warrior IV"
-  ], 
-  "Dungeon Crawl Stone Soup": [
-    "Zooming Secretary", 
-    "Final Fantasy VII", 
-    "Psychosomnium", 
-    "Age of Empires II: The Age of Kings", 
-    "Spelunky"
-  ], 
-  "Pokémon Mystery Dungeon: Explorers of Time": [
-    "Rogue", 
-    "Glare", 
-    "Rescue", 
-    "Chrono Trigger"
-  ], 
-  "Tales of Maj'Eyal": [
-    "Angband"
-  ], 
-  "Spelunky": [
-    "Aquaria", 
-    "Super Meat Boy", 
-    "Mario Bros.", 
-    "Diablo", 
-    "Hack"
-  ], 
-  "Dungeons of Dredmor": [
-    "Duke Nukem Forever", 
-    "Infinity Blade", 
-    "Game Over", 
-    "Terraria"
-  ], 
-  "Dungeons of the Unforgiven": [
-    "Dungeons & Dragons: Warriors of the Eternal Sun", 
-    "Mummies", 
-    "Moraff's Revenge", 
-    "Drakkhen", 
-    "Moraff's World"
-  ], 
-  "Super Lotsa Added Stuff Hack - Extended Magic": [
-    "Amulet of Yendor", 
-    "Moria", 
-    "Angband", 
-    "NetHack", 
-    "Hack"
-  ], 
-  "Brogue": [], 
-  "Weird Worlds: Return to Infinite Space": [
-    "Gish", 
-    "Oasis", 
-    "Infinite Space", 
-    "Dr. Blob's Organism", 
-    "Strange Adventures in Infinite Space"
-  ], 
   "Alphaman": [
-    "Hack", 
-    "Ricochet", 
     "Escape from Hell", 
+    "Golf", 
     "Larn", 
-    "NetHack"
+    "Fallout", 
+    "Ricochet"
   ], 
-  "Doom, the Roguelike": [], 
-  "Risk of Rain": [
+  "99 Levels to Hell": [
+    "Sleeping Dogs", 
+    "Monopoly", 
     "The Binding of Isaac", 
+    "Diablo II", 
     "Spelunky"
-  ], 
-  "Ancient Domains of Mystery": [
-    "Conway's Game of Life", 
-    "Moria", 
-    "Angband", 
-    "UnReal World", 
-    "Adventure"
-  ], 
-  "Sword of Fargoal": [
-    "Moria", 
-    "Rogue", 
-    "Adventure", 
-    "NetHack", 
-    "Spelunky"
-  ], 
-  "Chocobo no Fushigina Dungeon": [
-    "Final Fantasy Tactics", 
-    "Final Fantasy III", 
-    "Chocobo's Dungeon 2", 
-    "Final Fantasy", 
-    "Final Fantasy II"
-  ], 
-  "Omega": [
-    "Moria", 
-    "Angband", 
-    "Larn"
-  ], 
-  "Scarab of Ra": [
-    "Minesweeper", 
-    "Centipede", 
-    "Breakout", 
-    "Robots", 
-    "Patience"
-  ], 
-  "Fushigi no Dungeon: Fūrai no Shiren 2: Oni Shūrai! Siren-jō!": [
-    "Rogue", 
-    "Final Fantasy", 
-    "Mystery Dungeon: Shiren the Wanderer"
-  ], 
-  "Izuna: Legend of the Unemployed Ninja": [
-    "Izuna 2: The Unemployed Ninja Returns", 
-    "Rondo of Swords", 
-    "Pikmin 3"
-  ], 
-  "Moria": [
-    "Angband", 
-    "Rogue", 
-    "Diablo", 
-    "American Airlines", 
-    "Mines of Morgoth"
-  ], 
-  "Strange Adventures In Infinite Space": [
-    "Gish", 
-    "Oasis", 
-    "RuneScape", 
-    "Dr. Blob's Organism", 
-    "Weird Worlds: Return to Infinite Space"
-  ], 
-  "WazHack": [
-    "Organ Trail", 
-    "Final Fantasy Tactics", 
-    "Dungeons of Dredmor", 
-    "Adventure", 
-    "Hack"
   ], 
   "Not the Robots": [
+    "The Company of Myself", 
     "Hotline Miami", 
     "BioShock"
   ], 
   "Fatal Labyrinth": [
-    "Valkyria Chronicles", 
     "Streets of Rage 2", 
-    "Blinx the Time Sweeper", 
+    "Final Fantasy", 
+    "Shining Force", 
     "Phantasy Star", 
     "Sonic the Hedgehog"
+  ], 
+  "Pokémon Mystery Dungeon: Red Rescue Team": [
+    "Hey You, Pikachu!", 
+    "New Super Mario Bros.", 
+    "Mario Paint", 
+    "Black & White"
+  ], 
+  "Omega": [
+    "AlphaMan", 
+    "Moria", 
+    "Ultima", 
+    "Angband", 
+    "Monopoly"
   ]
 }

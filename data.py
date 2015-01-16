@@ -30,9 +30,12 @@ import json
 import ujson
 import pprint
 import urllib
+import logging
 import requests
 import collections
 
+
+logging.basicConfig(format='%(levelname)s: %(message)s', filename='program.log',level=logging.DEBUG)
 __dir = os.path.dirname(os.path.realpath(__file__))
 Game = collections.namedtuple('Game', ['First','Last','Title','Developer','Setting','Platform','Notes'], rename=True)
 
@@ -127,7 +130,9 @@ def compile_games():
   '''Return a set of videogame names'''
   path = os.path.join(__dir, 'generated', 'games.json')
   with open(path) as f:
-    return ujson.loads(f.read())
+    d = ujson.loads(f.read())
+    # logging.debug(d)
+    return d
 
 
 def get_roguelikes():
@@ -154,7 +159,7 @@ def get_urls(game):
   '''Return a list of potential websites to scrap'''
   title = game['Title']
   developer = game['Developer']
-  response = requests.get('http://duckduckgo.com/html/?q={}'.format(urllib.quote('{} {} {}'.format(title, developer, "interview game"))), timeout=(9.1, 12.1))
+  response = requests.get('http://duckduckgo.com/html/?q={}'.format(urllib.quote('"{}" {} {}'.format(title, developer, "interview game"))), timeout=(9.1, 12.1))
   soup = bs4.BeautifulSoup(response.text)
   links = []
   for node in soup.select('div.web-result'):
@@ -180,6 +185,6 @@ def get_url_content(game, verbose=False):
   return scrape
 
 if '__main__' in __name__:
-  compile_roguelikes(use_file=True, verbose=True)
-  compile_content(cached=False, verbose=True)
-
+  # compile_roguelikes(use_file=True, verbose=True)
+  # compile_content(verbose=True)
+  compile_games()

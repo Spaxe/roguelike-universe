@@ -20,8 +20,8 @@ draw_width = screen_width - 100.0
 draw_height = screen_height - 100.0
 
 def setup():
-#     size(screen_width, screen_height, "processing.core.PGraphicsRetina2D")
-    size(screen_width, screen_height, P2D)
+    size(screen_width, screen_height, "processing.core.PGraphicsRetina2D")
+#     size(screen_width, screen_height, P2D)
     global games_data, roguelike_data, relational_map_data, all_games_by_year, roguelikes_by_year, \
            roguelikes_list, begin_time, end_time, line_length
     
@@ -47,10 +47,10 @@ def draw():
 
     pushMatrix()
     translate(50, 50)
-          
+    
+    update_selection()      
     draw_roguelike_links()
     draw_timeline()
-#     draw_game_title()
     
     popMatrix()
 
@@ -142,28 +142,40 @@ def draw_roguelike_links():
                     xs[1],
                     draw_height/2 + abs(xs[1] - xs[0])/2.0 + 16,
                     0, PI)
-                
+        
+        
+        if source == selection_name:
+            pushMatrix()
+            pushStyle()
+            noStroke()
+            fill(map(_year, begin_time, end_time, 0, 1), 0.9, 0.8, 1)
+            label_x = source_x + 0.9 * line_length * (source_index / source_year_count)
+            label_y = draw_height/2 - 15
+            translate(label_x, label_y)
+            rotate(-PI/2)
+            label_length = textWidth(source)
+            rect(0,
+                 0, 
+                 label_length + 10, 
+                 line_length * 0.9, 
+                 2, 2, 2, 2)
+            fill(1)
+            textSize(12)
+            text(source, 5, 14)
+            popStyle()
+            popMatrix()        
         
     popStyle()
     popMatrix()
     
 
-def draw_game_title():
+def update_selection():
     global selection_name
-    pushStyle()
-    
-#     mX = map(mouseX, 0, screen_width, (screen_width - draw_width) / 2, (screen_width - draw_width) / 2 + draw_width)
     i = int(min(mouseX / float(screen_width), 0.9999) * len(roguelikes_list))
     name = roguelikes_list[i]
     selection_name = name
-    fill(0)
-    textSize(14)
-    textAlign(CENTER)
-    text('{} ({})'.format(name, roguelike_data[name]['First']), draw_width/2, 25)
-#     text(','.join(set(relational_map_data[name])), draw_width/2, 35)
     
-    popStyle()
-    
+            
 def compile_games_by_year(games):
     output = {}
     for game, data in games.iteritems():
