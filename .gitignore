@@ -4,3 +4,4 @@ backup
 generated/roguelike-game-articles.json
 *.pyc
 *.log
+.ipynb_checkpoints
