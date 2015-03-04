@@ -48,7 +48,10 @@ roguelike_sources = {
     "Platform": "C64, PET, VIC20",
     "Setting": "Fantasy",
     "Developer": "Jeff McCord",
-    "First": "1982"
+    "First": "1982",
+    "AKA": [
+      "Fargoal"
+    ]
   },
   "Island of Kesmai": {
     "Last": "",
@@ -93,7 +96,10 @@ roguelike_sources = {
     "Platform": "SNES",
     "Setting": "Fantasy",
     "Developer": "Chunsoft",
-    "First": "1993"
+    "First": "1993",
+    "AKA": [
+      "Torneko no Daibouken: Fushigi no Dungeon"
+    ]
   },
   "Dungeon": {
     "Last": "",
@@ -122,7 +128,10 @@ roguelike_sources = {
     "Platform": "PS2",
     "Setting": "Fantasy",
     "Developer": "Level-5",
-    "First": "2002"
+    "First": "2002",
+    "AKA": [
+      "Dark Cloud 2"
+    ]
   },
   "Linley's Dungeon Crawl": {
     "Last": "2005",
@@ -162,7 +171,10 @@ roguelike_sources = {
     "Platform": "DS",
     "Setting": "Fantasy",
     "Developer": "Success",
-    "First": "2006"
+    "First": "2006",
+    "AKA": [
+      "Izuna"
+    ]
   },
   "TowerClimb": {
     "Last": "",
@@ -840,7 +852,10 @@ roguelike_sources = {
     "Platform": "CROSS",
     "Setting": "Fantasy",
     "Developer": "The Slash'EM development team",
-    "First": "1998"
+    "First": "1998",
+    "AKA": [
+      "SLASH'EM"
+    ]
   },
   "Angband": {
     "Last": "2013",
@@ -903,7 +918,10 @@ roguelike_sources = {
     "Platform": "AMI, BeOS, DOS, LIN, OS2, OSX, WIN",
     "Setting": "Fantasy",
     "Developer": "Thomas Biskup",
-    "First": "1994"
+    "First": "1994",
+    "AKA": [
+      "ADOM"
+    ]
   },
   "The Sorcerer's Cave": {
     "Last": "",
@@ -932,41 +950,57 @@ roguelike_sources = {
     "Developer": "Peter Donnelly/Skookum",
     "First": "1995"
   },
-  "Pokémon Mystery Dungeon: Blue Rescue Team": {
+  "Pokémon Mystery Dungeon": {
     "Last": "N/A",
     "Links": [
-      "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Blue_Rescue_Team_and_Red_Rescue_Team",
-      "http://www.pokemonmysterydungeon.com/",
-      "http://www.gamespot.com/reviews/pokymon-mystery-dungeon-blue-rescue-team-review/1900-6158004/",
-      "https://ru.wikipedia.org/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team_%D0%B8_Blue_Rescue_Team",
-      "http://pokemon.wikia.com/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team_and_Blue_Rescue_Team",
+      "http://www.neoseeker.com/Games/Products/DS/pokemon_mystery_dungeon_blue/userreviews.html?reviewid=32933",
+      "http://www.cubed3.com/review/435/1/pokemon-mystery-dungeon-blue-rescue-team-nintendo-ds.html",
+      "http://www.rpgamer.com/games/pokemon/pokedunb/pokedunbimp.html",
+      "http://www.giantbomb.com/pokemon-mystery-dungeon-bluered-rescue-team/3030-13974/",
+      "http://www.videogamer.com/gba/pokemon_mystery_dungeon_red_rescue_team/review.html",
+      "http://www.rpgfan.com/reviews/Pokemon_Mystery_Dungeon_Red/index.html",
+      "http://pokemon.neoseeker.com/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team",
+      "http://www.pocketgamer.co.uk/r/DS/Pok%E9mon+Mystery+Dungeon:+Blue+Rescue+Team/review.asp?c=1736",
       "http://www.eurogamer.net/articles/r_pokemondungeon_ds",
-      "http://www.pokemon.com/us/pokemon-video-games/pokemon-mystery-dungeon-blue-rescue-team-and-pokemon-mystery-dungeon-red-rescue-team/",
-      "http://www.videogamer.com/ds/pokemon_mystery_dungeon_blue_rescue_team/review.html",
-      "http://strategywiki.org/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Blue_Rescue_Team_and_Red_Rescue_Team",
+      "https://ru.wikipedia.org/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team_%D0%B8_Blue_Rescue_Team",
+      "http://tcrf.net/Pok%C3%A9mon_Mystery_Dungeon:_Blue_Rescue_Team",
+      "http://pokemon.wikia.com/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team_and_Blue_Rescue_Team",
+      "http://www.nintendo.co.uk/Games/Nintendo-DS/Pokemon-Mystery-Dungeon-Blue-Rescue-Team-272387.html",
+      "http://www.vgchartz.com/game/4027/pokemon-mystery-dungeon-red-rescue-team/",
+      "http://pokemon.gamepedia.com/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team_and_Blue_Rescue_Team",
+      "http://www.dailymotion.com/video/x1pgk0c_cgr-undertow-pokemon-mystery-dungeon-red-rescue-team-review-for-game-boy-advance_videogames",
+      "http://www.rpgamer.com/games/pokemon/pokedunr/pokedunr.html",
+      "http://www.amazon.co.uk/Pok%C3%A9mon-Mystery-Dungeon-Rescue-Nintendo/dp/B000FW9NE2",
       "http://rover.ebay.com/rover/1/711-53200-19255-0/1?icep_ff3=2&pub=5574933636&toolid=10001&campid=5336728181&customid=&mpre=http%3A%2F%2Fwww%2Eebay%2Ecom%2Fbhp%2Fpokemon-mystery-dungeon-blue-rescue-team",
       "http://www.serebii.net/mysteriousdungeon/",
-      "http://pokemon.gamepedia.com/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team_and_Blue_Rescue_Team",
-      "http://www.rpgfan.com/reviews/Pokemon_Mystery_Dungeon_Blue/index.html",
-      "http://www.nintendo.co.uk/Games/Nintendo-DS/Pokemon-Mystery-Dungeon-Blue-Rescue-Team-272387.html",
-      "http://www.amazon.co.uk/Pok%C3%A9mon-Mystery-Dungeon-Rescue-Nintendo/dp/B000FW9NE2",
-      "http://www.pocketgamer.co.uk/r/DS/Pok%E9mon+Mystery+Dungeon:+Blue+Rescue+Team/review.asp?c=1736",
-      "http://www.giantbomb.com/pokemon-mystery-dungeon-bluered-rescue-team/3030-13974/",
-      "http://www.rpgamer.com/games/pokemon/pokedunb/pokedunbimp.html",
-      "http://www.neoseeker.com/Games/Products/DS/pokemon_mystery_dungeon_blue/userreviews.html?reviewid=32933",
-      "http://tcrf.net/Pok%C3%A9mon_Mystery_Dungeon:_Blue_Rescue_Team",
-      "http://floatzel.net/reviews/pokedun.htm",
-      "http://gamebomb.ru/games/29295",
+      "http://www.ciao.co.uk/Pokemon_Mystery_Dungeon_Blue_Rescue_Team_NDS__Review_5654931",
+      "http://www.videogamer.com/ds/pokemon_mystery_dungeon_blue_rescue_team/review.html",
+      "http://en.academic.ru/dic.nsf/enwiki/2869856",
+      "http://www.gamespot.com/reviews/pokymon-mystery-dungeon-blue-rescue-team-review/1900-6158004/",
+      "http://strategywiki.org/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Blue_Rescue_Team_and_Red_Rescue_Team",
       "http://ds.gamespy.com/nintendo-ds/mysterious-dungeon/733506p1.html",
-      "http://www.cubed3.com/review/435/1/pokemon-mystery-dungeon-blue-rescue-team-nintendo-ds.html",
-      "http://www.ciao.co.uk/Pokemon_Mystery_Dungeon_Blue_Rescue_Team_NDS__Review_5654931"
+      "http://www.pokemon.com/us/pokemon-video-games/pokemon-mystery-dungeon-blue-rescue-team-and-pokemon-mystery-dungeon-red-rescue-team/",
+      "http://tcrf.net/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team",
+      "http://gamebomb.ru/games/29295",
+      "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Blue_Rescue_Team_and_Red_Rescue_Team",
+      "http://www.pokemonmysterydungeon.com/",
+      "http://www.rpgfan.com/reviews/Pokemon_Mystery_Dungeon_Blue/index.html",
+      "http://floatzel.net/reviews/pokedun.htm"
     ],
-    "Title": "Pokémon Mystery Dungeon: Blue Rescue Team",
+    "Title": "Pokémon Mystery Dungeon",
     "Notes": "",
     "Platform": "DS",
     "Setting": "Modern, Fantasy",
     "Developer": "Chunsoft",
-    "First": "2005"
+    "First": "2005",
+    "AKA": [
+      "Pokémon Mystery Dungeon: Blue Rescue Team",
+      "Pokemon Mystery Dungeon: Blue Rescue Team",
+      "Pokémon Mystery Dungeon: Red Rescue Team",
+      "Pokemon Mystery Dungeon: Red Rescue Team",
+      "Blue Rescue Team",
+      "Red Rescue Team"
+    ]
   },
   "100 Rogues": {
     "Last": "",
@@ -1031,7 +1065,10 @@ roguelike_sources = {
     "Platform": "DS",
     "Setting": "Modern, Fantasy",
     "Developer": "Chunsoft",
-    "First": "2007"
+    "First": "2007",
+    "AKA": [
+      "Explorers of Darkness"
+    ]
   },
   "Sword of the Stars: The Pit": {
     "Last": "",
@@ -1069,7 +1106,10 @@ roguelike_sources = {
     "Platform": "WIN",
     "Setting": "Sci-Fi RPG",
     "Developer": "Kerberos Productions",
-    "First": "2013"
+    "First": "2013",
+    "AKA": [
+      "SotS: The Pit"
+    ]
   },
   "Castle of the Winds": {
     "Last": "N/A",
@@ -1179,7 +1219,10 @@ roguelike_sources = {
     "Platform": "WIN, LIN, OSX",
     "Setting": "Futuristic, Space Simulator",
     "Developer": "Subset Games",
-    "First": "2012"
+    "First": "2012",
+    "AKA": [
+      "FTL", "Faster Than Light"
+    ]
   },
   "The Guided Fate Paradox": {
     "Last": "",
@@ -1387,7 +1430,10 @@ roguelike_sources = {
     "Platform": "PSP",
     "Setting": "Fantasy",
     "Developer": "Nippon Ichi Software",
-    "First": "2010"
+    "First": "2010",
+    "AKA": [
+      "Z.H.P.", "ZHP"
+    ]
   },
   "Izuna 2: The Unemployed Ninja Returns": {
     "Last": "2008",
@@ -1427,7 +1473,10 @@ roguelike_sources = {
     "Platform": "DS",
     "Setting": "Fantasy",
     "Developer": "Ninja Studio",
-    "First": "2007"
+    "First": "2007",
+    "AKA": [
+      "Izuna 2"
+    ]
   },
   "Chocobo's Dungeon 2": {
     "Last": "",
@@ -1463,7 +1512,6 @@ roguelike_sources = {
     "Last": "",
     "Links": [
       "https://en.wikipedia.org/wiki/Fushigi_no_Dungeon:_F%C5%ABrai_no_Shiren_2:_Oni_Sh%C5%ABrai!_Siren-j%C5%8D!",
-      "https://en.wikipedia.org/wiki/Fushigi_no_Dungeon",
       "http://www.dealspwn.com/fushigi-no-dungeon-f-rai-no-shiren-2-oni-sh-rai-siren-j",
       "http://strategywiki.org/wiki/Mystery_Dungeon:_Shiren_the_Wanderer",
       "http://s9.zetaboards.com/Nintendo_64_Forever/topic/420068/1/",
@@ -1612,7 +1660,10 @@ roguelike_sources = {
     "Platform": "WIN",
     "Setting": "Space science fiction",
     "Developer": "Digital Eel",
-    "First": "2014"
+    "First": "2014",
+    "AKA": [
+      "Infinite Space III", "Infinite Space 3"
+    ]
   },
   "Dark Cloud": {
     "Last": "2001",
@@ -1745,7 +1796,10 @@ roguelike_sources = {
     "Platform": "WIN, MAC, iOS, DROID, NOOK",
     "Setting": "Space science fiction",
     "Developer": "Digital Eel",
-    "First": "2005"
+    "First": "2005",
+    "AKA": [
+      "Weird Worlds"
+    ]
   },
   "World of Arch": {
     "Last": "2012",
@@ -1814,7 +1868,10 @@ roguelike_sources = {
     "Platform": "PS1, WS",
     "Setting": "Fantasy",
     "Developer": "Square",
-    "First": "1997, 1999"
+    "First": "1997, 1999",
+    "AKA": [
+      "Chocobo's Mysterious Dungeon"
+    ]
   },
   "Smart Kobold": {
     "Last": "",
@@ -1970,39 +2027,6 @@ roguelike_sources = {
     "Developer": "Digital Eel",
     "First": "2002"
   },
-  "Pokémon Mystery Dungeon: Red Rescue Team": {
-    "Last": "N/A",
-    "Links": [
-      "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Blue_Rescue_Team_and_Red_Rescue_Team",
-      "http://www.pokemonmysterydungeon.com/",
-      "http://www.gamespot.com/reviews/pokymon-mystery-dungeon-blue-rescue-team-review/1900-6158004/",
-      "https://ru.wikipedia.org/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team_%D0%B8_Blue_Rescue_Team",
-      "http://www.videogamer.com/gba/pokemon_mystery_dungeon_red_rescue_team/review.html",
-      "http://pokemon.wikia.com/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team_and_Blue_Rescue_Team",
-      "http://www.pokemon.com/us/pokemon-video-games/pokemon-mystery-dungeon-blue-rescue-team-and-pokemon-mystery-dungeon-red-rescue-team/",
-      "http://www.rpgfan.com/reviews/Pokemon_Mystery_Dungeon_Red/index.html",
-      "http://strategywiki.org/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Blue_Rescue_Team_and_Red_Rescue_Team",
-      "http://www.serebii.net/mysteriousdungeon/",
-      "http://www.eurogamer.net/articles/r_pokemondungeon_ds",
-      "http://pokemon.gamepedia.com/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team_and_Blue_Rescue_Team",
-      "http://www.dailymotion.com/video/x1pgk0c_cgr-undertow-pokemon-mystery-dungeon-red-rescue-team-review-for-game-boy-advance_videogames",
-      "http://www.giantbomb.com/pokemon-mystery-dungeon-bluered-rescue-team/3030-13974/",
-      "http://pokemon.neoseeker.com/wiki/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team",
-      "http://tcrf.net/Pok%C3%A9mon_Mystery_Dungeon:_Red_Rescue_Team",
-      "http://floatzel.net/reviews/pokedun.htm",
-      "http://www.rpgamer.com/games/pokemon/pokedunr/pokedunr.html",
-      "http://gamebomb.ru/games/29295",
-      "http://www.nintendo.co.uk/Games/Nintendo-DS/Pokemon-Mystery-Dungeon-Blue-Rescue-Team-272387.html",
-      "http://en.academic.ru/dic.nsf/enwiki/2869856",
-      "http://www.vgchartz.com/game/4027/pokemon-mystery-dungeon-red-rescue-team/"
-    ],
-    "Title": "Pokémon Mystery Dungeon: Red Rescue Team",
-    "Notes": "",
-    "Platform": "GBA",
-    "Setting": "Modern, Fantasy",
-    "Developer": "Chunsoft",
-    "First": "2005"
-  },
   "Dungeons of the Unforgiven": {
     "Last": "",
     "Links": [
@@ -2062,7 +2086,10 @@ roguelike_sources = {
     "Platform": "DS",
     "Setting": "Modern, Fantasy",
     "Developer": "Chunsoft",
-    "First": "2007"
+    "First": "2007",
+    "AKA": [
+      "Explorers of Time"
+    ]
   },
   "Tales of Maj'Eyal": {
     "Last": "",
@@ -2168,7 +2195,10 @@ roguelike_sources = {
     "Platform": "LIN, OSX, WIN",
     "Setting": "Fantasy",
     "Developer": "Tarn Adams",
-    "First": "2006"
+    "First": "2006",
+    "AKA": [
+      "Dwarf Fortress"
+    ]
   },
   "Dungeons of Dredmor": {
     "Last": "",
@@ -2201,7 +2231,10 @@ roguelike_sources = {
     "Platform": "WIN, LIN, OSX",
     "Setting": "Fantasy",
     "Developer": "Gaslamp Games",
-    "First": "2011"
+    "First": "2011",
+    "AKA": [
+      "Dredmor"
+    ]
   },
   "Final Fantasy Fables: Chocobo's Dungeon": {
     "Last": "",
@@ -2243,7 +2276,7 @@ roguelike_sources = {
     "Developer": "Square Enix",
     "First": "2008"
   },
-  "Tales (or Troubles) of Middle Earth": {
+  "Tales of Middle Earth": {
     "Last": "2008",
     "Links": [
       "http://lotr.wikia.com/wiki/Tales",
@@ -2266,7 +2299,10 @@ roguelike_sources = {
     "Platform": "CROSS",
     "Setting": "Fantastical",
     "Developer": "DarkGod, others",
-    "First": "1998"
+    "First": "1998",
+    "AKA": [
+      "Troubles of Middle Earth"
+    ]
   },
   "Telengard": {
     "Last": "",
@@ -2386,7 +2422,10 @@ roguelike_sources = {
     "Platform": "DS",
     "Setting": "Fantasy",
     "Developer": "Konami",
-    "First": "2005"
+    "First": "2005",
+    "AKA": [
+      "Tao's Adventure"
+    ]
   },
   "99 Levels to Hell": {
     "Last": "",
@@ -2480,7 +2519,10 @@ roguelike_sources = {
     "Platform": "DS",
     "Setting": "Modern, Fantasy",
     "Developer": "Chunsoft",
-    "First": "2009"
+    "First": "2009",
+    "AKA": [
+      "Explorers of Sky"
+    ]
   },
   "Azure Dreams": {
     "Last": "2000",
