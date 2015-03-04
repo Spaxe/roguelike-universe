@@ -1,4 +1,4 @@
-roguelike_sources = {
+{
   "Adventure": {
     "First": "1976",
     "Links": [
@@ -11,7 +11,7 @@ roguelike_sources = {
       "Colossal Cave",
       "ADVENT"
     ]
-  }
+  },
   "Falcon's Eye": {
     "Last": "2001",
     "Links": [
@@ -22,7 +22,7 @@ roguelike_sources = {
       "http://falconseye.sourceforge.net/",
       "http://homeoftheunderdogs.net/game.php?id=2470",
       "https://libregamewiki.org/Falcon%27s_Eye",
-      "http://nethackwiki.com/wiki/Falcon's_Eye",
+      "http://nethackwiki.com/wiki/Falcon's_Eye"
     ],
     "Title": "Falcon's Eye",
     "Notes": "Graphical update to NetHack.",
@@ -819,7 +819,7 @@ roguelike_sources = {
     "Developer": "Hopoo Games",
     "First": "2013"
   },
-  "Super Lotsa Added Stuff Hack - Extended Magic": {
+  "Slash'EM": {
     "Last": "",
     "Links": [
       "http://www.slashem.org/",
@@ -854,7 +854,7 @@ roguelike_sources = {
     "Developer": "The Slash'EM development team",
     "First": "1998",
     "AKA": [
-      "SLASH'EM"
+      "SLASH'EM", "Super Lotsa Added Stuff Hack - Extended Magic", "Super Lotsa Added Stuff Hack"
     ]
   },
   "Angband": {
@@ -2553,7 +2553,7 @@ roguelike_sources = {
     "Developer": "Konami",
     "First": "1998"
   },
-  "Omega": {
+  "Omega (video game)": {
     "Last": "2010",
     "Links": [
       "http://www.roguebasin.com/index.php?title=Omega",
