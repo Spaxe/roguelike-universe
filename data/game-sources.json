@@ -344,7 +344,8 @@
     "Platform": "INT",
     "Setting": "Fantasy",
     "Year": 1982,
-    "Developer": "Mattel Electronics"
+    "Developer": "Mattel Electronics",
+    "AKA": ["Cloudy Mountain"]
   },
   "Dungeon Hack": {
     "Links": [
@@ -660,7 +661,7 @@
     "Setting": "Fantasy",
     "Year": 1994,
     "AKA": [
-      "ADOM"
+      "ADOM", "A.D.O.M."
     ],
     "Developer": "Thomas Biskup"
   },
@@ -738,7 +739,8 @@
     "Platform": "CROSS",
     "Setting": "Fantasy",
     "Year": 1987,
-    "Developer": "Laurence Brothers"
+    "Developer": "Laurence Brothers",
+    "AKA": ["Omega"]
   },
   "UnReal World": {
     "Links": [
@@ -1796,7 +1798,8 @@
     "Year": 2014,
     "AKA": [
       "Infinite Space III",
-      "Infinite Space 3"
+      "Infinite Space 3",
+      "Sea of Stars"
     ],
     "Developer": "Digital Eel"
   },
@@ -2152,7 +2155,8 @@
     "Platform": "CROSS (open source)",
     "Setting": "Fantasy",
     "Year": 2006,
-    "Developer": "Community"
+    "Developer": "Community",
+    "AKA": ["Stone Soup"]
   },
   "Strange Adventures In Infinite Space": {
     "Links": [
