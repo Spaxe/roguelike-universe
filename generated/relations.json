@@ -1,0 +1,366 @@
+{
+  "Dungeon": [
+    "Wasteland", 
+    "Planescape: Torment", 
+    "Fallout", 
+    "Obsidian", 
+    "Eternity"
+  ], 
+  "Falcon's Eye": [
+    "NetHack", 
+    "Slash'EM", 
+    "Angband", 
+    "Rogue", 
+    "Omega (video game)"
+  ], 
+  "Island of Kesmai": [
+    "Hack", 
+    "Legends of Kesmai", 
+    "Wolverine", 
+    "Driven", 
+    "Underworld", 
+    "Renegade"
+  ], 
+  "Torneko no Daiboken: Fushigi no Dungeon": [], 
+  "Pokémon Mystery Dungeon: Explorers of Sky": [
+    "Pokémon Mystery Dungeon: Explorers of Time", 
+    "Pokémon Mystery Dungeon: Explorers of Darkness", 
+    "Pokémon Mystery Dungeon"
+  ], 
+  "Linley's Dungeon Crawl": [
+    "NetHack", 
+    "Dungeon Crawl Stone Soup"
+  ], 
+  "TowerClimb": [
+    "Spelunky", 
+    "Escape", 
+    "Metroid", 
+    "Underworld", 
+    "SSX", 
+    "Minecraft"
+  ], 
+  "Teleglitch": [], 
+  "Brogue": [
+    "Amulet of Yendor"
+  ], 
+  "Weird Worlds: Return to Infinite Space": [
+    "Infinite Space III: Sea of Stars", 
+    "Infinite Space"
+  ], 
+  "Advanced Dungeons & Dragons: Cloudy Mountain": [
+    "Tower of Doom", 
+    "BurgerTime", 
+    "Loco-Motion", 
+    "Astrosmash", 
+    "Prototype"
+  ], 
+  "Dungeon Hack": [
+    "Angband", 
+    "Dungeon", 
+    "The Binding of Isaac", 
+    "Adventure", 
+    "Mass Effect", 
+    "Hard Nova", 
+    "Circuit's Edge", 
+    "Fallout", 
+    "Torchlight"
+  ], 
+  "Dungeon of Doom": [], 
+  "The Sorcerer's Cave": [], 
+  "Slash'EM": [
+    "NetHack", 
+    "Sword of Fargoal", 
+    "Brogue", 
+    "Rogue", 
+    "Simutrans"
+  ], 
+  "Beneath Apple Manor": [
+    "Adventure", 
+    "Rogue", 
+    "NetHack", 
+    "WazHack", 
+    "Pac-Man", 
+    "Escape", 
+    "Marko", 
+    "Trivia", 
+    "Exodus: Ultima III"
+  ], 
+  "Spelunky": [
+    "Slaves to Armok II: Dwarf Fortress", 
+    "Rex", 
+    "Robot", 
+    "Super Mario Bros.", 
+    "Braid"
+  ], 
+  "Larn": [], 
+  "Ancient Domains of Mystery": [
+    "Dungeon Crawl Stone Soup", 
+    "Brogue", 
+    "Dungeons of Dredmor", 
+    "UnReal World", 
+    "Slaves to Armok II: Dwarf Fortress"
+  ], 
+  "Dungeons of the Unforgiven": [], 
+  "Tower of Guns": [
+    "Rogue Legacy", 
+    "Quake"
+  ], 
+  "UnReal World": [], 
+  "Dragon Quest: Shonen Yangus to Fushigi no Dungeon": [], 
+  "Wizards Encounters": [], 
+  "Rogue Legacy": [], 
+  "The Binding of Isaac": [
+    "Super Meat Boy"
+  ], 
+  "Dark Chronicle": [
+    "Dark Cloud", 
+    "Rogue", 
+    "Rogue Galaxy", 
+    "Monster Rancher"
+  ], 
+  "Pokémon Mystery Dungeon": [
+    "Beyond"
+  ], 
+  "Risk of Rain": [
+    "FTL: Faster Than Light"
+  ], 
+  "Rogue": [
+    "Angband", 
+    "Adventure", 
+    "Ancient Domains of Mystery", 
+    "NetHack", 
+    "Hack", 
+    "Starflight"
+  ], 
+  "Adventure": [], 
+  "Sword of Fargoal": [
+    "Rogue"
+  ], 
+  "Pokémon Mystery Dungeon: Explorers of Darkness": [
+    "Pokémon Mystery Dungeon", 
+    "Pokémon Mystery Dungeon: Explorers of Time"
+  ], 
+  "Sword of the Stars: The Pit": [
+    "Rogue", 
+    "Sword of the Stars"
+  ], 
+  "Castle of the Winds": [
+    "Thor"
+  ], 
+  "Nightmare of Druaga: Fushigino Dungeon": [
+    "Ki", 
+    "2x2"
+  ], 
+  "FTL: Faster Than Light": [
+    "Weird Worlds: Return to Infinite Space", 
+    "Federation", 
+    "Rebel"
+  ], 
+  "The Guided Fate Paradox": [
+    "Z.H.P. Unlosing Ranger VS Darkdeath Evilman", 
+    "Dungeon", 
+    "Azure Dreams", 
+    "Pokémon Mystery Dungeon", 
+    "Destiny", 
+    "Overlord", 
+    "Street Fighter", 
+    "Hotline Miami", 
+    "Void"
+  ], 
+  "Shiren the Wanderer": [
+    "Mystery Dungeon: Shiren the Wanderer", 
+    "Torneko: The Last Hope", 
+    "Torneko no Daiboken: Fushigi no Dungeon", 
+    "Zero Escape: Virtue's Last Reward"
+  ], 
+  "Mission Thunderbolt": [], 
+  "Moria": [
+    "Angband", 
+    "Rogue"
+  ], 
+  "Moraff's World": [
+    "Mahjongg", 
+    "Mahjong"
+  ], 
+  "Scarab of Ra": [], 
+  "Z.H.P. Unlosing Ranger VS Darkdeath Evilman": [
+    "Dungeon", 
+    "Last Rebellion", 
+    "Destiny", 
+    "Minecraft", 
+    "Hotline Miami", 
+    "Void"
+  ], 
+  "Izuna 2: The Unemployed Ninja Returns": [
+    "Izuna: Legend of the Unemployed Ninja", 
+    "Pokémon Mystery Dungeon", 
+    "Far Cry"
+  ], 
+  "Hack": [
+    "NetHack"
+  ], 
+  "Azure Dreams": [], 
+  "Fushigi no Dungeon: Fūrai no Shiren 2: Oni Shūrai! Siren-jō!": [], 
+  "Don't Starve": [
+    "Oscar", 
+    "Mark of the Ninja"
+  ], 
+  "100 Rogues": [
+    "Rogue", 
+    "Attack", 
+    "Game of Thrones"
+  ], 
+  "Doom, the Roguelike": [], 
+  "Infinite Space III: Sea of Stars": [
+    "Weird Worlds: Return to Infinite Space", 
+    "FTL: Faster Than Light", 
+    "Infinite Space"
+  ], 
+  "Dark Cloud": [
+    "Rogue", 
+    "Dark Chronicle", 
+    "Rogue Galaxy", 
+    "Half-Life", 
+    "Destiny", 
+    "Unreal Tournament", 
+    "Metal Gear"
+  ], 
+  "Izuna: Legend of the Unemployed Ninja": [
+    "Final Fantasy", 
+    "Candy Land"
+  ], 
+  "Baroque": [
+    "Lost Odyssey", 
+    "Borderlands"
+  ], 
+  "Omega (video game)": [], 
+  "World of Arch": [
+    "Diablo", 
+    "Wall Street", 
+    "Barbarian"
+  ], 
+  "Chocobo no Fushigina Dungeon": [
+    "Chrono Trigger", 
+    "Disc"
+  ], 
+  "Smart Kobold": [
+    "Dungeon", 
+    "Dungeons of Dredmor"
+  ], 
+  "Moraff's Revenge": [], 
+  "Torneko: The Last Hope": [
+    "Torneko no Daiboken: Fushigi no Dungeon"
+  ], 
+  "Dragon Crystal": [
+    "Genesis", 
+    "Shinobi", 
+    "Mortal Kombat"
+  ], 
+  "Dungeon Crawl Stone Soup": [
+    "Slaves to Armok II: Dwarf Fortress", 
+    "Spelunky", 
+    "Liero", 
+    "Desktop Dungeons"
+  ], 
+  "Strange Adventures In Infinite Space": [
+    "Weird Worlds: Return to Infinite Space"
+  ], 
+  "Lost Labyrinth": [
+    "Labyrinth", 
+    "Sonic Colors", 
+    "Gears of War", 
+    "Minotaur"
+  ], 
+  "Tales of Middle Earth": [
+    "Rogue", 
+    "Sword of the Stars: The Pit", 
+    "Angband"
+  ], 
+  "Pokémon Mystery Dungeon: Explorers of Time": [
+    "Pokémon Mystery Dungeon"
+  ], 
+  "Tales of Maj'Eyal": [
+    "Rogue", 
+    "NetHack"
+  ], 
+  "Mystery Dungeon: Shiren the Wanderer": [
+    "Shiren the Wanderer", 
+    "Torneko no Daiboken: Fushigi no Dungeon", 
+    "Torneko: The Last Hope"
+  ], 
+  "Slaves to Armok II: Dwarf Fortress": [
+    "Adventure", 
+    "Fortress", 
+    "Legends", 
+    "Bloodline", 
+    "Hydra"
+  ], 
+  "Dungeons of Dredmor": [
+    "Brogue", 
+    "Slaves to Armok II: Dwarf Fortress", 
+    "The Binding of Isaac", 
+    "Diablo", 
+    "Dark Souls", 
+    "Company of Heroes"
+  ], 
+  "Final Fantasy Fables: Chocobo's Dungeon": [
+    "Chocobo no Fushigina Dungeon", 
+    "Final Fantasy", 
+    "Destroyer"
+  ], 
+  "Deadly Dungeons": [
+    "Dungeon", 
+    "The Legend of Zelda", 
+    "The Legend of Zelda: A Link Between Worlds"
+  ], 
+  "Telengard": [
+    "Dungeon", 
+    "Rogue", 
+    "Hack", 
+    "DND"
+  ], 
+  "WazHack": [
+    "Brogue", 
+    "Dungeon", 
+    "Angband", 
+    "Dungeons of Dredmor", 
+    "Rogue", 
+    "Terraria"
+  ], 
+  "Angband": [], 
+  "Tao's Adventure: Curse of the Demon Seal": [
+    "Azure Dreams"
+  ], 
+  "NetHack": [
+    "Rogue", 
+    "Hack", 
+    "Omega (video game)", 
+    "FTL: Faster Than Light", 
+    "Dungeon Crawl Stone Soup", 
+    "Sokoban", 
+    "Diablo", 
+    "Alpha"
+  ], 
+  "99 Levels to Hell": [
+    "Spelunky", 
+    "Dungeon"
+  ], 
+  "Not the Robots": [
+    "Building"
+  ], 
+  "Fatal Labyrinth": [
+    "Genesis", 
+    "Shining Force", 
+    "Streets of Rage", 
+    "Mission", 
+    "Sonic CD"
+  ], 
+  "Chocobo's Dungeon 2": [
+    "Dungeon", 
+    "Final Fantasy", 
+    "The Golden Compass"
+  ], 
+  "Alphaman": [
+    "AlphaMan"
+  ]
+}

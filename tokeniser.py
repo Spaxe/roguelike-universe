@@ -82,7 +82,6 @@ blacklist = set([
 not_games = set([
   'Add',
   'Advent',
-  'Adventure',
   'Adventures',
   'Air',
   'Alien',
@@ -119,7 +118,6 @@ not_games = set([
   'Dragon',
   'Dreams',
   'Drop',
-  'Dungeon',
   'Dungeons',
   'Edmund',
   'Energy',
@@ -222,7 +220,6 @@ not_games = set([
   'Tactic',
   'Tank',
   'Team',
-  'Teleglitch: Die More Edition',
   'Temporal',
   'That',
   'The Pit',
