@@ -13,6 +13,8 @@
   "quotmark": true,
   "undef": true,
   "unused": false,
+  "sub": true,
+  "strict": false,
   "globals": {
     "ADD": true,
     "ALT": true,

@@ -1,74 +1,113 @@
-/* global R */
-'use strict';
-
 // Data
-var data_game_year;
-var data_years;
-var max_year;
-var min_year;
-
-// Functions
-var normalise_year;
+var game_sources;
+var game_relations;
+var year_bucket;
 
 // Layout
 var padding = 50;
-var w, h;
+var w = 1600;
+var h = 1000;
+var division = 800;
 
-function preload() {
-  data_game_year = loadJSON('generated/games-years.json');
+// Element
+var unit = 12;
+
+function preload () {
+  game_sources = loadJSON('generated/game-sources.json');
+  game_relations = loadJSON('generated/roguelike-relations.json');
 }
 
-function preprocess() {
-  data_years = R.values(data_game_year);
-  max_year = R.max(data_years);
-  min_year = R.min(data_years);
+function preprocess () {
+  // Sort games by year with definite order
+  year_bucket = {};
+  fn.eachProp(game_sources, function (k, v) {
+    var year = v['Year'];
+    year_bucket[year] = year_bucket[year] ? year_bucket[year].concat([k]) : [k];
+  });
 
-  normalise_year = function (year) {
-    return map(year, min_year, max_year+1, 0, 1);
-  };
+  // Generate unit coordinates chronologically
+  var i = 0;
+  fn.eachProp(year_bucket, function (k, v) {
+    fn.each(v, function (game) {
+      game_sources[game].index = i;
+      i++;
+    });
+  });
 }
 
 function setup () {
   preprocess();
   colorMode(HSB, 1);
-  createCanvas(1200, 600);
-  w = width - padding * 2;
-  h = height - padding * 2;
+  createCanvas(w + 2 * padding, h + 2 * padding);
+  noLoop();
+
+  textSize(10);
+  textFont('Georgia, Serif');
 }
 
 function draw () {
   background(1);
-  fill(0.04, 0.8, 0.9, 1);
-
-  var y_scale = 0.2;
+  noStroke();
+  fill(0);
 
   push();
-    translate(padding, padding);
+    translate(0, division);
+    fn.eachProp(year_bucket, function (k, v) {
+      fn.each(v, function(game) {
+        var g = game_sources[game];
+        var x = g.index * (unit * 1.5);
+        rect(x,
+             0,
+             unit,
+             unit / 4);
 
-    push();
-      translate(0, h/2);
-      var year_counter = {};
-      R.forEach(function (year) {
-        var x = normalise_year(year);
-        var c = year_counter[year] + 1 || 0;
-        var y = c % 2 === 0 ? -Math.ceil(c/2) : Math.ceil(c/2);
-        year_counter[year] = c;
+        // game connections
+        push();
+          noFill();
+          stroke(0);
+          fn.each(fn.unique(game_relations[game]), function (other) {
+            if (game !== other) {
+              var r = game_sources[other];
+              var rx = r.index * (unit * 1.5);
+              var d = Math.abs(rx-x);
+              arc((rx+x)/2 + unit / 2, 0, d, d, PI, 2*PI);
+            }
+          });
+        pop();
 
-        rect(x * w, y * y_scale, Math.floor(w/(max_year-min_year)) - 10, 1);
-      }, data_years);
+        // game titles
+        push();
+          noStroke();
+          fill(0);
+          translate(x + 2, unit / 2);
+          rotate(PI/2);
 
-      console.log(R.max(R.values(year_counter)));
-
-      // R.forEach(function (year) {
-      //   text(year, normalise_year(year) * w, h/4);
-      // }, R.range(min_year, max_year+1));
-
-      // R.forEach(function (c) {
-      //   c *= 500;
-      //   text(c, w, c/2 * y_scale);
-      //   text(c, w, -c/2 * y_scale);
-      // }, R.range(0, 5));
-    pop();
-
+          text(game, 0, 0);
+        pop();
+      });
+    });
   pop();
 }
+
+// Util functions
+var fn = {
+  each: function (array, callback) {
+    for (var i = 0; i < array.length; i++) {
+      callback(array[i]);
+    }
+  },
+
+  eachProp: function (obj, callback) {
+    for (var x in obj) {
+      if (obj.hasOwnProperty(x)) {
+        callback(x, obj[x]);
+      }
+    }
+  },
+
+  unique: function (array) {
+    return array.filter(function (value, index, self) {
+      return self.indexOf(value) === index;
+    });
+  }
+};
