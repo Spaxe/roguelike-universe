@@ -1,5 +1,5 @@
 // fn by Xavier Ho <contact@xavierho.com>
-define([], function () {
+define(['svg'], function (SVG) {
 
   var fn = {
 
@@ -62,7 +62,7 @@ define([], function () {
 
     // Context functions
     svg: function(id) {
-      return SVG(id).fixSubPixelOffset();
+      return SVG(id);
     },
 
     // Mathematics and geometry

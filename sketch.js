@@ -7,7 +7,7 @@ require.config({
   }
 });
 
-require(['svg', 'fn'], function(SVG, fn) {
+require(['fn'], function(fn) {
 
   var game_sources_path = 'generated/game-sources.json';
   var game_relations_path = 'generated/roguelike-relations.json';
