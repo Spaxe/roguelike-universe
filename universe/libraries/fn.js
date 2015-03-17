@@ -56,12 +56,6 @@ var fn = {
 
   // Context functions
   svg: function(id) {
-    return new Promise(function (resolve, reject) {
-      try {
-        resolve(SVG(id));
-      } catch (e) {
-        reject(e);
-      }
-    });
+    return SVG(id);
   }
 };
