@@ -12,11 +12,15 @@ html, body, #universe {
   cursor: pointer;
 }
 
-.roguelike-title:hover {
+.roguelike-title-hover {
   fill: red;
 }
 
 .roguelike-relation {
   fill: none;
   stroke: black;
+}
+
+.roguelike-relation-hover {
+  stroke: red;
 }

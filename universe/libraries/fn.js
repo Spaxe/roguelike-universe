@@ -16,6 +16,10 @@ var fn = {
     }
   },
 
+  has: function (arr, element) {
+    return arr.indexOf(element) > -1;
+  },
+
   unique: function (array) {
     return array.filter(function (value, index, self) {
       return self.indexOf(value) === index;

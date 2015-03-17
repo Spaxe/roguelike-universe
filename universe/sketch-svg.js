@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     scaleX: 0.5,
     scaleY: 0.5
   });
+  var group_relations = universe.group().transform({x: 0, y: 800})
 
   // Load roguelike games and metadata
   Promise.resolve(fn.getJSON(game_sources_path))
@@ -71,7 +72,10 @@ document.addEventListener('DOMContentLoaded', function () {
                cy: 0,
                rotation: 90
              })
-             .attr('class', 'roguelike-title');
+             .addClass('roguelike-title')
+             .data('title', k)
+             .on('mouseover', title_mousehover)
+             .on('mouseout', title_mouseout);
       });
 
       // Draw connections
@@ -84,13 +88,30 @@ document.addEventListener('DOMContentLoaded', function () {
             var rx = r_index * (unit * 1.5);
             var d = Math.abs(kx - rx);
             var arc = fn.arc((kx+rx)/2+unit/2, 0, d/2, Math.PI, Math.PI*2);
-            universe.group()
-                    .transform({x: 0, y: 800})
-                    .path(arc)
-                    .attr('class', 'roguelike-relation');
+            group_relations.path(arc)
+                           .data('titles', [k, r])
+                           .addClass('roguelike-relation');
           }
         });
       });
     });
+
+    // Interactions
+    function title_mousehover () {
+      this.addClass('roguelike-title-hover');
+      var title = this.data('title');
+      group_relations.each(function () {
+        if (fn.has(this.data('titles'), title)) {
+          this.addClass('roguelike-relation-hover');
+        }
+      });
+    }
+
+    function title_mouseout () {
+      this.removeClass('roguelike-title-hover');
+      group_relations.each(function () {
+        this.removeClass('roguelike-relation-hover');
+      });
+    }
 
 });
