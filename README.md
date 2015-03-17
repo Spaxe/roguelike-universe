@@ -1,11 +1,10 @@
 # Roguelike Universe
 
-by Xavier Ho <contact@xavierho.com>
+**Live Webpage: http://spaxe.github.io/roguelike-universe/**
 
-http://jumptoglide.com
+Author: Xavier Ho <contact@xavierho.com>
+Website: http://jumptoglide.com
 
-References
-----------
-List of Every Video Games Ever Made: Source: http://pastebin.com/EuxZMbWT
-
-List of Roguelike Games: http://en.wikipedia.org/wiki/Chronology_of_roguelike_video_games
+## References
+ * List of Every Video Games Ever Made: Source: http://pastebin.com/EuxZMbWT
+ * List of Roguelike Games: http://en.wikipedia.org/wiki/Chronology_of_roguelike_video_games
