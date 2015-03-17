@@ -1,3 +1,4 @@
+/* globals fn */
 document.addEventListener('DOMContentLoaded', function () {
 
   var game_sources_path = 'generated/game-sources.json';
@@ -17,8 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var unit = 12;
 
   // Program
-  var svg = fn.svg('universe')
-              .fixSubPixelOffset();
+  var svg = fn.svg('universe');
   var universe = svg.group().transform({
     x: padding,
     y: padding,
@@ -55,7 +55,20 @@ document.addEventListener('DOMContentLoaded', function () {
       var lines = universe.group()
                           .transform({x: 0, y: 800});
       fn.eachProp(game_sources, function (k, v) {
-        lines.rect(unit, unit/3).transform({x: v.index * (unit * 1.5), y: 0});
+        lines.rect(unit, unit/4)
+             .transform({
+               x: v.index * (unit * 1.5),
+               y: 0
+             });
+        lines.text(k)
+             .transform({
+               x: v.index * (unit * 1.5) + unit,
+               y: -unit * 2,
+               cx: v.index * (unit * 1.5),
+               cy: 0,
+               rotation: 90
+             })
+             .attr('class', 'roguelike-title');
       });
 
     });

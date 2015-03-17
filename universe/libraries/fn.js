@@ -56,6 +56,6 @@ var fn = {
 
   // Context functions
   svg: function(id) {
-    return SVG(id);
+    return SVG(id).fixSubPixelOffset();
   }
 };
