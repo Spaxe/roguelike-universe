@@ -1,5 +1,13 @@
 /* globals fn */
-document.addEventListener('DOMContentLoaded', function () {
+
+require.config({
+  paths: {
+    'svg': 'lib/svg',
+    'fn': 'src/fn'
+  }
+});
+
+require(['svg', 'fn'], function(SVG, fn) {
 
   var game_sources_path = 'generated/game-sources.json';
   var game_relations_path = 'generated/roguelike-relations.json';
