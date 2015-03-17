@@ -26,7 +26,7 @@ require(['fn'], function(fn) {
   var unit = 12;
 
   // Program
-  var svg = fn.svg('universe');
+  var svg = fn.svg('#universe');
   var universe = svg.group().transform({
     x: padding,
     y: padding,
