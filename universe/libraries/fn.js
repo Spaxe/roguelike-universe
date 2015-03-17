@@ -57,5 +57,24 @@ var fn = {
   // Context functions
   svg: function(id) {
     return SVG(id).fixSubPixelOffset();
+  },
+
+  // Mathematics and geometry
+  polarToCartesian: function (cx, cy, r, angle) {
+    return {
+      x: cx + (r * Math.cos(angle)),
+      y: cy + (r * Math.sin(angle))
+    };
+  },
+
+  arc: function (cx, cy, r, beginAngle, endAngle) {
+    var start = fn.polarToCartesian(cx, cy, r, endAngle);
+    var end = fn.polarToCartesian(cx, cy, r, beginAngle);
+    var arcSweep = (endAngle - beginAngle) <= 180 ? "0" : "1";
+
+    return new SVG.PathArray([
+        ["M", start.x, start.y],
+        ["A", r, r, 0, arcSweep, 0, end.x, end.y]
+    ]);
   }
 };

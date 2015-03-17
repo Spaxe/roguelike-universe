@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
   Promise.resolve(fn.getJSON(game_sources_path))
     .then(function (sources) {
 
+      game_sources = sources;
+
       // Sort games by year
       fn.eachProp(sources, function (k, v) {
         var year = v['Year'];
@@ -46,12 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       });
 
-      game_sources = sources;
-
       // Load roguelike relations
       return Promise.resolve(fn.getJSON(game_relations_path));
     }).then(function (relations) {
 
+      game_relations = relations;
+
+      // Draw game titles
       var lines = universe.group()
                           .transform({x: 0, y: 800});
       fn.eachProp(game_sources, function (k, v) {
@@ -71,6 +74,23 @@ document.addEventListener('DOMContentLoaded', function () {
              .attr('class', 'roguelike-title');
       });
 
+      // Draw connections
+      fn.eachProp(game_relations, function (k, v) {
+        fn.each(fn.unique(v), function (r) {
+          if (k !== r) {
+            var k_index = game_sources[k].index;
+            var r_index = game_sources[r].index;
+            var kx = k_index * (unit * 1.5);
+            var rx = r_index * (unit * 1.5);
+            var d = Math.abs(kx - rx);
+            var arc = fn.arc((kx+rx)/2+unit/2, 0, d/2, Math.PI, Math.PI*2);
+            universe.group()
+                    .transform({x: 0, y: 800})
+                    .path(arc)
+                    .attr('class', 'roguelike-relation');
+          }
+        });
+      });
     });
 
 });

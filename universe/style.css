@@ -15,3 +15,8 @@ html, body, #universe {
 .roguelike-title:hover {
   fill: red;
 }
+
+.roguelike-relation {
+  fill: none;
+  stroke: black;
+}
