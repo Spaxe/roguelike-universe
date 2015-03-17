@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       game_relations = relations;
 
+      // Remove loading placeholder
+      document.getElementById('loading').remove();
+
       // Draw game titles
       var lines = universe.group()
                           .transform({x: 0, y: 800});
