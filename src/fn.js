@@ -1,35 +1,6 @@
-// fn by Xavier Ho <contact@xavierho.com>
-
-define(['svg'], function (SVG) {
+define([], function () {
 
   var fn = this.fn = function () {};
-
-  // Context functions
-  fn.svg = function (elementSelector) {
-    return SVG(typeof elementSelector === 'string' ?
-      document.querySelector(elementSelector) :
-      elementSelector
-    );
-  }
-
-  fn.arc = function (cx, cy, r, beginAngle, endAngle) {
-    var start = fn.polarToCartesian(cx, cy, r, endAngle);
-    var end = fn.polarToCartesian(cx, cy, r, beginAngle);
-    var arcSweep = (endAngle - beginAngle) <= 180 ? "0" : "1";
-
-    return new SVG.PathArray([
-        ["M", start.x, start.y],
-        ["A", r, r, 0, arcSweep, 0, end.x, end.y]
-    ]);
-  };
-
-  // Mathematics and geometry
-  fn.polarToCartesian = function (cx, cy, r, angle) {
-    return {
-      x: cx + (r * Math.cos(angle)),
-      y: cy + (r * Math.sin(angle))
-    };
-  };
 
   // Utility functions
   fn.each = function (array, callback) {
@@ -48,6 +19,17 @@ define(['svg'], function (SVG) {
 
   fn.has = function (arr, element) {
     return arr.indexOf(element) > -1;
+  };
+
+  fn.merge = function (a, b) {
+    var c = {};
+    for (var i in a)
+      if (a.hasOwnProperty(i))
+        c[i] = a[i];
+    for (var i in b)
+      if (b.hasOwnProperty(i))
+        c[i] = b[i];
+    return c;
   };
 
   fn.unique = function (array) {
