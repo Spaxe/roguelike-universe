@@ -31,7 +31,7 @@ require(['fn', 'gx'], function(fn, gx) {
 
   // Program
   var svg = gx.svg('#universe');
-  svg.rect(50, 50, 100, 100);
+  // svg.rect(50, 50, 100, 100);
 
   var universe = svg.g('translate(50 50) scale(0.5 0.5)');
 
