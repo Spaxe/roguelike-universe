@@ -30,45 +30,74 @@ require(['fn', 'gx'], function(fn, gx) {
   var unit = 12;
 
   // Program
-  gx.frame('#universe');
-  gx.rect(50, 50, 100, 100);
+  var svg = gx.svg('#universe');
+  svg.rect(50, 50, 100, 100);
 
-  gx.g('translate(50 50) scale(0.5 0.5)');
+  var universe = svg.g('translate(50 50) scale(0.5 0.5)');
 
-  document.getElementById('loading').remove();
+  // Load roguelike games and metadata
+  Promise.resolve(fn.getJSON(game_sources_path))
+    .then(function (sources) {
 
-  // var universe = svg.group().transform({
-  //   x: padding,
-  //   y: padding,
-  //   scaleX: 0.5,
-  //   scaleY: 0.5
-  // });
+      game_sources = sources;
+
+      // Sort games by year
+      fn.eachProp(sources, function (k, v) {
+        var year = v['Year'];
+        year_bucket[year] = year_bucket[year] ?
+          year_bucket[year].concat([k]) : [k];
+      });
+
+      // Generate unit coordinates chronologically
+      var i = 0;
+      fn.eachProp(year_bucket, function (k, v) {
+        fn.each(v, function (game) {
+          sources[game].index = i;
+          i++;
+        });
+      });
+
+      // Load roguelike relations
+      return Promise.resolve(fn.getJSON(game_relations_path));
+
+    }).then(function (relations) {
+
+      game_relations = relations;
+
+      // Remove loading placeholder
+      document.getElementById('loading').remove();
+
+      // Draw game titles
+      var lines = universe.g('translate(0 800)');
+      fn.eachProp(game_sources, function (k, v) {
+        lines.rect(v.index * (unit * 1.5), 0, unit, unit/4)
+      });
+
+      // var lines = universe.group()
+      //                     .transform({x: 0, y: 800});
+      // fn.eachProp(game_sources, function (k, v) {
+      //   lines.rect(unit, unit/4)
+      //        .transform({
+      //          x: v.index * (unit * 1.5),
+      //          y: 0
+      //        });
+      //   lines.text(k)
+      //        .transform({
+      //          x: v.index * (unit * 1.5) + unit,
+      //          y: -unit * 2,
+      //          cx: v.index * (unit * 1.5),
+      //          cy: 0,
+      //          rotation: 90
+      //        })
+      //        .addClass('roguelike-title')
+      //        .data('title', k)
+      //        .on('mouseover', title_mousehover)
+      //        .on('mouseout', title_mouseout);
+      });
+
   // var group_relations = universe.group().transform({x: 0, y: 800})
 
-  // // Load roguelike games and metadata
-  // Promise.resolve(fn.getJSON(game_sources_path))
-  //   .then(function (sources) {
 
-  //     game_sources = sources;
-
-  //     // Sort games by year
-  //     fn.eachProp(sources, function (k, v) {
-  //       var year = v['Year'];
-  //       year_bucket[year] = year_bucket[year] ?
-  //         year_bucket[year].concat([k]) : [k];
-  //     });
-
-  //     // Generate unit coordinates chronologically
-  //     var i = 0;
-  //     fn.eachProp(year_bucket, function (k, v) {
-  //       fn.each(v, function (game) {
-  //         sources[game].index = i;
-  //         i++;
-  //       });
-  //     });
-
-  //     // Load roguelike relations
-  //     return Promise.resolve(fn.getJSON(game_relations_path));
   //   }).then(function (relations) {
 
   //     game_relations = relations;

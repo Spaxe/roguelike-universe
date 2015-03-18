@@ -6,17 +6,18 @@ define(['fn', 'observe'], function (fn) {
 
   // gx object definition and methods
   var idn = 0;
-  var gxFrame = null;
-  function gx(obj) {
+  function gx(obj, parent) {
     if (!(typeof obj === 'string' || typeof obj.tag === 'string')) {
       throw new TypeError('Invalid gx() tagName. Did you forget to supply it?');
     }
     var obj = obj.tag ? obj : {tag: obj};
     var config = this.config = {};
-    var element = document.createElementNS('http://www.w3.org/2000/svg', obj.tag);
-    var objFrame = gxFrame;
+    var element = this.element = document.createElementNS('http://www.w3.org/2000/svg', obj.tag);
+    this.parent = parent;
 
     // Data binding
+    // TODO: This is a bit of a wildcard. Needs to do some boundary checking to
+    //       ensure we're not overriding functions.
     Object.observe(config, function (changes) {
       changes.forEach(function (change) {
         element.setAttribute(change.name, change.object[change.name]);
@@ -30,36 +31,46 @@ define(['fn', 'observe'], function (fn) {
     });
 
     if (!config.id) config.id = 'gx_' + obj.tag + '_' + idn++;
-    if (objFrame) objFrame.appendChild(element);
+    if (parent) parent.element.appendChild(element);
 
-    return element;
+    return this;
   }
 
-  // Factory static methods
+  // Factory methods
   gx.defineTags = function (funcs) {
     fn.eachProp(funcs, function (f, d) {
-      gx[f] = function () {
-        var args = {};
-        for (var i = 0; i < arguments.length; i++) {
-          args[d[i]] = arguments[i];
+      gx.prototype[f] = function () {
+        if (arguments.length === 1 && arguments[0].constructor.name === 'Object') {
+          var args = arguments[0];
+        } else {
+          var args = {};
+          for (var i = 0; i < arguments.length; i++) {
+            args[d[i]] = arguments[i];
+          }
         }
-        return new gx(fn.merge({tag: f}, args));
+        return new gx(fn.merge({tag: f}, args), this);
       };
     });
   };
 
   gx.defineTags({
-    svg: [],
     g: ['transform'],
     rect: ['x', 'y', 'width', 'height']
   });
 
   // Instance methods
   gx.prototype.attr = function() {
+    var config = this.config;
     if (arguments.length === 0) {
       return this.config;
     } else if (arguments.length === 1) {
-      return this.config[arguments[0]];
+      if (typeof arguments === 'string') {
+        return this.config[arguments[0]];
+      } else {
+        fn.eachProp(arguments[0], function (k, v) {
+          config[k] = v;
+        });
+      }
     } else {
       var args = [];
       for (var i = 0; i < arguments.length; i++) {
@@ -71,24 +82,22 @@ define(['fn', 'observe'], function (fn) {
     }
   };
 
-  // static methods
-  gx.frame = function (selector) {
-    if (typeof selector === 'string') {
-      var element = document.querySelector(selector);
-      if (!element)
-        throw new Error('You must supply a valid DOM selector as argument to start gx().');
-      gxFrame = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      if (element instanceof Array) {
-        element.forEach(function (e) {
-          e.appendChild(gxFrame);
-        });
-      } else {
-        element.appendChild(gxFrame);
-      }
-    } else {
-      gxFrame = selector;
-    }
-    return this;
+  // Select an element to create a SVGElement under.
+  // TODO: Support more than one element with this method.
+  gx.svg = function (selector) {
+    var element = typeof selector === 'string' ? document.querySelector(selector) : undefined;
+    if (!element)
+      throw new TypeError('gx.svg() cannot find a valid DOM element: ' + selector);
+    var svg = new gx({
+      tag: 'svg',
+      xmlns: 'http://www.w3.org/2000/svg',
+      'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+      version: 1.1,
+      width: '100%',
+      height: '100%'
+    });
+    element.appendChild(svg.element);
+    return svg;
   };
 
   gx.arc = function (cx, cy, r, beginAngle, endAngle) {
