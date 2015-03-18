@@ -29,7 +29,7 @@ define(['fn', 'observe'], function (fn) {
       config[k] = v;
     });
 
-    if (!config.id) config.id = 'gx_' + config.tag + '_' + idn++;
+    if (!config.id) config.id = 'gx_' + obj.tag + '_' + idn++;
     if (objFrame) objFrame.appendChild(element);
 
     return element;
@@ -50,6 +50,7 @@ define(['fn', 'observe'], function (fn) {
 
   gx.defineTags({
     svg: [],
+    g: ['transform'],
     rect: ['x', 'y', 'width', 'height']
   });
 

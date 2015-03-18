@@ -32,6 +32,9 @@ require(['fn', 'gx'], function(fn, gx) {
   // Program
   gx.frame('#universe');
   gx.rect(50, 50, 100, 100);
+
+  gx.g('translate(50 50) scale(0.5 0.5)');
+
   document.getElementById('loading').remove();
 
   // var universe = svg.group().transform({
