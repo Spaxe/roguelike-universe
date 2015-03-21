@@ -4,11 +4,11 @@ require.config({
   paths: {
     'gx': 'src/gx',
     'fn': 'src/fn',
-    'bvg': 'src/bvg',
+    'BVG': 'src/BVG',
   }
 });
 
-require(['fn', 'bvg'], function(fn, bvg) {
+require(['fn', 'BVG'], function(fn, BVG) {
 
   var game_sources_path = 'generated/game-sources.json';
   var game_relations_path = 'generated/roguelike-relations.json';
@@ -27,8 +27,8 @@ require(['fn', 'bvg'], function(fn, bvg) {
   var unit = 12;
 
   // Program
-  var svg = bvg.create('#universe');
-  svg.appendChild(bvg.rect(50, 50, 100, 100));
+  var svg = BVG.create('#universe');
+  svg.appendChild(BVG.rect(50, 50, 100, 100));
 
   // var universe = svg.g('translate(50 50) scale(0.5 0.5)');
 
