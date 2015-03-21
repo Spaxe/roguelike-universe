@@ -4,25 +4,55 @@
 
 define([], function () {
 
+  var svgElements = {
+    svg: ['xmlns:xlink', 'version', 'width', 'height'],
+    g: ['transform'],
+    rect: ['x', 'y', 'width', 'height']
+  };
   var BVGIDCounter = 0;
+
   var BVG = function (svg, data, bind) {
     if (typeof svg === 'string')
       svg = document.createElementNS('http://www.w3.org/2000/svg', svg);
     if (!(svg instanceof SVGElement))
       throw new TypeError('svg (' + svg + ') must be SVG tag name or element.');
 
+    var bvg = svg;
+    bvg.isBVG = true;
+    bvg.data = function () {
+      if (arguments.length === 0) {
+        return data;
+      } else if (arguments.length === 1) {
+        if (typeof arguments[0] === 'string') {
+          return data[arguments[0]];
+        } else {
+          for (var name in arguments[0]) {
+            if (arguments[0].hasOwnProperty(name)) {
+              data[name] = arguments[0][name];
+            }
+          }
+          return bvg;
+        }
+      } else {
+        data[arguments[0]] = arguments[1];
+        return bvg;
+      }
+    }
+    bvg.bind = bind;
+    BVG.addFactoryMethods(bvg);
+
     Object.observe(data, function(changes) {
       changes.forEach(function (change) {
-        bind(svg, change);
+        bind(bvg, change);
       });
     });
 
     if (!data.id)
-      data.id = 'BVG_' + svg.tagName + '_' + BVGIDCounter++;
+      data.id = 'BVG_' + bvg.tagName + '_' + BVGIDCounter++;
 
     for (var name in data) {
       if (data.hasOwnProperty(name)) {
-        bind(svg, {
+        bind(bvg, {
           type: 'add',
           object: data,
           name: name
@@ -30,9 +60,7 @@ define([], function () {
       }
     }
 
-    svg.data = data;
-    svg.bind = bind;
-    return svg;
+    return bvg;
   };
 
   BVG.create = function (htmlElement) {
@@ -41,8 +69,7 @@ define([], function () {
     if (!(htmlElement instanceof HTMLElement))
       throw new TypeError('htmlElement (' + htmlElement + ') was not found.');
 
-    var svg = BVG.svg('http://www.w3.org/2000/svg',
-                      'http://www.w3.org/1999/xlink',
+    var svg = BVG.svg('http://www.w3.org/1999/xlink',
                       1.1,
                       '100%',
                       '100%');
@@ -57,12 +84,12 @@ define([], function () {
     * This allows name checking for functions since calling an undefined
     * function would fail.
     */
-  BVG.factory = function (svg, attrs) {
-    BVG[svg] = function () {
+  BVG.factory = function (bvg, svg, attrs) {
+    bvg[svg] = function () {
       if (arguments.length === 2 &&
           arguments[0] instanceof Object &&
           typeof arguments[1] === 'function') {
-        return BVG(svg, arguments[0]. arguments[1]);
+        var newBVG = BVG(svg, arguments[0]. arguments[1]);
       } else {
         var data = {};
         var paranmeters = [];
@@ -72,8 +99,19 @@ define([], function () {
         attrs.forEach(function (arg) {
           data[arg] = paranmeters.shift();
         });
-        return BVG(svg, data, BVG.bindEqual);
+        var newBVG = BVG(svg, data, bvg.bindEqual);
       }
+      if (bvg.isBVG)
+        bvg.appendChild(newBVG);
+      return newBVG;
+    };
+    bvg[svg + 'Array'] = function(data, bind) {
+      return data.map(function (datum) {
+        var newBVG = BVG[svg].apply(BVG[svg], datum);
+        if (bvg.isBVG)
+          bvg.appendChild(newBVG);
+        return newBVG;
+      });
     };
   };
 
@@ -85,14 +123,12 @@ define([], function () {
     }
   };
 
-  var svgElements = {
-    svg: ['xmlns', 'xmlns:xlink', 'version', 'width', 'height'],
-    g: ['transform'],
-    rect: ['x', 'y', 'width', 'height']
+  BVG.addFactoryMethods = function (bvg) {
+    for (var tagName in svgElements) {
+      BVG.factory(bvg, tagName, svgElements[tagName]);
+    }
   };
-  for (var svg in svgElements) {
-    BVG.factory(svg, svgElements[svg]);
-  }
+  BVG.addFactoryMethods(BVG);
 
   return BVG;
 });

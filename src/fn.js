@@ -32,6 +32,19 @@ define([], function () {
     return c;
   };
 
+  fn.range = function (start, end, step) {
+    var output = [];
+    if (!end) {
+      end = start;
+      start = 0;
+    }
+    step = step || (end > start ? 1 : -1);
+    for (var n = start; n < end; n += step) {
+      output.push(n);
+    }
+    return output;
+  }
+
   fn.unique = function (array) {
     return array.filter(function (value, index, self) {
       return self.indexOf(value) === index;

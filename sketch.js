@@ -27,8 +27,14 @@ require(['fn', 'BVG'], function(fn, BVG) {
   var unit = 12;
 
   // Program
-  var svg = BVG.create('#universe');
-  svg.appendChild(BVG.rect(50, 50, 100, 100));
+  var bvg = BVG.create('#universe');
+  bvg.rectArray([
+    [50, 50, 100, 100],
+    [50, 160, 100, 100],
+    [160, 50, 100, 100],
+    [160, 160, 100, 100],
+    [50, 270, 210, 300]
+  ]);
 
   // var universe = svg.g('translate(50 50) scale(0.5 0.5)');
 
@@ -60,9 +66,6 @@ require(['fn', 'BVG'], function(fn, BVG) {
   //   }).then(function (relations) {
 
   //     game_relations = relations;
-
-  //     // Remove loading placeholder
-  //     document.getElementById('loading').remove();
 
   //     // Draw game titles
   //     var lines = universe.g('translate(0 800)');
@@ -160,5 +163,8 @@ require(['fn', 'BVG'], function(fn, BVG) {
   //       this.removeClass('roguelike-relation-hover');
   //     });
   //   }
+
+  // Remove loading placeholder
+  document.getElementById('loading').remove();
 
 });
