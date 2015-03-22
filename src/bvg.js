@@ -19,26 +19,8 @@ define([], function () {
 
     var bvg = svg;
     bvg.isBVG = true;
-    bvg.data = function () {
-      if (arguments.length === 0) {
-        return data;
-      } else if (arguments.length === 1) {
-        if (typeof arguments[0] === 'string') {
-          return data[arguments[0]];
-        } else {
-          for (var name in arguments[0]) {
-            if (arguments[0].hasOwnProperty(name)) {
-              data[name] = arguments[0][name];
-            }
-          }
-          return bvg;
-        }
-      } else {
-        data[arguments[0]] = arguments[1];
-        return bvg;
-      }
-    }
     bvg.bind = bind;
+    BVG.addUtilityMethods(bvg);
     BVG.addFactoryMethods(bvg);
 
     Object.observe(data, function(changes) {
@@ -79,7 +61,7 @@ define([], function () {
 
   /** ### BVG.factory(svg, attrs)
     *
-    * *Internal.* Populate the library with functions to create a BVG.
+    * Populate the library with functions to create a BVG.
     *
     * This allows name checking for functions since calling an undefined
     * function would fail.
@@ -115,6 +97,13 @@ define([], function () {
     };
   };
 
+  BVG.addFactoryMethods = function (bvg) {
+    for (var tagName in svgElements) {
+      BVG.factory(bvg, tagName, svgElements[tagName]);
+    }
+  };
+  BVG.addFactoryMethods(BVG);
+
   BVG.bindEqual = function (svg, change) {
     if (change.type === 'add' || change.type === 'update') {
       svg.setAttribute(change.name, change.object[change.name]);
@@ -123,12 +112,31 @@ define([], function () {
     }
   };
 
-  BVG.addFactoryMethods = function (bvg) {
-    for (var tagName in svgElements) {
-      BVG.factory(bvg, tagName, svgElements[tagName]);
+  BVG.addUtilityMethods = function (bvg) {
+    bvg.data = function () {
+      if (arguments.length === 0) {
+        return data;
+      } else if (arguments.length === 1) {
+        if (typeof arguments[0] === 'string') {
+          return data[arguments[0]];
+        } else {
+          for (var name in arguments[0]) {
+            if (arguments[0].hasOwnProperty(name)) {
+              data[name] = arguments[0][name];
+            }
+          }
+          return bvg;
+        }
+      } else {
+        data[arguments[0]] = arguments[1];
+        return bvg;
+      }
     }
+
+
   };
-  BVG.addFactoryMethods(BVG);
+
+
 
   return BVG;
 });

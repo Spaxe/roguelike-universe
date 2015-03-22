@@ -3,12 +3,6 @@ define([], function () {
   var fn = this.fn = function () {};
 
   // Utility functions
-  fn.each = function (array, callback) {
-    for (var i = 0; i < array.length; i++) {
-      callback(array[i]);
-    }
-  };
-
   fn.eachProp = function (obj, callback) {
     for (var x in obj) {
       if (obj.hasOwnProperty(x)) {
