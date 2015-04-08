@@ -1,14 +1,4 @@
-/* globals fn */
-
-require.config({
-  paths: {
-    'gx': 'src/gx',
-    'fn': 'src/fn',
-    'BVG': 'src/BVG',
-  }
-});
-
-require(['fn', 'BVG'], function(fn, BVG) {
+require(['node_modules/bvg/bvg'], function(BVG) {
 
   var game_sources_path = 'generated/game-sources.json';
   var game_relations_path = 'generated/roguelike-relations.json';
@@ -28,13 +18,15 @@ require(['fn', 'BVG'], function(fn, BVG) {
 
   // Program
   var bvg = BVG.create('#universe');
-  bvg.rectArray([
+  [
     [50, 50, 100, 100],
     [50, 160, 100, 100],
     [160, 50, 100, 100],
     [160, 160, 100, 100],
     [50, 270, 210, 300]
-  ]);
+  ].forEach(function (d) {
+    bvg.rect.apply(bvg, d);
+  });
 
   // var universe = svg.g('translate(50 50) scale(0.5 0.5)');
 
@@ -163,8 +155,4 @@ require(['fn', 'BVG'], function(fn, BVG) {
   //       this.removeClass('roguelike-relation-hover');
   //     });
   //   }
-
-  // Remove loading placeholder
-  document.getElementById('loading').remove();
-
 });
