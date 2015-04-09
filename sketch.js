@@ -2,31 +2,144 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
   var game_sources_path = 'generated/game-sources.json';
   var game_relations_path = 'generated/roguelike-relations.json';
+  var game_years_path = 'generated/games-years.json';
+  var other_relations_path = 'generated/other-relations.json';
 
   var game_sources;
   var game_relations;
+  var game_years;
+  var other_relations;
   var year_bucket = {};
 
   // Layout
-  var padding = 50;
-  var w = 1600;
-  var h = 1000;
-  var division = 800;
-
-  // Element
-  var unit = 12;
+  var size = 100;
+  var min_year;
+  var max_year;
+  var years;
+  var barLength;
 
   // Program
-  var bvg = BVG.create('#universe');
-  [
-    [50, 50, 100, 100],
-    [50, 160, 100, 100],
-    [160, 50, 100, 100],
-    [160, 160, 100, 100],
-    [50, 270, 210, 300]
-  ].forEach(function (d) {
-    bvg.rect.apply(bvg, d);
+  var universe = BVG.create('#universe', size);
+
+  getJSON(game_years_path).then(function (json) {
+    game_years = json;
+    var ys = [];
+    Object.keys(game_years).forEach(function (game) {
+      ys.push(game_years[game]);
+    });
+
+    min_year = Math.min.apply(null, ys);
+    max_year = Math.max.apply(null, ys);
+    years = max_year - min_year + 1;
+    barLength = (size - 10) / years;
+
+    return getJSON(game_sources_path);
+
+  }).then(function (json) {
+    game_sources = json;
+
+    // Sort games by year
+    Object.keys(game_sources).forEach(function (title) {
+      var year = game_sources[title]['Year'];
+      if (!year_bucket[year]) year_bucket[year] = [];
+      year_bucket[year].push(title);
+    });
+
+    // Draw timeline
+    for (var y = min_year; y <= max_year; y++) {
+      var x = (y - min_year) / years * (size - 10) + 5;
+      if (year_bucket[y]) {
+        var n = year_bucket[y].length;
+        year_bucket[y].forEach(function (title, i) {
+          // universe.rect(x,
+          //               size / 2 - i,
+          //               barLength * 0.9,
+          //               0.8)
+          //         .noStroke()
+          //         .fill(100);
+          game_sources[title].x = x + barLength * 0.9 / 2;
+          game_sources[title].y = size / 2 - i + 0.4;
+        });
+      }
+      universe.text(y, x, size / 2 + 1.75)
+              .addClass('year');
+    }
+
+    return getJSON(game_relations_path);
+
+  // Roguelike Relations
+  }).then(function (json) {
+    game_relations = json;
+
+    Object.keys(game_relations).forEach(function (title) {
+      var cache = {};
+      game_relations[title].forEach(function (other) {
+        if (cache.hasOwnProperty(other)) return;
+        else cache[other] = true;
+
+        var x = (game_sources[title].x + game_sources[other].x) / 2;
+        var y = size / 2 + 0.5;
+        var r = Math.abs(game_sources[title].x - game_sources[other].x) / 2;
+        universe.arc(x, y, r, r, Math.PI, Math.PI*2)
+                .stroke(0, 0, 0, 0.2)
+                .strokeWidth(0.1)
+                .noFill();
+      });
+    });
+
+    return getJSON(other_relations_path);
+
+  }).then (function (json) {
+    other_relations = json;
+
+    Object.keys(other_relations).forEach(function (title) {
+      var cache = {};
+      other_relations[title].forEach(function (other) {
+        if (cache.hasOwnProperty(other)) return;
+        else cache[other] = true;
+
+        var title_x = (game_sources[title].Year - min_year) / years * (size - 10) + 5;
+        var other_x = (game_years[other] - min_year) / years * (size - 10) + 5;
+        var x = (title_x + other_x) / 2 + barLength * 0.9 / 2;
+        var y = size / 2 + 2.5;
+        var r = Math.abs(title_x - other_x) / 2;
+        universe.arc(x, y, r, r, 0, Math.PI)
+                .stroke(0, 0, 0, 0.05)
+                .strokeWidth(0.1)
+                .noFill();
+      });
+    });
+
+  }).catch(function (e) {
+
+    // Error handling
+    throw e;
   });
+
+  function getURL(url) {
+    return new Promise(function (resolve, reject) {
+      var req = new XMLHttpRequest();
+      req.open('GET', url);
+      req.onload = function () {
+        if (req.status == 200) {
+          resolve(req.response);
+        } else {
+          reject(new Error(req.statusText));
+        }
+      };
+      req.onerror = function() {
+        reject(new Error('Network Error'));
+      };
+      req.send();
+    });
+  };
+
+  function getJSON(url) {
+    return getURL(url).then(JSON.parse).catch(function (err) {
+      console.log('getJSON failed to load', url);
+      throw err;
+    });
+  };
 
   // var universe = svg.g('translate(50 50) scale(0.5 0.5)');
 
