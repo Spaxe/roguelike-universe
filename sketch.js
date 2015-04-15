@@ -40,49 +40,23 @@ require(['node_modules/bvg/bvg'], function(BVG) {
     max_year = Math.max.apply(null, ys);
     years = max_year - min_year + 1;
     barLength = (heinlein_width - 10) / years;
+    for (var year = min_year; year <= max_year; year++) {
+      var x = (year - min_year) / years * (heinlein_width - 10) + 5;
+      heinlein.text(year, x, heinlein_height / 2 + 1.75)
+              .addClass('year')
+              .fill(BVG.hsla(getHueByYear(year), 40, 60));
+    }
 
     return getJSON(game_sources_path);
 
   }).then(function (json) {
     game_sources = json;
 
-    // Sort games by year
+    // Scramble force layout coordinates
     Object.keys(game_sources).forEach(function (title) {
-      var year = game_sources[title]['Year'];
-      if (!year_bucket[year]) year_bucket[year] = [];
-      year_bucket[year].push(title);
+      game_sources[title].x = Math.random() * 100;
+      game_sources[title].y = Math.random() * 100;
     });
-
-    // Draw timeline
-    for (var y = min_year; y <= max_year; y++) {
-      var x = (y - min_year) / years * (heinlein_width - 10) + 5;
-      if (year_bucket[y]) {
-        var n = year_bucket[y].length;
-        year_bucket[y].forEach(function (title, i) {
-          // Stacked chart for sampled games
-          sampled_games.rect(x,
-                             samples_height * 0.75 - i,
-                             barLength * 0.9,
-                             0.8)
-                       .noStroke()
-                       .fill(BVG.hsla(getHueByYear(y), 40, 60));
-
-          // Beginning force layout coordinates
-          game_sources[title].x = Math.random() * 100;
-          game_sources[title].y = Math.random() * 100;
-        });
-      }
-
-      // Timeline for Stacked Chart
-      sampled_games.text(y, x, samples_height * 0.75 + 1.75)
-              .addClass('year')
-              .fill(BVG.hsla(getHueByYear(y), 40, 60));
-
-      // Timeline for Heinlein
-      heinlein.text(y, x, heinlein_height / 2 + 1.75)
-              .addClass('year')
-              .fill(BVG.hsla(getHueByYear(y), 40, 60));
-    }
 
     return getJSON(game_relations_path);
 
@@ -217,10 +191,8 @@ require(['node_modules/bvg/bvg'], function(BVG) {
     return (year - min_year) / (max_year - min_year) * 360;
   }
 
-  function updateForceLayout (points, relations, attraction, threshold, repulsion) {
-    attraction = attraction || 3;
-    threshold = threshold || 5;
-    repulsion = repulsion || 8;
+  function updateForceLayout (points, relations) {
+    var threshold = 10;
 
     // Converging variable
     var limit = 0.1;
@@ -245,9 +217,9 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
 
         if (relations[point].indexOf(other) > -1 || relations[other].indexOf(point) > -1) {
-          var F = attraction * Math.log(distance / threshold);
+          var F = 4 * Math.log(distance / threshold);
         } else {
-          var F = Math.log(distance / (threshold * repulsion));
+          var F = Math.log(distance / (threshold * 4));
         }
 
         var Fx = F * Math.cos(angle);
