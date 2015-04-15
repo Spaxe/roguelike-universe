@@ -10,16 +10,24 @@ require(['node_modules/bvg/bvg'], function(BVG) {
   var game_years;
   var other_relations;
   var year_bucket = {};
+  var force_graph = [];
 
   // Layout
-  var size = 100;
+  var samples_height = 20;
+  var samples_width = 100;
+  var heinlein_height = 80;
+  var heinlein_width = 100;
+  var force_width = 100;
+  var force_height = 100;
   var min_year;
   var max_year;
   var years;
   var barLength;
 
-  // Program
-  var universe = BVG.create('#universe', size);
+  // Charts
+  var sampled_games = BVG.create('#samples', samples_width, samples_height);
+  var heinlein = BVG.create('#heinlein', heinlein_width, heinlein_height);
+  var force_layout = BVG.create('#force', force_width, force_height);
 
   getJSON(game_years_path).then(function (json) {
     game_years = json;
@@ -31,7 +39,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
     min_year = Math.min.apply(null, ys);
     max_year = Math.max.apply(null, ys);
     years = max_year - min_year + 1;
-    barLength = (size - 10) / years;
+    barLength = (heinlein_width - 10) / years;
 
     return getJSON(game_sources_path);
 
@@ -47,22 +55,33 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
     // Draw timeline
     for (var y = min_year; y <= max_year; y++) {
-      var x = (y - min_year) / years * (size - 10) + 5;
+      var x = (y - min_year) / years * (heinlein_width - 10) + 5;
       if (year_bucket[y]) {
         var n = year_bucket[y].length;
         year_bucket[y].forEach(function (title, i) {
-          // universe.rect(x,
-          //               size / 2 - i,
-          //               barLength * 0.9,
-          //               0.8)
-          //         .noStroke()
-          //         .fill(100);
-          game_sources[title].x = x + barLength * 0.9 / 2;
-          game_sources[title].y = size / 2 - i + 0.4;
+          // Stacked chart for sampled games
+          sampled_games.rect(x,
+                             samples_height * 0.75 - i,
+                             barLength * 0.9,
+                             0.8)
+                       .noStroke()
+                       .fill(BVG.hsla(getHueByYear(y), 40, 60));
+
+          // Beginning force layout coordinates
+          game_sources[title].x = Math.random() * 60 + 20;
+          game_sources[title].y = Math.random() * 60 + 20;
         });
       }
-      universe.text(y, x, size / 2 + 1.75)
-              .addClass('year');
+
+      // Timeline for Stacked Chart
+      sampled_games.text(y, x, samples_height * 0.75 + 1.75)
+              .addClass('year')
+              .fill(BVG.hsla(getHueByYear(y), 40, 60));
+
+      // Timeline for Heinlein
+      heinlein.text(y, x, heinlein_height / 2 + 1.75)
+              .addClass('year')
+              .fill(BVG.hsla(getHueByYear(y), 40, 60));
     }
 
     return getJSON(game_relations_path);
@@ -73,19 +92,82 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
     Object.keys(game_relations).forEach(function (title) {
       var cache = {};
+
+      heinlein.text('Roguelike games', 5, 10)
+              .addClass('label')
+              .fill(BVG.hsla(20, 30, 70));
+
       game_relations[title].forEach(function (other) {
-        if (cache.hasOwnProperty(other)) return;
+        if (cache.hasOwnProperty(other) || other === title) return;
         else cache[other] = true;
 
-        var x = (game_sources[title].x + game_sources[other].x) / 2;
-        var y = size / 2 + 0.5;
-        var r = Math.abs(game_sources[title].x - game_sources[other].x) / 2;
-        universe.arc(x, y, r, r, Math.PI, Math.PI*2)
-                .stroke(0, 0, 0, 0.2)
+        // Draw relation Heinlein arcs
+        var title_x = (game_sources[title].Year - min_year) / years * (heinlein_width - 10) + 5;
+        var other_x = (game_sources[other].Year - min_year) / years * (heinlein_width - 10) + 5;
+        var x = (title_x + other_x) / 2;
+        var y = heinlein_height / 2 + 0.5;
+        var r = Math.abs(title_x - other_x) / 2;
+        heinlein.arc(x, y, r, r, Math.PI, Math.PI*2)
+                .stroke(BVG.hsla(getHueByYear(game_sources[title].Year), 40, 70))
                 .strokeWidth(0.1)
                 .noFill();
+
+        // Draw force layout links
+        var line = new BVG('line', {
+          begin: game_sources[title],
+          end: game_sources[other]
+        }, function (tag, data) {
+          tag.setAttribute('x1', data.begin.x);
+          tag.setAttribute('y1', data.begin.y);
+          tag.setAttribute('x2', data.end.x);
+          tag.setAttribute('y2', data.end.y);
+        });
+        line.strokeWidth(0.1);
+        force_layout.append(line);
       });
     });
+
+
+    //Draw Force directed layout nodes
+    Object.keys(game_sources).forEach(function (title) {
+      var circle = new BVG('circle', {
+          points: game_sources[title],
+          r: 0.5
+        }, function (tag, data) {
+          tag.setAttribute('cx', data.points.x);
+          tag.setAttribute('cy', data.points.y);
+          tag.setAttribute('r', data.r);
+        });
+        circle.strokeWidth(0.1)
+              .stroke(240, 128, 64)
+              .fill(220, 64, 32);
+        force_layout.append(circle);
+    });
+
+    // Update Force Layouts
+    // var forceLayoutIntervalID = window.setInterval(function () {
+    //   console.log('force layout updating');
+    //   if (updateForceLayout(game_sources, game_relations)) {
+    //     window.clearInterval(forceLayoutIntervalID);
+    //     console.log('force layout converged');
+    //   }
+    // }, 500);
+
+    function _updateForceLayout () {
+      if(!updateForceLayout(game_sources, game_relations)) {
+        window.requestAnimationFrame(_updateForceLayout);
+      } else {
+        console.log('Force Layout completed');
+      }
+    }
+    window.requestAnimationFrame(_updateForceLayout);
+
+    // force_layout.tag().addEventListener('click', function () {
+      // for (var i = 0; i < 100; i++) {
+      //   console.log(i);
+        // updateForceLayout(game_sources, game_relations);
+      // }
+    // });
 
     return getJSON(other_relations_path);
 
@@ -94,17 +176,22 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
     Object.keys(other_relations).forEach(function (title) {
       var cache = {};
+
+      heinlein.text('Other games', 5, 75)
+              .addClass('label')
+              .fill(BVG.hsla(20, 30, 80));
+
       other_relations[title].forEach(function (other) {
         if (cache.hasOwnProperty(other)) return;
         else cache[other] = true;
 
-        var title_x = (game_sources[title].Year - min_year) / years * (size - 10) + 5;
-        var other_x = (game_years[other] - min_year) / years * (size - 10) + 5;
+        var title_x = (game_sources[title].Year - min_year) / years * (heinlein_width - 10) + 5;
+        var other_x = (game_years[other] - min_year) / years * (heinlein_width - 10) + 5;
         var x = (title_x + other_x) / 2 + barLength * 0.9 / 2;
-        var y = size / 2 + 2.5;
+        var y = heinlein_height / 2 + 2.5;
         var r = Math.abs(title_x - other_x) / 2;
-        universe.arc(x, y, r, r, 0, Math.PI)
-                .stroke(0, 0, 0, 0.05)
+        heinlein.arc(x, y, r, r, 0, Math.PI)
+                .stroke(BVG.hsla(getHueByYear(game_sources[title].Year), 40, 70, 0.2))
                 .strokeWidth(0.1)
                 .noFill();
       });
@@ -116,7 +203,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
     throw e;
   });
 
-  function getURL(url) {
+  function getURL (url) {
     return new Promise(function (resolve, reject) {
       var req = new XMLHttpRequest();
       req.open('GET', url);
@@ -134,138 +221,69 @@ require(['node_modules/bvg/bvg'], function(BVG) {
     });
   };
 
-  function getJSON(url) {
+  function getJSON (url) {
     return getURL(url).then(JSON.parse).catch(function (err) {
       console.log('getJSON failed to load', url);
       throw err;
     });
   };
 
-  // var universe = svg.g('translate(50 50) scale(0.5 0.5)');
+  function getHueByYear (year) {
+    return (year - min_year) / (max_year - min_year) * 360;
+  }
 
-  // // Load roguelike games and metadata
-  // Promise.resolve(fn.getJSON(game_sources_path))
-  //   .then(function (sources) {
+  function updateForceLayout (points, relations, attraction, threshold, repulsion) {
+    attraction = attraction || 3;
+    threshold = threshold || 5;
+    repulsion = repulsion || 8;
 
-  //     game_sources = sources;
+    // Converging variable
+    var limit = 0.1;
+    var converge = limit;
 
-  //     // Sort games by year
-  //     fn.eachProp(sources, function (k, v) {
-  //       var year = v['Year'];
-  //       year_bucket[year] = year_bucket[year] ?
-  //         year_bucket[year].concat([k]) : [k];
-  //     });
+    // Reset forces
+    var forces = {}
+    Object.keys(points).forEach(function (point) {
+      forces[point] = {
+        Fx: 0,
+        Fy: 0
+      };
+    });
 
-  //     // Generate unit coordinates chronologically
-  //     var i = 0;
-  //     fn.eachProp(year_bucket, function (k, v) {
-  //       fn.each(v, function (game) {
-  //         sources[game].index = i;
-  //         i++;
-  //       });
-  //     });
+    // Calculate attractive forces and repulsive forces
+    Object.keys(points).forEach(function (point) {
+      Object.keys(points).forEach(function (other) {
+        if (point === other) return;
+        var xDistance = points[other].x - points[point].x;
+        var yDistance = points[other].y - points[point].y;
+        var angle = Math.atan2(yDistance, xDistance);
+        var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
 
-  //     // Load roguelike relations
-  //     return Promise.resolve(fn.getJSON(game_relations_path));
+        if (relations[point].indexOf(other) > -1 || relations[other].indexOf(point) > -1) {
+          var F = attraction * Math.log(distance / threshold);
+        } else {
+          var F = Math.log(distance / (threshold * repulsion));
+        }
 
-  //   }).then(function (relations) {
+        var Fx = F * Math.cos(angle);
+        var Fy = F * Math.sin(angle);
+        forces[point].Fx += Fx;
+        forces[point].Fy += Fy;
+        forces[other].Fx += -Fx;
+        forces[other].Fy += -Fy;
 
-  //     game_relations = relations;
+        converge = Math.max(converge, Math.abs(Fx), Math.abs(Fy));
+      });
+    });
 
-  //     // Draw game titles
-  //     var lines = universe.g('translate(0 800)');
-  //     fn.eachProp(game_sources, function (k, v) {
-  //       lines.rect(v.index * (unit * 1.5), 0, unit, unit/4)
-  //     });
+    // Move a tiny step
+    Object.keys(points).forEach(function (point) {
+      points[point].x += forces[point].Fx * 0.1;
+      points[point].y += forces[point].Fy * 0.1;
+    });
 
-      // var lines = universe.group()
-      //                     .transform({x: 0, y: 800});
-      // fn.eachProp(game_sources, function (k, v) {
-      //   lines.rect(unit, unit/4)
-      //        .transform({
-      //          x: v.index * (unit * 1.5),
-      //          y: 0
-      //        });
-      //   lines.text(k)
-      //        .transform({
-      //          x: v.index * (unit * 1.5) + unit,
-      //          y: -unit * 2,
-      //          cx: v.index * (unit * 1.5),
-      //          cy: 0,
-      //          rotation: 90
-      //        })
-      //        .addClass('roguelike-title')
-      //        .data('title', k)
-      //        .on('mouseover', title_mousehover)
-      //        .on('mouseout', title_mouseout);
-      // });
+    // Establish convergence
+    return converge <= limit;
+  }
 
-  // var group_relations = universe.group().transform({x: 0, y: 800})
-
-
-  //   }).then(function (relations) {
-
-  //     game_relations = relations;
-
-  //     // Remove loading placeholder
-  //     document.getElementById('loading').remove();
-
-  //     // Draw game titles
-  //     var lines = universe.group()
-  //                         .transform({x: 0, y: 800});
-  //     fn.eachProp(game_sources, function (k, v) {
-  //       lines.rect(unit, unit/4)
-  //            .transform({
-  //              x: v.index * (unit * 1.5),
-  //              y: 0
-  //            });
-  //       lines.text(k)
-  //            .transform({
-  //              x: v.index * (unit * 1.5) + unit,
-  //              y: -unit * 2,
-  //              cx: v.index * (unit * 1.5),
-  //              cy: 0,
-  //              rotation: 90
-  //            })
-  //            .addClass('roguelike-title')
-  //            .data('title', k)
-  //            .on('mouseover', title_mousehover)
-  //            .on('mouseout', title_mouseout);
-  //     });
-
-  //     // Draw connections
-  //     fn.eachProp(game_relations, function (k, v) {
-  //       fn.each(fn.unique(v), function (r) {
-  //         if (k !== r) {
-  //           var k_index = game_sources[k].index;
-  //           var r_index = game_sources[r].index;
-  //           var kx = k_index * (unit * 1.5);
-  //           var rx = r_index * (unit * 1.5);
-  //           var d = Math.abs(kx - rx);
-  //           var arc = fn.arc((kx+rx)/2+unit/2, 0, d/2, Math.PI, Math.PI*2);
-  //           group_relations.path(arc)
-  //                          .data('titles', [k, r])
-  //                          .addClass('roguelike-relation');
-  //         }
-  //       });
-  //     });
-  //   });
-
-  //   // Interactions
-  //   function title_mousehover () {
-  //     this.addClass('roguelike-title-hover');
-  //     var title = this.data('title');
-  //     group_relations.each(function () {
-  //       if (fn.has(this.data('titles'), title)) {
-  //         this.addClass('roguelike-relation-hover');
-  //       }
-  //     });
-  //   }
-
-  //   function title_mouseout () {
-  //     this.removeClass('roguelike-title-hover');
-  //     group_relations.each(function () {
-  //       this.removeClass('roguelike-relation-hover');
-  //     });
-  //   }
 });
