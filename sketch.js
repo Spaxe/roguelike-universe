@@ -68,8 +68,8 @@ require(['node_modules/bvg/bvg'], function(BVG) {
                        .fill(BVG.hsla(getHueByYear(y), 40, 60));
 
           // Beginning force layout coordinates
-          game_sources[title].x = Math.random() * 60 + 20;
-          game_sources[title].y = Math.random() * 60 + 20;
+          game_sources[title].x = Math.random() * 100;
+          game_sources[title].y = Math.random() * 100;
         });
       }
 
@@ -101,10 +101,10 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         if (cache.hasOwnProperty(other) || other === title) return;
         else cache[other] = true;
 
-        // Draw relation Heinlein arcs
+        // Draw Roguelike relation Heinlein arcs
         var title_x = (game_sources[title].Year - min_year) / years * (heinlein_width - 10) + 5;
         var other_x = (game_sources[other].Year - min_year) / years * (heinlein_width - 10) + 5;
-        var x = (title_x + other_x) / 2;
+        var x = (title_x + other_x) / 2 + barLength * 0.9 / 2;
         var y = heinlein_height / 2 + 0.5;
         var r = Math.abs(title_x - other_x) / 2;
         heinlein.arc(x, y, r, r, Math.PI, Math.PI*2)
@@ -144,15 +144,6 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         force_layout.append(circle);
     });
 
-    // Update Force Layouts
-    // var forceLayoutIntervalID = window.setInterval(function () {
-    //   console.log('force layout updating');
-    //   if (updateForceLayout(game_sources, game_relations)) {
-    //     window.clearInterval(forceLayoutIntervalID);
-    //     console.log('force layout converged');
-    //   }
-    // }, 500);
-
     function _updateForceLayout () {
       if(!updateForceLayout(game_sources, game_relations)) {
         window.requestAnimationFrame(_updateForceLayout);
@@ -161,13 +152,6 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       }
     }
     window.requestAnimationFrame(_updateForceLayout);
-
-    // force_layout.tag().addEventListener('click', function () {
-      // for (var i = 0; i < 100; i++) {
-      //   console.log(i);
-        // updateForceLayout(game_sources, game_relations);
-      // }
-    // });
 
     return getJSON(other_relations_path);
 
@@ -181,6 +165,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
               .addClass('label')
               .fill(BVG.hsla(20, 30, 80));
 
+      // Heinlein relations for out of genre
       other_relations[title].forEach(function (other) {
         if (cache.hasOwnProperty(other)) return;
         else cache[other] = true;
