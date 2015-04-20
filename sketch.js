@@ -96,7 +96,10 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         BVG_Heinlein.arc(x, y, r, r, Math.PI, Math.PI*2)
                     .stroke(BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 70))
                     .strokeWidth(0.1)
-                    .noFill();
+                    .noFill()
+                    .data('source', title)
+                    .data('target', other)
+                    .addClass('arc');
 
         // Draw force layout links
         var line = new BVG('line', {
@@ -140,7 +143,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
     return getJSON(path_otherRelations);
 
-  }).then (function (json) {
+  }).then(function (json) {
     data_otherRelations = json;
 
     Object.keys(data_otherRelations).forEach(function (title) {
@@ -163,7 +166,10 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         BVG_Heinlein.arc(x, y, r, r, 0, Math.PI)
                 .stroke(BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 70, 0.2))
                 .strokeWidth(0.1)
-                .noFill();
+                .noFill()
+                .data('source', title)
+                .data('target', other)
+                .addClass('arc');
       });
     });
 
@@ -177,23 +183,19 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       BVG_Heinlein.find('.heinlein-selection').forEach(function (bvg) {
         bvg.remove();
       });
+      BVG_Heinlein.find('.arc').forEach(function (bvg) {
+        bvg.removeClass('heinlein-selection-arc');
+      });
 
-      var x = getXCoordByYear(game.Year) + getYearWidth() / 2 + 0.3;
-      var y = heinlein_height / 2;
-      var colour = BVG.hsla(getHueByYear(game.Year), 40, 60, 1);
-      var rectData = {
-        x: getXCoordByYear(game.Year),
-        y: y,
-        width: getYearWidth(),
-        height: 0
-      };
-      var rect = BVG_Heinlein.rect(rectData).fill(colour).noStroke().addClass('heinlein-selection');
-      var text = BVG_Heinlein.text(event.target.value, x, y)
-                  .attr('transform', 'rotate(-90 ' + x + ' ' + y + ')')
-                  .addClass('heinlein-selection');
-      var textWidth = text.tag().getBBox().width;
-      rectData.y = y - textWidth - 1;
-      rectData.height = textWidth + 2;
+      // Draw selected game label
+      drawGameLabel(event.target.value, getXCoordByYear(game.Year));
+
+      // Bold selected relations
+      BVG_Heinlein.find('.arc').forEach(function (bvg) {
+        if (bvg.data('source') === event.target.value || bvg.data('other') === event.target.value) {
+          bvg.addClass('heinlein-selection-arc');
+        }
+      });
     });
 
   // Error handling
@@ -224,6 +226,41 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       console.log('getJSON failed to load', url);
       throw err;
     });
+  }
+
+  function drawGameLabel(game, x) {
+    var _x = x + getYearWidth() / 2 + 0.2;
+    var _y = heinlein_height / 2;
+    var rectData = {
+      x: x,
+      y: _y,
+      width: 0,
+      height: 0
+    };
+    var textData = {
+      text: game,
+      x: _x,
+      y: _y
+    };
+    var rect = BVG_Heinlein.rect(rectData)
+                           .fill(BVG.hsla(getHueByYear(data_gameSources[game].Year), 40, 60))
+                           .noStroke()
+                           .addClass('heinlein-selection');
+    var text = BVG_Heinlein.text(textData)
+                           .addClass('heinlein-selection');
+    var textBBox = text.tag().getBBox();
+    var textWidth = textBBox.width;
+    var textHeight = textBBox.height;
+    rectData.y = (heinlein_height - textWidth) / 2 - 1;
+    rectData.x = x - 0.5;
+    rectData.width = textHeight + 1;
+    rectData.height = textWidth + 2;
+    textData.y = (heinlein_height + textWidth) / 2;
+    text.attr('transform', 'rotate(-90 ' + _x + ' ' + textData.y + ')');
+    return {
+      text: text,
+      rect: rect
+    };
   }
 
   function updateForceLayout (points, relations) {
