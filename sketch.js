@@ -1,95 +1,107 @@
+/* globals require */
 require(['node_modules/bvg/bvg'], function(BVG) {
 
-  var game_sources_path = 'generated/game-sources.json';
-  var game_relations_path = 'generated/roguelike-relations.json';
-  var game_years_path = 'generated/games-years.json';
-  var other_relations_path = 'generated/other-relations.json';
+  // Paths
+  var path_gameSources = 'generated/game-sources.json';
+  var path_gameRelations = 'generated/roguelike-relations.json';
+  var path_gameYears = 'generated/games-years.json';
+  var path_otherRelations = 'generated/other-relations.json';
 
-  var game_sources;
-  var game_relations;
-  var game_years;
-  var other_relations;
-  var year_bucket = {};
-  var force_graph = [];
+  // Containers
+  var data_gameSources;
+  var data_gameRelations;
+  var data_gameYears;
+  var data_otherRelations;
 
   // Layout
-  var samples_height = 20;
-  var samples_width = 100;
   var heinlein_height = 80;
-  var heinlein_width = 100;
-  var force_width = 100;
   var force_height = 100;
-  var min_year;
-  var max_year;
-  var years;
-  var barLength;
+
+  // Dynamic Functions
+  var getXCoordByYear;
+  var getHueByYear;
+  var getYearWidth;
 
   // Charts
-  var sampled_games = BVG.create('#samples', samples_width, samples_height);
-  var heinlein = BVG.create('#heinlein', heinlein_width, heinlein_height);
-  var force_layout = BVG.create('#force', force_width, force_height);
+  var BVG_Heinlein = BVG.create('#heinlein', 100, heinlein_height);
+  var BVG_Force = BVG.create('#force', 100, force_height);
 
-  getJSON(game_years_path).then(function (json) {
-    game_years = json;
+  // Controls
+  var UI_GameSelection = document.querySelector('#game-selection');
+
+  // Async request for the list of game and years
+  getJSON(path_gameYears).then(function (json) {
+    data_gameYears = json;
     var ys = [];
-    Object.keys(game_years).forEach(function (game) {
-      ys.push(game_years[game]);
+    Object.keys(data_gameYears).forEach(function (game) {
+      ys.push(data_gameYears[game]);
     });
 
-    min_year = Math.min.apply(null, ys);
-    max_year = Math.max.apply(null, ys);
-    years = max_year - min_year + 1;
-    barLength = (heinlein_width - 10) / years;
-    for (var year = min_year; year <= max_year; year++) {
-      var x = (year - min_year) / years * (heinlein_width - 10) + 5;
-      heinlein.text(year, x, heinlein_height / 2 + 1.75)
-              .addClass('year')
-              .fill(BVG.hsla(getHueByYear(year), 40, 60));
-    }
+    var min_year = Math.min.apply(null, ys);
+    var max_year = Math.max.apply(null, ys);
+    getYearWidth = function () {
+      return 90 / (max_year - min_year + 1);
+    };
+    getXCoordByYear = function (year) {
+      return (year - min_year) / (max_year - min_year + 1) * 90 + 5;
+    };
+    getHueByYear = function (year) {
+      return (year - min_year) / (max_year - min_year) * 360;
+    };
 
-    return getJSON(game_sources_path);
+    for (var year = min_year; year <= max_year; year++) {
+      var x = getXCoordByYear(year);
+      BVG_Heinlein.text(year, x, heinlein_height / 2 + 1.75)
+                  .addClass('year')
+                  .fill(BVG.hsla(getHueByYear(year), 40, 60));
+    }
+    return getJSON(path_gameSources);
 
   }).then(function (json) {
-    game_sources = json;
+    data_gameSources = json;
 
-    // Scramble force layout coordinates
-    Object.keys(game_sources).forEach(function (title) {
-      game_sources[title].x = Math.random() * 100;
-      game_sources[title].y = Math.random() * 100;
+    // Scramble force layout coordinates and populate titles
+    Object.keys(data_gameSources).forEach(function (title) {
+      var option = document.createElement('option');
+      option.value = title;
+      option.innerHTML = title;
+      UI_GameSelection.appendChild(option);
+      data_gameSources[title].x = Math.random() * 100;
+      data_gameSources[title].y = Math.random() * 100;
     });
 
-    return getJSON(game_relations_path);
+    return getJSON(path_gameRelations);
 
   // Roguelike Relations
   }).then(function (json) {
-    game_relations = json;
+    data_gameRelations = json;
 
-    Object.keys(game_relations).forEach(function (title) {
+    Object.keys(data_gameRelations).forEach(function (title) {
       var cache = {};
 
-      heinlein.text('Roguelike games', 5, 10)
-              .addClass('label')
-              .fill(BVG.hsla(20, 30, 70));
+      BVG_Heinlein.text('Roguelike games', 5, 10)
+                  .addClass('label')
+                  .fill(BVG.hsla(20, 30, 70));
 
-      game_relations[title].forEach(function (other) {
+      data_gameRelations[title].forEach(function (other) {
         if (cache.hasOwnProperty(other) || other === title) return;
         else cache[other] = true;
 
         // Draw Roguelike relation Heinlein arcs
-        var title_x = (game_sources[title].Year - min_year) / years * (heinlein_width - 10) + 5;
-        var other_x = (game_sources[other].Year - min_year) / years * (heinlein_width - 10) + 5;
-        var x = (title_x + other_x) / 2 + barLength * 0.9 / 2;
+        var title_x = getXCoordByYear(data_gameSources[title].Year);
+        var other_x = getXCoordByYear(data_gameSources[other].Year);
+        var x = (title_x + other_x) / 2 + getYearWidth() * 0.9 / 2;
         var y = heinlein_height / 2 + 0.5;
         var r = Math.abs(title_x - other_x) / 2;
-        heinlein.arc(x, y, r, r, Math.PI, Math.PI*2)
-                .stroke(BVG.hsla(getHueByYear(game_sources[title].Year), 40, 70))
-                .strokeWidth(0.1)
-                .noFill();
+        BVG_Heinlein.arc(x, y, r, r, Math.PI, Math.PI*2)
+                    .stroke(BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 70))
+                    .strokeWidth(0.1)
+                    .noFill();
 
         // Draw force layout links
         var line = new BVG('line', {
-          begin: game_sources[title],
-          end: game_sources[other]
+          begin: data_gameSources[title],
+          end: data_gameSources[other]
         }, function (tag, data) {
           tag.setAttribute('x1', data.begin.x);
           tag.setAttribute('y1', data.begin.y);
@@ -97,15 +109,14 @@ require(['node_modules/bvg/bvg'], function(BVG) {
           tag.setAttribute('y2', data.end.y);
         });
         line.strokeWidth(0.1);
-        force_layout.append(line);
+        BVG_Force.append(line);
       });
     });
 
-
     //Draw Force directed layout nodes
-    Object.keys(game_sources).forEach(function (title) {
+    Object.keys(data_gameSources).forEach(function (title) {
       var circle = new BVG('circle', {
-          points: game_sources[title],
+          points: data_gameSources[title],
           r: 0.5
         }, function (tag, data) {
           tag.setAttribute('cx', data.points.x);
@@ -115,11 +126,11 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         circle.strokeWidth(0.1)
               .stroke(240, 128, 64)
               .fill(220, 64, 32);
-        force_layout.append(circle);
+        BVG_Force.append(circle);
     });
 
     function _updateForceLayout () {
-      if(!updateForceLayout(game_sources, game_relations)) {
+      if(!updateForceLayout(data_gameSources, data_gameRelations)) {
         window.requestAnimationFrame(_updateForceLayout);
       } else {
         console.log('Force Layout completed');
@@ -127,38 +138,66 @@ require(['node_modules/bvg/bvg'], function(BVG) {
     }
     window.requestAnimationFrame(_updateForceLayout);
 
-    return getJSON(other_relations_path);
+    return getJSON(path_otherRelations);
 
   }).then (function (json) {
-    other_relations = json;
+    data_otherRelations = json;
 
-    Object.keys(other_relations).forEach(function (title) {
+    Object.keys(data_otherRelations).forEach(function (title) {
       var cache = {};
 
-      heinlein.text('Other games', 5, 75)
+      BVG_Heinlein.text('Other games', 5, 75)
               .addClass('label')
               .fill(BVG.hsla(20, 30, 80));
 
       // Heinlein relations for out of genre
-      other_relations[title].forEach(function (other) {
+      data_otherRelations[title].forEach(function (other) {
         if (cache.hasOwnProperty(other)) return;
         else cache[other] = true;
 
-        var title_x = (game_sources[title].Year - min_year) / years * (heinlein_width - 10) + 5;
-        var other_x = (game_years[other] - min_year) / years * (heinlein_width - 10) + 5;
-        var x = (title_x + other_x) / 2 + barLength * 0.9 / 2;
+        var title_x = getXCoordByYear(data_gameSources[title].Year);
+        var other_x = getXCoordByYear(data_gameYears[other]);
+        var x = (title_x + other_x) / 2 + getYearWidth() * 0.9 / 2;
         var y = heinlein_height / 2 + 2.5;
         var r = Math.abs(title_x - other_x) / 2;
-        heinlein.arc(x, y, r, r, 0, Math.PI)
-                .stroke(BVG.hsla(getHueByYear(game_sources[title].Year), 40, 70, 0.2))
+        BVG_Heinlein.arc(x, y, r, r, 0, Math.PI)
+                .stroke(BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 70, 0.2))
                 .strokeWidth(0.1)
                 .noFill();
       });
     });
 
-  }).catch(function (e) {
+    ///////
+    // UI Handling
+    // Attach update function to game selection
+    UI_GameSelection.addEventListener('change', function gameSelectionFunc (event) {
+      var game = data_gameSources[event.target.value];
 
-    // Error handling
+      // Clean up existing selection
+      BVG_Heinlein.find('.heinlein-selection').forEach(function (bvg) {
+        bvg.remove();
+      });
+
+      var x = getXCoordByYear(game.Year) + getYearWidth() / 2 + 0.3;
+      var y = heinlein_height / 2;
+      var colour = BVG.hsla(getHueByYear(game.Year), 40, 60, 1);
+      var rectData = {
+        x: getXCoordByYear(game.Year),
+        y: y,
+        width: getYearWidth(),
+        height: 0
+      };
+      var rect = BVG_Heinlein.rect(rectData).fill(colour).noStroke().addClass('heinlein-selection');
+      var text = BVG_Heinlein.text(event.target.value, x, y)
+                  .attr('transform', 'rotate(-90 ' + x + ' ' + y + ')')
+                  .addClass('heinlein-selection');
+      var textWidth = text.tag().getBBox().width;
+      rectData.y = y - textWidth - 1;
+      rectData.height = textWidth + 2;
+    });
+
+  // Error handling
+  }).catch(function (e) {
     throw e;
   });
 
@@ -178,28 +217,24 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       };
       req.send();
     });
-  };
+  }
 
   function getJSON (url) {
     return getURL(url).then(JSON.parse).catch(function (err) {
       console.log('getJSON failed to load', url);
       throw err;
     });
-  };
-
-  function getHueByYear (year) {
-    return (year - min_year) / (max_year - min_year) * 360;
   }
 
   function updateForceLayout (points, relations) {
     var threshold = 10;
 
     // Converging variable
-    var limit = 0.1;
+    var limit = 1;
     var converge = limit;
 
     // Reset forces
-    var forces = {}
+    var forces = {};
     Object.keys(points).forEach(function (point) {
       forces[point] = {
         Fx: 0,
@@ -216,10 +251,11 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         var angle = Math.atan2(yDistance, xDistance);
         var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
 
+        var F;
         if (relations[point].indexOf(other) > -1 || relations[other].indexOf(point) > -1) {
-          var F = 4 * Math.log(distance / threshold);
+          F = 4 * Math.log(distance / threshold);
         } else {
-          var F = Math.log(distance / (threshold * 4));
+          F = Math.log(distance / (threshold * 4));
         }
 
         var Fx = F * Math.cos(angle);

@@ -6,8 +6,6 @@
       html, body {
         margin: 0;
         font-family: 'Lucida Bright', Georgia, serif;
-        font-size: 1px;
-        color: hsla(0, 0%, 30%, 1);
       }
       #content {
         max-width: 1200px;
@@ -30,11 +28,22 @@
         font-weight: bold;
         margin-top: 20px;
       }
+      #content p {
+        margin-top: 8px;
+        margin-bottom: 12px;
+      }
+      #content label {
+        font-weight: bold;
+      }
       svg .year {
         font-size: 0.75px;
       }
       svg .label {
         font-size: 1px;
+      }
+      svg text.heinlein-selection {
+        font-size: 1.25px;
+        fill: rgba(255, 255, 255, 1);
       }
       .subtitle {
         font-size: 16px;
@@ -46,10 +55,19 @@
   <body>
     <article id="content">
       <h1>Roguelike Universe</h1>
-      <p class="subtitle">Connecting games by inspiration and similar ideas</p>
-      <h2>Sampled Games</h2>
-      <div id="samples"></div>
-      <h2>Influence By Year</h2>
+      <p class="subtitle">Selected games between 1971 - 2014</p>
+      <h2>Influence Arcs</h2>
+      <p>
+      This chart represents connections between Roguelike games and with games from other genres. Data was gathered
+      from crawling the web for interviews, post-mortems, reviews and dev diaries. Connections were made by algorithms
+      using keyword spotting and lexical affinity in natural language processing.
+      </p>
+      <p>
+        <label>Select a game:
+          <select name="game-selection" id="game-selection">
+          </select>
+        </label>
+      </p>
       <div id="heinlein"></div>
       <h2>Influence Map</h2>
       <div id="force"></div>
