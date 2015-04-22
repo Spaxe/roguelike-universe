@@ -138,7 +138,9 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       });
       circle.strokeWidth(0.1)
             .noStroke()
-            .fill(colour);
+            .fill(colour)
+            .data('title', title)
+            .addClass('influence-node');
       BVG_Force.append(circle);
 
       // Label
@@ -155,6 +157,37 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         .noStroke()
         .fill(colour);
       BVG_Force.append(label);
+    });
+
+    // Allow mouse interactions
+    var forceMouseTarget = '';
+    var bbox = BVG_Force.tag().getBoundingClientRect();
+    BVG_Force.tag().addEventListener('resize', function (event) {
+      bbox = BVG_Force.tag().getBoundingClientRect();
+    });
+    BVG_Force.tag().addEventListener('mousedown', function (event) {
+      if (event.target.tagName && event.target.tagName === 'circle') {
+        forceMouseTarget = event.target._getBVG().data('title');
+        data_gameSources[forceMouseTarget].dragging = true;
+      }
+    });
+    BVG_Force.tag().addEventListener('mouseup', function (event) {
+      if (forceMouseTarget) {
+        data_gameSources[forceMouseTarget].dragging = false;
+        forceMouseTarget = '';
+      }
+    });
+    BVG_Force.tag().addEventListener('mousemove', function (event) {
+      if (forceMouseTarget) {
+        var bvgWidth = bbox.width;
+        var bvgHeight = bbox.height;
+        if (bvgWidth !== 0 && bvgHeight !== 0) {
+          var x = event.clientX / bvgWidth * 100;
+          var y = event.clientY / bvgHeight * force_height;
+          data_gameSources[forceMouseTarget].x = x;
+          data_gameSources[forceMouseTarget].y = y;
+        }
+      }
     });
 
     function _updateForceLayout () {
@@ -368,8 +401,10 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
     // Move a tiny step
     Object.keys(points).forEach(function (point) {
-      points[point].x += forces[point].Fx * 0.1;
-      points[point].y += forces[point].Fy * 0.1;
+      if (!points[point].dragging) {
+        points[point].x += forces[point].Fx * 0.1;
+        points[point].y += forces[point].Fy * 0.1;
+      }
     });
 
     // Establish convergence
