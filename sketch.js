@@ -80,37 +80,45 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       var cache = {};
 
       BVG_Heinlein.text('Roguelike games', 5, 10)
-                  .addClass('label')
+                  .addClass('heinlein-label')
                   .fill(BVG.hsla(20, 30, 70));
+      var title_year = data_gameSources[title].Year;
 
       data_gameRelations[title].forEach(function (other) {
         if (cache.hasOwnProperty(other) || other === title) return;
         else cache[other] = true;
 
+        // Inspiration must come from the past, not future
+        var other_year = data_gameSources[other].Year;
+        var source = other_year <= title_year ? other : title;
+        var target = other_year > title_year ? other : title;
+
         // Draw Roguelike relation Heinlein arcs
-        var title_x = getXCoordByYear(data_gameSources[title].Year);
-        var other_x = getXCoordByYear(data_gameSources[other].Year);
-        var x = (title_x + other_x) / 2 + getYearWidth() * 0.9 / 2;
+        var target_x = getXCoordByYear(data_gameSources[target].Year);
+        var source_x = getXCoordByYear(data_gameSources[source].Year);
+        var x = (target_x + source_x) / 2 + getYearWidth() * 0.9 / 2;
         var y = heinlein_height / 2 + 0.5;
-        var r = Math.abs(title_x - other_x) / 2;
-        var c = BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 70);
+        var r = Math.abs(target_x - source_x) / 2;
+        var c = BVG.hsla(getHueByYear(data_gameSources[target].Year), 40, 70);
         BVG_Heinlein.arc(x, y, r, r, Math.PI, Math.PI*2)
                     .stroke(c)
                     .strokeWidth(0.1)
                     .noFill()
-                    .data('source', other)
-                    .data('target', title)
+                    .data('source', source)
+                    .data('target', target)
                     .data('colour', c)
                     .addClass('arc');
 
         // Draw force layout links
         var link = arrow({
-          begin: data_gameSources[other],
-          end: data_gameSources[title],
+          begin: data_gameSources[source],
+          end: data_gameSources[target],
           r: 0.2,
           offset: 1
         });
         link.line.strokeWidth(0.1);
+        link.line.stroke(c);
+        link.endpoint.stroke(c);
         BVG_Force.append(link.line);
         BVG_Force.append(link.endpoint);
       });
@@ -118,18 +126,35 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
     //Draw Force directed layout nodes
     Object.keys(data_gameSources).forEach(function (title) {
+      var colour = BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 60);
+
       var circle = new BVG('circle', {
-          points: data_gameSources[title],
+          point: data_gameSources[title],
           r: 0.5
-        }, function (tag, data) {
-          tag.setAttribute('cx', data.points.x);
-          tag.setAttribute('cy', data.points.y);
-          tag.setAttribute('r', data.r);
-        });
-        circle.strokeWidth(0.1)
-              .stroke(240, 128, 64)
-              .fill(220, 64, 32);
-        BVG_Force.append(circle);
+      }, function (tag, data) {
+        tag.setAttribute('cx', data.point.x);
+        tag.setAttribute('cy', data.point.y);
+        tag.setAttribute('r', data.r);
+      });
+      circle.strokeWidth(0.1)
+            .noStroke()
+            .fill(colour);
+      BVG_Force.append(circle);
+
+      // Label
+      var label = new BVG('text', {
+        point: data_gameSources[title],
+        title: title
+      }, function (tag, data) {
+        var x = data.point.x - tag.getBBox().width / 2;
+        var y = data.point.y - 1;
+        tag.setAttribute('x', x);
+        tag.setAttribute('y', y);
+        tag.innerHTML = data.title;
+      }).addClass('influence-label')
+        .noStroke()
+        .fill(colour);
+      BVG_Force.append(label);
     });
 
     function _updateForceLayout () {
@@ -150,7 +175,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       var cache = {};
 
       BVG_Heinlein.text('Other games', 5, 75)
-              .addClass('label')
+              .addClass('heinlein-label')
               .fill(BVG.hsla(20, 30, 80));
 
       // Heinlein relations for out of genre
