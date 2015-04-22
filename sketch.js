@@ -61,7 +61,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
     data_gameSources = json;
 
     // Scramble force layout coordinates and populate titles
-    Object.keys(data_gameSources).forEach(function (title) {
+    Object.keys(data_gameSources).sort().forEach(function (title) {
       var option = document.createElement('option');
       option.value = title;
       option.innerHTML = title;
@@ -93,26 +93,26 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         var x = (title_x + other_x) / 2 + getYearWidth() * 0.9 / 2;
         var y = heinlein_height / 2 + 0.5;
         var r = Math.abs(title_x - other_x) / 2;
+        var c = BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 70);
         BVG_Heinlein.arc(x, y, r, r, Math.PI, Math.PI*2)
-                    .stroke(BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 70))
+                    .stroke(c)
                     .strokeWidth(0.1)
                     .noFill()
-                    .data('source', title)
-                    .data('target', other)
+                    .data('source', other)
+                    .data('target', title)
+                    .data('colour', c)
                     .addClass('arc');
 
         // Draw force layout links
-        var line = new BVG('line', {
-          begin: data_gameSources[title],
-          end: data_gameSources[other]
-        }, function (tag, data) {
-          tag.setAttribute('x1', data.begin.x);
-          tag.setAttribute('y1', data.begin.y);
-          tag.setAttribute('x2', data.end.x);
-          tag.setAttribute('y2', data.end.y);
+        var link = arrow({
+          begin: data_gameSources[other],
+          end: data_gameSources[title],
+          r: 0.2,
+          offset: 1
         });
-        line.strokeWidth(0.1);
-        BVG_Force.append(line);
+        link.line.strokeWidth(0.1);
+        BVG_Force.append(link.line);
+        BVG_Force.append(link.endpoint);
       });
     });
 
@@ -163,12 +163,14 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         var x = (title_x + other_x) / 2 + getYearWidth() * 0.9 / 2;
         var y = heinlein_height / 2 + 2.5;
         var r = Math.abs(title_x - other_x) / 2;
+        var c = BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 70, 0.2);
         BVG_Heinlein.arc(x, y, r, r, 0, Math.PI)
-                .stroke(BVG.hsla(getHueByYear(data_gameSources[title].Year), 40, 70, 0.2))
+                .stroke(c)
                 .strokeWidth(0.1)
                 .noFill()
-                .data('source', title)
-                .data('target', other)
+                .data('source', other)
+                .data('target', title)
+                .data('colour', c)
                 .addClass('arc');
       });
     });
@@ -185,6 +187,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       });
       BVG_Heinlein.find('.arc').forEach(function (bvg) {
         bvg.removeClass('heinlein-selection-arc');
+        bvg.stroke(bvg.data('colour'));
       });
 
       // Draw selected game label
@@ -192,8 +195,11 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
       // Bold selected relations
       BVG_Heinlein.find('.arc').forEach(function (bvg) {
-        if (bvg.data('source') === event.target.value || bvg.data('other') === event.target.value) {
+        if (bvg.data('source') === event.target.value || bvg.data('target') === event.target.value) {
           bvg.addClass('heinlein-selection-arc');
+          var c = bvg.stroke();
+          c[0] = getHueByYear(data_gameSources[event.target.value].Year);
+          bvg.stroke(BVG.hsla.apply(BVG, c));
         }
       });
     });
@@ -226,6 +232,35 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       console.log('getJSON failed to load', url);
       throw err;
     });
+  }
+
+  function arrow (data, binding) {
+    if (!data) throw new Error('arrow() received no data.');
+
+    var endpoint = new BVG('polygon', data, function (tag, data) {
+      var angle = Math.atan2(data.end.y - data.begin.y, data.end.x - data.begin.x);
+      var offsetX = (data.offset || 0) * Math.cos(angle);
+      var offsetY = (data.offset || 0) * Math.sin(angle);
+      var points = [
+        data.end.x - offsetX,
+        data.end.y - offsetY,
+        data.end.x - offsetX - data.r * Math.cos(angle - Math.PI / 6),
+        data.end.y - offsetY - data.r * Math.sin(angle - Math.PI / 6),
+        data.end.x - offsetX - data.r * Math.cos(angle + Math.PI / 6),
+        data.end.y - offsetY - data.r * Math.sin(angle + Math.PI / 6)
+      ];
+      tag.setAttribute('points', points.join(' '));
+    });
+    var line = new BVG('line', data, function (tag, data) {
+      tag.setAttribute('x1', data.begin.x);
+      tag.setAttribute('y1', data.begin.y);
+      tag.setAttribute('x2', data.end.x);
+      tag.setAttribute('y2', data.end.y);
+    });
+    return {
+      line: line,
+      endpoint: endpoint
+    };
   }
 
   function drawGameLabel(game, x) {
