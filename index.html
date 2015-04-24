@@ -53,9 +53,16 @@
       }
       svg .influence-label {
         font-size: 1px;
+        user-select: none;
       }
       .subtitle {
         font-size: 16px;
+      }
+      .noselect, .noselect * {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
     </style>
     <script src="node_modules/object.observe/dist/object-observe.js" type="text/javascript"></script>

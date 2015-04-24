@@ -113,7 +113,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
         var link = arrow({
           begin: data_gameSources[source],
           end: data_gameSources[target],
-          r: 0.2,
+          r: 0.1,
           offset: 1
         });
         link.line.strokeWidth(0.1);
@@ -161,34 +161,43 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
     // Allow mouse interactions
     var forceMouseTarget = '';
-    var bbox = BVG_Force.tag().getBoundingClientRect();
-    BVG_Force.tag().addEventListener('resize', function (event) {
-      bbox = BVG_Force.tag().getBoundingClientRect();
-    });
-    BVG_Force.tag().addEventListener('mousedown', function (event) {
+    var forceElement = BVG_Force.tag();
+    forceElement.addEventListener('mousedown', function (event) {
       if (event.target.tagName && event.target.tagName === 'circle') {
         forceMouseTarget = event.target._getBVG().data('title');
+        console.log(forceMouseTarget);
         data_gameSources[forceMouseTarget].dragging = true;
+        BVG_Force.addClass('noselect');
       }
     });
-    BVG_Force.tag().addEventListener('mouseup', function (event) {
+    forceElement.addEventListener('mouseup', function (event) {
       if (forceMouseTarget) {
         data_gameSources[forceMouseTarget].dragging = false;
         forceMouseTarget = '';
+        BVG_Force.removeClass('noselect');
       }
     });
-    BVG_Force.tag().addEventListener('mousemove', function (event) {
+    forceElement.addEventListener('mousemove', function (event) {
       if (forceMouseTarget) {
-        var bvgWidth = bbox.width;
-        var bvgHeight = bbox.height;
+        var bvgWidth = forceElement.offsetWidth;
+        var bvgHeight = forceElement.offsetHeight;
         if (bvgWidth !== 0 && bvgHeight !== 0) {
-          var x = event.clientX / bvgWidth * 100;
-          var y = event.clientY / bvgHeight * force_height;
-          data_gameSources[forceMouseTarget].x = x;
-          data_gameSources[forceMouseTarget].y = y;
+          // var x = event.offsetX / bvgWidth * 100;
+          // var y = event.offsetY / bvgHeight * force_height;
+          // console.log(event.offsetX, event.offsetY, bvgWidth, bvgHeight, event);
+          var dx = event.movementX / bvgWidth * 100;
+          var dy = event.movementY / bvgHeight * force_height;
+          // data_gameSources[forceMouseTarget].x = x;
+          // data_gameSources[forceMouseTarget].y = y;
+          data_gameSources[forceMouseTarget].x += dx;
+          data_gameSources[forceMouseTarget].y += dy;
         }
       }
     });
+
+    function _forceElementDragHandler () {
+
+    }
 
     function _updateForceLayout () {
       if(!updateForceLayout(data_gameSources, data_gameRelations)) {
@@ -383,7 +392,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
 
         var F;
         if (relations[point].indexOf(other) > -1 || relations[other].indexOf(point) > -1) {
-          F = 4 * Math.log(distance / threshold);
+          F = 6 * Math.log(distance / threshold);
         } else {
           F = Math.log(distance / (threshold * 4));
         }
