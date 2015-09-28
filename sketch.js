@@ -61,6 +61,7 @@ require(['node_modules/bvg/bvg'], function(BVG) {
     data_gameSources = json;
 
     // Scramble force layout coordinates and populate titles
+    var links = [];
     Object.keys(data_gameSources).sort().forEach(function (title) {
       var option = document.createElement('option');
       option.value = title;
@@ -68,7 +69,11 @@ require(['node_modules/bvg/bvg'], function(BVG) {
       UI_GameSelection.appendChild(option);
       data_gameSources[title].x = Math.random() * 100;
       data_gameSources[title].y = Math.random() * 100;
+      var links_len = data_gameSources[title].Links.length;
+      links.push(links_len);
     });
+
+    console.log(links.join('\n'));
 
     return getJSON(path_gameRelations);
 
