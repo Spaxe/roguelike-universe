@@ -1,7 +1,8 @@
 #############################################################################
 # Environment
 testing="core@188.166.209.155"
-alias env=`testing`
+
+env=$testing
 
 #############################################################################
 # Development
@@ -17,14 +18,22 @@ task_client() {
   node node_modules/http-server/bin/http-server -p 8003
 }
 
-task_tunnel_admin () {
-  ssh -fNTL localhost:8004:$(ssh env "docker inspect --format \
-  '{{ .NetworkSettings.IPAddress }}' universe-testing"):8080 env
+task_start_tunnel_admin () {
+  ssh -fNTL localhost:8004:$(ssh ${env} "docker inspect --format \
+  '{{ .NetworkSettings.IPAddress }}' universe-testing"):8080 ${env}
 }
 
-task_tunnel_driver () {
-  ssh -fNTL localhost:8005:$(ssh env "docker inspect --format \
-  '{{ .NetworkSettings.IPAddress }}' universe-testing"):28015 env
+task_stop_tunnel_admin () {
+  kill $(lsof -t -i @localhost:8004 -sTCP:listen)
+}
+
+task_start_tunnel_driver () {
+  ssh -fNTL localhost:8005:$(ssh ${env} "docker inspect --format \
+  '{{ .NetworkSettings.IPAddress }}' universe-testing"):28015 ${env}
+}
+
+task_stop_tunnel_driver () {
+  kill $(lsof -t -i @localhost:8005 -sTCP:listen)
 }
 
 task_build () {
