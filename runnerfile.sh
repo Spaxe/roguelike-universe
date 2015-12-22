@@ -10,18 +10,27 @@ task_client() {
   node node_modules/http-server/bin/http-server -p 8003
 }
 
-task_build () {
+task_build_server () {
   docker build -t spaxe/rogue-ideas-server server
+}
+
+task_build_client () {
   docker build -t spaxe/rogue-ideas client
 }
 
-task_push () {
+task_push_server () {
   docker push spaxe/rogue-ideas-server
+}
+
+task_push_client () {
   docker push spaxe/rogue-ideas
 }
 
-task_pull () {
+task_pull_server () {
   docker pull spaxe/rogue-ideas-server
+}
+
+task_pull_client () {
   docker pull spaxe/rogue-ideas
 }
 
