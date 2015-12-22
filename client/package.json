@@ -1,5 +1,5 @@
 {
-  "name": "rogue_ideas_server",
+  "name": "rogue_ideas",
   "version": "0.0.1",
   "description": "Visualising roguelike games and their inspirations",
   "author": "Xavier Ho <contact@xavierho.com>",
@@ -10,6 +10,6 @@
     "url": "https://github.com/Spaxe/roguelike-universe.git"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "http-server": "^0.8.5"
   }
 }
