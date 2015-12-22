@@ -58,10 +58,10 @@ task_remove_client () {
   docker rm rogue-ideas
 }
 
-task_update_server () {
+task_upgrade_server () {
   runner_sequence pull_server stop_server remove_server run_server
 }
 
-task_update_client () {
+task_upgrade_client () {
   runner_sequence pull_client stop_client remove_client run_client
 }
