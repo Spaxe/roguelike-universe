@@ -7,3 +7,7 @@ task_server () {
   npm install
   npm start
 }
+
+task_client() {
+
+}
