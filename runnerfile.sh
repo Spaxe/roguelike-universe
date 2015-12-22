@@ -85,9 +85,13 @@ task_remove_client () {
 # Testing
 
 task_start_testing_database () {
-  docker run --name universe-testing -p 8004:8080 -v "$PWD:/database" -d rethinkdb
+  docker run --name universe-testing -p 8004:8080 -v "$PWD/database:/data" -d rethinkdb
 }
 
 task_stop_testing_database () {
   docker stop universe-testing
+}
+
+task_remove_testing_database () {
+  docker rm universe-testing
 }
