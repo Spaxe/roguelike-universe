@@ -39,11 +39,11 @@ task_push_client () {
 #############################################################################
 # Deployment
 task_upgrade_server () {
-  runner_sequence pull_server stop_server remove_server start_server
+  runner_sequence pull_server stop_server remove_server run_server
 }
 
 task_upgrade_client () {
-  runner_sequence pull_client stop_client remove_client start_client
+  runner_sequence pull_client stop_client remove_client run_client
 }
 
 task_pull_server () {
@@ -54,12 +54,12 @@ task_pull_client () {
   docker pull spaxe/rogue-ideas
 }
 
-task_start_server () {
+task_run_server () {
   docker run --name=rogue-ideas-server --restart=always \
              -p 80:8002 -d spaxe/rogue-ideas-server
 }
 
-task_start_client () {
+task_run_client () {
   docker run --name=rogue-ideas --restart=always \
              -p 80:8003 -d spaxe/rogue-ideas
 }
@@ -84,8 +84,12 @@ task_remove_client () {
 #############################################################################
 # Testing
 
-task_start_testing_database () {
+task_build_testing_database () {
   docker run --name universe-testing -p 8004:8080 -v "$PWD/database:/data" -d rethinkdb
+}
+
+task_start_testing_database () {
+  docker start universe-testing
 }
 
 task_stop_testing_database () {
