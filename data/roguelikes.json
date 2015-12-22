@@ -1,0 +1,439 @@
+[
+  {
+    "Year": 1978,
+    "Title": "Beneath Apple Manor",
+    "Developer": "Don Worth"
+  },
+  {
+    "Year": 1978,
+    "Title": "DUNGEON",
+    "Developer": "Brian Sawyer"
+  },
+  {
+    "Year": 1980,
+    "Title": "Rogue",
+    "Developer": "Michael Toy, others"
+  },
+  {
+    "Year": 1982,
+    "Title": "Telengard",
+    "Developer": "Daniel Lawrence"
+  },
+  {
+    "Year": 1982,
+    "Title": "Sword of Fargoal",
+    "Developer": "Jeff McCord"
+  },
+  {
+    "Year": 1982,
+    "Title": "Hack",
+    "Developer": "Jay Fenlason, Andries Brouwer, others"
+  },
+  {
+    "Year": 1982,
+    "Title": "Advanced Dungeons & Dragons: Cloudy Mountain",
+    "Developer": "Mattel Electronics"
+  },
+  {
+    "Year": 1983,
+    "Title": "Moria",
+    "Developer": "Robert Alan Koeneke & Jimmey Wayne Todd"
+  },
+
+  {
+    "Year": 1985,
+    "Title": "Dungeon of Doom, The",
+    "Developer": "John Raymonds"
+  },
+  {
+    "Year": 1985,
+    "Title": "Island of Kesmai",
+    "Developer": "John Taylor, Kelton Flinn"
+  },
+  {
+    "Year": 1986,
+    "Title": "Larn",
+    "Developer": "Noah Morgan, Phil Cordier"
+  },
+  {
+    "Year": 1987,
+    "Title": "NetHack",
+    "Developer": "The NetHack DevTeam"
+  },
+  {
+    "Year": 1987,
+    "Title": "Omega",
+    "Developer": "Laurence Brothers"
+  },
+  {
+    "Year": 1987,
+    "Title": "Scarab of Ra",
+    "Developer": "Rick Holzgrafe"
+  },
+  {
+    "Year": 1988,
+    "Title": "Moraff's Revenge",
+    "Developer": "Steve Moraff"
+  },
+  {
+    "Year": 1989,
+    "Title": "Castle of the Winds",
+    "Developer": "SaadaSoft"
+  },
+  {
+    "Year": 1990,
+    "Title": "Dragon Crystal",
+    "Developer": "Sega"
+  },
+  {
+    "Year": 1990,
+    "Title": "Angband",
+    "Developer": "Alex Cutler, Andy Astrand"
+  },
+  {
+    "Year": 1991,
+    "Title": "Fatal Labyrinth",
+    "Developer": "Sega"
+  },
+  {
+    "Year": 1991,
+    "Title": "Moraff's World",
+    "Developer": "Steve Moraff"
+  },
+  {
+    "Year": 1992,
+    "Title": "Mission Thunderbolt",
+    "Developer": "Dave Scheifler, John Calhoun"
+  },
+  {
+    "Year": 1992,
+    "Title": "UnReal World",
+    "Developer": "Sami Maaranen"
+  },
+  {
+    "Year": 1993,
+    "Title": "Torneko no Daiboken: Fushigi no Dungeon",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 1993,
+    "Title": "Dungeons of the Unforgiven",
+    "Developer": "Steve Moraff"
+  },
+  {
+    "Year": 1993,
+    "Title": "Dungeon Hack",
+    "Developer": "DreamForge"
+  },
+  {
+    "Year": 1994,
+    "Title": "Ancient Domains of Mystery",
+    "Developer": "Thomas Biskup"
+  },
+  {
+    "Year": 1994,
+    "Title": "World of Arch",
+    "Developer": "I.A. Jääskeläinen"
+  },
+  {
+    "Year": 1995,
+    "Title": "The Sorcerer's Cave",
+    "Developer": "Peter Donnelly/Skookum"
+  },
+  {
+    "Year": 1995,
+    "Title": "Alphaman",
+    "Developer": "Jeffrey R. Olson"
+  },
+  {
+    "Year": 1995,
+    "Title": "Mystery Dungeon: Shiren the Wanderer",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 1997,
+    "Title": "Chocobo no Fushigina Dungeon",
+    "Developer": "Square"
+  },
+  {
+    "Year": 1997,
+    "Title": "Linley's Dungeon Crawl",
+    "Developer": "Linley Henzell"
+  },
+  {
+    "Year": 1998,
+    "Title": "Baroque",
+    "Developer": "Sting"
+  },
+  {
+    "Year": 1998,
+    "Title": "Tales (or Troubles) of Middle Earth",
+    "Developer": "DarkGod, others"
+  },
+  {
+    "Year": 1998,
+    "Title": "Chocobo's Dungeon 2",
+    "Developer": "Square"
+  },
+  {
+    "Year": 1998,
+    "Title": "Azure Dreams",
+    "Developer": "Konami"
+  },
+  {
+    "Year": 1998,
+    "Title": "Super Lotsa Added Stuff Hack - Extended Magic",
+    "Developer": "The Slash'EM development team"
+  },
+  {
+    "Year": 1999,
+    "Title": "Torneko: The Last Hope",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 2000,
+    "Title": "Dark Cloud",
+    "Developer": "Level-5"
+  },
+  {
+    "Year": 2000,
+    "Title": "Falcon's Eye",
+    "Developer": "Jaakko Peltonen"
+  },
+  {
+    "Year": 2000,
+    "Title": "Fushigi no Dungeon: Fūrai no Shiren 2: Oni Shūrai! Siren-jō!",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 2001,
+    "Title": "Lost Labyrinth",
+    "Developer": "Lost Labyrinth"
+  },
+  {
+    "Year": 2002,
+    "Title": "Strange Adventures In Infinite Space",
+    "Developer": "Digital Eel"
+  },
+  {
+    "Year": 2002,
+    "Title": "Dark Chronicle / Dark Cloud 2",
+    "Developer": "Level-5"
+  },
+  {
+    "Year": 2002,
+    "Title": "Doom, the Roguelike",
+    "Developer": "Kornel Kisielewicz"
+  },
+  {
+    "Year": 2004,
+    "Title": "Nightmare of Druaga: Fushigino Dungeon, The",
+    "Developer": "Arika, Chunsoft"
+  },
+  {
+    "Year": 2005,
+    "Title": "Weird Worlds: Return to Infinite Space",
+    "Developer": "Digital Eel"
+  },
+  {
+    "Year": 2005,
+    "Title": "Pokémon Mystery Dungeon: Blue Rescue Team",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 2005,
+    "Title": "Pokémon Mystery Dungeon: Red Rescue Team",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 2005,
+    "Title": "Tao's Adventure: Curse of the Demon Seal",
+    "Developer": "Konami"
+  },
+  {
+    "Year": 2006,
+    "Title": "Izuna: Legend of the Unemployed Ninja",
+    "Developer": "Success"
+  },
+  {
+    "Year": 2006,
+    "Title": "Dungeon Crawl Stone Soup",
+    "Developer": "Community"
+  },
+  {
+    "Year": 2006,
+    "Title": "Slaves to Armok II: Dwarf Fortress",
+    "Developer": "Tarn Adams"
+  },
+  {
+    "Year": 2006,
+    "Title": "Dragon Quest: Shonen Yangus to Fushigi no Dungeon",
+    "Developer": "cavia"
+  },
+  {
+    "Year": 2007,
+    "Title": "Pokémon Mystery Dungeon: Explorers of Darkness",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 2007,
+    "Title": "Pokémon Mystery Dungeon: Explorers of Time",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 2007,
+    "Title": "Izuna 2: The Unemployed Ninja Returns",
+    "Developer": "Ninja Studio"
+  },
+  {
+    "Year": 2008,
+    "Title": "Final Fantasy Fables: Chocobo's Dungeon",
+    "Developer": "Square Enix"
+  },
+  {
+    "Year": 2008,
+    "Title": "Shiren the Wanderer",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 2009,
+    "Title": "Pokémon Mystery Dungeon: Explorers of Sky",
+    "Developer": "Chunsoft"
+  },
+  {
+    "Year": 2009,
+    "Title": "Brogue",
+    "Developer": "Brian Walker"
+  },
+  {
+    "Year": 2009,
+    "Title": "Spelunky",
+    "Developer": "Derek Yu, Andy Hull"
+  },
+  {
+    "Year": 2010,
+    "Title": "100 Rogues",
+    "Developer": "Dinofarm Games"
+  },
+  {
+    "Year": 2010,
+    "Title": "Smart Kobold",
+    "Developer": "Jeff Lait"
+  },
+  {
+    "Year": 2010,
+    "Title": "Z.H.P. Unlosing Ranger VS Darkdeath Evilman",
+    "Developer": "Nippon Ichi Software"
+  },
+  {
+    "Year": 2011,
+    "Title": "Deadly Dungeons",
+    "Developer": "CodeZombie Games"
+  },
+  {
+    "Year": 2011,
+    "Title": "Dungeons of Dredmor",
+    "Developer": "Gaslamp Games"
+  },
+  {
+    "Year": 2011,
+    "Title": "The Binding of Isaac (video game)",
+    "Developer": "Edmund McMillen, Florian Himsl"
+  },
+
+  {
+    "Year": 2011,
+    "Title": "Tales of Maj'Eyal",
+    "Developer": "Nicolas ‘DarkGod’ Casalini"
+  },
+  {
+    "Year": 2012,
+    "Title": "FTL: Faster Than Light",
+    "Developer": "Subset Games"
+  },
+  {
+    "Year": 2013,
+    "Title": "TowerClimb (Beta)",
+    "Developer": "davioware"
+  },
+  {
+    "Year": 2013,
+    "Title": "Wizards Encounters",
+    "Developer": "Alderan Gaming"
+  },
+  {
+    "Year": 2013,
+    "Title": "Sword of the Stars: The Pit",
+    "Developer": "Kerberos Productions"
+  },
+  {
+    "Year": 2013,
+    "Title": "WazHack",
+    "Developer": "Warwick \"Waz\" Allison"
+  },
+  {
+    "Year": 2013,
+    "Title": "Don't Starve",
+    "Developer": "Klei Entertainment"
+  },
+  {
+    "Year": 2013,
+    "Title": "Rogue Legacy",
+    "Developer": "Cellar Door Games"
+  },
+  {
+    "Year": 2013,
+    "Title": "99 Levels to Hell",
+    "Developer": "ZaxisGames"
+  },
+  {
+    "Year": 2013,
+    "Title": "Risk of Rain",
+    "Developer": "Hopoo Games"
+  },
+  {
+    "Year": 2013,
+    "Title": "The Guided Fate Paradox",
+    "Developer": "Nippon Ichi Software"
+  },
+  {
+    "Year": 2013,
+    "Title": "Not the Robots",
+    "Developer": "2DArray"
+  },
+  {
+    "Year": 2013,
+    "Title": "Teleglitch",
+    "Developer": "Test3 Projects"
+  },
+  {
+    "Year": 2014,
+    "Title": "Tower of Guns",
+    "Developer": "Terrible Posture Games"
+  },
+  {
+    "Year": 2014,
+    "Title": "Infinite Space III: Sea of Stars",
+    "Developer": "Digital Eel"
+  },
+  {
+    "Year": 2014,
+    "Title": "Road Not Taken",
+    "Developer": "Spry Fox"
+  },
+  {
+    "Year": 2015,
+    "Title": "Popup Dungeon",
+    "Developer": "Triple B Titles"
+  },
+  {
+    "Year": 2015,
+    "Title": "Hand of Fate",
+    "Developer": "Defiant Development"
+  },
+  {
+    "Year": 2016,
+    "Title": "Darkest Dungeon",
+    "Developer": "Red Hook Studios"
+  }
+]

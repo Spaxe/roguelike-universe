@@ -79,3 +79,15 @@ task_remove_server () {
 task_remove_client () {
   docker rm rogue-ideas
 }
+
+
+#############################################################################
+# Testing
+
+task_start_testing_database () {
+  docker run --name universe-testing -p 8004:8080 -v "$PWD:/database" -d rethinkdb
+}
+
+task_stop_testing_database () {
+  docker stop universe-testing
+}
