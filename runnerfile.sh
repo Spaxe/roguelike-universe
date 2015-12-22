@@ -19,7 +19,7 @@ task_client() {
 }
 
 task_start_tunnel_admin () {
-  ssh -fNTL localhost:8004:$(ssh ${env} "docker inspect --format \
+  autossh -M0 -f -NTL localhost:8004:$(ssh ${env} "docker inspect --format \
   '{{ .NetworkSettings.IPAddress }}' universe-testing"):8080 ${env}
 }
 
@@ -28,7 +28,7 @@ task_stop_tunnel_admin () {
 }
 
 task_start_tunnel_driver () {
-  ssh -fNTL localhost:8005:$(ssh ${env} "docker inspect --format \
+  autossh -M0 -f -NTL localhost:8005:$(ssh ${env} "docker inspect --format \
   '{{ .NetworkSettings.IPAddress }}' universe-testing"):28015 ${env}
 }
 
