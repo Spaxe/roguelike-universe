@@ -34,10 +34,30 @@ task_pull_client () {
   docker pull spaxe/rogue-ideas
 }
 
-task_start_server () {
-  docker run -p 80:8002 -d spaxe/rogue-ideas-server
+task_run_server () {
+  docker run --name=rogue-ideas-server --restart=always -p 80:8002 -d spaxe/rogue-ideas-server
 }
 
-task_start_client () {
-  docker run -p 80:8003 -d spaxe/rogue-ideas
+task_run_client () {
+  docker run --name=rogue-ideas --restart=always -p 80:8003 -d spaxe/rogue-ideas
+}
+
+task_stop_server () {
+  docker stop rogue-ideas-server
+}
+
+task_stop_client () {
+  docker stop rogue-ideas
+}
+
+task_remove_server () {
+  docker rm rogue-ideas-server
+}
+
+task_remove_client () {
+  docker rm rogue-ideas
+}
+
+task_update_sever () {
+  runner_sequence pull_server stop_server remove_server run_server
 }
