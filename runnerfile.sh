@@ -89,7 +89,7 @@ task_upgrade_testing_database () {
 }
 
 task_run_testing_database () {
-  docker run --name -p 8080:8080 universe-testing -v "$PWD/database:/data" -d rethinkdb
+  docker run --name universe-testing -p 8080:8080 -v "$PWD/database:/data" -d rethinkdb
 }
 
 task_start_testing_database () {
