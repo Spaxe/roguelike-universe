@@ -12,6 +12,14 @@ task_client() {
   node node_modules/http-server/bin/http-server -p 8003
 }
 
+task_tunnel_admin () {
+  ssh -L 8004:localhost:8080 core@188.166.209.155
+}
+
+task_tunnel_driver () {
+  ssh -L 8005:localhost:28015 core@188.166.209.155
+}
+
 task_build () {
   runner_parallel build_server build_client
 }
@@ -89,7 +97,7 @@ task_upgrade_testing_database () {
 }
 
 task_run_testing_database () {
-  docker run --name universe-testing -p 8080:8080 -v "$PWD/database:/data" -d rethinkdb
+  docker run --name universe-testing -v "$PWD/database:/data" -d rethinkdb
 }
 
 task_start_testing_database () {
@@ -102,6 +110,11 @@ task_stop_testing_database () {
 
 task_remove_testing_database () {
   docker rm universe-testing
+}
+
+task_test_connection () {
+  cd devops
+  node test_connection.js
 }
 
 task_test () {

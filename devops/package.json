@@ -1,0 +1,31 @@
+{
+  "name": "rogue-ideas-devops",
+  "version": "0.0.1",
+  "description": "Developer-Operations for setting up the environment",
+  "main": "index.js",
+  "dependencies": {
+    "node-dir": "^0.1.11",
+    "rethinkdb": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spaxe/roguelike-universe.git"
+  },
+  "keywords": [
+    "roguelike",
+    "games",
+    "inspiration",
+    "network",
+    "ideas"
+  ],
+  "author": "Xavier Ho <contact@xavierho.com> (http://jumptoglide.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Spaxe/roguelike-universe/issues"
+  },
+  "homepage": "https://github.com/Spaxe/roguelike-universe#readme"
+}
