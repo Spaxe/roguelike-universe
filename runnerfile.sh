@@ -1,4 +1,9 @@
 #############################################################################
+# Environment
+testing="core@188.166.209.155"
+alias env=`testing`
+
+#############################################################################
 # Development
 task_server () {
   cd server
@@ -13,11 +18,13 @@ task_client() {
 }
 
 task_tunnel_admin () {
-  ssh -L 8004:localhost:8080 core@188.166.209.155
+  ssh -fNTL localhost:8004:$(ssh env "docker inspect --format \
+  '{{ .NetworkSettings.IPAddress }}' universe-testing"):8080 env
 }
 
 task_tunnel_driver () {
-  ssh -L 8005:localhost:28015 core@188.166.209.155
+  ssh -fNTL localhost:8005:$(ssh env "docker inspect --format \
+  '{{ .NetworkSettings.IPAddress }}' universe-testing"):28015 env
 }
 
 task_build () {
