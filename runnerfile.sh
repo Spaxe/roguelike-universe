@@ -4,6 +4,8 @@ testing="core@188.166.209.155"
 
 env=$testing
 
+alias node='node --harmony'
+
 #############################################################################
 # Development
 task_server () {
@@ -16,6 +18,38 @@ task_client() {
   cd client
   npm install
   node node_modules/http-server/bin/http-server -p 8003
+}
+
+task_build () {
+  runner_parallel build_server build_client
+}
+
+task_push () {
+  runner_parallel push_server push_client
+}
+
+task_start_tunnel () {
+  runner_parallel start_tunnel_admin start_tunnel_driver
+}
+
+task_stop_tunnel () {
+  runner_parallel stop_tunnel_admin stop_tunnel_driver
+}
+
+task_build_server () {
+  docker build -t spaxe/rogue-ideas-server server
+}
+
+task_build_client () {
+  docker build -t spaxe/rogue-ideas client
+}
+
+task_push_server () {
+  docker push spaxe/rogue-ideas-server
+}
+
+task_push_client () {
+  docker push spaxe/rogue-ideas
 }
 
 task_start_tunnel_admin () {
@@ -34,30 +68,6 @@ task_start_tunnel_driver () {
 
 task_stop_tunnel_driver () {
   kill $(lsof -t -i @localhost:8005 -sTCP:listen)
-}
-
-task_build () {
-  runner_parallel build_server build_client
-}
-
-task_push () {
-  runner_parallel push_server push_client
-}
-
-task_build_server () {
-  docker build -t spaxe/rogue-ideas-server server
-}
-
-task_build_client () {
-  docker build -t spaxe/rogue-ideas client
-}
-
-task_push_server () {
-  docker push spaxe/rogue-ideas-server
-}
-
-task_push_client () {
-  docker push spaxe/rogue-ideas
 }
 
 #############################################################################
@@ -130,7 +140,14 @@ task_remove_testing_database () {
 
 task_test_connection () {
   cd devops
+  npm install
   node test_connection.js
+}
+
+task_populate_database () {
+  cd devops
+  npm install
+  node populate_database.js
 }
 
 task_test () {
