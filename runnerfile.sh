@@ -11,7 +11,7 @@ alias node='node --harmony'
 task_server () {
   cd server
   npm install
-  npm start >> server.log 2>&1 &
+  nodemon server.js >> server.log 2>&1 &
   tail -f server.log -n 4
 }
 
