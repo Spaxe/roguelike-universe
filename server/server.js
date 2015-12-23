@@ -14,6 +14,21 @@ app.param('version', (req, res, next, version) => {
   else res.status(400).json({ reason: 'API version invalid. Try v1?' });
 });
 
+app.param('table', async ((req, res, next, table) => {
+
+  try {
+    const conn = await (connect());
+    const cursor = await (r.db(DB).tableList().run(conn));
+    var tables = await (cursor.toArray());
+  } catch (e) {
+    console.error('Connection failed: %s', err);
+    res.status(500).json({ reason: 'Connection failed, sorry :(' });
+  }
+
+  if (tables.indexOf(table) > 0) next();
+  else res.status(418).json({ reason: 'This is not the resource you are looking for' });
+}));
+
 
 app.get('/api/:version/:table', async ((req, res) => {
 
