@@ -21,7 +21,7 @@ app.param('table', async ((req, res, next, table) => {
     const cursor = await (r.db(DB).tableList().run(conn));
     var tables = await (cursor.toArray());
   } catch (e) {
-    console.error('Connection failed: %s', err);
+    console.error('Connection failed: %s', e);
     res.status(500).json({ reason: 'Connection failed, sorry :(' });
   }
 
@@ -38,7 +38,7 @@ app.get('/api/:version/:table', async ((req, res) => {
     const results = await (cursor.toArray());
     res.json(results);
   } catch (e) {
-    console.error('Connection failed: %s', err);
+    console.error('Connection failed: %s', e);
     res.status(500).json({ reason: 'Connection failed, sorry :(' });
   }
 
