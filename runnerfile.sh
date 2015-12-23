@@ -17,14 +17,18 @@ fi
 task_server () {
   cd server
   npm install
-  tail -n0 -f server.log &
-  nodemon server.js &>> server.log
+  nodemon server.js
 }
 
 task_client() {
   cd client
   npm install
   node node_modules/http-server/bin/http-server -p 8003
+}
+
+task_babel() {
+  cd client
+  watchify -v --debug -t [ babelify --presets [ react es2015 ] ] rogue-ideas.js -o public/rogue-ideas.min.js
 }
 
 task_build () {

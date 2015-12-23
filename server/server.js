@@ -9,6 +9,12 @@ const DB = 'universe';
 const PORT = 8002;
 const app = express();
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
+
 app.param('version', (req, res, next, version) => {
   if (version === 'v1') next();
   else res.status(400).json({ reason: 'API version invalid. Try v1?' });
@@ -29,12 +35,11 @@ app.param('table', async ((req, res, next, table) => {
   else res.status(418).json({ reason: 'This is not the resource you are looking for' });
 }));
 
-
 app.get('/api/:version/:table', async ((req, res) => {
 
   try {
     const conn = await (connect());
-    const cursor = await (r.db(DB).table('games').orderBy({ index: r.desc('Year')}).run(conn));
+    const cursor = await (r.db(DB).table('games').sample(10).run(conn));
     const results = await (cursor.toArray());
     res.json(results);
   } catch (e) {

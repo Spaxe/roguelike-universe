@@ -15,7 +15,7 @@ r.connect({ host: 'localhost', port: 8005 })
 
 }).then( connection => {
 
-  r.dbDrop('test').run(connection)
+  r.dbDrop('test').run(connection).catch( () => {} )
   .then( () => {
 
     return r.dbCreate('universe').run(connection)
@@ -44,7 +44,10 @@ const populate = function (connection, name, path, callback) {
     return r.tableCreate(name).run(connection);
   })
   .then( () => {
-    return r.table(name).indexCreate('Year').run(connection);
+    if (name === 'corpus')
+      return r.table(name).run(connection);
+    else
+      return r.table(name).indexCreate('year').run(connection);
   })
   .then( () => {
     return promise(fs.readFile, path, 'utf-8')
