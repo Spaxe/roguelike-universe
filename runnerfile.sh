@@ -6,13 +6,19 @@ env=$testing
 
 alias node='node --harmony'
 
+# Testing GNU version (Mac users should get coreutils on homebrew)
+if date --version >/dev/null 2>&1 ; then
+  alias tail='gtail'
+fi
+
+
 #############################################################################
 # Development
 task_server () {
   cd server
   npm install
-  nodemon server.js >> server.log 2>&1 &
-  tail -f server.log -n 4
+  tail -n0 -f server.log &
+  nodemon server.js &>> server.log
 }
 
 task_client() {

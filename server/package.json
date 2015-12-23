@@ -10,6 +10,7 @@
     "url": "https://github.com/Spaxe/roguelike-universe.git"
   },
   "dependencies": {
+    "asyncawait": "^1.0.1",
     "express": "^4.13.3",
     "rethinkdb": "^2.2.1"
   }
