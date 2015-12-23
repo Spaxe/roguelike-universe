@@ -4,7 +4,6 @@
   "description": "Developer-Operations for setting up the environment",
   "main": "index.js",
   "dependencies": {
-    "node-dir": "^0.1.11",
     "rethinkdb": "^2.2.1"
   },
   "devDependencies": {},

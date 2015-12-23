@@ -44,6 +44,9 @@ const populate = function (connection, name, path, callback) {
     return r.tableCreate(name).run(connection);
   })
   .then( () => {
+    return r.table(name).indexCreate('Year').run(connection);
+  })
+  .then( () => {
     return promise(fs.readFile, path, 'utf-8')
   }).then(data => {
     const json = JSON.parse(data);
