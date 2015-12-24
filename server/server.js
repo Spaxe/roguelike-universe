@@ -39,7 +39,7 @@ app.get('/api/:version/:table', async ((req, res) => {
 
   try {
     const conn = await (connect());
-    const cursor = await (r.db(DB).table('games').sample(10).run(conn));
+    const cursor = await (r.db(DB).table(req.params.table).sample(10).run(conn));
     const results = await (cursor.toArray());
     res.json(results);
   } catch (e) {
