@@ -142,7 +142,6 @@ const getRoguelikeRelations = async ( (req, res) => {
 const getRoguelikeWords = async ((req, res) => {
   try {
     const conn = await (connect());
-<<<<<<< HEAD
     const title = req.params.title;
     const words = await( await (r.db(DB)
         .table('corpus')
@@ -150,11 +149,6 @@ const getRoguelikeWords = async ((req, res) => {
         .pluck('content', 'url')
         .run(conn)).toArray());
     res.json( {title, words} );
-=======
-    const cursor = await (r.db(DB).table(req.params.table).sample(10).run(conn));
-    const results = await (cursor.toArray());
-    res.json(results);
->>>>>>> 29fd3e5b1211dec64bf2044a0b022bcc80d8ea04
   } catch (e) {
     failed(req, res, e);
   }
