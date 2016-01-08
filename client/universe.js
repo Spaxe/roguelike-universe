@@ -11,8 +11,7 @@ export const Universe = React.createClass({
 
   componentDidMount() {
 
-    load('http://localhost:8002/api/v1/games', (err, data) => {
-      console.log(data);
+    load('http://localhost:8002/api/v1/roguelikes', (err, data) => {
       this.setState({ games: data });
     });
 

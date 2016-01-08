@@ -9,6 +9,10 @@ const DB = 'universe';
 const PORT = 8002;
 const app = express();
 
+let cache = {
+  tables: []
+};
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -22,32 +26,45 @@ app.param('version', (req, res, next, version) => {
 
 app.param('table', async ((req, res, next, table) => {
 
-  try {
-    const conn = await (connect());
-    const cursor = await (r.db(DB).tableList().run(conn));
-    var tables = await (cursor.toArray());
-  } catch (e) {
-    console.error('Connection failed: %s', e);
-    res.status(500).json({ reason: 'Connection failed, sorry :(' });
+  if (cache.tables.length === 0) {
+    try {
+      const conn = await (connect());
+      const cursor = await (r.db(DB).tableList().run(conn));
+      cache.tables = await (cursor.toArray());
+    } catch (e) {
+      console.error('Connection failed: %s', e);
+      res.status(500).json({ reason: 'Connection failed, sorry :(' });
+    }
   }
 
-  if (tables.indexOf(table) > 0) next();
+  if (cache.tables.indexOf(table) > 0) next();
   else res.status(418).json({ reason: 'This is not the resource you are looking for' });
 }));
 
-app.get('/api/:version/:table', async ((req, res) => {
+app.get('/api/:version/table/:table', async ((req, res) => {
 
+  console.log(req);
   try {
     const conn = await (connect());
-    const cursor = await (r.db(DB).table('games').sample(10).run(conn));
-    const results = await (cursor.toArray());
-    res.json(results);
+    const count = await (r.db(DB).table(req.params.table).count().run(conn));
+    const sample = await (r.db(DB).table(req.params.table).sample(1).run(conn));
+
+    res.json({
+      count: count,
+      sample: await (sample.toArray()),
+    });
   } catch (e) {
     console.error('Connection failed: %s', e);
     res.status(500).json({ reason: 'Connection failed, sorry :(' });
   }
 
 }));
+
+// catch 404 and forward to error handler
+app.use( (req, res, next) => {
+  res.status(404).json({ reason: 'Nothing here.' });
+});
+
 
 const connect = () => {
 
