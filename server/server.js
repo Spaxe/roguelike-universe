@@ -8,9 +8,18 @@ const await = require('asyncawait/await');
 const DB = 'universe';
 const PORT = 8002;
 
-const connect = () => {
-  return r.connect({ host: 'localhost', port: 8005 });
-};
+const connect = async (() => {
+  // Attempt local (production) then remote tunnel (development)
+  try {
+    return await (r.connect({ host: 'localhost', port: 28015 }));
+  } catch (e) {
+    try {
+      return await (r.connect({ host: 'localhost', port: 8005 }));
+    } catch (e) {
+      throw e;
+    }
+  }
+});
 
 
 const failed = (req, res, e) => {
