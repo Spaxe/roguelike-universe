@@ -100,12 +100,12 @@ task_pull_client () {
 }
 
 task_run_server () {
-  docker run --name=rogue-ideas-server --restart=always \
+  docker run --name=rogue-ideas-server --net=host --restart=always \
              -p 80:8002 -d spaxe/rogue-ideas-server
 }
 
 task_run_client () {
-  docker run --name=rogue-ideas --restart=always \
+  docker run --name=rogue-ideas --net=host --restart=always \
              -p 80:8003 -d spaxe/rogue-ideas
 }
 
