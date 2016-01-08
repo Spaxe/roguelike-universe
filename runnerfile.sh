@@ -100,12 +100,12 @@ task_pull_client () {
 }
 
 task_run_server () {
-  docker run --name=rogue-ideas-server --net=host --restart=always \
+  docker run --name=rogue-ideas-server --restart=always \
              -p 80:8002 -d spaxe/rogue-ideas-server
 }
 
 task_run_client () {
-  docker run --name=rogue-ideas --net=host --restart=always \
+  docker run --name=rogue-ideas --restart=always \
              -p 80:8003 -d spaxe/rogue-ideas
 }
 
@@ -134,7 +134,7 @@ task_upgrade_testing_database () {
 }
 
 task_run_testing_database () {
-  docker run --name=universe-testing --net=host --restart=always -v "$PWD/database:/data" -d rethinkdb
+  docker run --name=universe-testing --restart=always -v "$PWD/database:/data" -d rethinkdb
 }
 
 task_start_testing_database () {
