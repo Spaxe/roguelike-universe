@@ -7,7 +7,8 @@ const express = require('express');
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
 
-const accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'});
+const accessLogPath = __dirname + '/access.log';
+const accessLogStream = fs.createWriteStream(accessLogPath, {flags: 'a'});
 
 const DB = 'universe';
 const PORT = 8002;
@@ -28,6 +29,7 @@ const connect = async (() => {
 
 const failed = (req, res, e) => {
   console.error('Connection failed: %s', e);
+  accessLogStream.write(`Connection failed: ${e.toString()}\n`);
   res.status(500).json({ reason: 'Connection failed, sorry :(' });
 };
 
