@@ -100,9 +100,8 @@ task_pull_client () {
 }
 
 task_run_server () {
-  DOCKERHOST=`ip -4 addr show scope global dev docker0 | grep inet | awk '{print $2}' | cut -d / -f 1`
   docker run --name=rogue-ideas-server --restart=always \
-             -p 80:8002 --add-host=dockerhost:$DOCKERHOST -d spaxe/rogue-ideas-server
+             -p 80:8002 --link=universe-testing:database -d spaxe/rogue-ideas-server
 }
 
 task_run_client () {
