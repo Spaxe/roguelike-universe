@@ -11,7 +11,7 @@ const PORT = 8002;
 const connect = async (() => {
   // Attempt local (production) then remote tunnel (development)
   try {
-    return await (r.connect({ host: 'localhost', port: 28015 }));
+    return await (r.connect({ host: 'dockerhost', port: 28015 }));
   } catch (e) {
     try {
       return await (r.connect({ host: 'localhost', port: 8005 }));
