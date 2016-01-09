@@ -8,3 +8,4 @@ generated/roguelike-game-articles.json
 node_modules
 *.min.js
 database
+server/access.log

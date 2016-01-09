@@ -1,9 +1,13 @@
 'use strict';
 
+const fs = require('fs');
 const r = require('rethinkdb');
+const morgan = require('morgan');
 const express = require('express');
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
+
+const accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'});
 
 const DB = 'universe';
 const PORT = 8002;
@@ -170,6 +174,8 @@ const app = express();
 let cache = {
   tables: []
 };
+
+app.use(morgan('combined', {stream: accessLogStream}));
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
