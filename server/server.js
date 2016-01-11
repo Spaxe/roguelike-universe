@@ -98,6 +98,19 @@ const getRoguelike = async ( (req, res) => {
   }
 });
 
+const getRoguelikeList = async ( (req, res) => {
+  try {
+    const conn = await (connect());
+    const gameList = await (r.db(DB)
+      .table('roguelikes')
+      .getField('title')
+      .run(conn));
+    res.json( await (gameList.toArray()) );
+  } catch (e) {
+    failed(req, res, e);
+  }
+});
+
 const getRoguelikeRelations = async ( (req, res) => {
   try {
     const conn = await (connect());
@@ -191,6 +204,7 @@ app.param('table', validateTable);
 app.get('/api/:version/table/:table', getTable);
 app.get('/api/:version/game/title/:title', getGame);
 app.get('/api/:version/roguelike/title/:title', getRoguelike);
+app.get('/api/:version/roguelike/list', getRoguelikeList);
 app.get('/api/:version/roguelike/relations/:title', getRoguelikeRelations);
 app.get('/api/:version/roguelike/words/:title', getRoguelikeWords);
 
