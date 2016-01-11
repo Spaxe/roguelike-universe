@@ -17,13 +17,13 @@ fi
 task_server () {
   cd server
   npm install
-  nodemon server.js
+  nodemon server.js -- --harmony
 }
 
 task_client () {
   cd client
   npm install
-  node node_modules/http-server/bin/http-server -p 8003
+  node node_modules/http-server/bin/http-server -p 8003 --harmony
 }
 
 task_babel () {

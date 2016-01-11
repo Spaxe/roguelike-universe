@@ -14,12 +14,13 @@ const DB = 'universe';
 const PORT = 8002;
 
 const connect = async (() => {
-  // Attempt local (production) then remote tunnel (development)
+  // Attempt local (development) then remote tunnel (production)
   try {
-    return await (r.connect({ host: 'database', port: 28015 }));
+    return await (r.connect({ host: 'localhost', port: 8005 }));
   } catch (e) {
     try {
-      return await (r.connect({ host: 'localhost', port: 8005 }));
+      return await (r.connect({ host: 'database', port: 28015 }));
+
     } catch (e) {
       throw e;
     }
@@ -103,7 +104,8 @@ const getRoguelikeList = async ( (req, res) => {
     const conn = await (connect());
     const gameList = await (r.db(DB)
       .table('roguelikes')
-      .getField('title')
+      .without('id')
+      .orderBy('year')
       .run(conn));
     res.json( await (gameList.toArray()) );
   } catch (e) {
@@ -111,7 +113,7 @@ const getRoguelikeList = async ( (req, res) => {
   }
 });
 
-const getRoguelikeRelations = async ( (req, res) => {
+const getRoguelikeRelations = async ((req, res) => {
   try {
     const conn = await (connect());
     const title = req.params.title;
@@ -143,25 +145,38 @@ const getRoguelikeRelations = async ( (req, res) => {
     let inspiredBy = [],
         inspirationTo = [];
 
-    relations.forEach( relation => {
+    relations.forEach( title => {
       const thisYear = await( await (r.db(DB)
         .table('roguelikes')
-        .getAll(relation, {index: 'title'})
+        .getAll(title, {index: 'title'})
         .getField('year')
         .run(conn)).toArray())[0];
 
-      if (!thisYear) console.warn(relation, "doesn't have a year recorded.");
+      if (!thisYear) console.warn(title, "doesn't have a year recorded.");
 
       if (thisYear < year) {
-        inspiredBy.push(relation);
+        inspiredBy.push({title, year: thisYear});
       } else if (thisYear > year) {
-        inspirationTo.push(relation);
+        inspirationTo.push({title, year: thisYear});
       } else {
         // Same year, unsure
       }
     });
 
-    res.json({ title, inspiredBy, inspirationTo });
+    res.json({ title, year, inspiredBy, inspirationTo });
+  } catch (e) {
+    failed(req, res, e);
+  }
+});
+
+const getRoguelikeRelationsAll = async ((req, res) => {
+  try {
+    const conn = await (connect());
+    const relations = await( await (r.db(DB)
+      .table('roguelike_relations')
+      .without('id')
+      .run(conn)).toArray());
+    res.json(relations);
   } catch (e) {
     failed(req, res, e);
   }
@@ -206,6 +221,7 @@ app.get('/api/:version/game/title/:title', getGame);
 app.get('/api/:version/roguelike/title/:title', getRoguelike);
 app.get('/api/:version/roguelike/list', getRoguelikeList);
 app.get('/api/:version/roguelike/relations/:title', getRoguelikeRelations);
+app.get('/api/:version/roguelike/relations-all', getRoguelikeRelationsAll);
 app.get('/api/:version/roguelike/words/:title', getRoguelikeWords);
 
 // catch 404 and forward to error handler
