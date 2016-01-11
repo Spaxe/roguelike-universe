@@ -8,7 +8,7 @@ import { promise, ratio, getJSON } from "./util";
 
 const server_url = 'http://localhost:8002/api/v1';
 
-let width = 1000, height = 1000;
+let width = 750, height = 750;
 let start_year = 1970, end_year = 2020;
 const fx = ratio.bind(ratio, start_year, end_year);
 
@@ -16,23 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let bvg = BVG.create('#container');
 
-  loadRoguelikeList().then( (xys) => {
-    xys.forEach( ({title, x, y}) => {
-
-      // Draw base circle
+  loadRoguelikeList().then( (titles) => {
+    titles.forEach( ({title, x, y}) => {
       let r = 5;
       bvg.circle(x * width, y + height / 2, r);
+    });
+  });
 
-      loadRoguelikeRelations(title).then( relations => {
 
-        relations.inspiredBy.forEach( title => {
-          bvg.arc(...arcYeartoYear(title.year, relations.year));
-        });
-        relations.inspirationTo.forEach( title => {
-          bvg.arc(...arcYeartoYear(relations.year, title.year));
-        });
+  loadRoguelikeRelationsAll().then( (relations) => {
+    relations.forEach( ({title, year, inspiredBy, inspirationTo}) => {
 
+      inspiredBy.forEach( r => {
+        bvg.arc(...arcYeartoYear(year, r.year));
       });
+      inspirationTo.forEach( r => {
+        bvg.arc(...arcYeartoYear(r.year, year));
+      });
+
     });
   });
 });
@@ -55,9 +56,9 @@ const loadRoguelikeList = () => {
 
 };
 
-const loadRoguelikeRelations = (title) => {
+const loadRoguelikeRelationsAll = () => {
 
-  return getJSON(`${server_url}/roguelike/relations/${title}`);
+  return getJSON(`${server_url}/roguelike/relations-all`);
 
 };
 
@@ -77,6 +78,6 @@ const arcYeartoYear = (a, b) => {
   let ry = rx;
   let startAngle = 0;
   let endAngle = Math.PI;
-  return [x, y, rx, ry, startAngle, endAngle];
+  return [x * width, y, rx, ry, startAngle, endAngle];
 
 };
