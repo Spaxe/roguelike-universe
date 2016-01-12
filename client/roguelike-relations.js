@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   loadRoguelikeRelationsAll().then( (relations) => {
     relations.forEach( ({title, year, inspiredBy, inspirationTo, otherInspiredBy, otherInspirationTo}) => {
 
+      let g = bvg.group(`translate(${fx(year) * width} ${height/2 + 15})`)
+      let text = g.text(title, 0, 0).transform('rotate(90)');
+
       inspiredBy.forEach( r => {
         let args = arcYeartoYear(year, r.year);
         args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
