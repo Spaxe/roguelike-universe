@@ -16,22 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let bvg = BVG.create('#container');
 
-  loadRoguelikeList().then( (titles) => {
-    titles.forEach( ({title, x, y}) => {
-      let r = 5;
-      bvg.circle(x * width, y + height / 2, r);
-    });
-  });
-
-
   loadRoguelikeRelationsAll().then( (relations) => {
-    relations.forEach( ({title, year, inspiredBy, inspirationTo}) => {
+    relations.forEach( ({title, year, inspiredBy, inspirationTo, otherInspiredBy, otherInspirationTo}) => {
 
       inspiredBy.forEach( r => {
         bvg.arc(...arcYeartoYear(year, r.year));
       });
       inspirationTo.forEach( r => {
         bvg.arc(...arcYeartoYear(r.year, year));
+      });
+      otherInspiredBy.forEach( r => {
+        bvg.arc(...arcYeartoYear(year, r.year, 1.0));
+      });
+      otherInspirationTo.forEach( r => {
+        bvg.arc(...arcYeartoYear(r.year, year, 1.0));
       });
 
     });
@@ -42,7 +40,7 @@ const loadRoguelikeList = () => {
 
   return getJSON(`${server_url}/roguelike/list`).then( roguelikes => {
 
-    const dh = -15;
+    const dh = 15;
     let counter = {};
 
     return roguelikes.map( r => {
@@ -62,13 +60,7 @@ const loadRoguelikeRelationsAll = () => {
 
 };
 
-const loadRoguelike = (title) => {
-
-  return getJSON(`${server_url}/roguelike/title/${title}`);
-
-};
-
-const arcYeartoYear = (a, b) => {
+const arcYeartoYear = (a, b, invert=-1.0) => {
 
   let x_a = fx(a, start_year, end_year);
   let x_b = fx(b, start_year, end_year);
@@ -77,7 +69,7 @@ const arcYeartoYear = (a, b) => {
   let rx = Math.abs(x_b - x_a) / 2 * height;
   let ry = rx;
   let startAngle = 0;
-  let endAngle = Math.PI;
+  let endAngle = Math.PI * invert;
   return [x * width, y, rx, ry, startAngle, endAngle];
 
 };

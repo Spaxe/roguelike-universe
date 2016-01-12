@@ -113,59 +113,15 @@ const getRoguelikeList = async ( (req, res) => {
   }
 });
 
-const _getRoguelikeRlations = async ( (conn, title) => {
-  const year = await( await (r.db(DB)
-    .table('roguelikes')
-    .getAll(title, {index: 'title'})
-    .getField('year')
-    .run(conn)).toArray())[0];
-
-  if (!year) {
-    res.status(404).json({reason: 'That game does not exist in our records.'});
-    return;
-  }
-
-  const relationA = flatten(await( await (r.db(DB)
-    .table('roguelike_relations')
-    .getAll(title, {index: 'title'})
-    .getField('relations')
-    .run(conn)).toArray()));
-  const relationB = await( await (r.db(DB)
-    .table('roguelike_relations')
-    .getAll(title, {index: 'relations'})
-    .getField('title')
-    .run(conn)).toArray());
-
-  const relations = relationA.concat(relationB).filter(unique);
-
-  let inspiredBy = [],
-      inspirationTo = [];
-
-  relations.forEach( title => {
-    const thisYear = await( await (r.db(DB)
-      .table('roguelikes')
-      .getAll(title, {index: 'title'})
-      .getField('year')
-      .run(conn)).toArray())[0];
-
-    if (!thisYear) console.warn(title, "doesn't have a year recorded.");
-
-    if (thisYear < year) {
-      inspiredBy.push({title, year: thisYear});
-    } else if (thisYear > year) {
-      inspirationTo.push({title, year: thisYear});
-    } else {
-      // Same year, unsure
-    }
-  });
-
-  return { title, year, inspiredBy, inspirationTo };
-});
-
 const getRoguelikeRelations = async ((req, res) => {
   try {
     const conn = await (connect());
-    res.json(await (_getRoguelikeRlations(conn, req.params.title)));
+    const relations = await( await (r.db(DB)
+      .table('roguelike_relations')
+      .getAll(title, {index: 'title'})
+      .without('id')
+      .run(conn)).toArray())
+    res.json(await (relations));
   } catch (e) {
     failed(req, res, e);
   }
@@ -174,13 +130,10 @@ const getRoguelikeRelations = async ((req, res) => {
 const getRoguelikeRelationsAll = async ((req, res) => {
   try {
     const conn = await (connect());
-    const titles = await( await (r.db(DB)
-      .table('roguelikes')
-      .getField('title')
-      .run(conn)).toArray());
-    const relations = titles.map( async ((title) => {
-      return await (_getRoguelikeRlations(conn, title));
-    }));
+    const relations = await( await (r.db(DB)
+      .table('roguelike_relations')
+      .without('id')
+      .run(conn)).toArray())
     res.json(await (relations));
   } catch (e) {
     failed(req, res, e);
