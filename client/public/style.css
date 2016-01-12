@@ -40,4 +40,21 @@ em { font-style: italic; }
   max-width: 800px;
   height: 95vw;
   max-height: 800px;
+  font-size: 60%;
+}
+
+.focus {
+  color: black;
+  stroke: rgba(0, 0, 0, 1);
+  stroke-width: 3;
+}
+
+.in-genre {
+  colour: rgba(0, 0, 0, 0.1);
+  stroke: rgba(0, 0, 0, 0.1);
+}
+
+.out-of-genre {
+  colour: rgba(0, 0, 0, 0.02);
+  stroke: rgba(0, 0, 0, 0.02);
 }
