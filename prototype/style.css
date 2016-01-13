@@ -10,7 +10,7 @@ body {
   padding: 10px;
 }
 
-header {
+#text {
   margin: 0 auto;
   width: 95vw;
   max-width: 800px;
@@ -34,13 +34,17 @@ p { line-height: 1.35; }
 em { font-style: italic; }
 .series { margin-top: 0; margin-bottom: 24px; }
 
-#container {
+.visualisation {
   margin: 0 auto;
   width: 95vw;
   max-width: 800px;
   height: 95vw;
   max-height: 800px;
   font-size: 60%;
+}
+
+#genre-influence.visualisation {
+  max-width: 800px;
 }
 
 .focus {
