@@ -28,7 +28,7 @@ task_client () {
 
 task_babel () {
   cd client
-  watchify -v --debug -t [ babelify --presets [ react es2015 ] ] roguelike-relations.js -o public/roguelike-relations.min.js
+  watchify -v --debug -t [ babelify --presets [ es2015 ] ] roguelike-relations.js -o public/roguelike-relations.min.js
 }
 
 task_build () {

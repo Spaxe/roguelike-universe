@@ -132,6 +132,7 @@ const getRoguelikeRelationsAll = async ((req, res) => {
     const conn = await (connect());
     const relations = await( await (r.db(DB)
       .table('roguelike_relations')
+      .orderBy('year')
       .without('id')
       .run(conn)).toArray())
     res.json(await (relations));
