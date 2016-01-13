@@ -6,7 +6,7 @@
 import BVG from "bvg";
 import { promise, ratio, getJSON } from "./util";
 
-const server_url = 'http://localhost:8002/api/v1';
+const server_url = 'http://188.166.209.155/api/v1';
 const start_year = 1970, end_year = 2020;
 const fx = ratio.bind(ratio, start_year, end_year);
 
