@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
   loadRoguelikeRelationsAll().then( relations => {
 
     // Draw timeline
-    for (let i = start_year + 1; i < end_year; i++) {
+    bvg.text('year',
+             0.001 * width,
+             height / 2 + 3);
+    for (let i = start_year + 2; i < end_year; i++) {
       bvg.text(i.toString().substr(2, 4),
                (fx(i) - 0.005) * width,
                height / 2 + 3
@@ -48,24 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
     relations.forEach( ({title, year, inspiredBy, inspirationTo, otherInspiredBy, otherInspirationTo}) => {
 
       inspiredBy.forEach( r => {
-        let args = arcYeartoYear(year, r.year);
-        args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
-        bvg.arc(...args).stroke(0, 0, 0, 0.2);
+        drawArc(bvg, year, r.year, -1.0, 0.1);
       });
       inspirationTo.forEach( r => {
-        let args = arcYeartoYear(r.year, year);
-        args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
-        bvg.arc(...args).stroke(0, 0, 0, 0.2);
+        drawArc(bvg, r.year, year, -1.0, 0.1);
       });
       otherInspiredBy.forEach( r => {
-        let args = arcYeartoYear(year, r.year, 1.0);
-        args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
-        bvg.arc(...args).stroke(0, 0, 0, 0.05);
+        drawArc(bvg, year, r.year, 1.0, 0.05);
       });
       otherInspirationTo.forEach( r => {
-        let args = arcYeartoYear(r.year, year, 1.0);
-        args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
-        bvg.arc(...args).stroke(0, 0, 0, 0.05);
+        drawArc(bvg, r.year, year, 1.0, 0.05);
       });
 
     });
@@ -88,24 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
           }).strokeWidth(2).stroke(0, 0, 0, 0.5);
 
           relation.inspiredBy.forEach( r => {
-            let args = arcYeartoYear(relation.year, r.year);
-            args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
-            focus.arc(...args).stroke(0, 0, 0, 1).strokeWidth(3);
+            drawArc(focus, relation.year, r.year, -1, 1, 3);
           });
           relation.inspirationTo.forEach( r => {
-            let args = arcYeartoYear(r.year, relation.year);
-            args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
-            focus.arc(...args).stroke(0, 0, 0, 1).strokeWidth(3);
+            drawArc(focus, r.year, relation.year, -1, 1, 3);
           });
           relation.otherInspiredBy.forEach( r => {
-            let args = arcYeartoYear(relation.year, r.year, 1.0);
-            args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
-            focus.arc(...args).stroke(0, 0, 0, 1).strokeWidth(3);
+            drawArc(focus, relation.year, r.year, 1, 1, 3);
           });
           relation.otherInspirationTo.forEach( r => {
-            let args = arcYeartoYear(r.year, relation.year, 1.0);
-            args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
-            focus.arc(...args).stroke(0, 0, 0, 1).strokeWidth(3);
+            drawArc(focus, r.year, relation.year, 1, 1, 3);
           });
 
           return;
@@ -118,6 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
     drawSelection(selection);
 
   });
+
+  let drawArc = (g, yearA, yearB, invert=-1.0, opacity=1, strokeWidth=1) => {
+    let args = arcYeartoYear(yearA, yearB, invert);
+    args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
+    g.arc(...args).stroke(0, 0, 0, opacity).strokeWidth(strokeWidth);
+  }
 
 });
 
@@ -140,3 +133,4 @@ let arcYeartoYear = (a, b, invert=-1.0) => {
   return [x, y, rx, ry, startAngle, endAngle];
 
 };
+
