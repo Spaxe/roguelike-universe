@@ -12,8 +12,15 @@ const fx = ratio.bind(ratio, start_year, end_year);
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  let bvg = BVG.create('#container');
-  let focus = bvg.group({});
+  roguelikeRelations();
+  genreInfluenceMap();
+
+});
+
+const roguelikeRelations = () => {
+
+  let bvg = BVG.create('#roguelike-relations');
+  let focus = bvg.group('');
   let width = bvg.tag().clientWidth;
   let height = bvg.tag().clientHeight;
   let GUI_game = document.getElementById('game');
@@ -31,6 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
                height / 2 + 3
       );
     }
+    bvg.text('In-genre',
+             0.001 * width,
+             0.1 * height);
+    bvg.text('Out-of-genre',
+             0.001 * width,
+             0.9 * height);
+
 
     // Populate game titles
     relations.forEach( game => {
@@ -110,9 +124,81 @@ document.addEventListener('DOMContentLoaded', () => {
     let args = arcYeartoYear(yearA, yearB, invert);
     args[0] *= width; args[1] *= height; args[2] *= height; args[3] *= height;
     g.arc(...args).stroke(0, 0, 0, opacity).strokeWidth(strokeWidth);
-  }
+  };
+};
 
-});
+const genreInfluenceMap = () => {
+
+  let bvg = BVG.create('#genre-influence');
+  let focus = bvg.group('');
+  let width = bvg.tag().clientWidth;
+  let height = bvg.tag().clientHeight;
+  let radius = 3;
+
+  // Axis
+  bvg.line(0.1 * width, 0.01 * height, 0.1 * width, 0.9 * height).stroke(0);
+  bvg.line(0.1 * width, 0.9 * height, 0.99 * width, 0.9 * height).stroke(0);
+  let verticalLabelIn = bvg.group(`translate(${0.09 * width} ${0.15 * height})`);
+  verticalLabelIn.text('Influences from in-genre', 0, 0).transform('rotate(-90)');
+  let verticalLabelOut = bvg.group(`translate(${0.09 * width} ${0.9 * height})`);
+  verticalLabelOut.text('Influences from out-of-genre', 0, 0).transform('rotate(-90)');
+  bvg.text('Influenced by its past', 0.11 * width, 0.915 * height);
+  bvg.text('Influences its future', 0.87 * width, 0.915 * height);
+
+  loadRoguelikeRelationsAll().then( relations => {
+
+    let max = 0;
+    let games = relations.map( ({title, year, inspiredBy, inspirationTo, otherInspiredBy, otherInspirationTo}) => {
+
+      if ([
+        'Dungeon Crawl Stone Soup',
+        'Pokémon Mystery Dungeon: Explorers of Time and Explorers of Darkness',
+        'Shiren the Wanderer',
+        'Mystery Dungeon: Shiren the Wanderer',
+        'Weird Worlds: Return to Infinite Space',
+        'Pokémon Mystery Dungeon: Explorers of Sky',
+        'Izuna 2: The Unemployed Ninja Returns',
+        'Sword of the Stars: The Pit',
+        "Tao's Adventure: Curse of the Demon Sea",
+        'Dragon Quest: Shonen Yangus to Fushigi no Dungeon',
+        'Teleglitch',
+        "Moraff's Revenge",
+        'Doom, the Roguelike',
+        "Chocobo's Dungeon 2",
+        'Not the Robots',
+        'Izuna: Legend of the Unemployed Ninja',
+        'Deadly Dungeons',
+        "Tao's Adventure: Curse of the Demon Seal",
+        'Chocobo no Fushigina Dungeon',
+        'Rogue Legacy'
+      ].indexOf(title) >= 0) return {title, x: 0, y: 0};
+
+      let iB = inspiredBy.length;
+      let iT = inspirationTo.length;
+      let oB = otherInspiredBy.length / 4;
+      let oT = otherInspirationTo.length / 4;
+      let x = -iB - oB + iT + oT;
+      let y = -iB + oB - iT + oT;
+      max = Math.max(max, Math.pow(Math.abs(x), 2), Math.pow(Math.abs(y), 2)) + 1;
+      return { title, x, y };
+
+    });
+
+    games.forEach( c => {
+      if (c.x === 0 && c.y === 0) return;
+      let sx = c.x && c.x / Math.abs(c.x);
+      let sy = c.y && c.y / Math.abs(c.y);
+      let cx = Math.abs(c.x) > 0 ? Math.sqrt(Math.abs(c.x)) * 2 : 0;
+      let cy = Math.abs(c.y) > 0 ? Math.sqrt(Math.abs(c.y)) * 2 : 0;
+      let x = (0.5 + sx * cx / Math.sqrt(max)) * width;
+      let y = (0.5 + sy * cy / Math.sqrt(max)) * height;
+      bvg.circle(x, y, radius).fill(0);
+      bvg.text(c.title, x + 5, y + 3).fill(0);
+    });
+
+  });
+
+};
 
 const loadRoguelikeRelationsAll = () => {
 
