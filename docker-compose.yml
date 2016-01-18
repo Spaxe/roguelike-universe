@@ -1,0 +1,14 @@
+spaxe/rogue-ideas-server:
+  image: spaxe/rogue-ideas-server
+  ports:
+   - "80:8002"
+  links:
+   - universe-testing
+universe-testing:
+  image: rethinkdb
+  expose:
+   - "8080"
+   - "28015"
+   - "29015"
+  volume:
+    - "$PWD/database:/data"

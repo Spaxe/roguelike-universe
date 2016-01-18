@@ -1,0 +1,19 @@
+{
+  "name": "rogue_ideas",
+  "version": "0.0.1",
+  "description": "Visualising roguelike games and their inspirations",
+  "author": "Xavier Ho <contact@xavierho.com>",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Spaxe/roguelike-universe.git"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "bvg": "^0.2.0",
+    "http-server": "^0.8.5",
+    "xhr": "^2.2.0"
+  }
+}
