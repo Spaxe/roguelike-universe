@@ -204,21 +204,31 @@ const roguelikeInfluenceTimeline = (relations, coordsLUT) => {
   let width = bvg.tag().clientWidth;
   let height = bvg.tag().clientHeight;
   let radius = 3;
+  let fy = ratio.bind(ratio, start_year + 7, end_year - 5) ;
+
+  bvg.text('year',
+           0.01 * width,
+           0.01 * height);
+  for (let i = start_year + 8; i <= end_year - 6; i++) {
+    bvg.text(i.toString(), 0.01 * width, fy(i) * height);
+  }
 
   relations.forEach( ({title, year, inspiredBy, inspirationTo}, i) => {
 
-    if (year > 2014) return;
+    if (year > 2014 ||
+        (inspiredBy.length === 0 && inspirationTo.length === 0))
+      return;
     let x = coordsLUT[title].x;
-    let y = fx(year) * height;
+    let y = fy(year) * height;
 
     inspiredBy.forEach( r => {
       let x2 = coordsLUT[r.title].x;
-      let y2 = fx(r.year) * height;
+      let y2 = fy(r.year) * height;
       bvg.line(x, y, x2, y2);
     });
     inspirationTo.forEach( r => {
       let x2 = coordsLUT[r.title].x;
-      let y2 = fx(r.year) * height;
+      let y2 = fy(r.year) * height;
       bvg.line(x, y, x2, y2);
     });
 
