@@ -33,18 +33,24 @@ h2 {
 p { line-height: 1.35; }
 em { font-style: italic; }
 .series { margin-top: 0; margin-bottom: 24px; }
+.side-image { max-width: 30%; float: right; padding: 10px; }
 
 .visualisation {
   margin: 0 auto;
   width: 95vw;
   max-width: 800px;
   height: 95vw;
-  max-height: 800px;
+  height: 800px;
   font-size: 60%;
 }
 
 #genre-influence.visualisation {
   max-width: 800px;
+}
+
+#influence-timeline {
+  max-width: 800px;
+  height: 1600px;
 }
 
 .focus {
