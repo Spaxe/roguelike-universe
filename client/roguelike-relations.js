@@ -207,12 +207,13 @@ const roguelikeInfluenceTimeline = (relations, coordsLUT) => {
   let radius = 3;
   let fy = ratio.bind(ratio, start_year + 7, end_year - 5) ;
 
-  bvg.text('year',
-           0.01 * width,
-           0.01 * height).fill(0);
+  let verticalLabelIn = bvg.group(`translate(${0.007 * width} ${0.04 * height})`);
+  verticalLabelIn.text('year', 0, 0).transform('rotate(-90)').fill(0);
   for (let i = start_year + 8; i <= end_year - 6; i++) {
-    bvg.text(i.toString(), 0.01 * width, fy(i) * height + 3).fill(0);
+    bvg.text(i.toString(), 0.025 * width, fy(i) * height + 3).fill(0);
   }
+
+  bvg.line(0.015 * width, 0.02 * height, 0.015 * width, 0.99 * height).stroke(0);
 
   let titlesToOffsetHalf = [
     "Sword of Fargoal",
@@ -225,19 +226,18 @@ const roguelikeInfluenceTimeline = (relations, coordsLUT) => {
     "Sword of the Stars: The Pit",
     "Risk of Rain",
     "WazHack",
-    "Infinite Space III: Sea of Stars"
+    "Infinite Space III: Sea of Stars",
+    "Smart Kobold",
   ];
 
   let titlesToOffsetOneThird = [
     "WazHack",
     "Izuna: Legend of the Unemployed Ninja",
-    'Z.H.P. Unlosing Ranger VS Darkdeath Evilman'
   ];
 
   let titlesToOffsetTwoThirds = [
     "Dungeon Crawl Stone Soup",
     "TowerClimb",
-    "Smart Kobold",
   ];
 
   const calcOffset = (title) => {
