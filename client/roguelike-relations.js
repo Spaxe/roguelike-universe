@@ -162,6 +162,7 @@ const genreInfluenceMap = (relations) => {
       'Doom, the Roguelike',
       "Chocobo's Dungeon 2",
       'Not the Robots',
+      "Slaves to Armok II: Dwarf Fortress",
       'Izuna: Legend of the Unemployed Ninja',
       'Deadly Dungeons',
       "Tao's Adventure: Curse of the Demon Seal",
@@ -208,33 +209,88 @@ const roguelikeInfluenceTimeline = (relations, coordsLUT) => {
 
   bvg.text('year',
            0.01 * width,
-           0.01 * height);
+           0.01 * height).fill(0);
   for (let i = start_year + 8; i <= end_year - 6; i++) {
-    bvg.text(i.toString(), 0.01 * width, fy(i) * height);
+    bvg.text(i.toString(), 0.01 * width, fy(i) * height + 3).fill(0);
   }
+
+  let titlesToOffsetHalf = [
+    "Sword of Fargoal",
+    "Torneko no Daiboken: Fushigi no Dungeon",
+    "Chocobo no Fushigina Dungeon",
+    "Super Lotsa Added Stuff Hack - Extended Magic",
+    "Tao's Adventure: Curse of the Demon Seal",
+    "Pokémon Mystery Dungeon: Explorers of Time and Explorers of Darkness",
+    "Shiren the Wanderer",
+    "Sword of the Stars: The Pit",
+    "Risk of Rain",
+    "WazHack",
+    "Infinite Space III: Sea of Stars"
+  ];
+
+  let titlesToOffsetOneThird = [
+    "WazHack",
+    "Izuna: Legend of the Unemployed Ninja",
+    'Z.H.P. Unlosing Ranger VS Darkdeath Evilman'
+  ];
+
+  let titlesToOffsetTwoThirds = [
+    "Dungeon Crawl Stone Soup",
+    "TowerClimb",
+    "Smart Kobold",
+  ];
+
+  const calcOffset = (title) => {
+    let offset = titlesToOffsetHalf.indexOf(title) < 0 ? 0 : 16;
+        offset = titlesToOffsetOneThird.indexOf(title) < 0 ? offset : 10;
+        offset = titlesToOffsetTwoThirds.indexOf(title) < 0 ? offset : 21;
+    return offset;
+  }
+
+  let connected = {};
 
   relations.forEach( ({title, year, inspiredBy, inspirationTo}, i) => {
 
     if (year > 2014 ||
         (inspiredBy.length === 0 && inspirationTo.length === 0))
       return;
+
+    let offset = calcOffset(title);
+
     let x = coordsLUT[title].x;
-    let y = fy(year) * height;
+    let y = fy(year) * height + offset;
 
     inspiredBy.forEach( r => {
+      if (Math.abs(year - r.year) > 15) return;
+      let offset = calcOffset(r.title);
       let x2 = coordsLUT[r.title].x;
-      let y2 = fy(r.year) * height;
+      let y2 = fy(r.year) * height + offset;
       bvg.line(x, y, x2, y2);
+      connected[r.title] = true;
+      connected[title] = true;
     });
     inspirationTo.forEach( r => {
+      if (Math.abs(year - r.year) > 15) return;
+      let offset = calcOffset(r.title);
       let x2 = coordsLUT[r.title].x;
-      let y2 = fy(r.year) * height;
+      let y2 = fy(r.year) * height + offset;
       bvg.line(x, y, x2, y2);
+      connected[r.title] = true;
+      connected[title] = true;
     });
 
-    bvg.circle(x, y, radius).fill(0);
-    bvg.text(title, x + 5, y + 3).fill(0);
+  });
 
+  relations.forEach( ({title, year}) => {
+
+    let offset = calcOffset(title);
+
+    if (connected[title]) {
+      let x = coordsLUT[title].x;
+      let y = fy(year) * height + offset;
+      bvg.circle(x, y, radius).fill(0);
+      bvg.text(title, x + 5, y + 3).fill(0);
+    }
 
   });
 
