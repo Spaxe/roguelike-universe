@@ -23,8 +23,9 @@ const roguelikeRelations = (relations) => {
 
   let bvg = BVG.create('#roguelike-relations');
   let focus = bvg.group('');
-  let width = bvg.tag().clientWidth;
-  let height = bvg.tag().clientHeight;
+  let tag = bvg.tag();
+  let width = tag.clientWidth || tag.parentNode.clientWidth;
+  let height = tag.clientHeight || tag.parentNode.clientHeight;
   let GUI_game = document.getElementById('game');
   let selection = 'Dungeon';
 
@@ -129,8 +130,9 @@ const genreInfluenceMap = (relations) => {
 
   let bvg = BVG.create('#genre-influence');
   let focus = bvg.group('');
-  let width = bvg.tag().clientWidth;
-  let height = bvg.tag().clientHeight;
+  let tag = bvg.tag();
+  let width = tag.clientWidth || tag.parentNode.clientWidth;
+  let height = tag.clientHeight || tag.parentNode.clientHeight;
   let radius = 3;
 
   // Axis
@@ -202,8 +204,9 @@ const genreInfluenceMap = (relations) => {
 const roguelikeInfluenceTimeline = (relations, coordsLUT) => {
 
   let bvg = BVG.create('#influence-timeline');
-  let width = bvg.tag().clientWidth;
-  let height = bvg.tag().clientHeight;
+  let tag = bvg.tag();
+  let width = tag.clientWidth || tag.parentNode.clientWidth;
+  let height = tag.clientHeight || tag.parentNode.clientHeight;
   let radius = 3;
   let fy = ratio.bind(ratio, start_year + 7, end_year - 5) ;
 
