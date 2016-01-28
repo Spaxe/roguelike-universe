@@ -100,7 +100,7 @@ const roguelikeRelations = (relations) => {
       const relation = relations[i];
       if (relation.title === selection) {
 
-        focus.text(selection, fx(relation.year) * width, 0.095 * height)
+        focus.text(selection, fx(relation.year - 2) * width, 0.095 * height)
           .fill(0);
 
         focus.line({
