@@ -40,10 +40,17 @@ const roguelikeRelations = (relations) => {
            0.001 * width,
            height / 2 + 3);
   for (let i = start_year + 2; i < end_year; i++) {
-    bvg.text(i.toString().substr(2, 4),
-             (fx(i) - 0.005) * width,
-             height / 2 + 3
-    );
+    if (i % 5 === 0) {
+      bvg.text(i.toString(),
+               (fx(i) - 0.02) * width,
+               height / 2 + 3
+      ).fill(0);
+    } else {
+      bvg.text('·',
+               (fx(i) - 0.0025) * width,
+               height / 2 + 3
+      ).fill(0);
+    }
   }
   bvg.text('In-genre',
            0.001 * width,
@@ -142,8 +149,8 @@ const genreInfluenceMap = (relations) => {
   verticalLabelIn.text('Influences from in-genre', 0, 0).transform('rotate(-90)');
   let verticalLabelOut = bvg.group(`translate(${0.09 * width} ${0.9 * height})`);
   verticalLabelOut.text('Influences from out-of-genre', 0, 0).transform('rotate(-90)');
-  bvg.text('Influenced by its past', 0.11 * width, 0.915 * height);
-  bvg.text('Influences its future', 0.87 * width, 0.915 * height);
+  bvg.text('Influenced by the past', 0.11 * width, 0.915 * height);
+  bvg.text('Influences the future', 0.87 * width, 0.915 * height);
 
   let max = 0;
   let games = relations.map( ({title, year, inspiredBy, inspirationTo, otherInspiredBy, otherInspirationTo}) => {

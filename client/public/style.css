@@ -44,8 +44,8 @@ em { font-style: italic; }
   font-size: 60%;
 }
 
-#genre-influence.visualisation {
-  max-width: 800px;
+#roguelike-relations.visualisation {
+  font-size: 80%;
 }
 
 #influence-timeline {
