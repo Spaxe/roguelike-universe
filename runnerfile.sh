@@ -134,7 +134,7 @@ task_upgrade_testing_database () {
 }
 
 task_run_testing_database () {
-  docker run --name=universe-testing --restart=always -v "$PWD/database:/data" -d rethinkdb
+  docker run --name=universe-testing --restart=always -v "$PWD/database:/data" -d rethinkdb:2.2.5
 }
 
 task_start_testing_database () {
