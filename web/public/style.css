@@ -1,11 +1,16 @@
-.axis path {
-  stroke-width: 1;
-  stroke: black;
-  fill: none;
-}
-
 .relations path {
   stroke-width: 1;
   stroke: black;
   fill: none;
 }
+
+.axis path, .axis line {
+  stroke: none;
+  fill: none;
+}
+
+.axis text {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+

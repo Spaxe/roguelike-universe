@@ -17,13 +17,18 @@ let frame = svg.append('g')
 
 let x = d3.time.scale()
     .range([0, width])
-    .domain([new Date(1960, 1, 1), new Date(2019, 1, 1)]);
+    .domain([new Date(1978, 1, 1), new Date()]);
 
 let arc = d3.svg.arc();
 
 let xAxis = d3.svg.axis()
     .scale(x)
-    .orient('middle');
+    .orient('bottom')
+    .ticks(d3.time.years, 1)
+    .tickFormat(d => {
+      if (d.getFullYear() % 5 !== 0) return '·';
+      else return d.getFullYear();
+    });
 
 //////////////////////////
 
@@ -58,53 +63,41 @@ endpoint.roguelikes().then(data => {
     };
     game = game[0];
 
+    const draw_arc = (game, other_game, upside) => {
+      var x0 = x(new Date(Number(game.year), 1, 1));
+      var x1 = x(new Date(Number(other_game.year), 1, 1));
+      var r = Math.abs(x1-x0)/2;
+
+      arc.startAngle(upside ? Math.PI/2 : -Math.PI/2)
+         .endAngle(upside ? -Math.PI/2 : -3*Math.PI/2)
+         .innerRadius(r)
+         .outerRadius(r);
+
+      return frame.append('path')
+                  .attr('class', 'relation-arc')
+                  .attr('transform', `translate(${(x0+x1)/2},${upside ? height/2 : height/2+25})`)
+                  .attr('d', arc);
+    };
+
     delete r.title;
     for (let title of _.values(r)) {
 
+      let this_arc;
       let other_game = _.filter(roguelikes, { title });
 
       if (other_game.length) {
-
-        other_game = other_game[0];
-
-        var x0 = x(new Date(Number(game.year), 1, 1));
-        var x1 = x(new Date(Number(other_game.year), 1, 1));
-        var r = Math.abs(x1-x0)/2;
-
-        arc.startAngle(Math.PI/2)
-           .endAngle(-Math.PI/2)
-           .innerRadius(r)
-           .outerRadius(r);
-
-        frame.append('path')
-             .attr('class', 'relation-arc')
-             .attr('transform', `translate(${(x0+x1)/2},${height/2})`)
-             .attr('d', arc);
-
+        this_arc = draw_arc(game, other_game[0], true);
       } else {
-
         other_game = _.filter(videogames, { title });
-
         if (other_game.length) {
-
-          other_game = other_game[0];
-
-          var x0 = x(new Date(Number(game.year), 1, 1));
-          var x1 = x(new Date(Number(other_game.year), 1, 1));
-          var r = Math.abs(x1-x0)/2;
-
-          arc.startAngle(-Math.PI/2)
-             .endAngle(-3*Math.PI/2)
-             .innerRadius(r)
-             .outerRadius(r);
-
-          frame.append('path')
-               .attr('class', 'relation-arc')
-               .attr('transform', `translate(${(x0+x1)/2},${height/2+25})`)
-               .attr('d', arc);
-
+          this_arc = draw_arc(game, other_game[0], false);
         }
+      }
 
+      if (this_arc) {
+        this_arc.on('mouseover', () => {
+          console.log(game, other_game);
+        })
       }
 
     }
