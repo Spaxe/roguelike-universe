@@ -1,0 +1,11 @@
+.axis path {
+  stroke-width: 1;
+  stroke: black;
+  fill: none;
+}
+
+.relations path {
+  stroke-width: 1;
+  stroke: black;
+  fill: none;
+}
