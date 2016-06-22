@@ -4,6 +4,25 @@
   fill: none;
 }
 
+.relations text {
+  font-size: 12px;
+  font-family: sans-serif;
+  fill: black;
+  stroke: none;
+}
+
+.relations path.active {
+  stroke-width: 2;
+}
+
+.relations path.up {
+  opacity: 0.8;
+}
+
+.relations path.down {
+  opacity: 0.4;
+}
+
 .axis path, .axis line {
   stroke: none;
   fill: none;

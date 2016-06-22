@@ -19,8 +19,6 @@ let x = d3.time.scale()
     .range([0, width])
     .domain([new Date(1978, 1, 1), new Date()]);
 
-let arc = d3.svg.arc();
-
 let xAxis = d3.svg.axis()
     .scale(x)
     .orient('bottom')
@@ -64,19 +62,31 @@ endpoint.roguelikes().then(data => {
     game = game[0];
 
     const draw_arc = (game, other_game, upside) => {
-      var x0 = x(new Date(Number(game.year), 1, 1));
-      var x1 = x(new Date(Number(other_game.year), 1, 1));
-      var r = Math.abs(x1-x0)/2;
+      let x0 = x(new Date(Number(game.year), 1, 1));
+      let x1 = x(new Date(Number(other_game.year), 1, 1));
+      let r = Math.abs(x1-x0)/2;
 
-      arc.startAngle(upside ? Math.PI/2 : -Math.PI/2)
-         .endAngle(upside ? -Math.PI/2 : -3*Math.PI/2)
-         .innerRadius(r)
-         .outerRadius(r);
+      let arc = d3.svg.arc().startAngle(upside ? Math.PI/2 : -Math.PI/2)
+                            .endAngle(upside ? -Math.PI/2 : -3*Math.PI/2)
+                            .innerRadius(r)
+                            .outerRadius(r);
 
       return frame.append('path')
-                  .attr('class', 'relation-arc')
+                  .attr('class', `relation-arc ${upside ? 'up' : 'down'}`)
                   .attr('transform', `translate(${(x0+x1)/2},${upside ? height/2 : height/2+25})`)
                   .attr('d', arc);
+    };
+
+    const draw_label = (game) => {
+      let x0 = x(new Date(Number(game.year), 1, 1));
+
+      return frame.append('text')
+                  .attr('class', 'game-title')
+                  .attr('transform', `translate(${x0},${height/2}) rotate(90)`)
+                  .attr('x', 0)
+                  .attr('y', 0)
+                  .attr('text-anchor', 'middle')
+                  .text(game.title);
     };
 
     delete r.title;
@@ -95,9 +105,17 @@ endpoint.roguelikes().then(data => {
       }
 
       if (this_arc) {
+        let game_label, other_label;
         this_arc.on('mouseover', () => {
-          console.log(game, other_game);
-        })
+          this_arc.classed('active', true);
+          game_label = draw_label(game);
+          other_label = draw_label(other_game[0]);
+        });
+        this_arc.on('mouseout', () => {
+          this_arc.classed('active', false);
+          game_label.remove();
+          other_label.remove();
+        });
       }
 
     }
