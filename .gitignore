@@ -8,3 +8,4 @@ node_modules
 *.min.js
 database
 server/access.log
+*.map
