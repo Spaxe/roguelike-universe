@@ -308,7 +308,7 @@ const roguelikeInfluenceTimeline = (relations, coordsLUT) => {
 
 const loadRoguelikeRelationsAll = () => {
 
-  return getJSON(`${server_url}/roguelike/relations-all`);
+  return getJSON(`data.json`);
 
 };
 
