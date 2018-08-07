@@ -1,0 +1,42 @@
+<!doctype html>
+<head>
+  <title>Roguelike Universe - Design Influence Visualisation</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <section id="text">
+    <h1>Roguelike Relations</h1>
+    <p class="series"><em>Part of the Roguelike Universe series</em>: selected games between 1971 - 2016</p>
+
+    <h2>Influence Arcs</h2>
+    <p>This chart represents connections between roguelike games and with games from other genres. Data was gathered from crawling the web for interviews, post-mortems, reviews and dev diaries. Connections were made by algorithms using keyword spotting in natural language processing.</p>
+    <br>
+    <label>Select a game: <select id="game"></select></label>
+  </section>
+  <section class="visualisation" id="roguelike-relations"></section>
+
+  <section id="text">
+    <img src="assets/Figure-genre-influential.png" class="side-image">
+    <h2>Genre-Influence Matrix</h2>
+    <p>The genre-influence matrix was developed as a supplementary legend to read the influence diagram above. Each quadrant represents a combination of <em>in-genre</em>/<em>out-of-genre</em> and <em>past</em>/<em>future</em>. This creates an interesting dynamic where a title can be representative of its own genre, taking most of its influence from the past, or influential by having many connections to its future, with respect to titles in the roguelike as well as the broader context.</p>
+    <br><br><br><br>
+  </section>
+
+  <section id="text">
+    <h2>Genre-Influence Map</h2>
+    <p>Taking each arc in the quadrant (upper-left, upper-right, bottom-left, bottom-right), we can draw a point for each roguelike game. The more arcs there are in each quadrant, the more biased the point is towards a corner of the map. For readability, we omitted 20 titles, and relaxed the point placements so they are not cluttered.</p>
+    <br>
+  </section>
+  <section class="visualisation" id="genre-influence"></section>
+
+  <section id="text">
+    <h2>Roguelike Influence Timeline</h2>
+    <br>
+  </section>
+  <section class="visualisation" id="influence-timeline"></section>
+
+  <script src="object.observe.min.js"></script>
+  <script src="roguelike-relations.min.js"></script>
+</body>

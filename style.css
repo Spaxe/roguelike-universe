@@ -1,0 +1,19 @@
+body {
+  font: 16px/22px Georgia, serif;
+}
+
+main {
+  margin: 25px auto 0 auto;
+  padding: 0 0 0 0;
+  max-width: 800px;
+}
+
+a, a:active, a:visited {
+  color: #6293ba;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6eacc0;
+  text-decoration: underline;
+}
