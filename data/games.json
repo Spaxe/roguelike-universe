@@ -15736,6 +15736,10 @@
     "year": 1993
   },
   {
+    "title": "Battletech",
+    "year": 2018
+  },
+  {
     "title": "Battlezone",
     "year": 1980
   },
@@ -20908,6 +20912,10 @@
     "year": 2005
   },
   {
+    "title": "Bravely Default",
+    "year": 2012
+  },
+  {
     "title": "BraveStarr",
     "year": 1987
   },
@@ -25646,6 +25654,10 @@
   {
     "title": "Caves of the Wumpus",
     "year": 1995
+  },
+  {
+    "title": "Caves of Qud",
+    "year": 2010
   },
   {
     "title": "Cavewars",
@@ -31560,6 +31572,10 @@
     "year": 1990
   },
   {
+    "title": "Crawl",
+    "year": 2017
+  },
+  {
     "title": "Crayola Arcade",
     "year": 2003
   },
@@ -34368,6 +34384,10 @@
     "year": 2011
   },
   {
+    "title": "Daimonin",
+    "year": 2001
+  },
+  {
     "title": "Daigasso! Band Brothers",
     "year": 2004
   },
@@ -37026,6 +37046,10 @@
   {
     "title": "Defense Grid: The Awakening",
     "year": 2008
+  },
+  {
+    "title": "Defense of the Ancients",
+    "year": 2003
   },
   {
     "title": "Defensor",
@@ -40872,6 +40896,10 @@
     "year": 2006
   },
   {
+    "title": "Dominions 4: Thrones of Ascension",
+    "year": 2013
+  },
+  {
     "title": "Dominique Pamplemousse in \\\"It's All Over Once the Fat Lady Sings!\\\"",
     "year": 2013
   },
@@ -41134,6 +41162,10 @@
   {
     "title": "Doolhof",
     "year": 1980
+  },
+  {
+    "title": "Doom",
+    "year": 1993
   },
   {
     "title": "Doom Rails",
@@ -42308,8 +42340,12 @@
     "year": 2005
   },
   {
-    "title": "Dragon Quest I & II",
-    "year": 1993
+    "title": "Dragon Quest",
+    "year": 1986
+  },
+  {
+    "title": "Dragon Quest II",
+    "year": 1987
   },
   {
     "title": "Dragon Quest IV: Chapters of the Chosen",
@@ -43890,6 +43926,10 @@
   {
     "title": "Dungeons and Dungeons",
     "year": 2008
+  },
+  {
+    "title": "D&D",
+    "year": 1974
   },
   {
     "title": "Dungeons of Daggorath",
@@ -68512,6 +68552,10 @@
     "year": 2010
   },
   {
+    "title": "Incursion",
+    "year": 1992
+  },
+  {
     "title": "Incredipede",
     "year": 2013
   },
@@ -86964,6 +87008,10 @@
     "year": 1999
   },
   {
+    "title": "Merlin's Revenge 2",
+    "year": 2008
+  },
+  {
     "title": "Mermaid Madness",
     "year": 1986
   },
@@ -97434,6 +97482,10 @@
   {
     "title": "Nuclear Strike",
     "year": 1997
+  },
+  {
+    "title": "Nuclear Throne",
+    "year": 2013
   },
   {
     "title": "Nuclear War",
@@ -115092,6 +115144,10 @@
     "year": 2009
   },
   {
+    "title": "Rolemaster",
+    "year": 1980
+  },
+  {
     "title": "Rolemaster: Magestorm",
     "year": 1996
   },
@@ -124248,7 +124304,7 @@
     "year": 2012
   },
   {
-    "title": "Slaves to Armok: God of Blood - Chapter II: Dwarf Fortress",
+    "title": "Dwarf Fortress",
     "year": 2006
   },
   {
@@ -140272,7 +140328,7 @@
     "year": 1994
   },
   {
-    "title": "The Elder Scrolls: Chapter II - Daggerfall",
+    "title": "The Elder Scrolls: Chapter II: Daggerfall",
     "year": 1996
   },
   {
@@ -145962,6 +146018,10 @@
   {
     "title": "The Wheel of Time",
     "year": 1999
+  },
+  {
+    "title": "Wheel of Time MUD",
+    "year": 1993
   },
   {
     "title": "The Whispered World",
@@ -161216,7 +161276,7 @@
     "year": 1995
   },
   {
-    "title": "World of Dragon Warrior: Torneko - The Last Hope",
+    "title": "Torneko: The Last Hope",
     "year": 1999
   },
   {
