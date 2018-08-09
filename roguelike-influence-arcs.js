@@ -121,13 +121,13 @@
 
       // Populate the dropdown menu
       const select = d3.select('#roguelike-arc-selection');
-      const hyperlink = d3.select('#roguelike-arc-roguetemple');
-      const project = d3.select('#roguelike-arc-project');
-      const theme = d3.select('#roguelike-arc-theme');
-      const developer = d3.select('#roguelike-arc-developer');
-      const released = d3.select('#roguelike-arc-released');
-      const updated = d3.select('#roguelike-arc-updated');
-      const count = d3.select('#roguelike-arc-count');
+      const hyperlink = d3.select('#roguelike-arc-infobox [name=roguetemple]');
+      const project = d3.select('#roguelike-arc-infobox [name=project]');
+      const theme = d3.select('#roguelike-arc-infobox [name=theme]');
+      const developer = d3.select('#roguelike-arc-infobox [name=developer]');
+      const released = d3.select('#roguelike-arc-infobox [name=released]');
+      const updated = d3.select('#roguelike-arc-infobox [name=updated]');
+      const count = d3.select('#roguelike-arc-infobox [name=count]');
 
       roguelikeInfluences.forEach( r => {
         const year = releasedYears[r.Name];

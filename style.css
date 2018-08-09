@@ -1,8 +1,5 @@
 body {
   font: 16px/22px Georgia, serif;
-}
-
-main {
   margin: 25px auto 0 auto;
   padding: 0 0 0 0;
   max-width: 800px;
@@ -55,11 +52,9 @@ svg text {
   font: 10px Georgia, serif;
 }
 
-#influence-arcs .arc {
-  fill: rgb(79,74,138);
-}
-
-#influence-timeline .roguelike {
+#influence-arcs .arc,
+#influence-timeline .roguelike,
+#influence-map .dot {
   fill: rgb(79,74,138);
 }
 
@@ -127,4 +122,10 @@ text.annotation {
 line.annotation {
   stroke: white;
   stroke-width: 2;
+}
+
+.words .list {
+  padding: 2px 4px;
+  margin-right: 0.5em;
+  background: #ecffff;
 }

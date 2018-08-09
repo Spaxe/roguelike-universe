@@ -347,13 +347,22 @@
         influences,
       ] = files;
 
+      // Populate the dropdown menu
+      const select = d3.select('#roguelike-timeline-selection');
+      const hyperlink = d3.select('#roguelike-timeline-infobox [name=roguetemple]');
+      const project = d3.select('#roguelike-timeline-infobox [name=project]');
+      const theme = d3.select('#roguelike-timeline-infobox [name=theme]');
+      const developer = d3.select('#roguelike-timeline-infobox [name=developer]');
+      const released = d3.select('#roguelike-timeline-infobox [name=released]');
+      const updated = d3.select('#roguelike-timeline-infobox [name=updated]');
+      const count = d3.select('#roguelike-timeline-infobox [name=count]');
+
       validRoguelikelikeInfluences.sort((a, b) => {
         if (a.Name < b.Name) return -1;
         else if (a.Name > b.Name) return 1;
         return 0;
       });
 
-      const select = d3.select('#roguelike-timeline-selection');
       select.append('option')
         .attr('value', '')
         .text(`=== Roguelike games ===`);
@@ -363,7 +372,7 @@
           .attr('value', r.Name)
           .text(`${r.Name} (${year})`);
         // Default selection on load
-        if (r.Name === 'NetHack') {
+        if (r.Name === 'Dungeons of Dredmor') {
           option.attr('selected', true);
         }
       });
@@ -381,8 +390,41 @@
       select.on('change', drawGameInfluence);
 
       function drawGameInfluence () {
-        const title = d3.event.target.value
+        const title = d3.event.target.value;
+        if (title === '') {
+          return;
+        }
+        const knownTitles = d3.select('#roguelike-timeline-known');
+        const inferredTitles = d3.select('#roguelike-timeline-inferred');
         const data = validInfluences.filter(r => r.titleA === title || r.titleB === title);
+        const datum = findTitle(title);
+        const relatedInfluences = filterByName(influences, title);
+        const influenceCount = relatedInfluences.length;
+        const knownInfluenceCount = filterKnown(relatedInfluences).length;
+
+        // Display metadata
+        hyperlink.html('Title: ');
+        hyperlink.append('a')
+          .attr('href', datum['RogueTemple'] || "#")
+          .attr('target', '_blank')
+          .text(datum['RogueTemple'] ? title : "N/A");
+
+        project.html('Project page: ');
+        project.append('a')
+          .attr('href', datum['Link'] || "#")
+          .attr('target', '_blank')
+          .text(datum['Link'] || "N/A");
+
+        theme.text(`Theme: ${datum['Theme'] || 'N/A'}`)
+          .attr('title', datum['Theme'] || 'N/A');
+        developer.text(`Developer: ${datum['Developer'] || 'N/A'}`)
+          .attr('title', datum['Developer'] || 'N/A');
+        released.text(`Initial release: ${datum['Released'] || 'N/A'}`)
+          .attr('title', datum['Released'] || 'N/A');
+        updated.text(`Most recent update: ${datum['Updated'] || 'N/A'}`)
+          .attr('title', datum['Updated'] || 'N/A');
+        count.text(`Estimated influence: ${influenceCount > 1 ? influenceCount + ' games' : influenceCount + ' game'} (${knownInfluenceCount} known)`)
+          .attr('title', `${influenceCount} (${knownInfluenceCount} known)`);
 
         frame.selectAll('.active').remove();
         const activeInfluences = frame.append('g').lower()
@@ -411,6 +453,54 @@
               }
             })
           .exit().remove();
+
+        // Display connectded titles
+        const knownInfluences = data.filter(r => r.type === 'known')
+          .map(r => identifyOther(r, title))
+          .filter(onlyUnique);
+        const inferredInfluences = data.filter(r => r.type === 'inferred')
+          .map(r => identifyOther(r, title))
+          .filter(onlyUnique);
+
+        if (knownInfluences.length > 0) {
+          knownTitles.html('Known influences: ');
+          const knownList = knownTitles.selectAll('.list')
+            .data(knownInfluences)
+            .enter();
+          knownList.append('a')
+            .attr('class', 'list')
+            .attr('href', "#")
+            .text(d => d)
+            .on('click', d => {
+              select.property('value', d);
+              select.dispatch('change');
+              d3.event.preventDefault();
+              return false;
+            })
+            .exit().remove();
+        } else {
+          knownTitles.html('');
+        }
+
+        if (inferredInfluences.length > 0) {
+          inferredTitles.html('Inferred influences: ');
+          const inferredList = inferredTitles.selectAll('.list')
+            .data(inferredInfluences)
+            .enter();
+          inferredList.append('a')
+            .attr('class', 'list')
+            .attr('href', "#")
+            .text(d => d)
+            .on('click', d => {
+              select.property('value', d);
+              select.dispatch('change');
+              d3.event.preventDefault();
+              return false;
+            })
+            .exit().remove();
+        } else {
+          inferredTitles.html('');
+        }
 
         // Display active title
         const activeTitle = findTitle(title);
@@ -462,6 +552,8 @@
           ));
       }
 
+      select.dispatch('change');
+
       function findTitle (title) {
         const r = validRoguelikeInfluences.filter(r => r.Name === title);
         if (r.length === 1) {
@@ -472,6 +564,17 @@
         if (ri.length === 1) {
           return ri[0];
         }
+      }
+
+      function identifyOther (influence, title) {
+        if (influence.titleA === title) {
+          return influence.titleB;
+        }
+        return influence.titleA;
+      }
+
+      function onlyUnique(value, index, self) {
+        return self.indexOf(value) === index;
       }
 
       resolve(files);
