@@ -163,3 +163,20 @@ function filterRoguelikelikeInGenre (influences) {
     return r.categoryA === 'roguelikelike' && r.categoryB === 'roguelikelike';
   });
 }
+
+function onlyUnique (value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function filterUniquePosition (positions) {
+  const memory = new Set();
+  const filtered = [];
+  positions.forEach(r => {
+    const id = `${r.x},${r.y}`;
+    if (!memory.has(id)) {
+      filtered.push(r);
+    }
+    memory.add(id);
+  });
+  return filtered;
+}

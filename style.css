@@ -3,6 +3,7 @@ body {
   margin: 25px auto 0 auto;
   padding: 0 0 0 0;
   max-width: 800px;
+  font-smoothing: antialiased;
 }
 
 a, a:active, a:visited {
@@ -56,6 +57,16 @@ svg text {
 #influence-timeline .roguelike,
 #influence-map .dot {
   fill: rgb(79,74,138);
+}
+
+#influence-map .dot {
+  stroke: rgba(91,122,175,0.8);
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+#influence-map .dot.active {
+  fill: #ecffff;
 }
 
 #influence-timeline .line {

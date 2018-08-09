@@ -103,14 +103,14 @@
     .attr('text-anchor', 'middle')
     .attr('x', width/2)
     .attr('y', 6)
-    .text('influences from roguelikes');
+    .text('influences other roguelikes');
 
   frame.append('text')
     .attr('class', 'map label')
     .attr('text-anchor', 'middle')
     .attr('x', width/2)
     .attr('y', height-6)
-    .text('influences from non-roguelikes');
+    .text('influences other non-roguelikes');
 
   function draw (files) {
     return new Promise ( (resolve, reject) => {
@@ -155,17 +155,43 @@
       const dots = frame.append('g')
         .attr('class', 'map')
         .selectAll('dot')
-        .data(positions)
+        .data(filterUniquePosition(positions))
           .enter();
 
       dots.append('circle')
         .attr('class', 'roguelike dot')
         .attr('cx', d => xScale(d.x))
         .attr('cy', d => yScale(d.y))
-        .attr('r', d => Math.sqrt(findOnPosition(d)) + 1);
+        .attr('r', d => Math.sqrt(findOnPosition(d).length) + 2)
+        .on('click', displayTitles);
 
       function findOnPosition (d) {
-        return positions.filter(r => r.x === d.x && r.y === d.y).length;
+        return filterTitle(positions.filter(r => r.x === d.x && r.y === d.y)).filter(onlyUnique);
+      }
+
+      function filterTitle (positions) {
+        return positions.map(r => r.title);
+      }
+
+      function displayTitles (d) {
+        const titles = findOnPosition(d);
+        const list = d3.select('#roguelike-map-selected');
+
+        list.html('Selected: ');
+        const selectedList = list.selectAll('.list')
+          .data(titles)
+          .enter();
+        selectedList.append('span')
+          .attr('class', 'list')
+          .text(d => d)
+          .exit().remove();
+
+        frame.selectAll('.active').remove();
+        frame.append('circle')
+          .attr('class', 'roguelike dot active')
+          .attr('cx', _ => xScale(d.x))
+          .attr('cy', _ => yScale(d.y))
+          .attr('r', _ => Math.sqrt(findOnPosition(d).length) + 2);
       }
 
       resolve(files);
