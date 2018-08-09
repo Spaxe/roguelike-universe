@@ -10,6 +10,7 @@ function init () {
     d3.csv('data/roguelikelike-influence.csv'),
     d3.json('data/games-influence.json'),
   ]).then(gatherInfluence)
+    .then(setupUI)
     .then(draw)
     .catch(console.error);
 
@@ -63,7 +64,7 @@ function init () {
     .append('text')
     .text('year released');
 
-  ////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
   // Gather influence pairs into a list
   function gatherInfluence (files) {
     return new Promise ( (resolve, reject) => {
@@ -191,7 +192,29 @@ function init () {
     });
   }
 
-  ////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+  // Setup user interface
+  function setupUI (files) {
+    return new Promise ( (resolve, reject) => {
+      const [
+        roguelikeInfluences,
+        roguelikelikeInfluences,
+        releasedYears,
+        influences
+      ] = files;
+
+      const select = d3.select('#roguelike-arc-selection');
+      roguelikeInfluences.forEach(r => {
+        const option = select.append('option')
+          .attr('value', r.Name)
+          .text(`${r.Name} (${releasedYears[r.Name]})`);
+      });
+
+      resolve(files);
+    });
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
   // After the data is loaded, draw influence arcs
   function draw (files) {
     const [
