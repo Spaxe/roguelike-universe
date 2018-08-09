@@ -17,3 +17,17 @@ a:hover {
   color: #6eacc0;
   text-decoration: underline;
 }
+
+.influence .domain {
+  stroke: none;
+}
+
+.influence .tick line {
+  stroke: rgba(0, 0, 0, 0.5);
+  stroke-width: 1;
+}
+
+.influence.lighter .tick line {
+  stroke: rgba(0, 0, 0, 0.1);
+  stroke-width: 1;
+}
