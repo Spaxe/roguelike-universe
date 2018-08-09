@@ -16,8 +16,9 @@ function init () {
   ////////////////////////////////////////////////////////////////////////////////
   // Setup influence arc diagram
   const margin = { left: 20, top: 20, right: 20, bottom: 20 };
-  const width = 700 - margin.left - margin.right;
+  const width = 800 - margin.left - margin.right;
   const height = 700 - margin.top - margin.bottom;
+  const axisWidth = 25;
 
   const timeRange = [new Date('1969-12-31'), new Date('2020-01-01')];
   const timeScale = d3.scaleTime()
@@ -30,7 +31,7 @@ function init () {
     .tickFormat("");
   const timeAxisBetween = d3.axisBottom(timeScale)
     .ticks(d3.timeYear.every(1).filter(d => d.getYear() % 5 !== 0))
-    .tickSize(25)
+    .tickSize(axisWidth)
     .tickFormat("");
 
   const container = d3.select('#influence-arcs div');
@@ -40,6 +41,7 @@ function init () {
   const frame = svg.append('g')
     .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
+  // Year Axis
   const timeAxis = frame.append('g')
     .attr('class', 'influence axis lighter')
     .attr('transform', `translate(0, ${height/2})`)
@@ -52,8 +54,14 @@ function init () {
 
   const timeAxis2 = frame.append('g')
     .attr('class', 'influence axis')
-    .attr('transform', `translate(0, ${height/2+25})`)
+    .attr('transform', `translate(0, ${height/2+axisWidth})`)
     .call(timeAxisTop);
+
+  const timeLabel = frame.append('g')
+    .attr('class', 'influence label')
+    .attr('transform', `translate(-20, ${height/2-6})`)
+    .append('text')
+    .text('year released');
 
   ////////////////////////////////////////////////////////////////////////////////
   // Gather influence pairs into a list
@@ -193,6 +201,24 @@ function init () {
       influences
     ] = files;
 
+    function filterRoguelikeInGenre (influences) {
+      return influences.filter(r => {
+        return r.categoryA === 'roguelike' && r.categoryB === 'roguelike';
+      });
+    }
+
+    function filterRoguelikeOutOfGenre (influences) {
+      return influences.filter(r => {
+        return r.categoryA === 'roguelike' && r.categoryB !== 'roguelike';
+      });
+    }
+
+    function filterRoguelikelikeInGenre (influences) {
+      return influences.filter(r => {
+        return r.categoryA === 'roguelikelike' && r.categoryB === 'roguelikelike';
+      });
+    }
+
     function yearX (name) {
       return timeScale(releasedYears[name]);
     }
@@ -204,8 +230,8 @@ function init () {
       const yearB = new Date(`${maxYear}-01-01`);
       const pointA = timeScale(yearA);
       const pointB = timeScale(yearB);
-      let outerRadius = (pointB - pointA) / 2;
-      let innerRadius = (pointB - pointA) / 2 - 1;
+      let outerRadius = Math.ceil((pointB - pointA) / 2);
+      let innerRadius = Math.ceil((pointB - pointA) / 2 - 1);
 
       if (d.type === 'known') {
         outerRadius += 1;
@@ -229,18 +255,30 @@ function init () {
       return (pointA + pointB) / 2;
     }
 
-    const arcs = frame.append('g')
-      .attr('class', 'influence')
+    const roguelikeInfluenceInGenre = frame.append('g')
+      .attr('class', 'roguelike in-genre influence')
       .selectAll('.arc')
-      .data(influences)
+      .data(filterRoguelikeInGenre(influences))
       .enter()
         .append('path')
         .attr('transform', d => `translate(${positionArc(d)},${height/2})`)
         .attr('class', 'arc')
+        .attr('opacity', d => d.type === 'known' ? 0.025 : 0.0125)
+        .attr('d', influenceArc);
+
+    const roguelikeInfluenceOutOfGenre = frame.append('g')
+      .attr('class', 'roguelike out-of-genre influence')
+      .selectAll('.arc')
+      .data(filterRoguelikeOutOfGenre(influences))
+      .enter()
+        .append('path')
+        .attr('transform', d => `translate(${positionArc(d)} ${height/2+axisWidth}) rotate(180) `)
+        .attr('class', 'arc')
         .attr('opacity', d => d.type === 'known' ? 0.05 : 0.025)
         .attr('d', influenceArc);
-  }
 
+
+  }
 
 }
 init();

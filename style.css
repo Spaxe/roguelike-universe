@@ -18,6 +18,19 @@ a:hover {
   text-decoration: underline;
 }
 
+figure {
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 12px;
+}
+
+.influence text {
+  font: 10px Georgia, serif;
+}
+
 .influence .domain {
   stroke: none;
 }
