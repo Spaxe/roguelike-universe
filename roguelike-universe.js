@@ -10,8 +10,8 @@ function init () {
     d3.csv('data/roguelikelike-influence.csv'),
     d3.json('data/games-influence.json'),
   ]).then(gatherInfluence)
-    .then(setupUI)
     .then(draw)
+    .then(setupUI)
     .catch(console.error);
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -40,29 +40,41 @@ function init () {
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom);
   const frame = svg.append('g')
-    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+    .attr('transform', `translate(${margin.left} ${margin.top})`);
 
   // Year Axis
   const timeAxis = frame.append('g')
     .attr('class', 'influence axis lighter')
-    .attr('transform', `translate(0, ${height/2})`)
+    .attr('transform', `translate(0 ${height/2})`)
     .call(timeAxisBetween);
 
   const timeAxis1 = frame.append('g')
     .attr('class', 'influence axis')
-    .attr('transform', `translate(0, ${height/2})`)
+    .attr('transform', `translate(0 ${height/2})`)
     .call(timeAxisBottom);
 
   const timeAxis2 = frame.append('g')
     .attr('class', 'influence axis')
-    .attr('transform', `translate(0, ${height/2+axisWidth})`)
+    .attr('transform', `translate(0 ${height/2+axisWidth})`)
     .call(timeAxisTop);
 
   const timeLabel = frame.append('g')
     .attr('class', 'influence label')
-    .attr('transform', `translate(-20, ${height/2-6})`)
+    .attr('transform', `translate(-20 ${height/2-6})`)
     .append('text')
     .text('year released');
+
+  // Labels
+  const labels = frame.append('g')
+    .attr('class', 'influence label lighter');
+  labels.append('text')
+    .text('influences roguelikes games')
+    .attr('x', -20)
+    .attr('y', 10);
+  labels.append('text')
+    .text('influences other genres')
+    .attr('x', -20)
+    .attr('y', height-10)
 
   //////////////////////////////////////////////////////////////////////////////
   // Gather influence pairs into a list
@@ -193,6 +205,39 @@ function init () {
   }
 
   //////////////////////////////////////////////////////////////////////////////
+  // After the data is loaded, draw influence arcs
+  function draw (files) {
+    return new Promise ( (resolve, reject) => {
+      const [
+        roguelikeInfluences,
+        roguelikelikeInfluences,
+        releasedYears,
+        influences
+      ] = files;
+
+      const roguelikeInfluenceInGenre = frame.append('g')
+        .attr('class', 'roguelike in-genre influence')
+        .selectAll('.arc')
+        .data(filterRoguelike(influences))
+        .enter()
+          .append('path')
+          .attr('transform', d => {
+            if (d.categoryB === 'roguelike') {
+              return `translate(${positionArc(d)} ${height/2})`;
+            } else {
+              return `translate(${positionArc(d)} ${height/2+axisWidth}) rotate(180)`;
+            }
+          })
+          .attr('class', 'arc')
+          .attr('opacity', d => d.categoryB === 'roguelike' ? 0.0125 : 0.025)
+          .attr('d', influenceArc)
+        .exit().remove();
+
+      resolve(files);
+    });
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
   // Setup user interface
   function setupUI (files) {
     return new Promise ( (resolve, reject) => {
@@ -203,104 +248,169 @@ function init () {
         influences
       ] = files;
 
+      // Populate the dropdown menu
       const select = d3.select('#roguelike-arc-selection');
-      roguelikeInfluences.forEach(r => {
-        const option = select.append('option')
-          .attr('value', r.Name)
-          .text(`${r.Name} (${releasedYears[r.Name]})`);
+      const hyperlink = d3.select('#roguelike-arc-roguetemple');
+      const project = d3.select('#roguelike-arc-project');
+      const theme = d3.select('#roguelike-arc-theme');
+      const developer = d3.select('#roguelike-arc-developer');
+      const released = d3.select('#roguelike-arc-released');
+      const updated = d3.select('#roguelike-arc-updated');
+      const count = d3.select('#roguelike-arc-count');
+
+      roguelikeInfluences.forEach( r => {
+        const year = releasedYears[r.Name];
+
+        if (year !== 1000) {
+          const option = select.append('option')
+            .attr('value', r.Name)
+            .text(`${r.Name} (${year})`);
+          // Default selection on load
+          if (r.Name === 'NetHack') {
+            option.attr('selected', true);
+          }
+        }
+
       });
+
+      // Display influence arcs on selection
+      select.on('change', drawGameInfluence);
+
+      function drawGameInfluence () {
+        const title = d3.event.target.value
+        const year = releasedYears[title];
+        const x = timeScale(new Date(`${year}-01-01`));
+        const datum = roguelikeInfluences.filter(r => r.Name === title)[0];
+        const relatedInfluences = filterByName(influences, title);
+        const influenceCount = relatedInfluences.length;
+        const knownInfluenceCount = filterKnown(relatedInfluences).length;
+
+        // Display metadata
+        hyperlink.html('Title: ');
+        hyperlink.append('a')
+          .attr('href', datum['RogueTemple'] || "#")
+          .attr('target', '_blank')
+          .text(title);
+
+        project.html('Project page: ');
+        project.append('a')
+          .attr('href', datum['Link'] || "#")
+          .attr('target', '_blank')
+          .text(datum['Link'] || "N/A");
+
+        theme.text(`Theme: ${datum['Theme'] || 'N/A'}`)
+          .attr('title', datum['Theme'] || 'N/A');
+        developer.text(`Developer: ${datum['Developer'] || 'N/A'}`)
+          .attr('title', datum['Developer'] || 'N/A');
+        released.text(`Initial release: ${datum['Released'] || 'N/A'}`)
+          .attr('title', datum['Released'] || 'N/A');
+        updated.text(`Most recent update: ${datum['Updated'] || 'N/A'}`)
+          .attr('title', datum['Updated'] || 'N/A');
+        count.text(`Games influenced: ${influenceCount} (${knownInfluenceCount} known)`)
+          .attr('title', `${influenceCount} (${knownInfluenceCount} known)`);
+
+
+        // Remove previous selection
+        frame.select('.active').remove();
+
+        // Draw current selection
+        const active = frame.append('g')
+          .attr('class', 'active')
+
+        active.append('line')
+          .attr('stroke', 'black')
+          .attr('stroke-width', 0.5)
+          .attr('x1', x)
+          .attr('y1', 0)
+          .attr('x2', x)
+          .attr('y2', height);
+
+        active.append('text')
+          .attr('x', () => x > width/2 ? -6 + x : 6 + x)
+          .attr('y', 8)
+          .style('font-weight', 500)
+          .attr('text-anchor', () => x > width/2 ? 'end' : 'start')
+          .text(`${title} (${year})`);
+
+        active.selectAll('.arc')
+          .data(filterByName(influences, title))
+          .enter()
+            .append('path')
+            .attr('class', 'arc')
+            .attr('transform', d => {
+              if (d.categoryB === 'roguelike') {
+                return `translate(${positionArc(d)} ${height/2})`;
+              } else {
+                return `translate(${positionArc(d)} ${height/2+axisWidth}) rotate(180)`;
+              }
+            })
+            .attr('opacity', 1)
+            .attr('d', influenceArc)
+          .exit().remove();
+      }
+      select.dispatch('change');
 
       resolve(files);
     });
   }
 
   //////////////////////////////////////////////////////////////////////////////
-  // After the data is loaded, draw influence arcs
-  function draw (files) {
-    const [
-      roguelikeInfluences,
-      roguelikelikeInfluences,
-      releasedYears,
-      influences
-    ] = files;
+  // Shared util functions
+  function filterRoguelike (influences) {
+    return influences.filter(r => {
+      return r.categoryA === 'roguelike';
+    });
+  }
 
-    function filterRoguelikeInGenre (influences) {
-      return influences.filter(r => {
-        return r.categoryA === 'roguelike' && r.categoryB === 'roguelike';
-      });
+  function filterByName (influences, name) {
+    return influences.filter(r => {
+      return r.titleA === name || r.titleB === name;
+    });
+  }
+
+  function filterKnown (influences) {
+    return influences.filter(r => {
+      return r.type === 'known';
+    });
+  }
+
+  function filterRoguelikelikeInGenre (influences) {
+    return influences.filter(r => {
+      return r.categoryA === 'roguelikelike' && r.categoryB === 'roguelikelike';
+    });
+  }
+
+
+  function influenceArc (d) {
+    const minYear = Math.min(d.yearA, d.yearB);
+    const maxYear = Math.max(d.yearA, d.yearB);
+    const yearA = new Date(`${minYear}-01-01`);
+    const yearB = new Date(`${maxYear}-01-01`);
+    const pointA = timeScale(yearA);
+    const pointB = timeScale(yearB);
+    let outerRadius = Math.ceil((pointB - pointA) / 2);
+    let innerRadius = Math.ceil((pointB - pointA) / 2 - 0.5);
+
+    if (d.type === 'known') {
+      outerRadius += 1.5;
+      innerRadius -= 1.5;
     }
 
-    function filterRoguelikeOutOfGenre (influences) {
-      return influences.filter(r => {
-        return r.categoryA === 'roguelike' && r.categoryB !== 'roguelike';
-      });
-    }
+    return d3.arc()
+      .innerRadius(innerRadius)
+      .outerRadius(outerRadius)
+      .startAngle(-Math.PI / 2)
+      .endAngle(Math.PI / 2)();
+  };
 
-    function filterRoguelikelikeInGenre (influences) {
-      return influences.filter(r => {
-        return r.categoryA === 'roguelikelike' && r.categoryB === 'roguelikelike';
-      });
-    }
-
-    function yearX (name) {
-      return timeScale(releasedYears[name]);
-    }
-
-    function influenceArc (d) {
-      const minYear = Math.min(d.yearA, d.yearB);
-      const maxYear = Math.max(d.yearA, d.yearB);
-      const yearA = new Date(`${minYear}-01-01`);
-      const yearB = new Date(`${maxYear}-01-01`);
-      const pointA = timeScale(yearA);
-      const pointB = timeScale(yearB);
-      let outerRadius = Math.ceil((pointB - pointA) / 2);
-      let innerRadius = Math.ceil((pointB - pointA) / 2 - 1);
-
-      if (d.type === 'known') {
-        outerRadius += 1;
-        innerRadius -= 1;
-      }
-
-      return d3.arc()
-        .innerRadius(innerRadius)
-        .outerRadius(outerRadius)
-        .startAngle(-Math.PI / 2)
-        .endAngle(Math.PI / 2)();
-    };
-
-    function positionArc (d) {
-      const minYear = Math.min(d.yearA, d.yearB);
-      const maxYear = Math.max(d.yearA, d.yearB);
-      const yearA = new Date(`${minYear}-01-01`);
-      const yearB = new Date(`${maxYear}-01-01`);
-      const pointA = timeScale(yearA);
-      const pointB = timeScale(yearB);
-      return (pointA + pointB) / 2;
-    }
-
-    const roguelikeInfluenceInGenre = frame.append('g')
-      .attr('class', 'roguelike in-genre influence')
-      .selectAll('.arc')
-      .data(filterRoguelikeInGenre(influences))
-      .enter()
-        .append('path')
-        .attr('transform', d => `translate(${positionArc(d)},${height/2})`)
-        .attr('class', 'arc')
-        .attr('opacity', d => d.type === 'known' ? 0.025 : 0.0125)
-        .attr('d', influenceArc);
-
-    const roguelikeInfluenceOutOfGenre = frame.append('g')
-      .attr('class', 'roguelike out-of-genre influence')
-      .selectAll('.arc')
-      .data(filterRoguelikeOutOfGenre(influences))
-      .enter()
-        .append('path')
-        .attr('transform', d => `translate(${positionArc(d)} ${height/2+axisWidth}) rotate(180) `)
-        .attr('class', 'arc')
-        .attr('opacity', d => d.type === 'known' ? 0.05 : 0.025)
-        .attr('d', influenceArc);
-
-
+  function positionArc (d) {
+    const minYear = Math.min(d.yearA, d.yearB);
+    const maxYear = Math.max(d.yearA, d.yearB);
+    const yearA = new Date(`${minYear}-01-01`);
+    const yearB = new Date(`${maxYear}-01-01`);
+    const pointA = timeScale(yearA);
+    const pointB = timeScale(yearB);
+    return (pointA + pointB) / 2;
   }
 
 }

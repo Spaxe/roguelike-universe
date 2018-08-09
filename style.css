@@ -18,6 +18,30 @@ a:hover {
   text-decoration: underline;
 }
 
+p.related {
+  margin-bottom: 2px;
+}
+
+p.related + p {
+  margin-top: 2px;
+}
+
+.infobox {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border: 1px solid silver;
+  padding: 1em;
+  margin-left: 3em;
+}
+
+.infobox span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
 figure {
   margin: 0 auto;
 }
@@ -27,8 +51,28 @@ figcaption {
   font-size: 12px;
 }
 
-.influence text {
+svg text {
   font: 10px Georgia, serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-250 {
+  flex: 0 0 250px;
+}
+
+.m0 {
+  margin: 0;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.right-link {
+  padding-right: 1em;
 }
 
 .influence .domain {

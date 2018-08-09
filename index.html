@@ -11,17 +11,31 @@
 <body>
   <main>
     <h1>Roguelike Influences</h1>
-    <p><em>Part of the <em>Roguelike Universe</em> series: Visualising roguelike influences between 1975 — 2017.</em></p>
+    <p><em>Part of the <em>Roguelike Universe</em> series: Visualising roguelike influences between 1975 — 2018.</em></p>
     <p>By <a href="https://twitter.com/Xavier_Ho">@Xavier_Ho</a> | version 2.0.0 | <a href="https://static1.squarespace.com/static/51392274e4b0f86e34bbf68e/t/58fffc9f1e5b6c2665a93726/1493171379954/Finding+Design+Influence+within+Roguelike+Games.pdf">original paper</a></p>
 
     <section>
       <h2>Influence Arcs</h2>
-      <p>This chart represents connections between roguelike games and with games from other genres. Data was gathered from crawling the web for interviews, post-mortems, reviews and developer diaries. Connections were made by algorithms using keyword spotting in natural language processing.</p>
-      <p><label>Select a roguelike game: <select id="roguelike-arc-selection"></select></label></p>
+      <div class="flex">
+        <div>
+          <p>This chart represents connections between roguelike games and with games from other genres. Data was gathered from crawling the web for interviews, post-mortems, reviews and developer diaries. Connections were made by algorithms using keyword spotting in natural language processing.</p>
+          <p><label>Select a roguelike game: <select id="roguelike-arc-selection"></select></label></p>
+        </div>
+
+        <div class="infobox small flex-250">
+          <span class="m0" id="roguelike-arc-roguetemple" class="right-link small"></span>
+          <span class="m0" id="roguelike-arc-project" class="right-link small"></span>
+          <span class="m0" id="roguelike-arc-developer" class="right-link small"></span>
+          <span class="m0" id="roguelike-arc-theme" class="right-link small"></span>
+          <span class="m0" id="roguelike-arc-released" class="right-link small"></span>
+          <span class="m0" id="roguelike-arc-updated" class="right-link small"></span>
+          <span class="m0" id="roguelike-arc-count" class="right-link small"></span>
+        </div>
+      </div>
 
       <figure id="influence-arcs">
         <div></div>
-        <figcaption>Roguelike influence arcs</figcaption>
+        <figcaption><em>Figure 1: Roguelike influence arcs</em></figcaption>
       </figure>
     </section>
   </main>
