@@ -9,10 +9,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <main>
-    <h1>Roguelike Influences</h1>
-    <p><em>Part of the <em>Roguelike Universe</em> series: Visualising roguelike influences between 1975 — 2018.</em></p>
-    <p>By <a href="https://twitter.com/Xavier_Ho">@Xavier_Ho</a> | version 2.0.0 | <a href="https://static1.squarespace.com/static/51392274e4b0f86e34bbf68e/t/58fffc9f1e5b6c2665a93726/1493171379954/Finding+Design+Influence+within+Roguelike+Games.pdf">original paper</a></p>
+
+    <header>
+      <h1>Roguelike Influences</h1>
+      <p><em>Part of the <em>Roguelike Universe</em> series: Visualising roguelike influences between 1975 — 2018.</em></p>
+      <p>By <a href="https://twitter.com/Xavier_Ho">@Xavier_Ho</a> | version 2.0.0 | <a href="https://static1.squarespace.com/static/51392274e4b0f86e34bbf68e/t/58fffc9f1e5b6c2665a93726/1493171379954/Finding+Design+Influence+within+Roguelike+Games.pdf">original paper</a></p>
+    </header>
 
     <section>
       <h2>Influence Arcs</h2>
@@ -38,9 +42,34 @@
         <figcaption><em>Figure 1: Roguelike influence arcs</em></figcaption>
       </figure>
     </section>
+
+    <section>
+      <div class="flex">
+        <div>
+          <h3>Genre-Influence Matrix</h3>
+          <p>The genre-influence matrix was developed as a supplementary legend to read the influence diagram above. Each quadrant represents a combination of <em>in-genre</em>/<em>out-of-genre</em> and <em>past</em>/<em>future</em>. This creates an interesting dynamic where a title can be representative of its own genre, taking most of its influence from the past, or influential by having many connections to its future, with respect to titles in the roguelike as well as the broader context.</p>
+        </div>
+        <figure class="flex-250 ml1">
+          <img class="image" src="assets/Figure-genre-influential.png">
+          <figcaption><em>Figure 2: Genre-Influence Matrix</em></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Influence Timeline</h2>
+      <p><label>Select a game: <select id="roguelike-timeline-selection"></select></label></p>
+      <figure id="influence-timeline">
+        <div></div>
+      </figure>
+    </section>
+
+
   </main>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script type="module" src="roguelike-universe.js"></script>
+  <script src="roguelike-utils.js"></script>
+  <script src="roguelike-influence-arcs.js"></script>
+  <script src="roguelike-influence-timeline.js"></script>
 </body>
 </html>

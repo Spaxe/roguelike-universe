@@ -55,20 +55,48 @@ svg text {
   font: 10px Georgia, serif;
 }
 
+#influence-arcs .arc {
+  fill: rgb(79,74,138);
+}
+
+#influence-timeline .roguelike {
+  fill: rgb(79,74,138);
+}
+
+#influence-timeline .line {
+  stroke: rgb(79,74,138);
+}
+
+#influence-timeline .roguelikelike {
+  fill: rgb(91,122,175);
+}
+
+#influence-timeline .influence.label {
+  font-style: italic;
+}
+
 .flex {
   display: flex;
 }
 
 .flex-250 {
-  flex: 0 0 250px;
+  flex: 0 0 275px;
 }
 
 .m0 {
   margin: 0;
 }
 
+.ml1 {
+  margin-left: 1em;
+}
+
 .small {
   font-size: 12px;
+}
+
+.image {
+  width: 100%;
 }
 
 .right-link {
@@ -87,4 +115,16 @@ svg text {
 .influence.lighter .tick line {
   stroke: rgba(0, 0, 0, 0.1);
   stroke-width: 1;
+}
+
+text.annotation {
+  stroke: white;
+  stroke-width: 2;
+  paint-order: stroke;
+  fill: black;
+}
+
+line.annotation {
+  stroke: white;
+  stroke-width: 2;
 }

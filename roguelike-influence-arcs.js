@@ -1,8 +1,7 @@
-// Roguelike Universe visualisation
+// Roguelike Universe data visualisation
 // Author: Xavier Ho <contact@xavierho.com>
 
-function init () {
-
+;(function () {
   ////////////////////////////////////////////////////////////////////////////////
   // Download data
   Promise.all([
@@ -75,134 +74,6 @@ function init () {
     .text('influences other genres')
     .attr('x', -20)
     .attr('y', height-10)
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Gather influence pairs into a list
-  function gatherInfluence (files) {
-    return new Promise ( (resolve, reject) => {
-      let [
-        roguelikeInfluences,
-        roguelikelikeInfluences,
-        releasedYears
-      ] = files;
-
-      // Remove last empty row
-      roguelikeInfluences = roguelikeInfluences.slice(0, -1);
-      roguelikelikeInfluences = roguelikelikeInfluences.slice(0, -1);
-
-      // transform influences into JSON
-      roguelikeInfluences.forEach(r => {
-        r.Influences = JSON.parse(r.Influences);
-        r.Inferred_Roguelike_Influences = JSON.parse(r.Inferred_Roguelike_Influences);
-        r.Inferred_Roguelikelike_Influences = JSON.parse(r.Inferred_Roguelikelike_Influences);
-        r.Inferred_Other_Influences = JSON.parse(r.Inferred_Other_Influences);
-      });
-
-      roguelikelikeInfluences.forEach(r => {
-        r.Influences = JSON.parse(r.Influences);
-        r.Inferred_Roguelike_Influences = JSON.parse(r.Inferred_Roguelike_Influences);
-        r.Inferred_Roguelikelike_Influences = JSON.parse(r.Inferred_Roguelikelike_Influences);
-        r.Inferred_Other_Influences = JSON.parse(r.Inferred_Other_Influences);
-      });
-
-      // Loop through the influence dataset and make data rows for arcs
-      const influences = [];
-
-      roguelikeInfluences.forEach(r => {
-        r.Influences.forEach(i => {
-          if (validYears(r.Name, i)) {
-            influences.push({
-              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-              categoryA: 'roguelike', categoryB: 'roguelike', type: 'known',
-            });
-          }
-        });
-
-        r.Inferred_Roguelike_Influences.forEach(i => {
-          if (validYears(r.Name, i)) {
-            influences.push({
-              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-              categoryA: 'roguelike', categoryB: 'roguelike',  type: 'inferred',
-            });
-          }
-        });
-
-        r.Inferred_Roguelikelike_Influences.forEach(i => {
-          if (validYears(r.Name, i)) {
-            influences.push({
-              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-              categoryA: 'roguelike', categoryB: 'roguelikelike',  type: 'inferred',
-            });
-          }
-        });
-
-        r.Inferred_Other_Influences.forEach(i => {
-          if (validYears(r.Name, i)) {
-            influences.push({
-              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-              categoryA: 'roguelike', categoryB: 'other',  type: 'inferred',
-            });
-          }
-        });
-
-      });
-
-      roguelikelikeInfluences.forEach(r => {
-        r.Influences.forEach(i => {
-          if (validYears(r.Name, i)) {
-            influences.push({
-              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-              categoryA: 'roguelikelike', categoryB: 'roguelike',  type: 'known',
-            });
-          }
-        });
-
-        r.Inferred_Roguelike_Influences.forEach(i => {
-          if (validYears(r.Name, i)) {
-            influences.push({
-              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-              categoryA: 'roguelikelike', categoryB: 'roguelike',  type: 'inferred',
-            });
-          }
-        });
-
-        r.Inferred_Roguelikelike_Influences.forEach(i => {
-          if (validYears(r.Name, i)) {
-            influences.push({
-              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-              categoryA: 'roguelikelike', categoryB: 'roguelikelike',  type: 'inferred',
-            });
-          }
-        });
-
-        r.Inferred_Other_Influences.forEach(i => {
-          if (validYears(r.Name, i)) {
-            influences.push({
-              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-              categoryA: 'roguelikelike', categoryB: 'other',  type: 'inferred',
-            });
-          }
-        });
-
-      });
-
-      function validYears (a, b) {
-        return releasedYears[a]
-                && releasedYears[b]
-                && releasedYears[a] !== 1000
-                && releasedYears[b] !== 1000;
-      }
-
-      const output = [
-        roguelikeInfluences,
-        roguelikelikeInfluences,
-        releasedYears,
-        influences,
-      ];
-
-      resolve(output);
-    });
-  }
 
   //////////////////////////////////////////////////////////////////////////////
   // After the data is loaded, draw influence arcs
@@ -306,12 +177,12 @@ function init () {
           .attr('title', datum['Released'] || 'N/A');
         updated.text(`Most recent update: ${datum['Updated'] || 'N/A'}`)
           .attr('title', datum['Updated'] || 'N/A');
-        count.text(`Games influenced: ${influenceCount} (${knownInfluenceCount} known)`)
+        count.text(`Estimated influence: ${influenceCount > 1 ? influenceCount + ' games' : influenceCount + ' game'} (${knownInfluenceCount} known)`)
           .attr('title', `${influenceCount} (${knownInfluenceCount} known)`);
 
 
         // Remove previous selection
-        frame.select('.active').remove();
+        frame.selectAll('.active').remove();
 
         // Draw current selection
         const active = frame.append('g')
@@ -354,33 +225,6 @@ function init () {
     });
   }
 
-  //////////////////////////////////////////////////////////////////////////////
-  // Shared util functions
-  function filterRoguelike (influences) {
-    return influences.filter(r => {
-      return r.categoryA === 'roguelike';
-    });
-  }
-
-  function filterByName (influences, name) {
-    return influences.filter(r => {
-      return r.titleA === name || r.titleB === name;
-    });
-  }
-
-  function filterKnown (influences) {
-    return influences.filter(r => {
-      return r.type === 'known';
-    });
-  }
-
-  function filterRoguelikelikeInGenre (influences) {
-    return influences.filter(r => {
-      return r.categoryA === 'roguelikelike' && r.categoryB === 'roguelikelike';
-    });
-  }
-
-
   function influenceArc (d) {
     const minYear = Math.min(d.yearA, d.yearB);
     const maxYear = Math.max(d.yearA, d.yearB);
@@ -413,5 +257,4 @@ function init () {
     return (pointA + pointB) / 2;
   }
 
-}
-init();
+})();
