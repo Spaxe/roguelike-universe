@@ -32,7 +32,7 @@
       <div class="flex">
         <div>
           <p class="mt0">Arcs above the horizon are influences between two roguelike games, and arcs below the horizon are influences between a roguelike and a non-roguelike game.</p>
-          <p><label>Explore by selecting a game: <select id="roguelike-arc-selection"></select></label></p>
+          <p><label>Selecting a game to see its influence arcs: <select id="roguelike-arc-selection"></select></label></p>
         </div>
 
         <div id="roguelike-arc-infobox" class="infobox smaller flex-250">
@@ -48,26 +48,28 @@
 
       <figure id="influence-arcs">
         <div></div>
-        <figcaption><em>Figure 1: Roguelike influence arcs</em></figcaption>
+        <figcaption><em>Figure 1: Roguelike influence arcs</em> | <a id="roguelike-arc-data">Download data</a></figcaption>
       </figure>
     </section>
 
     <section>
+      <h3>The Genre-Influence Matrix</h3>
       <div class="flex">
         <div>
-          <h3>Genre-Influence Matrix</h3>
-          <p>The genre-influence matrix was developed as a supplementary legend to read the influence diagram above. Each quadrant represents a combination of <em>in-genre</em>/<em>out-of-genre</em> and <em>past</em>/<em>future</em>. This creates an interesting dynamic where a title can be representative of its own genre, taking most of its influence from the past, or influential by having many connections to its future, with respect to titles in the roguelike as well as the broader context.</p>
+          <p>The genre-influence matrix divides the diagram above into 4 quadrants. Each quadrant represents a pair made of <em>in-genre</em>/<em>out-of-genre</em> and <em>past</em>/<em>future</em>. This creates an interesting dynamic where a title can be representative of its own genre, taking most of its influence from the past, or influential by having many connections to its future, with respect to roguelike titles.</p>
+          <p>For instance, <span id="genre-influential-text"></span> Recently published games may be representative of its genre now, but as time goes on, it may become more influential in the genre as other games follow its footsteps.</p>
+          <p>If we summarise the number of influences for each game, we can plot them in a 2-dimensional map.</p>
         </div>
         <figure class="flex-250 ml1">
           <img class="image" src="assets/Figure-genre-influential.png">
-          <figcaption><em>Figure 2: Genre-Influence Matrix</em></figcaption>
+          <figcaption><em>Figure 2: Genre-Influence Matrix<br><a href="assets/Figure-genre-influential.png" download="roguelike-unversei_genre-influence-matrix.png">Download image</a></em></figcaption>
         </figure>
       </div>
     </section>
 
     <section>
-      <h2>Roguelike Influence Map</h2>
-      <p>Taking each arc in the quadrant (upper-left, upper-right, bottom-left, bottom-right), we can draw a point for each roguelike game. The more arcs there are in each quadrant, the more biased the point is towards a corner of the map.</p>
+      <h2>Explore the Roguelike Influence Map</h2>
+      <p></p>
       <p id="roguelike-map-selected" class="words smaller"></p>
       <figure id="influence-map">
         <div></div>

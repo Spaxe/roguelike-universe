@@ -180,3 +180,15 @@ function filterUniquePosition (positions) {
   });
   return filtered;
 }
+
+const roguelike_universe_metadata = {
+  author: 'Xavier Ho',
+  email: 'contact@xavierho.com',
+  author_website: 'https://jumptoglide.com',
+  github_website: 'https://github.com/Spaxe/roguelike-universe',
+  project_website: 'https://spaxe.github.io/roguelike-universe',
+  license: 'Unless otherwise specified, Creative Commons Non-Commercial applies',
+  license_url: 'https://creativecommons.org/licenses/by-nc/3.0/',
+  acknowledgement: 'RogueTemple and RogueBasin contributors',
+  download_date: new Date(),
+};

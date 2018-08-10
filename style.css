@@ -24,8 +24,10 @@ p.related + p {
   margin-top: 2px;
 }
 
-.suggestion {
-
+#genre-influential-text span {
+  color: rgb(79,74,138);
+  font-style: italic;
+  border-bottom: 2px solid rgb(236,255,255);
 }
 
 .infobox {
@@ -87,7 +89,7 @@ svg text {
 }
 
 .tooltip {
-  background: white;
+  background: rgba(255,255,255,0.9);
   display: inline-block;
   border: 1px solid gray;
   padding: .5em 1em;

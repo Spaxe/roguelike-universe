@@ -116,10 +116,13 @@
         influences
       ] = files;
 
+      const data = filterRoguelike(influences);
+
+      // Draw the arcs
       const roguelikeInfluenceInGenre = frame.append('g')
         .attr('class', 'roguelike in-genre influence')
         .selectAll('.arc')
-        .data(filterRoguelike(influences))
+        .data(data)
         .enter()
           .append('path')
           .attr('transform', d => {
@@ -133,6 +136,12 @@
           .attr('opacity', d => d.categoryB === 'roguelike' ? 0.0125 : 0.025)
           .attr('d', influenceArc)
         .exit().remove();
+
+        // Prepare the data source for download
+        const download = {metadata: roguelike_universe_metadata, data: data};
+        const blob = new Blob([JSON.stringify(download, null, 2)], {type: 'application/json'});
+        const download_url = URL.createObjectURL(blob);
+        document.querySelector('#roguelike-arc-data').href = download_url;
 
       resolve(files);
     });
@@ -247,16 +256,74 @@
             })
             .attr('opacity', 1)
             .attr('stroke', 'transparent')
-            .attr('stroke-width', 3)
+            .attr('stroke-width', 10)
             .attr('d', influenceArc)
             .on('mousemove', displayTooltip)
             .on('mouseout', removeTooltip)
           .exit().remove();
+
+        // Update the description text
+        const descriptionText = d3.select('#genre-influential-text');
+        const descriptionType = calculateInfluenceType(title);
+
+        let influentialText,
+            genreText;
+        if (!descriptionType.influential && !descriptionType.representative) {
+          influentialText = 'neither more influential or representative';
+        } else if (descriptionType.influential) {
+          influentialText = 'more influential';
+        } else if (descriptionType.representative) {
+          influentialText = 'more representative';
+        }
+        if (!descriptionType.inGenre && !descriptionType.outOfGenre) {
+          genreText = 'all of its related';
+        } else if (descriptionType.inGenre) {
+          genreText = 'other roguelike';
+        } else if (descriptionType.outOfGenre) {
+          genreText = 'other non-roguelike';
+        }
+        descriptionText.html(`given the data we can say <span>${title}</span> is <span>${influentialText}</span> for <span>${genreText}</span> games.`);
       }
       select.dispatch('change');
 
+      function calculateInfluenceType (title) {
+        const result = {influential: false, representative: false, inGenre: false, outOfGenre: false};
+        const counts = {influential: 0, representative: 0, inGenre: 0, outOfGenre: 0};
+        influences.filter(r => r.titleA === title).forEach(r => {
+          if (r.yearB > r.yearA) {
+            counts.influential += 1;
+          } else if (r.yearB < r.yearA) {
+            counts.representative += 1;
+          }
+
+          if (r.categoryB === 'roguelike') {
+            counts.inGenre += 1;
+          } else {
+            counts.outOfGenre += 1;
+          }
+        });
+        influences.filter(r => r.titleB === title).forEach(r => {
+          if (r.yearA > r.yearB) {
+            counts.influential += 1;
+          } else if (r.yearA < r.yearB) {
+            counts.representative += 1;
+          }
+
+          if (r.categoryA === 'roguelike') {
+            counts.inGenre += 1;
+          } else {
+            counts.outOfGenre += 1;
+          }
+        });
+        console.log(counts);
+        result.influential = counts.influential > counts.representative + 1;
+        result.representative = counts.representative > counts.influential + 1;
+        result.inGenre = counts.inGenre > counts.outOfGenre + 1;
+        result.outOfGenre = counts.outOfGenre > counts.inGenre + 1;
+        return result;
+      }
+
       function displayTooltip (d) {
-        console.log(d3.event);
         let tooltip = container.select('#arc-tooltip');
         if (!tooltip.node()) {
           tooltip = container.append('div')
