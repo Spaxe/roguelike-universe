@@ -13,21 +13,26 @@
   <nav class="suggestion small">
     <a href="#about"><span>About this page</span></a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform?usp=sf_link" target="_blank"><span class="ml2">Send feedback</span></a>
-    <span class="ml2 lighter small">version 2.0.0</span>
+    <span class="ml2 light small">version 2.0.0</span>
   </nav>
 
   <header>
-    <h1>Roguelike Universe: <em>Influence</em></h1>
-    <p>This is an ongoing project to visualise roguelike influences between 1975 — 2018.</p>
+    <h1><a href="https://spaxe.github.io/roguelike-universe" class="no-link">Roguelike Universe: <em>Visualising Influence</em></a></h1>
+    <p class="small"><em>Visualise connections and influences for roguelike games between 1975 — 2018.</em></p>
+
+    <p>Influence is often a vague term, so let us define it. In <em>Roguelike Universe</em>, two games share a common influence, or influence on another when their author is quoted b
+
+    text here later.</p>
   </header>
 
-  <main>
+  <main class="mt2">
     <section>
-      <h2>Influence Arcs</h2>
+      <h2>Explore the Influence Arcs</h2>
+      <p>This diagram aligns each roguelike game by their release year, and draw influence arcs between the years. <span style="border-bottom: 3px solid rgb(79,74,138)">Thicker arcs</span> depict documented and known influences. <span style="border-bottom: 0.5px solid rgb(79,74,138)">Thinner arcs</span> are inferred influences gathered from web scraping, such as how often two games appear together in the same article.</p>
       <div class="flex">
         <div>
-          <p>This chart represents connections between roguelike games and with games from other genres. Data was gathered from crawling the web for interviews, post-mortems, reviews and developer diaries. Connections were made by algorithms using keyword spotting in natural language processing.</p>
-          <p><label>Select a roguelike game: <select id="roguelike-arc-selection"></select></label></p>
+          <p class="mt0">Arcs above the horizon are influences between two roguelike games, and arcs below the horizon are influences between a roguelike and a non-roguelike game.</p>
+          <p><label>Explore by selecting a game: <select id="roguelike-arc-selection"></select></label></p>
         </div>
 
         <div id="roguelike-arc-infobox" class="infobox smaller flex-250">

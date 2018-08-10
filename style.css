@@ -3,7 +3,6 @@ body {
   margin: 25px auto 0 auto;
   padding: 0 0 0 0;
   max-width: 800px;
-  font-smoothing: antialiased;
   position: relative;
 }
 
@@ -74,6 +73,7 @@ svg text {
   fill: #ecffff;
 }
 
+#influence-arcs .legend .line,
 #influence-timeline .line {
   stroke: rgb(79,74,138);
 }
@@ -84,6 +84,14 @@ svg text {
 
 #influence-timeline .influence.label {
   font-style: italic;
+}
+
+.tooltip {
+  background: white;
+  display: inline-block;
+  border: 1px solid gray;
+  padding: .5em 1em;
+  line-height: initial;
 }
 
 .flex {
@@ -98,6 +106,18 @@ svg text {
   margin: 0;
 }
 
+.mt0 {
+  margin-top: 0;
+}
+
+.mt1 {
+  margin-top: 1em;
+}
+
+.mt2 {
+  margin-top: 2em;
+}
+
 .ml1 {
   margin-left: 1em;
 }
@@ -106,12 +126,20 @@ svg text {
   margin-left: 2em;
 }
 
+.light {
+  color: #acacac;
+}
+
 .small {
   font-size: 0.9em;
 }
 
 .smaller {
-  font-size: 0.8em;
+  font-size: 0.75em;
+}
+
+.smallerer {
+  font-size: 0.6em;
 }
 
 .image {
@@ -120,6 +148,14 @@ svg text {
 
 .right-link {
   padding-right: 1em;
+}
+
+.no-link,
+.no-link:hover,
+.no-link:active,
+.no-link:visited {
+  color: initial;
+  text-decoration: none;
 }
 
 .influence .domain {

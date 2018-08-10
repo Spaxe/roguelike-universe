@@ -34,7 +34,8 @@
     .tickSize(axisWidth)
     .tickFormat("");
 
-  const container = d3.select('#influence-arcs div');
+  const container = d3.select('#influence-arcs div')
+    .style('position', 'relative');
   const svg = container.append('svg')
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom);
@@ -67,13 +68,42 @@
   const labels = frame.append('g')
     .attr('class', 'influence label lighter');
   labels.append('text')
-    .text('influences roguelikes games')
+    .text('influences in roguelikes games')
     .attr('x', -20)
     .attr('y', 10);
   labels.append('text')
-    .text('influences other genres')
+    .text('influences in other genres')
     .attr('x', -20)
     .attr('y', height-10)
+
+  // Legends
+  const legends = frame.append('g')
+    .attr('class', 'influence legend')
+    .attr('transform', 'translate(0 50)');
+  legends.append('line')
+    .attr('class', 'line')
+    .attr('stroke-width', 3)
+    .attr('x1', 0)
+    .attr('y1', 0)
+    .attr('x2', 30)
+    .attr('y2', 0);
+  legends.append('line')
+    .attr('class', 'line')
+    .attr('stroke-width', 1)
+    .attr('x1', 0)
+    .attr('y1', 16)
+    .attr('x2', 30)
+    .attr('y2', 16);
+  legends.append('text')
+    .text('known influence')
+    .attr('alignment-baseline', 'middle')
+    .attr('x', 36)
+    .attr('y', 0);
+  legends.append('text')
+    .text('inferred influence')
+    .attr('alignment-baseline', 'middle')
+    .attr('x', 36)
+    .attr('y', 16);
 
   //////////////////////////////////////////////////////////////////////////////
   // After the data is loaded, draw influence arcs
@@ -216,10 +246,37 @@
               }
             })
             .attr('opacity', 1)
+            .attr('stroke', 'transparent')
+            .attr('stroke-width', 3)
             .attr('d', influenceArc)
+            .on('mousemove', displayTooltip)
+            .on('mouseout', removeTooltip)
           .exit().remove();
       }
       select.dispatch('change');
+
+      function displayTooltip (d) {
+        console.log(d3.event);
+        let tooltip = container.select('#arc-tooltip');
+        if (!tooltip.node()) {
+          tooltip = container.append('div')
+            .attr('id', 'arc-tooltip')
+            .attr('class', 'tooltip smallerer');
+        }
+        tooltip.html(`
+          <em>${d.type}</em> influence<br>
+          ${d.titleA} (${d.yearA}) - ${d.categoryA}</em><br>
+          ${d.titleB} (${d.yearB}) - ${d.categoryB}</em><br>
+        `);
+        const tooltipWidth = tooltip.node().getBoundingClientRect().width;
+        tooltip.style('position', 'absolute')
+          .style('top', `${d3.event.layerY + 3}px`)
+          .style('left', `${d3.event.layerX > width/2 ? d3.event.layerX - tooltipWidth - 6 : d3.event.layerX + 6}px`);
+      }
+
+      function removeTooltip () {
+        container.select('#arc-tooltip').remove();
+      }
 
       resolve(files);
     });
