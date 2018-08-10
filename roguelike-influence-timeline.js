@@ -214,9 +214,14 @@
         .enter()
           .append('circle')
           .attr('class', 'dot')
+          .attr('stroke', 'transparent')
+          .attr('stroke-width', 10)
           .attr('cx', d => timeScale(new Date(d.Released)))
           .attr('cy', d => roguelikeInfluenceScale(d.influenceCount))
-          .attr('r', 3)
+          .attr('r', d => 3)
+          .on('mousemove', displayTooltip)
+          .on('mouseleave', removeTooltip)
+          .on('click', selectTitle);
 
       const roguelikelikeDots = frame.append('g')
         .attr('class', 'roguelikelike games')
@@ -225,9 +230,40 @@
         .enter()
           .append('circle')
           .attr('class', 'dot')
+          .attr('stroke', 'transparent')
+          .attr('stroke-width', 10)
           .attr('cx', d => timeScale(new Date(d.Released)))
           .attr('cy', d => roguelikelikeInfluenceScale(d.influenceCount))
-          .attr('r', 3);
+          .attr('r', d => 3)
+          .on('mousemove', displayTooltip)
+          .on('mouseleave', removeTooltip)
+          .on('click', selectTitle);
+
+      function displayTooltip (d) {
+        let tooltip = container.select('#timeline-tooltip');
+        if (!tooltip.node()) {
+          tooltip = container.append('div')
+            .attr('id', 'timeline-tooltip')
+            .attr('class', 'tooltip smallerer');
+        }
+        tooltip.html(`
+          <em>${d.Name}</em>
+        `);
+        const tooltipWidth = tooltip.node().getBoundingClientRect().width;
+        tooltip.style('position', 'absolute')
+          .style('top', `${d3.event.layerY + 3}px`)
+          .style('left', `${d3.event.layerX > width/2 ? d3.event.layerX - tooltipWidth - 6 : d3.event.layerX + 6}px`);
+      }
+
+      function removeTooltip () {
+        container.select('#timeline-tooltip').remove();
+      }
+
+      function selectTitle (d) {
+        const select = d3.select('#roguelike-timeline-selection');
+        select.node().value = d.Name;
+        select.dispatch('change');
+      }
 
       // Label games that are notable
       const roguelikeAnnotations = frame.append('g')
@@ -245,7 +281,6 @@
 
       roguelikeAnnotations.append('line')
         .attr('class', 'annotation')
-        .attr('stroke', 'black')
         .attr('x1', d => timeScale(new Date(d.Released)) + 20)
         .attr('y1', d => roguelikeInfluenceScale(d.influenceCount))
         .attr('x2', d => timeScale(new Date(d.Released)) + 8)
@@ -295,7 +330,7 @@
         }
       }
 
-      const influenceLines = frame.append('g')
+      const influenceLines = frame.append('g').lower()
         .selectAll('.line')
         .data(validInfluences)
         .enter()
@@ -468,7 +503,7 @@
             .data(knownInfluences)
             .enter();
           knownList.append('a')
-            .attr('class', 'list')
+            .attr('class', 'list mr1')
             .attr('href', "#")
             .text(d => d)
             .on('click', d => {
@@ -488,7 +523,7 @@
             .data(inferredInfluences)
             .enter();
           inferredList.append('a')
-            .attr('class', 'list')
+            .attr('class', 'list mr1')
             .attr('href', "#")
             .text(d => d)
             .on('click', d => {

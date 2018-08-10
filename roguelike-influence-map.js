@@ -215,7 +215,7 @@
           .data(titles)
           .enter();
         selectedList.append('span')
-          .attr('class', 'list')
+          .attr('class', 'list mr1')
           .text(d => d)
           .exit().remove();
 

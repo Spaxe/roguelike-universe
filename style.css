@@ -132,6 +132,10 @@ svg text {
   margin-left: 2em;
 }
 
+.mr1 {
+  margin-right: 0.5em;
+}
+
 .light {
   color: #acacac;
 }
@@ -186,12 +190,11 @@ text.annotation {
 }
 
 line.annotation {
-  stroke: white;
-  stroke-width: 2;
+  stroke: black;
+  stroke-width: 0.5;
 }
 
 .words .list {
   padding: 2px 4px;
-  margin-right: 0.5em;
   background: #ecffff;
 }
