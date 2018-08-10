@@ -66,13 +66,17 @@ svg text {
 }
 
 #influence-map .dot {
-  stroke: rgba(91,122,175,0.8);
-  stroke-width: 2;
   cursor: pointer;
+}
+
+#influence-map .dot.legend {
+  cursor: initial;
 }
 
 #influence-map .dot.active {
   fill: #ecffff;
+  stroke: rgb(79,74,138);
+  stroke-width: 3;
 }
 
 #influence-arcs .legend .line,

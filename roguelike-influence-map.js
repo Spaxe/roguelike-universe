@@ -112,6 +112,37 @@
     .attr('y', height-6)
     .text('influences other non-roguelikes');
 
+  // Draw legends
+  const legends = frame.append('g')
+    .attr('class', 'map legend')
+    .attr('transform', `translate(${width - 100} ${height - 50})`);
+  const radius = [2, 3, 4, 5, 7];
+  legends.selectAll('dot')
+    .data(radius)
+    .enter()
+      .append('circle')
+      .attr('class', 'roguelike dot legend')
+      .attr('cx', (d, i) => d + 15 * i)
+      .attr('cy', d => -d)
+      .attr('r', d => d);
+  legends.append('text')
+    .text('number of games')
+    .attr('text-anchor', 'middle')
+    .attr('class', 'map legend')
+    .attr('x', 36)
+    .attr('y', -18);
+  legends.append('text')
+    .text('fewer')
+    .attr('class', 'map legend')
+    .attr('x', -3)
+    .attr('y', 12);
+  legends.append('text')
+    .text('more')
+    .attr('text-anchor', 'end')
+    .attr('class', 'map legend')
+    .attr('x', 75)
+    .attr('y', 12);
+
   function draw (files) {
     return new Promise ( (resolve, reject) => {
       const [
@@ -163,6 +194,8 @@
         .attr('cx', d => xScale(d.x))
         .attr('cy', d => yScale(d.y))
         .attr('r', d => Math.sqrt(findOnPosition(d).length) + 2)
+        .attr('stroke', 'transparent')
+        .attr('stroke-width', 10)
         .on('click', displayTitles);
 
       function findOnPosition (d) {
