@@ -160,13 +160,13 @@
         }
 
         if (r.yearB > r.yearA) {
-          data[r.titleA].influential += 1;
+          data[r.titleA].influential += 2;
         } else if (r.yearB < r.yearA) {
           data[r.titleA].influential -= 1;
         }
 
         if (r.categoryB === 'roguelike') {
-          data[r.titleA].inGenre += 1;
+          data[r.titleA].inGenre += 2;
         } else {
           data[r.titleA].inGenre -= 1;
         }
@@ -174,9 +174,11 @@
 
       const extent = [];
       const positions = Object.keys(data).map(title => {
-        extent.push(data[title].influential);
-        extent.push(data[title].inGenre);
-        return {title: title, x: data[title].influential, y: data[title].inGenre};
+        const x = data[title].influential;
+        const y = data[title].inGenre;
+        extent.push(x);
+        extent.push(y);
+        return {title: title, x: x, y: y};
       });
       const extreme = Math.max(...extent.map(Math.abs)) + 5;
       xScale.domain([-extreme, extreme]);

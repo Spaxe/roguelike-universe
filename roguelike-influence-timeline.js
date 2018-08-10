@@ -440,6 +440,7 @@
         const relatedInfluences = filterByName(influences, title);
         const influenceCount = relatedInfluences.length;
         const knownInfluenceCount = filterKnown(relatedInfluences).length;
+        console.table(relatedInfluences);
 
         // Display metadata
         hyperlink.html('Title: ');

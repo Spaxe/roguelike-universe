@@ -33,8 +33,8 @@ function gatherInfluence (files) {
     roguelikeInfluences.forEach(r => {
       r.Influences.forEach(i => {
         if (validYears(r.Name, i)) {
-          // Temporary patching Diablo out of roguelike list
-          if (i === 'Diablo') {
+          // Temporary patching games out of roguelike list
+          if (i === 'Diablo' || i === 'Spelunky' || i === 'The Binding of Isaac') {
             influences.push({
               titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
               categoryA: 'roguelike', categoryB: 'roguelikelike', type: 'known',
@@ -80,10 +80,18 @@ function gatherInfluence (files) {
     roguelikelikeInfluences.forEach(r => {
       r.Influences.forEach(i => {
         if (validYears(r.Name, i)) {
-          influences.push({
-            titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-            categoryA: 'roguelikelike', categoryB: 'roguelike',  type: 'known',
-          });
+          // Temporary patching Spelunky out of roguelike list
+          if (i === 'Spelunky') {
+            influences.push({
+              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
+              categoryA: 'roguelikelike', categoryB: 'roguelikelike',  type: 'known',
+            });
+          } else {
+            influences.push({
+              titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
+              categoryA: 'roguelikelike', categoryB: 'roguelike',  type: 'known',
+            });
+          }
         }
       });
 
@@ -179,6 +187,11 @@ function filterUniquePosition (positions) {
     memory.add(id);
   });
   return filtered;
+}
+
+function sign (x) {
+  if (x === 0) return 0;
+  else return x / Math.abs(x);
 }
 
 const roguelike_universe_metadata = {
