@@ -81,7 +81,7 @@
 
     <section>
       <h2>Roguelike (and Roguelike-like) Influence Timeline</h2>
-      <p>Lastly, we produce a scatter plot of every roguelike, and 'roguelike-like' games. The horizontal axis is the release year (or the exact date as available), and the vertical, stacked axis is the number of influences each game has on other games. Influences are drawn as links between the dots.</p>
+      <p>Lastly, we produce a scatter plot of every roguelike, and 'roguelike-like' games. The horizontal axis is the release year (or the exact date as available), and the vertical, stacked axis is the number of influences each game has on other games. Games with no influences are omitted. Influences are drawn as links between the dots.</p>
       <div class="flex">
         <div>
           <p class="mt0">The primary aim of this chart is to not only show one 'hop' of influences, but also show multiple hops, influences of influences. Influences may form a small-world network.</p>
@@ -102,17 +102,42 @@
       <p id="roguelike-timeline-inferred" class="words smaller"></p>
       <figure id="influence-timeline">
         <div></div>
-        <figcaption><em>Figure 4: Roguelike Influence Timeline</em> | <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">Feedback</a> | Download data</figcaption>
+        <figcaption><em>Figure 4: Roguelike Influence Timeline</em> | <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">Feedback</a> | <a id="roguelike-timeline-data">Download data</a></figcaption>
       </figure>
     </section>
   </main>
 
-  <footer id="about">
-    <h2>About</h2>
-    <p><em>Roguelike Universe</em> is an ongoing effort to visualise roguelike influences by <a href="https://jumptoglide.com/" target="_blank">Xavier Ho</a>. You can make the data better by contributing to the <a href="http://roguebasin.roguelikedevelopment.org/index.php?title=Main_Page" target="_blank">RogueBasin</a> mediawiki.</em></p>
-    <p>Data source: <a href="https://forums.roguetemple.com/irldb/" target="_blank">RogueTemple DB</a></p>
-    <p>Source code: <a href="https://github.com/Spaxe/roguelike-universe" target="_blank">GitHub</a></p>
-    <p>Looking for previous versions? Go to <a href="/roguelike-universe/versions/1.0.0/index.html">1.0.0</a></p>
+  <footer id="about" class="mt2 small">
+    <h2>About this page</h2>
+    <p><em>Roguelike Universe</em> is an ongoing project to visualise roguelike influences. This project is <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">seeking corrections, suggestions, and feedback</a>.</p>
+
+    <h3>Method</h3>
+    <p>Known influence was collected through <a href="https://forums.roguetemple.com/irldb/" target="_blank">RogueTemple's IRLDB</a>, with a <a href="https://docs.google.com/spreadsheets/d/1cUmwMHQQWkPTh-89L9QDVc25QOCAHqjvqZYOufzmQOk/edit#gid=0" target="_blank">hand-cleaned version</a> stored online. You are welcome to edit the data. The search setting used can be found in <a href="assets/search_settings.png" target="_blank">this picture</a>. Inferred influence was calculated by <a href="https://github.com/Spaxe/roguelike-universe/blob/master/data/Roguelike%20Universe%20-%20Web%20Scraping.ipynb" target="_blank">web scraping</a>, gathering the first 10-30 links found via the <a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a> search engine. Data was <a href="https://github.com/Spaxe/roguelike-universe/blob/master/data/Roguelike%20Universe%20-%20Link%20Generation.ipynb" target="_blank">prepared in Python</a>, with a little bit of post-processing in JavaScript in the browser. Figures are homemade and crafted in <a href="https://d3js.org/" target="_blank">D3.js</a> with care. We try to make the live computed dataset available, which can be downloaded below each figure.</p>
+
+    <p>If you decide to reference or cite this work, please cite the following paper:
+    <pre>
+      <strong>Finding Design Influence within Roguelike Games</strong> (<a href="https://jumptoglide.com/s/Finding-Design-Influence-within-Roguelike-Games.pdf" target="_blank">open access PDf</a>)
+      Xavier Ho, Martin Tomitsch, Tomasz Bednarz
+      International Conference on Meaningful Play, East Lansing, 2016</pre>
+    </p>
+
+    <h3>License</h3>
+    <p>The Data visualisations and the computed source are licensed under the <a href="https://creativecommons.org/licenses/by-nc/3.0/" target="_blank">Creative Commons Non-Commercial 3.0 license</a>. Individual games, descriptions, and collected data are owned by the respective authors listed on the wiki or webpage. If you have concerns regarding the license, or use of this data, <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">let us know</a>.</p>
+
+    <h3>Contribute</h3>
+    <p>If you would like to contribute, the best way is to review and edit the games you are interested from <a href="http://roguebasin.roguelikedevelopment.org/index.php?title=Main_Page" target="_blank">the RogueBasin mediawiki</a>.</em> In particular, if you are the author of the game, and you see errors in the dataset, go ahead and make the correction! We would love to hear about <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">your changes</a>.</p>
+
+    <h3>Source Code</h3>
+    <p>Roguelike Universe is an <a href="https://github.com/Spaxe/roguelike-universe" target="_blank">open source project</a>. If you want to make this project more accessible to more people, make more efficient programs, or just want to try your hand at contributing to open source, we welcome pull requests and patches of all kinds.</p>
+
+    <h3>Credits</h3>
+    <p class="related">Author: <a href="https://jumptoglide.com/" target="_blank">Xavier Ho</a> (<a href="https://twitter.com/xavier_ho" target="_blank">twitter</a>)</p>
+    <p>Acknowledgement: <a href="https://forums.roguetemple.com/" target="_blank">RogueTemple</a> and <a href="http://roguebasin.roguelikedevelopment.org/index.php?title=Main_Page" target="_blank">RogueBasin contributors</a></p>
+
+    <h3>Previous versions</h3>
+    <p>Looking for previous versions? Go to <a href="versions/1.0.0/index.html">1.0.0</a></p>
+
+    <p class="mt2 small"><em>Roguelike Universe is crafted with care by Xavier Ho.</em></p>
   </footer>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>

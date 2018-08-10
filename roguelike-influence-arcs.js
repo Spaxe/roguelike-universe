@@ -315,7 +315,6 @@
             counts.outOfGenre += 1;
           }
         });
-        console.log(counts);
         result.influential = counts.influential > counts.representative + 1;
         result.representative = counts.representative > counts.influential + 1;
         result.inGenre = counts.inGenre > counts.outOfGenre + 1;

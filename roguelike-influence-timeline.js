@@ -608,6 +608,13 @@
         return influence.titleA;
       }
 
+      // Prepare the data source for download
+      const data = validRoguelikeInfluences.concat(validRoguelikelikeInfluences);
+      const download = {metadata: roguelike_universe_metadata, data: data};
+      const blob = new Blob([JSON.stringify(download, null, 2)], {type: 'application/json'});
+      const download_url = URL.createObjectURL(blob);
+      document.querySelector('#roguelike-timeline-data').href = download_url;
+
       resolve(files);
     });
   }
