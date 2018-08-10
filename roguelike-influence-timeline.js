@@ -170,10 +170,10 @@
       });
 
       const validRoguelikeInfluences = roguelikeInfluences.filter(r => {
-        return releasedYears[r.Name] !== 1000 && r.influenceCount > 0;
+        return releasedYears[r.Name] !== 1000;
       });
       const validRoguelikelikeInfluences = roguelikelikeInfluences.filter(r => {
-        return releasedYears[r.Name] !== 1000 && r.influenceCount > 0;
+        return releasedYears[r.Name] !== 1000;
       });
 
       roguelikeInfluenceScale.domain([1, d3.extent(roguelikeInfluenceCounts)[1]]);
@@ -225,6 +225,14 @@
           .on('blur', removeTooltip)
           .on('click', selectTitle);
 
+      // Listen for mouse event before focus
+      let tooltipX, tooltipY;
+      let tooltipWidth = 250;
+      frame.on('mousemove', () => {
+        tooltipX = d3.event.layerX > width/2 ? d3.event.layerX - tooltipWidth - 6 : d3.event.layerX + 6;
+        tooltipY = d3.event.layerY + 3;
+      });
+
       const roguelikelikeDots = frame.append('g')
         .attr('class', 'roguelikelike games')
         .selectAll('.dot')
@@ -253,10 +261,10 @@
         tooltip.html(`
           <em>${d.Name}</em>
         `);
-        const tooltipWidth = tooltip.node().getBoundingClientRect().width;
+        tooltipWidth = tooltip.node().getBoundingClientRect().width;
         tooltip.style('position', 'absolute')
-          .style('top', `${d3.event.layerY + 3}px`)
-          .style('left', `${d3.event.layerX > width/2 ? d3.event.layerX - tooltipWidth - 6 : d3.event.layerX + 6}px`);
+          .style('left', `${tooltipX}px`)
+          .style('top', `${tooltipY}px`);
       }
 
       function removeTooltip () {
@@ -440,7 +448,6 @@
         const relatedInfluences = filterByName(influences, title);
         const influenceCount = relatedInfluences.length;
         const knownInfluenceCount = filterKnown(relatedInfluences).length;
-        console.table(relatedInfluences);
 
         // Display metadata
         hyperlink.html('Title: ');
