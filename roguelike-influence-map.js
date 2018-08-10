@@ -44,7 +44,7 @@
     .attr('stroke', '#aaa')
     .attr('stroke-dasharray', 5)
     .attr('class', 'map axis')
-    .attr('x1', 100)
+    .attr('x1', 110)
     .attr('y1', height/2)
     .attr('x2', width-100)
     .attr('y2', height/2);
@@ -96,21 +96,21 @@
     .attr('alignment-baseline', 'middle')
     .attr('x', 6)
     .attr('y', height/2)
-    .text('influences the past');
+    .text('influenced by the past');
 
   frame.append('text')
     .attr('class', 'map label')
     .attr('text-anchor', 'middle')
     .attr('x', width/2)
     .attr('y', 6)
-    .text('influences other roguelikes');
+    .text('related more to roguelikes');
 
   frame.append('text')
     .attr('class', 'map label')
     .attr('text-anchor', 'middle')
     .attr('x', width/2)
     .attr('y', height-6)
-    .text('influences other non-roguelikes');
+    .text('related more to other genres');
 
   // Draw legends
   const legends = frame.append('g')
@@ -226,6 +226,12 @@
           .attr('cy', _ => yScale(d.y))
           .attr('r', _ => Math.sqrt(findOnPosition(d).length) + 2);
       }
+
+      // Prepare the data source for download
+      const download = {metadata: roguelike_universe_metadata, data: positions};
+      const blob = new Blob([JSON.stringify(download, null, 2)], {type: 'application/json'});
+      const download_url = URL.createObjectURL(blob);
+      document.querySelector('#roguelike-map-data').href = download_url;
 
       resolve(files);
     });
