@@ -65,6 +65,13 @@ svg text {
   fill: rgb(79,74,138);
 }
 
+#influence-arcs .arc:focus,
+#influence-map .dot:focus,
+#influence-timeline .dot:focus {
+  outline: 0; /* Tooltip is a better highlight */
+}
+
+
 #influence-map .dot {
   cursor: pointer;
 }

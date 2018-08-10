@@ -199,7 +199,9 @@
         .attr('stroke', 'transparent')
         .attr('stroke-width', 10)
         .on('click', displayTitles)
-        .on('focus', displayTitles);
+        .on('focus', displayTitles)
+        .on('mousemove', displayTooltip)
+        .on('mouseout', removeTooltip);
 
       function findOnPosition (d) {
         return filterTitle(positions.filter(r => r.x === d.x && r.y === d.y)).filter(onlyUnique);
@@ -228,6 +230,27 @@
           .attr('cx', _ => xScale(d.x))
           .attr('cy', _ => yScale(d.y))
           .attr('r', _ => Math.sqrt(findOnPosition(d).length) + 2);
+      }
+
+      function displayTooltip (d) {
+        let tooltip = container.select('#map-tooltip');
+        if (!tooltip.node()) {
+          tooltip = container.append('div')
+            .attr('id', 'map-tooltip')
+            .style('max-width', '250px')
+            .attr('class', 'tooltip smallerer');
+        }
+        tooltip.html(`
+          <em>${findOnPosition(d).join(', ')}</em>
+        `);
+        const tooltipWidth = tooltip.node().getBoundingClientRect().width;
+        tooltip.style('position', 'absolute')
+          .style('top', `${d3.event.layerY + 3}px`)
+          .style('left', `${d3.event.layerX > width/2 ? d3.event.layerX - tooltipWidth - 6 : d3.event.layerX + 6}px`);
+      }
+
+      function removeTooltip () {
+        container.select('#map-tooltip').remove();
       }
 
       // Prepare the data source for download

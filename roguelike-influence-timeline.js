@@ -33,7 +33,7 @@
   // Setup influence arc diagram
   const margin = { left: 30, top: 20, right: 20, bottom: 20 };
   const width = 800 - margin.left - margin.right;
-  const height = 700 - margin.top - margin.bottom;
+  const height = 600 - margin.top - margin.bottom;
   const axisWidth = 25;
 
   const timeRange = [new Date('1974-12-31'), new Date('2020-01-01')];
