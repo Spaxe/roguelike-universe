@@ -10,10 +10,15 @@
 </head>
 <body>
 
+  <nav class="suggestion small">
+    <a href="#about"><span>About this page</span></a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform?usp=sf_link" target="_blank"><span class="ml2">Send feedback</span></a>
+    <span class="ml2 lighter small">version 2.0.0</span>
+  </nav>
+
   <header>
-    <h1>Roguelike Influences</h1>
-    <p><em>Part of the <em>Roguelike Universe</em> series: Visualising roguelike influences between 1975 — 2018.</em></p>
-    <p>By <a href="https://twitter.com/Xavier_Ho">@Xavier_Ho</a> | version 2.0.0 | <a href="https://static1.squarespace.com/static/51392274e4b0f86e34bbf68e/t/58fffc9f1e5b6c2665a93726/1493171379954/Finding+Design+Influence+within+Roguelike+Games.pdf">original paper</a></p>
+    <h1>Roguelike Universe: <em>Influence</em></h1>
+    <p>This is an ongoing project to visualise roguelike influences between 1975 — 2018.</p>
   </header>
 
   <main>
@@ -25,14 +30,14 @@
           <p><label>Select a roguelike game: <select id="roguelike-arc-selection"></select></label></p>
         </div>
 
-        <div id="roguelike-arc-infobox" class="infobox small flex-250">
-          <span class="m0" name="roguetemple" class="right-link small"></span>
-          <span class="m0" name="project" class="right-link small"></span>
-          <span class="m0" name="developer" class="right-link small"></span>
-          <span class="m0" name="theme" class="right-link small"></span>
-          <span class="m0" name="released" class="right-link small"></span>
-          <span class="m0" name="updated" class="right-link small"></span>
-          <span class="m0" name="count" class="right-link small"></span>
+        <div id="roguelike-arc-infobox" class="infobox smaller flex-250">
+          <span class="m0" name="roguetemple" class="right-link"></span>
+          <span class="m0" name="project" class="right-link"></span>
+          <span class="m0" name="developer" class="right-link"></span>
+          <span class="m0" name="theme" class="right-link"></span>
+          <span class="m0" name="released" class="right-link"></span>
+          <span class="m0" name="updated" class="right-link"></span>
+          <span class="m0" name="count" class="right-link"></span>
         </div>
       </div>
 
@@ -58,7 +63,7 @@
     <section>
       <h2>Roguelike Influence Map</h2>
       <p>Taking each arc in the quadrant (upper-left, upper-right, bottom-left, bottom-right), we can draw a point for each roguelike game. The more arcs there are in each quadrant, the more biased the point is towards a corner of the map.</p>
-      <p id="roguelike-map-selected" class="words small"></p>
+      <p id="roguelike-map-selected" class="words smaller"></p>
       <figure id="influence-map">
         <div></div>
         <figcaption><em>Figure 3: Roguelike Influence Map</em></figcaption>
@@ -70,17 +75,17 @@
       <div class="flex">
         <div>
         <p><label>Select a game, or an influence: <select id="roguelike-timeline-selection"></select></label></p>
-        <p id="roguelike-timeline-known" class="words small"></p>
-        <p id="roguelike-timeline-inferred" class="words small"></p>
+        <p id="roguelike-timeline-known" class="words smaller"></p>
+        <p id="roguelike-timeline-inferred" class="words smaller"></p>
         </div>
-        <div id="roguelike-timeline-infobox" class="infobox small flex-250">
-          <span class="m0" name="roguetemple" class="right-link small"></span>
-          <span class="m0" name="project" class="right-link small"></span>
-          <span class="m0" name="developer" class="right-link small"></span>
-          <span class="m0" name="theme" class="right-link small"></span>
-          <span class="m0" name="released" class="right-link small"></span>
-          <span class="m0" name="updated" class="right-link small"></span>
-          <span class="m0" name="count" class="right-link small"></span>
+        <div id="roguelike-timeline-infobox" class="infobox smaller flex-250">
+          <span class="m0" name="roguetemple" class="right-link"></span>
+          <span class="m0" name="project" class="right-link"></span>
+          <span class="m0" name="developer" class="right-link"></span>
+          <span class="m0" name="theme" class="right-link"></span>
+          <span class="m0" name="released" class="right-link"></span>
+          <span class="m0" name="updated" class="right-link"></span>
+          <span class="m0" name="count" class="right-link"></span>
         </div>
       </div>
       <figure id="influence-timeline">
@@ -90,9 +95,9 @@
     </section>
   </main>
 
-  <footer>
+  <footer id="about">
     <h2>About</h2>
-    <p><em>Roguelike Universe</em> and this page is part of Xavier Ho's research on roguelike influences.</p>
+    <p><em>Roguelike Universe</em> is an ongoing effort to visualise roguelike influences by <a href="https://jumptoglide.com/" target="_blank">Xavier Ho</a>. You can make the data better by contributing to the <a href="http://roguebasin.roguelikedevelopment.org/index.php?title=Main_Page" target="_blank">RogueBasin</a> mediawiki.</em></p>
     <p>Data source: <a href="https://forums.roguetemple.com/irldb/" target="_blank">RogueTemple DB</a></p>
     <p>Source code: <a href="https://github.com/Spaxe/roguelike-universe" target="_blank">GitHub</a></p>
     <p>Looking for previous versions? Go to <a href="/roguelike-universe/versions/1.0.0/index.html">1.0.0</a></p>

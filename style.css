@@ -4,6 +4,7 @@ body {
   padding: 0 0 0 0;
   max-width: 800px;
   font-smoothing: antialiased;
+  position: relative;
 }
 
 a, a:active, a:visited {
@@ -22,6 +23,10 @@ p.related {
 
 p.related + p {
   margin-top: 2px;
+}
+
+.suggestion {
+
 }
 
 .infobox {
@@ -97,8 +102,16 @@ svg text {
   margin-left: 1em;
 }
 
+.ml2 {
+  margin-left: 2em;
+}
+
 .small {
-  font-size: 12px;
+  font-size: 0.9em;
+}
+
+.smaller {
+  font-size: 0.8em;
 }
 
 .image {
