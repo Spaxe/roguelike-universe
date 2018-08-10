@@ -221,6 +221,8 @@
           .attr('r', d => 3)
           .on('mousemove', displayTooltip)
           .on('mouseleave', removeTooltip)
+          .on('focus', displayTooltip)
+          .on('blur', removeTooltip)
           .on('click', selectTitle);
 
       const roguelikelikeDots = frame.append('g')
@@ -237,6 +239,8 @@
           .attr('r', d => 3)
           .on('mousemove', displayTooltip)
           .on('mouseleave', removeTooltip)
+          .on('focus', displayTooltip)
+          .on('blur', removeTooltip)
           .on('click', selectTitle);
 
       function displayTooltip (d) {

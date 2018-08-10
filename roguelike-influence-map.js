@@ -196,7 +196,8 @@
         .attr('r', d => Math.sqrt(findOnPosition(d).length) + 2)
         .attr('stroke', 'transparent')
         .attr('stroke-width', 10)
-        .on('click', displayTitles);
+        .on('click', displayTitles)
+        .on('focus', displayTitles);
 
       function findOnPosition (d) {
         return filterTitle(positions.filter(r => r.x === d.x && r.y === d.y)).filter(onlyUnique);

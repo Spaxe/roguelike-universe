@@ -260,6 +260,8 @@
             .attr('d', influenceArc)
             .on('mousemove', displayTooltip)
             .on('mouseout', removeTooltip)
+            .on('focus', displayTooltip)
+            .on('blur', removeTooltip)
           .exit().remove();
 
         // Update the description text
