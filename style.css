@@ -205,3 +205,9 @@ line.annotation {
   padding: 2px 4px;
   background: #ecffff;
 }
+
+.highlight {
+  color: rgb(79,74,138);
+  background: #ecffff;
+  padding: 0.5em 1em;
+}
