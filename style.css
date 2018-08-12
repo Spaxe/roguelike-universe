@@ -167,6 +167,10 @@ svg text {
   padding-right: 1em;
 }
 
+.fullwidth {
+  max-width: 100%;
+}
+
 .no-link,
 .no-link:hover,
 .no-link:active,

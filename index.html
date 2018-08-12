@@ -10,9 +10,13 @@
 </head>
 <body>
 
+  <noscript><p class="highlight">Roguelike Universe requires JavaScript to run. We can't run JavaScript in your browser, so we have replaced diagrams with static images.</p></noscript>
+
   <nav class="suggestion small">
-    <a href="#about"><span>About this page</span></a>
-    <span class="ml2 light small">version 2.0.0</span>
+    <p>
+      <a href="#about"><span>About this page</span></a>
+      <span class="ml2 light small">version 2.0.0, <em>last updated 12 August 2018</em></span>
+    </p>
   </nav>
 
   <header>
@@ -43,6 +47,7 @@
 
       <figure id="influence-arcs">
         <div></div>
+        <noscript><img class="fullwidth" src="assets/influence-arcs.png"></noscript>
         <figcaption><em>Figure 1: Roguelike influence arcs</em> | <a href="#about">Feedback</a> | <a id="roguelike-arc-data">Download data</a></figcaption>
       </figure>
     </section>
@@ -70,6 +75,7 @@
       <figure id="influence-map">
         <div></div>
         <p id="roguelike-map-selected" class="words smaller"></p>
+        <noscript><img class="fullwidth" src="assets/influence-map.png"></noscript>
         <figcaption><em>Figure 3: Roguelike Influence Map</em> | <a href="#about">Feedback</a> | <a id="roguelike-map-data">Download data</a></figcaption>
       </figure>
     </section>
@@ -97,6 +103,7 @@
         <div></div>
         <p id="roguelike-timeline-known" class="words smaller"></p>
         <p id="roguelike-timeline-inferred" class="words smaller"></p>
+        <noscript><img class="fullwidth" src="assets/influence-timeline.png"></noscript>
         <figcaption><em>Figure 4: Roguelike Influence Timeline</em> | <a href="#about">Feedback</a> | <a id="roguelike-timeline-data">Download data</a></figcaption>
       </figure>
     </section>
@@ -104,23 +111,30 @@
 
   <footer id="about" class="mt2 small">
     <h2>About this page</h2>
-    <p><em>Roguelike Universe</em> is an ongoing project to visualise roguelike influences. This project is <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">seeking corrections, suggestions, and feedback</a>.</p>
+    <p><em>Roguelike Universe</em> is an ongoing project to visualise roguelike influences.
 
-    <h3>Research</h3>
-    <p class="related">We currently have an open survey, and we want to know what you think of this tool!</p>
-    <p class="highlight"><a href="#" target="_blank"><em>Click here to participate in the research survey.</em></a></p>
+    We are seeking <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">corrections, suggestions, and feedback</a>. Please don't hesitate to get in touch via the link. If you reference or use the data sets, or the data visualisation, we would love to hear from you!</p>
 
     <h3>Method</h3>
-    <p>Known influence was collected through <a href="https://forums.roguetemple.com/irldb/" target="_blank">RogueTemple's IRLDB</a>, with a <a href="https://docs.google.com/spreadsheets/d/1cUmwMHQQWkPTh-89L9QDVc25QOCAHqjvqZYOufzmQOk/edit#gid=0" target="_blank">hand-cleaned version</a> stored online. You are welcome to edit the data. The search setting used can be found in <a href="assets/search_settings.png" target="_blank">this picture</a>. Inferred influence was calculated by <a href="https://github.com/Spaxe/roguelike-universe/blob/master/data/Roguelike%20Universe%20-%20Web%20Scraping.ipynb" target="_blank">web scraping</a>, gathering the first 10-30 links found via the <a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a> search engine. Data was <a href="https://github.com/Spaxe/roguelike-universe/blob/master/data/Roguelike%20Universe%20-%20Link%20Generation.ipynb" target="_blank">prepared in Python</a>, with a little bit of post-processing in JavaScript in the browser. Figures are homemade and crafted in <a href="https://d3js.org/" target="_blank">D3.js</a> with care. We try to make the live computed dataset available, which can be downloaded below each figure.</p>
 
-    <p>If you decide to reference or cite this work, please cite the following paper:
+    <p>The list of roguelike games, and their known influences was collected through <a href="https://forums.roguetemple.com/irldb/" target="_blank">RogueTemple's IRLDB</a>, with a <a href="https://docs.google.com/spreadsheets/d/1cUmwMHQQWkPTh-89L9QDVc25QOCAHqjvqZYOufzmQOk/edit#gid=0" target="_blank">hand-cleaned version</a> stored online. You are welcome to edit the data (and see <em>Contribute</em> below). The search setting used can be found in <a href="assets/search_settings.png" target="_blank">this picture</a>.</p>
+
+    <p>Inferred influences were calculated by <a href="https://github.com/Spaxe/roguelike-universe/blob/master/data/Roguelike%20Universe%20-%20Web%20Scraping.ipynb" target="_blank">web scraping using Python</a>, gathering the first meaningful 10-30 links found via the <a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a> search engine. Websites were screened by keywords. Data was then <a href="https://github.com/Spaxe/roguelike-universe/blob/master/data/Roguelike%20Universe%20-%20Link%20Generation.ipynb" target="_blank">prepared and cleaned up</a>, with the final post-processing done in JavaScript in the browser. Figures are homemade and crafted in <a href="https://d3js.org/" target="_blank">D3.js</a> with care. We try to make the live computed dataset available, which can be downloaded below each figure.</p>
+
+    <p>For academic publications, we encourage you to cite the following paper:
     <pre>
-      <strong>Finding Design Influence within Roguelike Games</strong> (<a href="https://jumptoglide.com/s/Finding-Design-Influence-within-Roguelike-Games.pdf" target="_blank">open access PDf</a>)
+      <strong>Finding Design Influence within Roguelike Games</strong> (p. 1-27) [<a href="https://jumptoglide.com/s/Finding-Design-Influence-within-Roguelike-Games.pdf" target="_blank">open access PDF</a>]
       Xavier Ho, Martin Tomitsch, Tomasz Bednarz
-      International Conference on Meaningful Play, East Lansing, 2016</pre>
+      Proceedings of the International Conference on Meaningful Play, East Lansing, 2016
+      Available at <a href="https://publications.csiro.au/rpr/pub?pid=csiro:EP166151">https://publications.csiro.au/rpr/pub?pid=csiro:EP166151</a></pre>
     </p>
 
-    <p>We encourage you to <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">drop us a message</a> if you do decide to take this project further!</p>
+    <h3>Participate in the survey</h3>
+    <p>We currently have an open survey about this page, which you can participate anonymously! We invite your input about the data visualisations, and will ask you about your experience with roguelike game design. You are not tested on anything. Your answers will help improve the research on roguelike games, and the functionality and data visualisations for Roguelike Universe.</p>
+
+    <p class="highlight">➡ <a href="#" target="_blank"><em>Click here</em> to participate in the research survey.</a></p>
+
+    <p>If you have any questions about this research project, you can get in touch with the researcher Xavier Ho via email (contact@xavierho.com), or <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">leave us a message</a>. For frequently asked questions about the research project, we have prepared the <a href="research/PIS.pdf" target="_blank">participant information sheet</a>.</p>
 
     <h3>License</h3>
     <p>The data visualisations and the computed source are licensed under the <a href="https://creativecommons.org/licenses/by-nc/3.0/" target="_blank">Creative Commons Non-Commercial 3.0 license</a>. Individual games, descriptions, and collected data are owned by the respective authors listed on the wiki or webpage. If you have concerns regarding the license, or use of this data, <a href="https://docs.google.com/forms/d/e/1FAIpQLScvx2Ajw_34mPcHeA5bXF2JsPPAPSrvg1JxP1Fzo8IxbG4U4w/viewform" target="_blank">let us know</a>.</p>
@@ -141,7 +155,7 @@
     <p class="mt2 small"><em>Roguelike Universe is crafted with care by Xavier Ho.</em></p>
   </footer>
 
-  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="lib/d3.min.js"></script>
   <script src="roguelike-utils.js"></script>
   <script src="roguelike-influence-arcs.js"></script>
   <script src="roguelike-influence-map.js"></script>
