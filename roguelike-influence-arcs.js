@@ -70,16 +70,16 @@
   labels.append('text')
     .text('influences in roguelikes games')
     .attr('x', -20)
-    .attr('y', 10);
+    .attr('y', height/2-50);
   labels.append('text')
     .text('influences in other genres')
     .attr('x', -20)
-    .attr('y', height-10)
+    .attr('y', height/2+50+axisWidth)
 
   // Legends
   const legends = frame.append('g')
     .attr('class', 'influence legend')
-    .attr('transform', 'translate(0 50)');
+    .attr('transform', 'translate(0 80)');
   legends.append('line')
     .attr('class', 'line')
     .attr('stroke-width', 3)
@@ -230,6 +230,7 @@
         active.append('line')
           .attr('stroke', 'black')
           .attr('stroke-width', 0.5)
+          .attr('stroke-dasharray', 10)
           .attr('x1', x)
           .attr('y1', 0)
           .attr('x2', x)
