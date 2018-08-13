@@ -34,7 +34,8 @@ function gatherInfluence (files) {
       r.Influences.forEach(i => {
         if (validYears(r.Name, i)) {
           // Temporary patching games out of roguelike list
-          if (i === 'Diablo' || i === 'Spelunky' || i === 'The Binding of Isaac') {
+          // TODO: Consolidate the list of games, and have a field for genre such as roguelike/roguelike-like
+          if (i === 'Diablo' || i === 'Diablo II' || i === 'Spelunky' || i === 'The Binding of Isaac') {
             influences.push({
               titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
               categoryA: 'roguelike', categoryB: 'roguelikelike', type: 'known',
@@ -81,7 +82,7 @@ function gatherInfluence (files) {
       r.Influences.forEach(i => {
         if (validYears(r.Name, i)) {
           // Temporary patching Spelunky out of roguelike list
-          if (i === 'Spelunky') {
+          if (i === 'Spelunky' || i === 'Diablo II') {
             influences.push({
               titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
               categoryA: 'roguelikelike', categoryB: 'roguelikelike',  type: 'known',
