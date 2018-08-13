@@ -5,7 +5,15 @@
 Author: Xavier Ho <contact@xavierho.com>, https://jumptoglide.com
 
 ## Release notes
- * v2.0.1 - underdevelopment in `v2`
+ Underdevelopment in `v2` branch.
+
+ * v2.0.2 - 2018-08-13
+   * Removed inferred influences if it's known. You only get one! :)
+   * Added a new form for authors to update games that are roguelike-like, or if they realy like to fill out forms.
+   * Corrected influences for MidBoss. Thanks Einchan! https://twitter.com/Enichan
+   * Pages now have a hashfragment for directly sharing links.
+
+ * v2.0.1 - 2018-08-13
    * Corrected two Diablo II links that previously pointed to void realm
    * Corrected Cogmind's influence to the 1984 boardgame, not the 2018 shiny game
    * Improved influence arc's legend drawing.
