@@ -72,28 +72,28 @@ function gatherInfluence (files) {
 
     roguelikeInfluences.forEach(r => {
       r.Inferred_Roguelike_Influences.forEach(i => {
-        if (validYears(r.Name, i) && !includedIn(influences, r.Name, i)) {
+        if (validYears(r.Name, i)) {
           influences.push({
             titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-            categoryA: 'roguelike', categoryB: 'roguelike',  type: 'inferred',
+            categoryA: 'roguelike', categoryB: 'roguelike',  type: includedIn(influences, r.Name, i) ? 'known' : 'inferred',
           });
         }
       });
 
       r.Inferred_Roguelikelike_Influences.forEach(i => {
-        if (validYears(r.Name, i) && !includedIn(influences, r.Name, i)) {
+        if (validYears(r.Name, i)) {
           influences.push({
             titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-            categoryA: 'roguelike', categoryB: 'roguelikelike',  type: 'inferred',
+            categoryA: 'roguelike', categoryB: 'roguelikelike',  type: includedIn(influences, r.Name, i) ? 'known' : 'inferred',
           });
         }
       });
 
       r.Inferred_Other_Influences.forEach(i => {
-        if (validYears(r.Name, i) && !includedIn(influences, r.Name, i)) {
+        if (validYears(r.Name, i)) {
           influences.push({
             titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-            categoryA: 'roguelike', categoryB: 'other',  type: 'inferred',
+            categoryA: 'roguelike', categoryB: 'other',  type: includedIn(influences, r.Name, i) ? 'known' : 'inferred',
           });
         }
       });
@@ -102,28 +102,28 @@ function gatherInfluence (files) {
 
     roguelikelikeInfluences.forEach(r => {
       r.Inferred_Roguelike_Influences.forEach(i => {
-        if (validYears(r.Name, i) && !includedIn(influences, r.Name, i)) {
+        if (validYears(r.Name, i)) {
           influences.push({
             titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-            categoryA: 'roguelikelike', categoryB: 'roguelike',  type: 'inferred',
+            categoryA: 'roguelikelike', categoryB: 'roguelike',  type: includedIn(influences, r.Name, i) ? 'known' : 'inferred',
           });
         }
       });
 
       r.Inferred_Roguelikelike_Influences.forEach(i => {
-        if (validYears(r.Name, i) && !includedIn(influences, r.Name, i)) {
+        if (validYears(r.Name, i)) {
           influences.push({
             titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-            categoryA: 'roguelikelike', categoryB: 'roguelikelike',  type: 'inferred',
+            categoryA: 'roguelikelike', categoryB: 'roguelikelike',  type: includedIn(influences, r.Name, i) ? 'known' : 'inferred',
           });
         }
       });
 
       r.Inferred_Other_Influences.forEach(i => {
-        if (validYears(r.Name, i) && !includedIn(influences, r.Name, i)) {
+        if (validYears(r.Name, i)) {
           influences.push({
             titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
-            categoryA: 'roguelikelike', categoryB: 'other',  type: 'inferred',
+            categoryA: 'roguelikelike', categoryB: 'other',  type: includedIn(influences, r.Name, i) ? 'known' : 'inferred',
           });
         }
       });
