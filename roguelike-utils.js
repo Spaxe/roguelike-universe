@@ -34,6 +34,7 @@ function gatherInfluence (files) {
       r.Influences.forEach(i => {
         if (validYears(r.Name, i)) {
           // Temporary patching games out of roguelike list
+          // TODO: Consolidate the list of games, and have a field for genre such as roguelike/roguelike-like
           if (i === 'Diablo' || i === 'Diablo II' || i === 'Spelunky' || i === 'The Binding of Isaac') {
             influences.push({
               titleA: r.Name, titleB: i, yearA: releasedYears[r.Name], yearB: releasedYears[i],
