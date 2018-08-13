@@ -19,6 +19,7 @@
   const width = 800 - margin.left - margin.right;
   const height = 700 - margin.top - margin.bottom;
   const axisWidth = 25;
+  let firstLoading = true;
 
   const timeRange = [new Date('1969-12-31'), new Date('2020-01-01')];
   const timeScale = d3.scaleTime()
@@ -162,6 +163,7 @@
       const select = d3.select('#roguelike-arc-selection');
       const hyperlink = d3.select('#roguelike-arc-infobox [name=roguetemple]');
       const contribute = d3.select('#roguelike-arc-contribute');
+      const share = d3.select('#roguelike-arc-share');
       const project = d3.select('#roguelike-arc-infobox [name=project]');
       const theme = d3.select('#roguelike-arc-infobox [name=theme]');
       const developer = d3.select('#roguelike-arc-infobox [name=developer]');
@@ -169,6 +171,11 @@
       const updated = d3.select('#roguelike-arc-infobox [name=updated]');
       const count = d3.select('#roguelike-arc-infobox [name=count]');
 
+      // We need to filter so if the title is a roguelike-like, go back to
+      // NetHack as roguelike-likes are not available for this chart.
+      const roguelikelikeTitles = new Set(roguelikelikeInfluences.map(r => r.Name));
+
+      const hashTitle = decodeURIComponent(window.location.hash).substring(1); // Remove the #
       roguelikeInfluences.forEach( r => {
         const year = releasedYears[r.Name];
 
@@ -176,8 +183,10 @@
           const option = select.append('option')
             .attr('value', r.Name)
             .text(`${r.Name} (${year})`);
-          // Default selection on load
-          if (r.Name === 'NetHack') {
+          // Default selection on load, but don't load roguelike-likes as they are not available for this chart
+          if (hashTitle !== '' && r.Name === hashTitle) {
+            option.attr('selected', true);
+          } else if ((hashTitle === '' || roguelikelikeTitles.has(hashTitle)) && r.Name === 'NetHack') {
             option.attr('selected', true);
           }
         }
@@ -226,6 +235,13 @@
         count.text(`Estimated influence: ${influenceCount > 1 ? influenceCount + ' games' : influenceCount + ' game'} (${knownInfluenceCount} known)`)
           .attr('title', `${influenceCount} (${knownInfluenceCount} known)`);
 
+        // Update hash fragment for sharing
+        if (!firstLoading) {
+          window.location.hash = title;
+        }
+
+        // Update share link
+        share.attr('href', window.location);
 
         // Remove previous selection
         frame.selectAll('.active').remove();
@@ -353,6 +369,8 @@
       function removeTooltip () {
         container.select('#arc-tooltip').remove();
       }
+
+      firstLoading = false;
 
       resolve(files);
     });

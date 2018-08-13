@@ -35,6 +35,7 @@
   const width = 800 - margin.left - margin.right;
   const height = 600 - margin.top - margin.bottom;
   const axisWidth = 25;
+  let firstLoading = true;
 
   const timeRange = [new Date('1974-12-31'), new Date('2020-01-01')];
   const timeScale = d3.scaleTime()
@@ -398,6 +399,8 @@
       const select = d3.select('#roguelike-timeline-selection');
       const hyperlink = d3.select('#roguelike-timeline-infobox [name=roguetemple]');
       const contribute = d3.select('#roguelike-timeline-contribute');
+      const contributeToggle = d3.select('#roguelike-timeline-contribute-toggle');
+      const share = d3.select('#roguelike-timeline-share');
       const project = d3.select('#roguelike-timeline-infobox [name=project]');
       const theme = d3.select('#roguelike-timeline-infobox [name=theme]');
       const developer = d3.select('#roguelike-timeline-infobox [name=developer]');
@@ -405,33 +408,48 @@
       const updated = d3.select('#roguelike-timeline-infobox [name=updated]');
       const count = d3.select('#roguelike-timeline-infobox [name=count]');
 
+      // We need to filter so if the title is a roguelike, we can make Roguebsin
+      // wiki links visible
+      const roguelikelikeTitles = new Set(roguelikelikeInfluences.map(r => r.Name));
+
       validRoguelikelikeInfluences.sort((a, b) => {
         if (a.Name < b.Name) return -1;
         else if (a.Name > b.Name) return 1;
         return 0;
       });
 
+      // Select the game based on hash fragment
+      const hashTitle = decodeURIComponent(window.location.hash).substring(1); // Remove the #
+
       select.append('option')
         .attr('value', '')
         .text(`=== Roguelike games ===`);
+
       validRoguelikeInfluences.forEach(r => {
         const year = releasedYears[r.Name];
         const option = select.append('option')
           .attr('value', r.Name)
           .text(`${r.Name} (${year})`);
-        // Default selection on load
-        if (r.Name === 'Dungeons of Dredmor') {
+        if (hashTitle !== '' && r.Name === hashTitle) {
           option.attr('selected', true);
         }
       });
+
       select.append('option')
         .attr('value', '')
         .text(`=== "Roguelike-like" games ===`);
+
       validRoguelikelikeInfluences.forEach(r => {
         const year = releasedYears[r.Name];
         const option = select.append('option')
           .attr('value', r.Name)
           .text(`${r.Name} (${year})`);
+        // Default selection on load
+        if (hashTitle !== '' && r.Name === hashTitle) {
+          option.attr('selected', true);
+        } else if ((hashTitle === '') && r.Name === 'Darkest Dungeon') {
+          option.attr('selected', true);
+        }
       });
 
       // Display influence lines on selection
@@ -441,6 +459,10 @@
         const title = d3.event.target.value;
         if (title === '') {
           return;
+        } else if (roguelikelikeTitles.has(title)) {
+          contributeToggle.style('display', 'none');
+        } else {
+          contributeToggle.style('display', 'block');
         }
         const knownTitles = d3.select('#roguelike-timeline-known');
         const inferredTitles = d3.select('#roguelike-timeline-inferred');
@@ -479,6 +501,14 @@
           .attr('title', datum['Updated'] || 'N/A');
         count.text(`Estimated influence: ${influenceCount > 1 ? influenceCount + ' games' : influenceCount + ' game'} (${knownInfluenceCount} known)`)
           .attr('title', `${influenceCount} (${knownInfluenceCount} known)`);
+
+        // Update hash fragment for sharing
+        if (!firstLoading) {
+          window.location.hash = title;
+        }
+
+        // Update share link
+        share.attr('href', window.location);
 
         frame.selectAll('.active').remove();
         const activeInfluences = frame.append('g').lower()
@@ -633,6 +663,8 @@
       const blob = new Blob([JSON.stringify(download, null, 2)], {type: 'application/json'});
       const download_url = URL.createObjectURL(blob);
       document.querySelector('#roguelike-timeline-data').href = download_url;
+
+      firstLoading = false;
 
       resolve(files);
     });
