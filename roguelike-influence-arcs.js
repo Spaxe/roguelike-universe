@@ -161,6 +161,7 @@
       // Populate the dropdown menu
       const select = d3.select('#roguelike-arc-selection');
       const hyperlink = d3.select('#roguelike-arc-infobox [name=roguetemple]');
+      const contribute = d3.select('#roguelike-arc-contribute');
       const project = d3.select('#roguelike-arc-infobox [name=project]');
       const theme = d3.select('#roguelike-arc-infobox [name=theme]');
       const developer = d3.select('#roguelike-arc-infobox [name=developer]');
@@ -204,6 +205,9 @@
           .attr('href', datum['RogueTemple'] || "#")
           .attr('target', '_blank')
           .text(datum['RogueTemple'] ? '(data source)' : '');
+
+        contribute.attr('href', datum['RogueTemple'] || "#")
+          .text(`link to the ${title} entry`);
 
         project.html('Project page: ');
         project.append('a')
