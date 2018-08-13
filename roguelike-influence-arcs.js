@@ -196,11 +196,14 @@
         const knownInfluenceCount = filterKnown(relatedInfluences).length;
 
         // Display metadata
-        hyperlink.html('Title: ');
+        hyperlink.html('');
+        hyperlink.append('strong')
+          .text(title);
         hyperlink.append('a')
+          .attr('class', 'small ml1')
           .attr('href', datum['RogueTemple'] || "#")
           .attr('target', '_blank')
-          .text(title);
+          .text(datum['RogueTemple'] ? '(data source)' : '');
 
         project.html('Project page: ');
         project.append('a')

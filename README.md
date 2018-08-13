@@ -10,6 +10,7 @@ Author: Xavier Ho <contact@xavierho.com>, https://jumptoglide.com
    * Corrected Cogmind's influence to the 1984 boardgame, not the 2018 shiny game
    * Improved influence arc's legend drawing.
    * Fixed spelling for "The Tombs"
+   * Added data source link in infobox.
 
  * v2.0.0 - 2018-08-12
    * New site launched.

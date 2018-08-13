@@ -115,6 +115,10 @@ svg text {
   flex: 0 0 275px;
 }
 
+.fw-500 {
+  font-weight: 500;
+}
+
 .m0 {
   margin: 0;
 }
@@ -169,6 +173,10 @@ svg text {
 
 .fullwidth {
   max-width: 100%;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .no-link,
