@@ -111,8 +111,8 @@
     </section>
 
     <section>
-      <h3>Does this mean we can plot roguelike influence on a 2-dimensional space?</h3>
-      <p>Similar to the diagram above, this map divides games into 4 quadrants. The position is calculated by adding up the number of influences in each quadrant. The further they are away from the origin, the more distinct their influences are. For instance, influences mostly in roguelike games will result in above the horizon line.</p>
+      <h3>How do their influences compare?</h3>
+      <p>We take each number of influences and draw a circle for each game. The further they are away from the origin, the more distinct their influences are. For instance, influences mostly in roguelike games will result in above the horizon line.</p>
       <p>You can click on a circle to see which games are at that location.</p>
       <figure id="influence-map">
         <div></div>
@@ -123,13 +123,12 @@
     </section>
 
     <section>
-      <h2>Roguelike (and Roguelike-like) Influence Timeline</h2>
-      <p>Lastly, we produce a scatter plot of every roguelike, and 'roguelike-like' games. The horizontal axis is the release year (or the exact date as available), and the vertical, stacked axis is the number of influences each game has on other games. Games with no influences are omitted. Influences are drawn as links between the dots.</p>
+      <h3>Which games have influenced other games, exactly?</h3>
+
       <div class="flex">
         <div>
-          <p class="mt0">The primary aim of this chart is to not only show one 'hop' of influences, but also show multiple hops, influences of influences. Influences may form a small-world network.</p>
-          <p class="words">Click on one of the <span class="list">known</span> or <span class="list">inferred</span> influences, and see where it leads you.</p>
-          <p><label>Or, select a game: <select id="roguelike-timeline-selection"></select></label></p>
+          <p>This is where scatter plot comes in handy. We plot every roguelike, and roguelike-like games in our dataset. More will be added over time.  Influences are drawn as links between the dots.</p>
+          <p>The horizontal axis is the release year (or the exact date as available), and the vertical, stacked axis is the total number of influences each game has to other games.</p>
         </div>
         <div id="roguelike-timeline-infobox" class="infobox smaller flex-250">
           <span class="m0" name="roguetemple" class="right-link"></span>
@@ -149,6 +148,9 @@
         <noscript><img class="fullwidth" src="assets/influence-timeline.png"></noscript>
         <figcaption><em>Figure 4: Roguelike Influence Timeline</em> | <a href="" id="roguelike-timeline-share" title="Copy this link to share with others">Share link</a> | <a href="#about">Feedback</a> | <a id="roguelike-timeline-data">Download data</a></figcaption>
       </figure>
+
+      <p class="words">Click on one of the <span class="list">known</span> or <span class="list">inferred</span> influences, and see where it leads you.</p>
+      <p><label>Or, select a game: <select id="roguelike-timeline-selection"></select></label></p>
 
       <p class="highlight smaller" id="roguelike-timeline-contribute-toggle"><em>Missing data? You can contribute to the "Influences" field on RogueBasin. Here is the <a href="#" target="_blank" id="roguelike-timeline-contribute"></a>.</em></p>
     </section>
