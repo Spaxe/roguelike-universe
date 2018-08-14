@@ -6,7 +6,7 @@
   <meta property="og:url" content="https://spaxe.github.io/roguelike-universe">
   <meta property="og:title" content="Roguelike Universe: Visualising Influence">
   <meta property="og:description" name="description" content="Visualise connections and influences for roguelike games between 1975 — 2018.">
-  <meta property="og:image" content="https://spaxe.github.io/roguelike-universe/assets/influence-arcs.png">
+  <meta property="og:image" content="https://spaxe.github.io/roguelike-universe/assets/influence-timeline.png">
   <meta name="twitter:creator" content="@Xavier_Ho"></meta>
   <meta name="twitter:card" content="summary_large_image"></meta>
   <meta name="author" content="Xavier Ho">
@@ -18,27 +18,56 @@
   <nav class="suggestion small">
     <p>
       <a class="highlight" href="#about"><span>About this page</span></a>
-      <a class="ml2 highlight" href="#survey"><span>Participate in the survey</span></a>
+      <a class="ml2 highlight" href="#survey"><span>Participate in survey</span></a>
       <a class="ml2 highlight" href="#update-entry"><span>Submit an update</span></a>
-      <span class="ml2 light small">version 2.0.2, <em>last updated 13 August 2018</em></span>
+      <span class="ml2 light small">version 2.1.0, <em>last updated 14 August 2018</em></span>
     </p>
   </nav>
 
   <header>
     <h1><a href="https://spaxe.github.io/roguelike-universe" class="no-link">Roguelike Universe: <em>Visualising Influence</em></a></h1>
-    <p class="small"><em>Visualise connections and influences for roguelike games between 1975 — 2018.</em></p>
+    <p class="small related"><em>Visualise connections and influences for roguelike games between 1975 — 2018</em></p>
+    <p class="smaller"><em>by <a href="https://twitter.com/Xavier_Ho" target="_blank">Xavier Ho</a></em></p>
   </header>
 
   <noscript><p class="highlight">Roguelike Universe requires JavaScript to run. We can't run JavaScript in your browser, so we have replaced diagrams with static images.</p></noscript>
 
   <main class="mt2">
     <section>
-      <h2>Explore the Influence Arcs</h2>
-      <p>This diagram aligns each <a href="https://en.wikipedia.org/wiki/Roguelike" target="_blank">roguelike game</a> by their release year, and draw influence arcs between the years. <span style="border-bottom: 3px solid rgb(79,74,138)">Thicker arcs</span> depict documented and known influences. <span style="border-bottom: 0.5px solid rgb(79,74,138)">Thinner arcs</span> are inferred influences gathered from web scraping, such as how often two games appear together in the same article.</p>
+      <p>
+        <a href="https://en.wikipedia.org/wiki/Roguelike" target="_blank">Roguelike games</a> have a long history as one of the earliest computer video games in the mid 1970's. <a href="https://web.stanford.edu/group/htgg/sts145papers/rhensley_2002_1.pdf" target="_blank">Distributed with Unix systems</a>, <em>Rogue</em> was created with curses, a programming library that allowed developers to display any ASCII characters anywhere on the terminal. It was unlike any other games that were available for home computers, which were more text-based adventure games. <em>Rogue</em> painted a world with letters and symbols, full of mystery and danger, and it quickly gained attention of many. The name, <a href="https://blog.roguetemple.com/history/" target="_blank">roguelike</a>, was adopted on Usenet since 1993 as we know it today.
+      </p>
+
+      <p>
+        What exactly makes a game <em>roguelike</em> was debated throughout the next decade. In 2008, the first International Roguelike Development Conference, held in Berlin, came to an <a href=" http://www.roguebasin.com/index.php?title=What_a_roguelike_is" target="_blank">agreement</a>: ASCII graphics, turn-based, grid-based dungeon crawl hack and slash, with randomly generated environments that changes at every level, and <em>permadeath</em>, you only get one life. Failure in a roguelike game means a shiny tombstone enshrined in your savefile, and a complete restart with a new, random dungeon level. To beat roguelike games, you die trying.
+      </p>
+
+      <p>
+        In the 2000s and 2010s, the games industry saw the rise of <a href="https://en.wikipedia.org/wiki/Indie_game" target="_blank">indie games</a>. With <em>Spelunky</em>, <em>The Binding of Isaac</em>, and many more again popularised random environment generation in mainstream games market. They deviated away from ASCII graphics and turn-based actions, and provided a more forgiving gameplay. They were not quite roguelikes, but <a href="https://www.hardcoregamer.com/2013/07/06/what-separates-a-roguelike-from-a-roguelite/47151/" target="_blank"><em>roguelites</em></a>. Other names such as <em>roguelike-like</em> also describe them, which we use in this webpage.
+      </p>
+
+      <p>
+        Roguelike games are important today not only because of their historical values, but also because they have the longest development and update release in modern games history. <em>NetHack</em>, more than 30 years later since its initial release in 1987, <a href="http://www.nethack.org/" target="_blank">still have updates</a> to the core distribution. This gargantuan life cycle has no match from other game genres. The runner up, <em>Ultima Online</em>, has so far only seen <a href="https://en.wikipedia.org/wiki/Ultima_Online" target="_blank">updates just over 20 years</a>. Roguelike and other roguelike-like games continue to influence game design with each new title release, and updates to existing beloved titles. This webpage is dedicated to enshrine their influence in the form of data visualisation, drawing a design history of over 40 years.
+      </p>
+
+      <p class="highlight">We are currently surveying the use of this webpage until 2 September. If you have 10 minutes, please consider to <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBZqMTlcrK41Izih87MLpcoK_woST7CdlomfV6N3DvsECO9Q/viewform?usp=sf_link" target="_blank">participate in the research survey.</a></p>
+    </section>
+
+    <section>
+      <h2>Visualising the Roguelike Influence</h2>
+
+      <p>
+        We collected data from <a href="http://roguebasin.roguelikedevelopment.org/" target="_blank">RogueBasin</a>, an editable wikipage mainly <a href="#update-entry">collaborated by roguelike game developers</a>. On each game entry, there is a field called <em>Influence</em> that documented sources of inspiration for these roguelike games. We refer to them as <strong>known influences</strong>, drawn with <span style="border-bottom: 3px solid rgb(79,74,138)">thick arcs</span>.
+      </p>
+
+      <p>
+        However, many entries are incomplete, and we have not seen any documentation on the influence of roguelike-like games. We saught after influence of more roguelike games by ways of web scraping, filtering websites via keywords and looked for articles about history, post-mortem, developer interviews, and player discussions around these games. Our algorithm counted the number of times two games were frequently mentioned together, and weighted them with a manually chosen cutoff. This derives the <strong>inferred influence</strong>, drawn with <span style="border-bottom: 0.5px solid rgb(79,74,138)">thin arcs</span>.
+      </p>
+
       <div class="flex">
         <div>
           <p class="mt0">Arcs above the horizon are influences between two roguelike games, and arcs below the horizon are influences between a roguelike and a non-roguelike game.</p>
-          <p><label>Selecting a game to see its influence arcs: <select id="roguelike-arc-selection"></select></label></p>
+          <p><label>You can choose a game to see its influence arcs: <select id="roguelike-arc-selection"></select></label></p>
 
           <p class="highlight smaller"><em>Missing data? You can contribute to the "Influences" field on RogueBasin. Here is the <a href="#" target="_blank" id="roguelike-arc-contribute"></a>.</em></p>
         </div>
@@ -62,12 +91,16 @@
     </section>
 
     <section>
-      <h3>The Genre-Influence Matrix</h3>
+      <h3>Which games are more representative or influential?</h3>
       <div class="flex">
         <div>
-          <p>The genre-influence matrix divides the diagram above into 4 quadrants. Each quadrant represents a pair made of <em>in-genre</em>/<em>out-of-genre</em> and <em>past</em>/<em>future</em>. This creates an interesting dynamic where a title can be representative of its own genre, taking most of its influence from the past, or influential by having many connections to its future, with respect to roguelike titles.</p>
-          <p>For instance, <span id="genre-influential-text"></span> Recently published games may be representative of its genre now, but as time goes on, it may become more influential in the genre as other games follow its footsteps.</p>
-          <p>If we aggregate the number of influences for each game, we can plot them in a 2-dimensional map.</p>
+          <p>
+            <em>Rogue</em>, <em>Moria</em>, and <em>Hack</em> have many influences into other games that came after them. We describe these games as <strong>influential</strong>. Other games, like <em>Slash'EM Extended</em> and <em>Darkfire RPG</em> are influenced from more games of their past. We call these games <strong>representative</strong> of their own kind. Relatively speaking, they borrowed more ideas than there are ideas that were borrowed from them.
+          </p>
+
+          <p>
+            We also make a distinction for influences connecting non-roguelike games. Games like <em>Shiny Gauntlet</em> have more inferred influences with non-roguelike games. The gameplay itself also shows the level of deviation from the traditional roguelike gameplay and feel. For instance, <span id="genre-influential-text"></span> We can use these connections to estimate the level of similarity between different games, and provide another venue of games discussion beyond genre labels.
+          </p>
         </div>
         <figure class="flex-250 ml1">
           <img class="image" src="assets/Figure-genre-influential.png">
@@ -78,9 +111,9 @@
     </section>
 
     <section>
-      <h2>Laying out the Roguelike Influence Map</h2>
+      <h3>Does this mean we can plot roguelike influence on a 2-dimensional space?</h3>
       <p>Similar to the diagram above, this map divides games into 4 quadrants. The position is calculated by adding up the number of influences in each quadrant. The further they are away from the origin, the more distinct their influences are. For instance, influences mostly in roguelike games will result in above the horizon line.</p>
-      <p>Click on a circle to see which games are at that location.</p>
+      <p>You can click on a circle to see which games are at that location.</p>
       <figure id="influence-map">
         <div></div>
         <p id="roguelike-map-selected" class="words smaller"></p>
@@ -129,7 +162,7 @@
 
     <h3>Method</h3>
 
-    <p>The list of roguelike games, and their known influences was collected through <a href="https://forums.roguetemple.com/irldb/" target="_blank">RogueTemple's IRLDB</a>, with a <a href="https://docs.google.com/spreadsheets/d/1cUmwMHQQWkPTh-89L9QDVc25QOCAHqjvqZYOufzmQOk/edit#gid=0" target="_blank">hand-cleaned version</a> stored online. You are welcome to edit the data (and see <em>Contribute</em> below). The search setting used can be found in <a href="assets/search_settings.png" target="_blank">this picture</a>.</p>
+    <p>The list of roguelike games, and their known influences was collected through <a href="https://forums.roguetemple.com/irldb/" target="_blank">RogueTemple's International Roguelike Database</a>, with a <a href="https://docs.google.com/spreadsheets/d/1cUmwMHQQWkPTh-89L9QDVc25QOCAHqjvqZYOufzmQOk/edit#gid=0" target="_blank">hand-cleaned version</a> stored online. You are welcome to edit the data (and see <em>Contribute</em> below). The search setting used can be found in <a href="assets/search_settings.png" target="_blank">this picture</a>.</p>
 
     <p>Inferred influences were calculated by <a href="https://github.com/Spaxe/roguelike-universe/blob/master/data/Roguelike%20Universe%20-%20Web%20Scraping.ipynb" target="_blank">web scraping using Python</a>, gathering the first meaningful 10-30 links found via the <a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a> search engine. Websites were screened by keywords. Data was then <a href="https://github.com/Spaxe/roguelike-universe/blob/master/data/Roguelike%20Universe%20-%20Link%20Generation.ipynb" target="_blank">prepared and cleaned up</a>, with the final post-processing done in JavaScript in the browser. Figures are homemade and crafted in <a href="https://d3js.org/" target="_blank">D3.js</a> with care. We try to make the live computed dataset available, which can be downloaded below each figure.</p>
 

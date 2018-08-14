@@ -7,6 +7,11 @@ Author: Xavier Ho <contact@xavierho.com>, https://jumptoglide.com
 ## Release notes
  Underdevelopment in `v2` branch.
 
+ * v2.1.0 - 2018-08-14
+   * Added a brief introduction to roguelike games.
+   * Rewrote the text description in the name of accessibility and Simple English.
+   * Made survey links more prominent.
+
  * v2.0.2 - 2018-08-13
    * Removed inferred influences if it's known. You only get one! :)
    * Added a new form for authors to update games that are roguelike-like, or if they realy like to fill out forms.
