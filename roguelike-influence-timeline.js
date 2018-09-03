@@ -21,17 +21,19 @@
     'Angband',
     'ADOM',
     'Brogue',
+    'Dungeon Crawl Stone Soup',
     'DoomRL',
   ];
   const notableRoguelikelikeTitles = [
     'Diablo',
     'Diablo II',
+    'Spelunky',
     'The Binding of Isaac',
   ];
 
   ////////////////////////////////////////////////////////////////////////////////
   // Setup influence arc diagram
-  const margin = { left: 30, top: 20, right: 20, bottom: 20 };
+  const margin = { left: 30, top: 20, right: 20, bottom: 30 };
   const width = 800 - margin.left - margin.right;
   const height = 600 - margin.top - margin.bottom;
   const axisWidth = 25;
