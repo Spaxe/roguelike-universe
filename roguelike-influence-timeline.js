@@ -20,12 +20,12 @@
     'NetHack',
     'Angband',
     'ADOM',
+    'Brogue',
     'DoomRL',
   ];
   const notableRoguelikelikeTitles = [
     'Diablo',
     'Diablo II',
-    'Spelunky',
     'The Binding of Isaac',
   ];
 

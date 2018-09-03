@@ -7,6 +7,12 @@ Author: Xavier Ho <contact@xavierho.com>, https://jumptoglide.com
 ## Release notes
  Underdevelopment in `v2` branch.
 
+ * v2.2.0 - 2018-09-03
+   * Added Alpha/Beta games from RogueBasin.
+   * Added influences for HyperRogue (thanks `zenorogue`! [Reddit post](https://www.reddit.com/r/roguelikes/comments/96sjzz/a_visualisation_of_roguelike_ancestryinfluence/e43t7o4))
+   * Slightly better title for the influence map
+   * Added Dungeonmans, thanks for the submission AdventurePro!
+
  * v2.1.1 - 2018-09-03
    * Closed survey and began analysis process
    * Preparing for Alpha/Beta games
