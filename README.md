@@ -12,6 +12,7 @@ Author: Xavier Ho <contact@xavierho.com>, https://jumptoglide.com
    * Added influences for HyperRogue (thanks `zenorogue`! [Reddit post](https://www.reddit.com/r/roguelikes/comments/96sjzz/a_visualisation_of_roguelike_ancestryinfluence/e43t7o4))
    * Slightly better title for the influence map
    * Added Dungeonmans, thanks for the submission AdventurePro!
+   * Added known and inferred list of games to click for the influence arc
 
  * v2.1.1 - 2018-09-03
    * Closed survey and began analysis process
