@@ -186,7 +186,7 @@
           // Default selection on load, but don't load roguelike-likes as they are not available for this chart
           if (hashTitle !== '' && r.Name === hashTitle) {
             option.attr('selected', true);
-          } else if ((hashTitle === '' || roguelikelikeTitles.has(hashTitle)) && r.Name === 'NetHack') {
+          } else if ((hashTitle === '' || roguelikelikeTitles.has(hashTitle)) && r.Name === 'Paper Dungeons Crawler') {
             option.attr('selected', true);
           }
         }

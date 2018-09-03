@@ -449,7 +449,7 @@
         // Default selection on load
         if (hashTitle !== '' && r.Name === hashTitle) {
           option.attr('selected', true);
-        } else if ((hashTitle === '') && r.Name === 'Darkest Dungeon') {
+        } else if ((hashTitle === '') && r.Name === 'Cogmind') {
           option.attr('selected', true);
         }
       });
