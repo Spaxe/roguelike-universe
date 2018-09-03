@@ -434,6 +434,8 @@
           .text(`${r.Name} (${year})`);
         if (hashTitle !== '' && r.Name === hashTitle) {
           option.attr('selected', true);
+        } else if ((hashTitle === '') && r.Name === 'Cogmind') {
+          option.attr('selected', true);
         }
       });
 
@@ -448,8 +450,6 @@
           .text(`${r.Name} (${year})`);
         // Default selection on load
         if (hashTitle !== '' && r.Name === hashTitle) {
-          option.attr('selected', true);
-        } else if ((hashTitle === '') && r.Name === 'Cogmind') {
           option.attr('selected', true);
         }
       });
