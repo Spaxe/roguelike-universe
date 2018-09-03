@@ -7,6 +7,10 @@ Author: Xavier Ho <contact@xavierho.com>, https://jumptoglide.com
 ## Release notes
  Underdevelopment in `v2` branch.
 
+ * v2.1.1 - 2018-09-03
+   * Closed survey and began analysis process
+   * Preparing for Alpha/Beta games
+
  * v2.1.0 - 2018-08-14
    * Added a brief introduction to roguelike games.
    * Rewrote the text description in the name of accessibility and Simple English.
