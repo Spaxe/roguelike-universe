@@ -307,8 +307,6 @@
           .map(r => identifyOther(r, title))
           .filter(onlyUnique);
 
-        console.log(title, data);
-
         if (knownInfluences.length > 0) {
           knownTitles.html('Known influences: ');
           const knownList = knownTitles.selectAll('.list')
