@@ -119,6 +119,54 @@
 
       const data = filterRoguelike(influences);
 
+      let roguelikeInfluenceCounts = [];
+      let roguelikelikeInfluenceCounts = [];
+
+      roguelikeInfluences.forEach(r => {
+        const title = r.Name;
+        const year = releasedYears[title];
+        const relatedInfluences = filterByName(influences, title);
+        roguelikeInfluenceCounts.push(relatedInfluences.length);
+        r.type = 'roguelike';
+        r.influenceCount = relatedInfluences.length;
+      });
+
+      roguelikelikeInfluences.forEach(r => {
+        const title = r.Name;
+        const year = releasedYears[title];
+        const relatedInfluences = filterByName(influences, title);
+        roguelikelikeInfluenceCounts.push(relatedInfluences.length);
+        r.type = 'roguelikelike';
+        r.influenceCount = relatedInfluences.length;
+      });
+
+      const validRoguelikeInfluences = roguelikeInfluences.filter(r => {
+        return releasedYears[r.Name] !== 1000;
+      });
+      const validRoguelikelikeInfluences = roguelikelikeInfluences.filter(r => {
+        return releasedYears[r.Name] !== 1000;
+      });
+
+      const validInfluences = influences.filter(r => {
+        const A = findTitle(r.titleA);
+        const B = findTitle(r.titleB);
+        return (r.categoryB === 'roguelike' || r.categoryB === 'roguelikelike')
+            && A !== undefined && A.influenceCount > 0
+            && B !== undefined && B.influenceCount > 0;
+      });
+
+      function findTitle (title) {
+        const r = validRoguelikeInfluences.filter(r => r.Name === title);
+        if (r.length === 1) {
+          return r[0]
+        }
+
+        const ri = validRoguelikelikeInfluences.filter(r => r.Name === title);
+        if (ri.length === 1) {
+          return ri[0];
+        }
+      }
+
       // Draw the arcs
       const roguelikeInfluenceInGenre = frame.append('g')
         .attr('class', 'roguelike in-genre influence')
@@ -138,13 +186,21 @@
           .attr('d', influenceArc)
         .exit().remove();
 
-        // Prepare the data source for download
-        const download = {metadata: roguelike_universe_metadata, data: data};
-        const blob = new Blob([JSON.stringify(download, null, 2)], {type: 'application/json'});
-        const download_url = URL.createObjectURL(blob);
-        document.querySelector('#roguelike-arc-data').href = download_url;
+      // Prepare the data source for download
+      const download = {metadata: roguelike_universe_metadata, data: data};
+      const blob = new Blob([JSON.stringify(download, null, 2)], {type: 'application/json'});
+      const download_url = URL.createObjectURL(blob);
+      document.querySelector('#roguelike-arc-data').href = download_url;
 
-      resolve(files);
+      resolve([
+        roguelikeInfluences,
+        roguelikelikeInfluences,
+        validRoguelikeInfluences,
+        validRoguelikelikeInfluences,
+        validInfluences,
+        releasedYears,
+        influences
+      ]);
     });
   }
 
@@ -155,6 +211,9 @@
       const [
         roguelikeInfluences,
         roguelikelikeInfluences,
+        validRoguelikeInfluences,
+        validRoguelikelikeInfluences,
+        validInfluences,
         releasedYears,
         influences
       ] = files;
@@ -171,6 +230,10 @@
       const updated = d3.select('#roguelike-arc-infobox [name=updated]');
       const count = d3.select('#roguelike-arc-infobox [name=count]');
 
+      // Populate the inferred and known connections
+      const knownTitles = d3.select('#roguelike-arc-known');
+      const inferredTitles = d3.select('#roguelike-arc-inferred');
+
       // We need to filter so if the title is a roguelike-like, go back to
       // NetHack as roguelike-likes are not available for this chart.
       const roguelikelikeTitles = new Set(roguelikelikeInfluences.map(r => r.Name));
@@ -186,7 +249,7 @@
           // Default selection on load, but don't load roguelike-likes as they are not available for this chart
           if (hashTitle !== '' && r.Name === hashTitle) {
             option.attr('selected', true);
-          } else if ((hashTitle === '' || roguelikelikeTitles.has(hashTitle)) && r.Name === 'NetHack') {
+          } else if ((hashTitle === '' || roguelikelikeTitles.has(hashTitle)) && r.Name === 'Paper Dungeons Crawler') {
             option.attr('selected', true);
           }
         }
@@ -200,6 +263,7 @@
         const title = d3.event.target.value
         const year = releasedYears[title];
         const x = timeScale(new Date(`${year}-01-01`));
+        const data = validInfluences.filter(r => r.titleA === title || r.titleB === title);
         const datum = roguelikeInfluences.filter(r => r.Name === title)[0];
         const relatedInfluences = filterByName(influences, title);
         const influenceCount = relatedInfluences.length;
@@ -234,6 +298,56 @@
           .attr('title', datum['Updated'] || 'N/A');
         count.text(`Estimated influence: ${influenceCount > 1 ? influenceCount + ' games' : influenceCount + ' game'} (${knownInfluenceCount} known)`)
           .attr('title', `${influenceCount} (${knownInfluenceCount} known)`);
+
+        // Display connectded titles
+        const knownInfluences = data.filter(r => r.type === 'known')
+          .map(r => identifyOther(r, title))
+          .filter(onlyUnique);
+        const inferredInfluences = data.filter(r => r.type === 'inferred')
+          .map(r => identifyOther(r, title))
+          .filter(onlyUnique);
+
+        console.log(title, data);
+
+        if (knownInfluences.length > 0) {
+          knownTitles.html('Known influences: ');
+          const knownList = knownTitles.selectAll('.list')
+            .data(knownInfluences)
+            .enter();
+          knownList.append('a')
+            .attr('class', 'list mr1')
+            .attr('href', "#")
+            .text(d => d)
+            .on('click', d => {
+              select.property('value', d);
+              select.dispatch('change');
+              d3.event.preventDefault();
+              return false;
+            })
+            .exit().remove();
+        } else {
+          knownTitles.html('');
+        }
+
+        if (inferredInfluences.length > 0) {
+          inferredTitles.html('Inferred influences: ');
+          const inferredList = inferredTitles.selectAll('.list')
+            .data(inferredInfluences)
+            .enter();
+          inferredList.append('a')
+            .attr('class', 'list mr1')
+            .attr('href', "#")
+            .text(d => d)
+            .on('click', d => {
+              select.property('value', d);
+              select.dispatch('change');
+              d3.event.preventDefault();
+              return false;
+            })
+            .exit().remove();
+        } else {
+          inferredTitles.html('');
+        }
 
         // Update hash fragment for sharing
         if (!firstLoading) {
@@ -311,6 +425,19 @@
         descriptionText.html(`given the data we can say <span>${title}</span> is <span>${influentialText}</span> for <span>${genreText}</span> games.`);
       }
       select.dispatch('change');
+
+      function findTitle (title) {
+        const r = validRoguelikeInfluences.filter(r => r.Name === title);
+        if (r.length === 1) {
+          return r[0]
+        }
+
+        const ri = validRoguelikelikeInfluences.filter(r => r.Name === title);
+        if (ri.length === 1) {
+          return ri[0];
+        }
+      }
+
 
       function calculateInfluenceType (title) {
         const result = {influential: false, representative: false, inGenre: false, outOfGenre: false};
@@ -406,6 +533,13 @@
     const pointA = timeScale(yearA);
     const pointB = timeScale(yearB);
     return (pointA + pointB) / 2;
+  }
+
+  function identifyOther (influence, title) {
+    if (influence.titleA === title) {
+      return influence.titleB;
+    }
+    return influence.titleA;
   }
 
 })();

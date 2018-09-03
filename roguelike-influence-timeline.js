@@ -20,6 +20,8 @@
     'NetHack',
     'Angband',
     'ADOM',
+    'Brogue',
+    'Dungeon Crawl Stone Soup',
     'DoomRL',
   ];
   const notableRoguelikelikeTitles = [
@@ -31,7 +33,7 @@
 
   ////////////////////////////////////////////////////////////////////////////////
   // Setup influence arc diagram
-  const margin = { left: 30, top: 20, right: 20, bottom: 20 };
+  const margin = { left: 30, top: 20, right: 20, bottom: 30 };
   const width = 800 - margin.left - margin.right;
   const height = 600 - margin.top - margin.bottom;
   const axisWidth = 25;
@@ -447,7 +449,7 @@
         // Default selection on load
         if (hashTitle !== '' && r.Name === hashTitle) {
           option.attr('selected', true);
-        } else if ((hashTitle === '') && r.Name === 'Darkest Dungeon') {
+        } else if ((hashTitle === '') && r.Name === 'Cogmind') {
           option.attr('selected', true);
         }
       });

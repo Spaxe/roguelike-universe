@@ -16,7 +16,7 @@
   // Setup influence arc diagram
   const margin = { left: 20, top: 20, right: 20, bottom: 20 };
   const width = 800 - margin.left - margin.right;
-  const height = 400 - margin.top - margin.bottom;
+  const height = 500 - margin.top - margin.bottom;
 
   const container = d3.select('#influence-map div');
   const svg = container.append('svg')
@@ -181,7 +181,7 @@
         return {title: title, x: x, y: y};
       });
       const extreme = Math.max(...extent.map(Math.abs)) + 5;
-      xScale.domain([-extreme, extreme]);
+      xScale.domain([-extreme/1.5, extreme/1.5]);
       yScale.domain([-extreme/2, extreme/2]);
 
       // Draw dots on the genre-influential map
